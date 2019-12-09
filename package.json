@@ -1,0 +1,20 @@
+{
+  "name": "Kartify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kartify-Team/Kartify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kartify-Team/Kartify/issues"
+  },
+  "homepage": "https://github.com/Kartify-Team/Kartify#readme"
+}
