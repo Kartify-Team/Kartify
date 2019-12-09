@@ -138,3 +138,12 @@ table {
   --primary-accent-color: #000fff;
   --secondary-accent-color: #00ffff;
 }
+
+.topnav {
+  background-color: #333;
+  color: #ffffff;
+  padding: 5px;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
