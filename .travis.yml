@@ -6,5 +6,3 @@ env:
 cache:
   directories:
     - "node_modules"
-before_script:
-  - npm run travis
