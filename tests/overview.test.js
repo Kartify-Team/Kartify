@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import App from '../client/components/App.jsx';
+import Overview from '../client/components/Overview/index.jsx';
 
-describe('App Component', () => {
+describe('Overview Component', () => {
    it('renders', () => {
-      shallow(<App />);
+      shallow(<Overview />);
     });
 
     it('renders all child components', () => {
-      mount(<App />);
+      mount(<Overview />);
     });
 });
