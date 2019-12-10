@@ -144,6 +144,8 @@ table {
   color: #ffffff;
   padding: 5px;
   overflow: hidden;
-  position: fixed;
   width: 100%;
+}
+
+#app {
 }

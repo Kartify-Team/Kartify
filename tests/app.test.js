@@ -1,9 +1,13 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import App from '../client/components/App.jsx';
+import React from "react";
+import { shallow, mount } from "enzyme";
+import App from "../client/components/App.jsx";
 
-describe('First React component test with Enzyme', () => {
-   it('renders without crashing', () => {
-      shallow(<App />);
-    });
+describe("App Component", () => {
+  it("renders", () => {
+    shallow(<App />);
+  });
+
+  it("renders all child components", () => {
+    mount(<App />);
+  });
 });
