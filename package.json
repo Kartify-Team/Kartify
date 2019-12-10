@@ -10,8 +10,9 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "nodemon server/index.js --watch",
-    "build": "webpack -d --watch"
+    "start": "nodemon server/index.js",
+    "build": "webpack -d --watch",
+    "travis": "node server/index.js"
   },
   "repository": {
     "type": "git",
