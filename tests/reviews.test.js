@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import App from '../client/components/App.jsx';
+import Reviews from '../client/components/Reviews/index.jsx';
 
-describe('App Component', () => {
+describe('Reviews Component', () => {
    it('renders', () => {
-      shallow(<App />);
+      shallow(<Reviews />);
     });
 
     it('renders all child components', () => {
-      mount(<App />);
+      mount(<Reviews />);
     });
 });
