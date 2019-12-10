@@ -10,8 +10,4 @@ describe("App Component", () => {
   it("renders all child components", () => {
     mount(<App />);
   });
-
-  it("this is destined to fail", () => {
-    expect(true).toEqual(false);
-  });
 });
