@@ -6,6 +6,12 @@ const mapStateToProps = (state) => ({
   myOutfit: ['product 1', null, 'product 2', 'product 3']
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  getRelatedProducts: (id) => {
+    dispatch() // TODO: CREATE ACTION
+  }
+})
+
 const OtherItemsContainer = connect(mapStateToProps)(OtherItems);
 
 export default OtherItemsContainer;
