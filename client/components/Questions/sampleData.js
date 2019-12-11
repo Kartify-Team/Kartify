@@ -13,7 +13,6 @@ module.exports = {
       }
     ]
   },
-
   questionData: {
     'product_id': '1',
     'results': [
