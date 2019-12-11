@@ -31,7 +31,7 @@ export default class OtherItems extends React.Component {
       })
       this.setState({
         relatedProducts: products
-      }, () => console.log(this.state.relatedProducts))
+      })
     })
     .catch(error => console.error(error))  
   }
