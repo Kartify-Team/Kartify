@@ -1,4 +1,18 @@
-export default {
+export default productData = {
+  "id": 1,
+  "name": "Camo Onesie",
+  "slogan": "Blend in to your crowd",
+  "description": "The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.",
+  "category": "Jackets",
+  "default_price": "140",
+  "features": [
+      {
+          "feature": "Buttons",
+          "value": "Brass"
+      }
+  ]
+}
+export default questionData = {
   'product_id': '1',
   'results': [
     {
@@ -121,3 +135,35 @@ export default {
     }
   ]
 };
+
+export default answerData = {
+  "question": "5",
+  "page": 0,
+  "count": 5,
+  "results": [
+      {
+          "answer_id": 46,
+          "body": "I've thrown it in the wash and it seems fine",
+          "date": "2018-02-08T00:00:00.000Z",
+          "answerer_name": "marcanthony",
+          "helpfulness": 11,
+          "photos": []
+      },
+      {
+          "answer_id": 101,
+          "body": "Only if you want to ruin it!",
+          "date": "2018-03-08T00:00:00.000Z",
+          "answerer_name": "ceasar",
+          "helpfulness": 5,
+          "photos": []
+      },
+      {
+          "answer_id": 96,
+          "body": "I wouldn't machine wash it",
+          "date": "2018-03-08T00:00:00.000Z",
+          "answerer_name": "ceasar",
+          "helpfulness": 0,
+          "photos": []
+      }
+  ]
+}
