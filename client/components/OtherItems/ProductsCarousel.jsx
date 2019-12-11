@@ -14,16 +14,21 @@ const ProductsCarousel = ({products}) => {
     slidesToShow: 3,
     slidesToScroll: 3
   }
-
-  return (
-    <div>
-      <Slider {...settings}>
-        {products.map(product => {
-          return <ProductCard product={product}/>
-        })}
-      </Slider>
-    </div>
-  )
+  if (products) {
+    return (
+      <div>
+        <Slider {...settings}>
+          {products.map(product => {
+            return <ProductCard product={product}/>
+          })}
+        </Slider>
+      </div>
+    )
+  } else {
+    return (
+      <div>LOADING...</div>
+    )
+  }
 }
 export default ProductsCarousel;
 

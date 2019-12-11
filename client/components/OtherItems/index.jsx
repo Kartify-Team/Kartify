@@ -4,18 +4,13 @@ import ProductsCarousel from './ProductsCarousel.jsx';
 import helpers from '../../greenfieldAPI/index.js';
 import 'regenerator-runtime';
 
-const OtherItems = ({relatedProducts, myOutfit}) => {
+const OtherItems = ({relatedProducts, myOutfit, getRelatedProducts, getMyOutfit}) => {
 
   useEffect(() => {
     // get ID
-    getRelatedProducts(2)
-    // get My Outfit
-  })
-
-  const getRelatedProducts = async (id) => {
-    let products = await helpers.getRelatedProductsInfo(id);
-    return products;
-  }
+    getRelatedProducts(3)   // TODO: CHANGE HARDCODED ID
+    // get My Outfit from User
+  }, [])
 
   return (
     <div className='otherItems'>
