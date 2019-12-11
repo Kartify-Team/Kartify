@@ -150,6 +150,13 @@ table {
   justify-content: center;
 }
 
+.productCard {
+  margin: 15px;
+  padding: 4px;
+  border: black;
+  border-style: solid;
+}
+
 /* Overview Component */
 
 #overview-container {
@@ -208,4 +215,74 @@ table {
 #left-description h2 {
   font-size: 30px;
   margin-top: 10px;
+}
+
+/* Reviews Component */
+
+#reviews-container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  border: black 1px solid;
+  margin: auto 20%;
+  height: 800px;
+}
+
+#review-list-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+}
+
+#review-stats-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#size-rating-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 15%;
+}
+
+#comfort-rating-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 15%;
+}
+
+#star-stats-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 40%;
+}
+
+/* Stars Component */
+
+.star-container {
+  display: inline-block;
+  position: relative;
+  height: 20px;
+}
+
+.bottom-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.top-star {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 10;
+  display: inline-block;
+  color: black;
+  width: 100%;
 }
