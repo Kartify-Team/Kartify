@@ -1,5 +1,4 @@
 import axios from 'axios';
-import questions from './questions';
 
 const greenfieldRoot = 'http://3.134.102.30';
 
@@ -10,7 +9,10 @@ export default {
   getRelatedProducts: (id) => {
     return axios.get(`${greenfieldRoot}/products/${id}/related`);
   },
-  getQuestions: (id) => {
-    return questions.getQuestions(id);
+  getQuestions: (productId) => {
+    return axios.get(`${greenfieldRoot}/qa/${productId}`);
+  },
+  getAnswers: (questionId) => {
+    return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);
   }
 };

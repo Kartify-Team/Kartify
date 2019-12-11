@@ -48,9 +48,6 @@ center,
 dl,
 dt,
 dd,
-ol,
-ul,
-li,
 fieldset,
 form,
 label,
@@ -148,4 +145,5 @@ table {
 }
 
 #app {
+  padding: 10px;
 }
