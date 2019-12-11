@@ -3,11 +3,11 @@ import { shallow, mount } from 'enzyme';
 import Overview from '../client/components/Overview/index.jsx';
 
 describe('Overview Component', () => {
-   it('renders', () => {
-      shallow(<Overview />);
-    });
+  it('renders', () => {
+    shallow(<Overview />);
+  });
 
-    it('renders all child components', () => {
-      mount(<Overview />);
-    });
+  it('renders all child components', () => {
+    mount(<Overview />);
+  });
 });
