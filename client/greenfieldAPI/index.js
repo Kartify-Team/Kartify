@@ -10,9 +10,12 @@ export default {
   getRelatedProducts: id => {
     return axios.get(`${greenfieldRoot}/products/${id}/related`);
   },
-  getReviewInfo: id => getProductRatings(id),
-  getQuestions: productId => {
-    return axios.get(`${greenfieldRoot}/qa/${productId}`);
+
+  getQuestions: (productId) => {
+    return axios.get(`${greenfieldRoot}/qa/${productId}`)
+      .then(({ data }) => data)
+      .catch((err) => console.log(err))
+
   },
   getAnswers: questionId => {
     return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);
