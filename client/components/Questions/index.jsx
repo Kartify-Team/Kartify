@@ -10,13 +10,10 @@ const Questions = ({ questions, addQuestionList }) => {
   const [product, setProduct] = useState(productData);
 
   useEffect(() => {
-    // greenfieldAPI
-    //   .getQuestions(product.id)
-    //   .then((questions) => addQuestionList(questions));
     addQuestionList(product.id);
   }, [product]);
   return (
-    <div>
+    <div className="component" id="questions-container">
       Q and A Component
       <ul>
         <li>

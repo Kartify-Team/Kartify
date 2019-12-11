@@ -1,9 +1,8 @@
 import { ADD_QUESTION_LIST } from "..";
 import greenfieldAPI from '../../greenfieldAPI'
 
-export const addQuestionList = (productId) => {
-
-    return function thunk(dispatch) {
+export const addQuestionList = (productId) => (
+    (dispatch) => {
         return greenfieldAPI
             .getQuestions(productId)
             .then((questions) => {
@@ -12,7 +11,7 @@ export const addQuestionList = (productId) => {
                     questions: questions
                 })
             });
-    }
-}
+    })
+
 
 
