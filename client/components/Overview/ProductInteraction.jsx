@@ -4,10 +4,14 @@ import React from 'react';
 import StyleSelector from './StyleSelector';
 import Cart from './Cart';
 
-const ProductInteraction = props => (
+const ProductInteraction = ({ product, styles }) => (
   <div id="product-interaction-container">
     <div className="interaction-item">
-      Placeholder for Stars Component, Price Component and Product Information
+      <p>Stars Component</p>
+      <a>Read All Reviews</a>
+      <h3>{product.category}</h3>
+      <h1>{product.name}</h1>
+      <p>Price Component</p>
     </div>
     <StyleSelector />
     <Cart />
