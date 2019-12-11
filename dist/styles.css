@@ -219,6 +219,16 @@ table {
 
 /* Reviews Component */
 
+#reviews-container,
+#review-list-container,
+#review-stats-container,
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+}
+
 #reviews-container {
   text-align: center;
   display: grid;
@@ -230,32 +240,22 @@ table {
 }
 
 #review-list-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
 }
 
 #review-stats-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
   display: flex;
   flex-direction: column;
 }
 
 #size-rating-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
   height: 15%;
 }
 
 #comfort-rating-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
   height: 15%;
 }
 
 #star-stats-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
   height: 40%;
 }
 
