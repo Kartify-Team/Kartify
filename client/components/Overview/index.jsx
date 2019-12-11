@@ -2,6 +2,7 @@ import React from 'react';
 import ProductImage from './ProductImage';
 import ProductInteraction from './ProductInteraction';
 import ProductDescription from './ProductDescription';
+import { productInfo, productStyles } from './testData';
 
 export default class Overview extends React.Component {
   constructor(props) {
@@ -12,8 +13,8 @@ export default class Overview extends React.Component {
     return (
       <div id="overview-container">
         <ProductImage />
-        <ProductInteraction />
-        <ProductDescription />
+        <ProductInteraction product={productInfo} styles={productStyles} />
+        <ProductDescription product={productInfo} />
       </div>
     );
   }

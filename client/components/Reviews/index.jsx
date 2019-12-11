@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ReviewList from './ReviewList';
+import ReviewStats from './ReviewStats';
 
-export default class Reviews extends React.Component {
+export default class Reviews extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
-    return <div>Reviews Component</div>;
+    return (
+      <div id="reviews-container">
+        <ReviewStats />
+        <ReviewList />
+      </div>
+    );
   }
 }

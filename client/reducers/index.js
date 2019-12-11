@@ -1,10 +1,9 @@
 //root reducer
-
 import { combineReducers } from 'redux';
-import reducerExample from './reducerExample';
+import questionsReducer from './questions';
 import otherItems from './otherItems.js';
 
 export default combineReducers({
+  questionsReducer,
   otherItems
 });
-

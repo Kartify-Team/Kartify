@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from "react";
-import QuestionList from "./QuestionList";
+import QuestionListContainer from "../../containers/Questions/QuestionList";
 import AnswerForm from "./AnswerForm";
 import AskForm from "./AskForm";
 
 import greenfieldAPI from "./../../greenfieldAPI";
 import { productData, questionData } from "./sampleData";
 
-const Questions = () => {
+const Questions = ({ questions, addQuestionList }) => {
   const [product, setProduct] = useState(productData);
-  const [questions, setQuestions] = useState({});
 
   useEffect(() => {
-    greenfieldAPI
-      .getQuestions(product.id)
-      .then((questions) => setQuestions(questions));
+    // greenfieldAPI
+    //   .getQuestions(product.id)
+    //   .then((questions) => addQuestionList(questions));
+    addQuestionList(product.id);
   }, [product]);
-  if (questions.results) {
+  if (questions) {
     return (
       <div>
         Q and A Component
         <ul>
-          <li>
-            <QuestionList questions={questions.results} />
-          </li>
+          <li>{/* <QuestionListContainer /> */}</li>
           <li>
             <AnswerForm />
           </li>
