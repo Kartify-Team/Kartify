@@ -163,7 +163,7 @@ table {
   margin: 0 auto;
   text-align: center;
   display: grid;
-  width: 1000px;
+  width: 80%;
   height: 800px;
   grid-template-columns: 65% 35%;
   grid-template-rows: 75% 25%;
@@ -224,7 +224,8 @@ table {
   display: grid;
   grid-template-columns: 35% 65%;
   border: black 1px solid;
-  margin: auto 20%;
+  margin: 0 auto;
+  width: 80%;
   height: 800px;
 }
 
