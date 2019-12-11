@@ -190,3 +190,30 @@ table {
   margin: auto;
   padding: 10px;
 }
+
+.star-container {
+  display: inline-block;
+  position: relative;
+  height: 20px;
+}
+
+.bottom-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.top-star {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 10;
+  display: inline-block;
+  color: black;
+  width: 100%;
+}
