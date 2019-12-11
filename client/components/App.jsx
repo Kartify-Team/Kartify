@@ -22,7 +22,7 @@ export default class App extends Component {
         <Route path="/">
           <Redirect to={'/products/1'} />
         </Route>
-
+        <div class="topnav">Kartify Product Page</div>
         <Switch>
           <Route path="/products/:id">
             <div id="components-container">
