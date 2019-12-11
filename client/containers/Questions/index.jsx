@@ -4,7 +4,6 @@ import store from "../../store.js";
 import { addQuestionList } from "../../actions/creators/addQuestionList";
 
 const mapStateToProps = (store) => {
-  console.log(store);
   return {
     product: store.product,
     questions: store.questionsReducer.questions
@@ -12,7 +11,6 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("in container: " + addQuestionList);
   return {
     addQuestionList: (productId) => dispatch(addQuestionList(productId))
   };

@@ -15,23 +15,21 @@ const Questions = ({ questions, addQuestionList }) => {
     //   .then((questions) => addQuestionList(questions));
     addQuestionList(product.id);
   }, [product]);
-  if (questions) {
-    return (
-      <div>
-        Q and A Component
-        <ul>
-          <li>{/* <QuestionListContainer /> */}</li>
-          <li>
-            <AnswerForm />
-          </li>
-          <li>
-            <AskForm />
-          </li>
-        </ul>
-      </div>
-    );
-  } else {
-    return <div></div>;
-  }
+  return (
+    <div>
+      Q and A Component
+      <ul>
+        <li>
+          <QuestionListContainer />
+        </li>
+        <li>
+          <AnswerForm />
+        </li>
+        <li>
+          <AskForm />
+        </li>
+      </ul>
+    </div>
+  );
 };
 export default Questions;
