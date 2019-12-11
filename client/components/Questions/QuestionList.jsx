@@ -1,6 +1,16 @@
-import React from 'react';
+import React from "react";
+import AnswerList from "./AnswerList";
 
-const QuestionList = () => {
-    return <div>QuestionList Component</div>
-}
-export default QuestionList
+const QuestionList = ({ questions }) => {
+  return questions.map((question) => {
+    return (
+      <div>
+        <div>Q: {question.question_body}</div>
+        <div>
+          A: <AnswerList answers={question.answers} />
+        </div>
+      </div>
+    );
+  });
+};
+export default QuestionList;

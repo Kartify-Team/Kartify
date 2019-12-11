@@ -10,7 +10,9 @@ export default {
     return axios.get(`${greenfieldRoot}/products/${id}/related`);
   },
   getQuestions: (productId) => {
-    return axios.get(`${greenfieldRoot}/qa/${productId}`);
+    return axios.get(`${greenfieldRoot}/qa/${productId}`)
+      .then(({ data }) => data)
+      .catch((err) => console.log(err))
   },
   getAnswers: (questionId) => {
     return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);
