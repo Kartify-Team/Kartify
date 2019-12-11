@@ -147,7 +147,6 @@ table {
 #app {
 }
 
-
 .productCard {
   margin: 15px;
   padding: 4px;
@@ -190,6 +189,8 @@ table {
   margin: auto;
   padding: 10px;
 }
+
+/* Stars Component */
 
 .star-container {
   display: inline-block;
