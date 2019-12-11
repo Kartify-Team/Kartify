@@ -1,50 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import ProductsCarousel from './ProductsCarousel.jsx';
 import helpers from '../../greenfieldAPI/index.js';
+import 'regenerator-runtime';
 
-const {getProductInfo, getRelatedProducts} = helpers;
+const OtherItems = ({relatedProducts, myOutfit}) => {
 
-class OtherItems extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   relatedProducts: [],
-    //   outfit: []
-    // };
+  useEffect(() => {
+    // get ID
+    getRelatedProducts(2)
+    // get My Outfit
+  })
+
+  const getRelatedProducts = async (id) => {
+    let products = await helpers.getRelatedProductsInfo(id);
+    return products;
   }
 
-  // componentDidMount() {
-  //   // TODO: change hardcoded id
-  //   getRelatedProducts(2)
-  //   .then(({data}) => {
-  //     let productInfoPromises = [];
-  //     data.forEach((id) => {
-  //       productInfoPromises.push(getProductInfo(id))
-  //     })
-  //     return Promise.all(productInfoPromises)
-  //   })
-  //   .then(results => {
-  //     let products = [];
-  //     results.forEach((product) => {
-  //       products.push(product.data)
-  //     })
-  //     this.setState({
-  //       relatedProducts: products
-  //     })
-  //   })
-  //   .catch(error => console.error(error))  
-  // }
-
-  render() {
-    return (
-      <div className='otherItems'>
-        <div className='otherItemsContainer'>
-          <ProductsCarousel products={this.props.myOutfit} />
-        </div>
+  return (
+    <div className='otherItems'>
+      <div className='otherItemsContainer'>
+        <ProductsCarousel products={relatedProducts}/>
+        <ProductsCarousel products={myOutfit} />
       </div>
-    )
-  }
+    </div>
+  )
 };
 
 export default OtherItems;

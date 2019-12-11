@@ -18,7 +18,7 @@ const ProductsCarousel = ({products}) => {
   return (
     <div>
       <Slider {...settings}>
-        {[1,2].map(product => {
+        {products.map(product => {
           return <ProductCard product={product}/>
         })}
       </Slider>
