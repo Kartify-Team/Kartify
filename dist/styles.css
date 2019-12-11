@@ -48,9 +48,6 @@ center,
 dl,
 dt,
 dd,
-ol,
-ul,
-li,
 fieldset,
 form,
 label,
@@ -183,4 +180,5 @@ table {
 .interaction-item {
   border: black 1px solid;
   margin: auto;
+  padding: 10px;
 }
