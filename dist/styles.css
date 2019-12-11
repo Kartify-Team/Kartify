@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
 
 /* Style Resets */
 
@@ -89,7 +89,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 article,
 aside,
@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -145,5 +145,40 @@ table {
 }
 
 #app {
+}
+
+/* Overview Component */
+
+#overview-container {
+  text-align: center;
+  display: grid;
+  width: 1000px;
+  height: 800px;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 75% 25%;
+}
+
+#product-image-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+}
+
+#product-interaction-container {
+  border: black 1px solid;
+  margin: 10px 10px 5px 5px;
+  display: grid;
+  grid-template-rows: 32% 32% 32%;
+}
+
+#product-description-container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  border: black 1px solid;
+  margin: 5px 10px 10px 10px;
+}
+
+.interaction-item {
+  border: black 1px solid;
+  margin: auto;
   padding: 10px;
 }
