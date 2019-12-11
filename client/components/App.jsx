@@ -1,6 +1,6 @@
 import React from "react";
 import OtherItems from "./OtherItems";
-import Overview from "./Overview";
+import OverviewContainer from "../containers/Overview";
 import Questions from "./Questions";
 import Reviews from "./Reviews";
 
@@ -13,7 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Overview />
+        <OverviewContainer />
         <OtherItems />
         <Questions />
         <Reviews />
