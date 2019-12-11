@@ -144,7 +144,10 @@ table {
   width: 100%;
 }
 
-#app {
+#components-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .productCard {
@@ -157,9 +160,10 @@ table {
 /* Overview Component */
 
 #overview-container {
+  margin: 0 auto;
   text-align: center;
   display: grid;
-  width: 1000px;
+  width: 80%;
   height: 800px;
   grid-template-columns: 65% 35%;
   grid-template-rows: 75% 25%;
@@ -180,6 +184,9 @@ table {
 #product-description-container {
   grid-column-start: 1;
   grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  height: 95%;
   border: black 1px solid;
   margin: 5px 10px 10px 10px;
 }
@@ -190,6 +197,26 @@ table {
   padding: 10px;
 }
 
+#left-description,
+#right-description {
+  text-align: left;
+}
+
+#left-description {
+  margin-left: 20px;
+  border-right: 3px solid black;
+}
+
+#right-description {
+  margin-left: 8px;
+  border-left: 3px solid black;
+}
+
+#left-description h2 {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
 /* Reviews Component */
 
 #reviews-container {
@@ -197,7 +224,8 @@ table {
   display: grid;
   grid-template-columns: 35% 65%;
   border: black 1px solid;
-  margin: auto 20%;
+  margin: 0 auto;
+  width: 80%;
   height: 800px;
 }
 
