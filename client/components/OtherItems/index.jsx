@@ -16,7 +16,7 @@ const OtherItems = ({relatedProducts, myOutfit, getRelatedProducts, getMyOutfit}
     <div className='otherItems'>
       <div className='otherItemsContainer'>
         <ProductsCarousel products={relatedProducts}/>
-        <ProductsCarousel products={myOutfit} />
+        {/* <ProductsCarousel products={myOutfit} /> */}
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ const ProductsCarousel = ({products}) => {
       <div>
         <Slider {...settings}>
           {products.map(product => {
-            return <ProductCard product={product}/>
+            return <ProductCard key={product.id} product={product} />
           })}
         </Slider>
       </div>
