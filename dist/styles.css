@@ -149,3 +149,10 @@ table {
 
 #app {
 }
+
+.productCard {
+  margin: 15px;
+  padding: 4px;
+  border: black;
+  border-style: solid;
+}
