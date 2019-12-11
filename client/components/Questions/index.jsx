@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import QuestionListContainer from "../../containers/Questions/QuestionList";
 import AnswerForm from "./AnswerForm";
 import AskForm from "./AskForm";
+import Search from "./Search";
 
 import greenfieldAPI from "./../../greenfieldAPI";
 import { productData, questionData } from "./sampleData";
@@ -13,19 +14,14 @@ const Questions = ({ questions, addQuestionList }) => {
     addQuestionList(product.id);
   }, [product]);
   return (
-    <div className="component" id="questions-container">
-      Q and A Component
-      <ul>
-        <li>
-          <QuestionListContainer />
-        </li>
-        <li>
-          <AnswerForm />
-        </li>
-        <li>
-          <AskForm />
-        </li>
-      </ul>
+    <div className="component" id="q-and-a-container">
+      <h1>Questions & Answers</h1>
+      <Search />
+      <QuestionListContainer />
+      <AnswerForm />
+      <AskForm />
+      <button>More Answered Questions</button>
+      <button>Add a Question</button>
     </div>
   );
 };

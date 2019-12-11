@@ -3,11 +3,10 @@ import AnswerList from "./AnswerList";
 
 const QuestionList = ({ questions }) => {
   if (questions) {
-    console.log(questions);
     return questions.map((question) => {
       return (
-        <div>
-          <div>Q: {question.question_body}</div>
+        <div id="question-container">
+          <h2>Q: {question.question_body}</h2>
           <div>
             A: <AnswerList answers={question.answers} />
           </div>
