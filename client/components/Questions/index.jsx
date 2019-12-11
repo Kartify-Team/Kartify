@@ -1,12 +1,8 @@
 import React from "react";
 
-export default class Questions extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return <div>Questions Component</div>;
-  }
+const Questions = ({product}) =>{
+ 
+    return <div>Questions Component</div>
+  
 }
+export default Questions
