@@ -13,7 +13,6 @@ const Questions = ({ questions, addQuestionList }) => {
     // greenfieldAPI
     //   .getQuestions(product.id)
     //   .then((questions) => addQuestionList(questions));
-    console.log(addQuestionList);
     addQuestionList(product.id);
   }, [product]);
   if (questions) {
