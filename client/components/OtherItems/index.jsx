@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import ProductsCarousel from './ProductsCarousel.jsx';
+import helpers from '../../greenfieldAPI/index.js';
+
+const {getProductInfo, getRelatedProducts} = helpers;
 
 export default class OtherItems extends React.Component {
   constructor(props) {
@@ -12,12 +15,12 @@ export default class OtherItems extends React.Component {
   }
 
   componentDidMount() {
-    // TODO: CHECK IF THIS IS THE NAME OF THE PROPS
-    axios.get(`http://3.134.102.30/products/2/related`)
+    // TODO: change hardcoded id
+    getRelatedProducts(2)
     .then(({data}) => {
       let productInfoPromises = [];
       data.forEach((id) => {
-        productInfoPromises.push(axios.get(`http://3.134.102.30/products/${id}`))
+        productInfoPromises.push(getProductInfo(id))
       })
       return Promise.all(productInfoPromises)
     })
@@ -28,7 +31,7 @@ export default class OtherItems extends React.Component {
       })
       this.setState({
         relatedProducts: products
-      })
+      }, () => console.log(this.state.relatedProducts))
     })
     .catch(error => console.error(error))  
   }
