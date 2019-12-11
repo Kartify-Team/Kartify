@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import OtherItems from './OtherItems/index.jsx';
 import OverviewContainer from '../containers/Overview';
 import ReviewsContainer from '../containers/Reviews';
-import Questions from './Questions';
+import QuestionsContainer from '../containers/Questions';
 
 export default class App extends Component {
   constructor(props) {
@@ -15,8 +15,8 @@ export default class App extends Component {
       <div>
         <OverviewContainer />
         <OtherItems />
-        <Questions />
         <ReviewsContainer />
+        <QuestionsContainer />
       </div>
     );
   }
