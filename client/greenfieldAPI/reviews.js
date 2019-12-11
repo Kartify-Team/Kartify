@@ -8,6 +8,7 @@ export const getProductRatings = productId => {
     .then(response => response.data.ratings);
 
   return getReviewMetadata.then(ratings => {
+    console.log('RATINGS', ratings);
     const oneCount = ratings[1] || 0;
     const twoCount = ratings[2] || 0;
     const threeCount = ratings[3] || 0;
@@ -24,11 +25,7 @@ export const getProductRatings = productId => {
       sum;
 
     return {
-      1: oneCount,
-      2: twoCount,
-      3: threeCount,
-      4: fourCount,
-      5: fiveCount,
+      ...ratings,
       average
     };
   });
