@@ -1,14 +1,19 @@
 import React from 'react';
+import ProductsCarousel from './ProductsCarousel';
 
-export default class ProductCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
+const ProductCard = ({product}) => {
+  if (product === null) {
     return (
       <div className='productCard'>
+        DO NOT RENDER <br/>
+        <button type='button' onClick={() => console.log('action')}>act btn</button>
+      </div>
+      
+    )
+  } else {
+    return (
+      <div className='productCard'>
+        {product}
         <div className='productCardImage'>
           {/* <img src='' /> */}
         </div>
@@ -20,7 +25,11 @@ export default class ProductCard extends React.Component {
           <div className='ProductCardRating'>
           </div>
         </div>
+        {/* //TODO: Create action */}
+        <button type='button' onClick={() => console.log('action')}>act btn</button>
       </div>
     )
   }
 }
+
+export default ProductCard;
