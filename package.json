@@ -12,8 +12,7 @@
     "test": "jest",
     "test_start": "node server/index.js && jest",
     "start": "nodemon server/index.js",
-    "build": "webpack -d --watch",
-    "travis": "node server/index.js"
+    "build": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
