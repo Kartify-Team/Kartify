@@ -10,12 +10,15 @@ export default {
   getRelatedProducts: id => {
     return axios.get(`${greenfieldRoot}/products/${id}/related`);
   },
+  getProductStyles: id => {
+    return axios.get(`${greenfieldRoot}/products/${id}/styles`);
+  },
 
-  getQuestions: (productId) => {
-    return axios.get(`${greenfieldRoot}/qa/${productId}`)
+  getQuestions: productId => {
+    return axios
+      .get(`${greenfieldRoot}/qa/${productId}`)
       .then(({ data }) => data)
-      .catch((err) => console.log(err))
-
+      .catch(err => console.log(err));
   },
   getAnswers: questionId => {
     return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);

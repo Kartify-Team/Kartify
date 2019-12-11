@@ -144,12 +144,16 @@ table {
   width: 100%;
 }
 
-#app {
+#components-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Overview Component */
 
 #overview-container {
+  margin: 0 auto;
   text-align: center;
   display: grid;
   width: 1000px;
@@ -173,6 +177,9 @@ table {
 #product-description-container {
   grid-column-start: 1;
   grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  height: 95%;
   border: black 1px solid;
   margin: 5px 10px 10px 10px;
 }
@@ -181,4 +188,24 @@ table {
   border: black 1px solid;
   margin: auto;
   padding: 10px;
+}
+
+#left-description,
+#right-description {
+  text-align: left;
+}
+
+#left-description {
+  margin-left: 20px;
+  border-right: 3px solid black;
+}
+
+#right-description {
+  margin-left: 8px;
+  border-left: 3px solid black;
+}
+
+#left-description h2 {
+  font-size: 30px;
+  margin-top: 10px;
 }
