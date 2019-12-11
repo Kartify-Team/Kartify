@@ -1,10 +1,11 @@
 import React from 'react';
+import ProductsCarousel from './ProductsCarousel';
 
-export default ({product}) => {
+const ProductCard = ({product}) => {
   if (product === null) {
     return (
       <div className='productCard'>
-        DO NOT RENDER
+        DO NOT RENDER <br/>
         <button type='button' onClick={() => console.log('action')}>act btn</button>
       </div>
       
@@ -30,3 +31,5 @@ export default ({product}) => {
     )
   }
 }
+
+export default ProductCard;

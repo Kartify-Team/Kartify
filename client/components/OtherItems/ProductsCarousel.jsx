@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import ProductCard from './ProductCard.jsx';
 
 
-export default ({products}) => {
+const ProductsCarousel = ({products}) => {
   const settings = {
     dots: false, // ?
     infinite: false,
@@ -14,17 +14,18 @@ export default ({products}) => {
     slidesToShow: 3,
     slidesToScroll: 3
   }
-  const example = ['SEBS', null, 'SANT', null, 'DIEGO', 'JORGE']
+
   return (
     <div>
       <Slider {...settings}>
-        {example.map(product => {
+        {[1,2].map(product => {
           return <ProductCard product={product}/>
         })}
       </Slider>
     </div>
   )
 }
+export default ProductsCarousel;
 
 //   render() {
 //     const settings = {
