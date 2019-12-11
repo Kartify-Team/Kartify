@@ -1,8 +1,8 @@
-import Redux from 'redux'
+import Redux from 'redux';
 
 export default (state = {}, action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+  default:
+    return state;
+  }
+};
