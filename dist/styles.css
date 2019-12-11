@@ -190,6 +190,47 @@ table {
   padding: 10px;
 }
 
+/* Reviews Component */
+
+#reviews-container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  border: black 1px solid;
+  margin: auto 20%;
+  height: 800px;
+}
+
+#review-list-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+}
+
+#review-stats-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#size-rating-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 15%;
+}
+
+#comfort-rating-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 15%;
+}
+
+#star-stats-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 40%;
+}
+
 /* Stars Component */
 
 .star-container {
