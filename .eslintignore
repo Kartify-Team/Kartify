@@ -2,6 +2,7 @@
 **/node_modules
 tests/
 dist/
+*test*
 
 node_modules/
 # Logs

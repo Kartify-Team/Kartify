@@ -13,10 +13,13 @@ export default class Reviews extends Component {
       return null;
     } else {
       return (
-        <div id="reviews-container">
-          <RatingBreakdown productId={this.props.product.id} />
-          <ReviewList />
-        </div>
+        <>
+          <h3>Ratings & Reviews</h3>
+          <div id="reviews-container">
+            <RatingBreakdown productId={this.props.product.id} />
+            <ReviewList />
+          </div>
+        </>
       );
     }
   }

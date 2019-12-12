@@ -173,7 +173,6 @@ table {
   margin: 0 auto;
   display: grid;
   width: 80%;
-  height: 800px;
 }
 
 .placeholder-component {
@@ -183,7 +182,8 @@ table {
 }
 h3 {
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 1em;
+  margin: 2em 0 0.5em 0;
   color: var(--color);
 }
 h2 {
@@ -277,9 +277,9 @@ sub {
   align-self: center;
 }
 
-h3 {
+/* h3 {
   font-size: 24px;
-}
+} */
 
 #stars-reviews {
   display: flex;
@@ -374,6 +374,7 @@ h3 {
   display: grid;
   width: 80%;
   height: 400px;
+  overflow: scroll;
 }
 
 .otherItemsContainer {
@@ -474,6 +475,7 @@ h3 {
   border: black 1px solid;
   margin: 10px 5px 5px 10px;
   padding: 0px;
+  height: 2em
 }
 #question-list-container {
   border: black 1px solid;
