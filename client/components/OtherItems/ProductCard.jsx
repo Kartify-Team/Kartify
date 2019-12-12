@@ -8,25 +8,26 @@ const ProductCard = ({product}) => {
         DO NOT RENDER <br/>
         <button type='button' onClick={() => console.log('action')}>act btn</button>
       </div>
-      
     )
   } else {
+    console.log(product)
     return (
       <div className='productCard'>
-        {product.name}
         <div className='productCardImage'>
           {/* <img src='' /> */}
+          <button className='cardButton' type='button' onClick={() => console.log('action')}>act btn</button>
         </div>
         <div className='productCardDescription'>
           <div className='ProductCardInfo'>
+            {product.category}
+            {product.name}
           </div>
           <div className='ProductCardPrice'>
+            ${product.default_price}
           </div>
           <div className='ProductCardRating'>
           </div>
         </div>
-        {/* //TODO: Create action */}
-        <button type='button' onClick={() => console.log('action')}>act btn</button>
       </div>
     )
   }

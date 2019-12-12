@@ -235,12 +235,63 @@ button .component {
 }
 /* Other Items Component */
 
+#otherItems {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  height: 400px;
+}
+
+.otherItemsContainer {
+  height: 100%;
+}
+
+.sliderContainer {
+  height: 100%;
+}
+
+.slick-slider {
+  height: 100%;
+}
+.slick-initialized  {
+  height: 100%;
+}
+
+#slider {
+  height: 100%;
+}
+
 .productCard {
+  height: 350px;
+  width: 190px;
   margin: 15px;
   padding: 4px;
   border: black;
   border-style: solid;
+  border-width: thin;
+  float: left
 }
+
+.productCardImage {
+  width: 100%;
+  height: 70%;
+  background-color: lightgray;
+  position: relative;
+}
+
+.productCardDescription {
+  width: 100%;
+  height: 30%;
+}
+
+.cardButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background-color: darkgray;
+}
+
 
 /* Questions Component */
 
