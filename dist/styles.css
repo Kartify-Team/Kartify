@@ -177,8 +177,9 @@ table {
 #product-interaction-container {
   border: black 1px solid;
   margin: 10px 10px 5px 5px;
-  display: grid;
-  grid-template-rows: 32% 32% 32%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 #product-description-container {
@@ -193,8 +194,33 @@ table {
 
 .interaction-item {
   border: black 1px solid;
-  margin: auto;
-  padding: 10px;
+  height: 33%;
+  width: 100%;
+}
+
+#overview-info {
+  display: grid;
+  grid-template-rows: 15% 15% 50% 15%;
+  text-align: left;
+  padding: auto;
+  justify-content: center;
+}
+
+#overview-info h1 {
+  font-size: 40px;
+  align-self: center;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+#stars-reviews {
+  display: flex;
+}
+
+#review-link-container {
+  justify-content: right;
 }
 
 #left-description,
@@ -215,6 +241,51 @@ table {
 #left-description h2 {
   font-size: 30px;
   margin-top: 10px;
+}
+
+.style-image {
+  width: 48px;
+  height: 48px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+#cart-container {
+  display: grid;
+  grid-template-areas:
+    'size size size qty qty'
+    'add add add add star';
+  align-content: center;
+  justify-content: center;
+}
+
+#add-button {
+  grid-area: add;
+  height: 50px;
+  width: 150px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+#size-button {
+  grid-area: size;
+  height: 50px;
+  margin: 5px;
+}
+
+#qty-button {
+  grid-area: qty;
+  margin: 5px;
+  height: 50px;
+}
+
+#star-button {
+  grid-area: star;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border: 1px solid black;
 }
 
 /* Reviews Component */
