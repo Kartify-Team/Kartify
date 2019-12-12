@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect
-} from 'react-router-dom';
-import OverviewContainer from '../containers/Overview';
-import OtherItemsContainer from '../containers/OtherItems';
-import ReviewsContainer from '../containers/Reviews';
-import QuestionsContainer from '../containers/Questions';
+} from "react-router-dom";
+import OverviewContainer from "../containers/Overview";
+import OtherItemsContainer from "../containers/OtherItems";
+import ReviewsContainer from "../containers/Reviews";
+import QuestionsContainer from "../containers/Questions";
 
 export default class App extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export default class App extends Component {
     return (
       <Router>
         <Route path="/">
-          <Redirect to={'/products/1'} />
+          <Redirect to={"/products/1"} />
         </Route>
         <div class="topnav">Kartify Product Page</div>
         <Switch>
@@ -28,8 +28,8 @@ export default class App extends Component {
             <div id="components-container">
               <OverviewContainer />
               <OtherItemsContainer />
-              <ReviewsContainer />
               <QuestionsContainer />
+              <ReviewsContainer />
             </div>
           </Route>
         </Switch>

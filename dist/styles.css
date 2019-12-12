@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
 
 /* Style Resets */
 
@@ -89,7 +89,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 article,
 aside,
@@ -106,6 +106,7 @@ section {
 }
 body {
   line-height: 1;
+  font-size: 8pt;
 }
 ol,
 ul {
@@ -119,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -127,12 +128,12 @@ table {
   border-spacing: 0;
 }
 
-/* Styles */
+/* Styles For All */
 
 :root {
-  --color: #000000;
+  --color: rgb(238, 238, 238);
   --background-color: #ffffff;
-  --primary-accent-color: #000fff;
+  --primary-accent-color: #000000;
   --secondary-accent-color: #00ffff;
 }
 
@@ -149,12 +150,28 @@ table {
   flex-direction: column;
   justify-content: center;
 }
+h3 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: --color;
+}
+h2 {
+  font-size: 1em;
+  font-weight: 800;
+  color: --primary-accent-color;
+}
 
-.productCard {
-  margin: 15px;
-  padding: 4px;
-  border: black;
-  border-style: solid;
+button .component {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  height: 800px;
+}
+
+.placeholder-component {
+  background-color: rgb(238, 238, 238);
+  margin: 10px 5px 5px 10px;
+  color: gray;
 }
 
 /* Overview Component */
@@ -216,7 +233,32 @@ table {
   font-size: 30px;
   margin-top: 10px;
 }
+/* Other Items Component */
 
+.productCard {
+  margin: 15px;
+  padding: 4px;
+  border: black;
+  border-style: solid;
+}
+
+/* Questions Component */
+
+#q-and-a-container {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  height: 800px;
+}
+#q-and-a-search {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  padding: 0px;
+}
+#question-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+}
 /* Reviews Component */
 
 #reviews-container,
