@@ -2,6 +2,7 @@ import React from "react";
 import AnswerList from "./AnswerList";
 
 const QuestionList = ({ questions }) => {
+  console.log(questions);
   if (questions) {
     return questions.map((question) => {
       return (

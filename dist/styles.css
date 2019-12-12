@@ -150,6 +150,19 @@ table {
   flex-direction: column;
   justify-content: center;
 }
+
+.component {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  height: 800px;
+}
+
+.placeholder-component {
+  background-color: rgb(238, 238, 238);
+  margin: 10px 5px 5px 10px;
+  color: gray;
+}
 h1 {
   text-transform: uppercase;
   font-size: 1.2em;
@@ -164,19 +177,6 @@ h2 {
 button {
   display: inline-block;
   width: fit-content;
-}
-
-.component {
-  margin: 0 auto;
-  display: grid;
-  width: 80%;
-  height: 800px;
-}
-
-.placeholder-component {
-  background-color: rgb(238, 238, 238);
-  margin: 10px 5px 5px 10px;
-  color: gray;
 }
 
 /* Overview Component */
