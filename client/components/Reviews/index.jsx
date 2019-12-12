@@ -9,11 +9,15 @@ export default class Reviews extends Component {
   }
 
   render() {
-    return (
-      <div id="reviews-container">
-        <ReviewStats />
-        <ReviewList />
-      </div>
-    );
+    if (!this.props.product) {
+      return null;
+    } else {
+      return (
+        <div id="reviews-container">
+          <ReviewStats productId={this.props.product.id} />
+          <ReviewList />
+        </div>
+      );
+    }
   }
 }
