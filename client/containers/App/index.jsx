@@ -3,7 +3,7 @@ import App from '../../components/App';
 import { changeProduct } from '../../actions/creators/changeProduct';
 
 const mapStateToProps = state => ({
-  productInfo: state.product.info
+  productInfo: state.product
 });
 
 const mapDispatchToProps = dispatch => ({
