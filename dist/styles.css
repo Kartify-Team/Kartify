@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
 
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
@@ -97,7 +97,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 article,
 aside,
@@ -128,7 +128,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -196,7 +196,7 @@ body {
   font-size: 1;
 }
 
-button {
+.action-button {
   border: black 1px solid;
   display: inline-block;
   width: auto;
@@ -311,8 +311,8 @@ h3 {
 #cart-container {
   display: grid;
   grid-template-areas:
-    'size size size qty qty'
-    'add add add add star';
+    "size size size qty qty"
+    "add add add add star";
   align-content: center;
   justify-content: center;
 }
@@ -357,7 +357,6 @@ h3 {
                                                                                             
  */
 
-/* Reviews Component */
 #otherItems {
   margin: 0 auto;
   display: grid;
@@ -395,22 +394,6 @@ h3 {
   float: left;
 }
 
-/* 
- _______      __      _______ 
-(  ___  )    /__\    (  ___  )
-| (   ) |   ( \/ )   | (   ) |
-| |   | |    \  /    | (___) |
-| |   | |    /  \/\  |  ___  |
-| | /\| |   / /\  /  | (   ) |
-| (_\ \ |  (  \/  \  | )   ( |
-(____\/_)   \___/\/  |/     \|
-                              
-<<<<<<< HEAD
- */
-=======
-*/
-
->>>>>>> c7348e9c3a43b49b4f5c06268ded8e9a0cf87b0c
 .productCardImage {
   width: 100%;
   height: 70%;
@@ -431,6 +414,17 @@ h3 {
   background-color: darkgray;
 }
 
+/* 
+ _______      __      _______ 
+(  ___  )    /__\    (  ___  )
+| (   ) |   ( \/ )   | (   ) |
+| |   | |    \  /    | (___) |
+| |   | |    /  \/\  |  ___  |
+| | /\| |   / /\  /  | (   ) |
+| (_\ \ |  (  \/  \  | )   ( |
+(____\/_)   \___/\/  |/     \|
+                              
+ */
 #q-and-a-container {
   margin: 0 auto;
   display: grid;
