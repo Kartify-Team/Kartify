@@ -6,18 +6,22 @@ const OtherItems = ({
   relatedProducts,
   myOutfit,
   getRelatedProducts,
-  getMyOutfit
+  getRelatedProductsStyles,
+  relatedProductsStyles,
+  getMyOutfit,
+  getMyOutfitImages
 }) => {
   useEffect(() => {
     // get ID
     getRelatedProducts(3); // TODO: CHANGE HARDCODED ID
+    getRelatedProductsStyles(3);
     // get My Outfit from User
   }, []);
 
   return (
     <div id="otherItems">
       <div className="otherItemsContainer">
-        <ProductsCarousel products={relatedProducts} />
+        <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} />
         {/* <ProductsCarousel products={myOutfit} /> */}
       </div>
     </div>
