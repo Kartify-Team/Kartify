@@ -150,7 +150,7 @@ table {
   flex-direction: column;
   justify-content: center;
 }
-h3 {
+h1 {
   text-transform: uppercase;
   font-size: 1.2em;
   color: --color;
@@ -161,7 +161,12 @@ h2 {
   color: --primary-accent-color;
 }
 
-button .component {
+button {
+  display: inline-block;
+  width: fit-content;
+}
+
+.component {
   margin: 0 auto;
   display: grid;
   width: 80%;

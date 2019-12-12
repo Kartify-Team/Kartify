@@ -7,7 +7,7 @@ export const addQuestionList = (productId) => (
             .getQuestions(productId)
             .then((questions) => {
                 return dispatch({
-                    type: 'ADD_QUESTION_LIST',
+                    type: ADD_QUESTION_LIST,
                     questions: questions
                 })
             });
