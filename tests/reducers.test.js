@@ -22,7 +22,7 @@ describe('product reducer', () => {
       }
     };
 
-    const newState = productReducer({}, action);
-    expect(newState.info.id).toEqual(2);
+    const product = productReducer(null, action);
+    expect(product.id).toEqual(2);
   });
 });
