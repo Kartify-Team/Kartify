@@ -475,7 +475,7 @@ h3 {
 #question-list-container {
   border: black 1px solid;
   margin: 10px 5px 5px 10px;
-  height: 600px;
+  max-height: 600px;
   overflow: scroll;
 }
 #question-container {
