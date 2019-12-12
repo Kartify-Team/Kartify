@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import QuestionListContainer from "../../containers/Questions/QuestionList";
 import AnswerForm from "./AnswerForm";
-import AskForm from "./AskForm";
 import Search from "./Search";
 
 import greenfieldAPI from "./../../greenfieldAPI";
-import { productData, questionData } from "./sampleData";
+import { productData } from "./sampleData";
 
-const Questions = ({ questions, addQuestionList }) => {
+const Questions = ({ addQuestionList }) => {
   const [product, setProduct] = useState(productData);
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const Questions = ({ questions, addQuestionList }) => {
       <QuestionListContainer />
 
       <AnswerForm />
-      <AskForm />
     </div>
   );
 };

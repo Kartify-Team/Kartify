@@ -12,8 +12,8 @@ const App = ({ changeProduct, productInfo }) => {
       <div id="components-container">
         <OverviewContainer />
         <OtherItemsContainer />
-        <ReviewsContainer />
         <QuestionsContainer />
+        <ReviewsContainer />
       </div>
     </>
   );
