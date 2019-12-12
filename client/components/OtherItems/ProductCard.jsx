@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
   if (product === null) {
     return (
       <div className='productCard'>
         <button className='cardButton' type='button' onClick={() => console.log('action')} src=''>X</button>
       </div>
-    )
+    );
   } else {
     return (
       <div className='productCard'>
@@ -26,8 +26,8 @@ const ProductCard = ({product}) => {
           </div>
         </div>
       </div>
-    )
+    );
   }
-}
+};
 
 export default ProductCard;

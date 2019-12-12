@@ -149,7 +149,7 @@ table {
  */
 
 :root {
-  --color: rgb(238, 238, 238);
+  --color: rgb(139, 139, 139);
   --background-color: #ffffff;
   --primary-accent-color: #000000;
   --secondary-accent-color: #00ffff;
@@ -177,23 +177,32 @@ table {
 }
 
 .placeholder-component {
-  background-color: rgb(238, 238, 238);
+  background-color: var(--color);
   margin: 10px 5px 5px 10px;
-  color: gray;
+  color: var(--secondary-accent-color);
 }
 h3 {
   text-transform: uppercase;
   font-size: 1.2em;
-  color: --color;
+  color: var(--color);
 }
 h2 {
   font-size: 1em;
   font-weight: 800;
-  color: --primary-accent-color;
+  color: var(--primary-accent-color);
 }
 
 body {
   font-size: 1;
+}
+
+p {
+  margin: 1.5em 0em;
+}
+
+sub {
+  font-size: 0.8em;
+  color: var(--color);
 }
 
 .action-button {
@@ -471,6 +480,15 @@ h3 {
   border: black 1px solid;
   margin: 10px 5px 5px 10px;
   padding: 5px;
+}
+#first-answer {
+  margin: 10px 0px;
+}
+#more-answers {
+  margin: 10px 0px 10px 15px;
+}
+#answerer {
+  margin: 5px 0px 10px 15px;
 }
 /* 
  _______  _______          _________ _______           _______ 
