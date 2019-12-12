@@ -18,10 +18,9 @@ const Questions = ({ questions, addQuestionList }) => {
       <h3>Questions & Answers</h3>
       <Search />
       <QuestionListContainer />
+
       <AnswerForm />
       <AskForm />
-      <button>More Answered Questions</button>
-      <button>Add a Question</button>
     </div>
   );
 };
