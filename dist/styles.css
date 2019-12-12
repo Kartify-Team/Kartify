@@ -468,7 +468,7 @@ h3 {
   margin: 0 auto;
   display: grid;
   width: 80%;
-  height: 800px;
+  
 }
 #q-and-a-search {
   border: black 1px solid;
@@ -478,6 +478,8 @@ h3 {
 #question-list-container {
   border: black 1px solid;
   margin: 10px 5px 5px 10px;
+  height: 600px;
+  overflow: scroll;
 }
 #question-container {
   border: black 1px solid;

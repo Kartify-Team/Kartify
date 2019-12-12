@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { removeHTMLTags } from "../../utils"
 import AnswerList from "./AnswerList";
 import AddQuestionModal from "./AddQuestionModal.jsx"
 
@@ -10,13 +10,16 @@ const QuestionList = ({ questions }) => {
 
   let addMoreQuestions = false;
   if (questions.length > 0) {
+    let count = 0;
     return (
       <div id="question-list-container">
-        {questions.map((question, index) => {
-          if (index < numQsDisplayed) {
+        {questions.map((question) => {
+          if (count < numQsDisplayed &&
+            Object.keys(question.answers).length > 0) {
+            count++;
             return (
-              <div id="question-container">
-                <h2>Q: {question.question_body}</h2>
+              <div id="question-container" key={question.question_id}>
+                <h2>Q: {removeHTMLTags(question.question_body)}</h2>
                 <div>
                   <AnswerList answers={question.answers} />
                 </div>
