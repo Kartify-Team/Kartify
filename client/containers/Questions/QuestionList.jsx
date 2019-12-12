@@ -3,7 +3,7 @@ import QuestionList from "../../components/Questions/QuestionList";
 import store from "../../store.js";
 
 const mapStateToProps = (store) => ({
-  questions: store.questionsReducer.questions
+  questions: store.questions
 });
 
 //mapDispatchToProps
