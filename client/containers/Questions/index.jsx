@@ -3,7 +3,7 @@ import Questions from '../../components/Questions';
 import { addQuestionList } from '../../actions/creators/addQuestionList';
 
 const mapStateToProps = store => ({
-  product: store.product.info,
+  product: store.product,
   questions: store.questions
 });
 

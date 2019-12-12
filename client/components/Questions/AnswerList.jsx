@@ -1,5 +1,5 @@
 import React from "react";
-
+import { removeHTMLTags } from "./../../helpers"
 const AnswerList = ({ answers, expanded }) => {
   //TODO: Add expanded var into store & allow answers to be expanded
 
@@ -8,10 +8,10 @@ const AnswerList = ({ answers, expanded }) => {
       return (
         <span key={answers[id].id}>
           {index === 0 ? (
-            <p id="first-answer">A: {answers[id].body}</p>
+            <p id="first-answer">A: {removeHTMLTags(answers[id].body)}</p>
           ) : (
-            <p id="more-answers">{answers[id].body}</p>
-          )}
+              <p id="more-answers">{removeHTMLTags(answers[id].body)}</p>
+            )}
           <sub id="answerer">
             by {answers[id].answerer_name},{" "}
             {new Date(answers[id].date).toLocaleDateString("en-US", {
