@@ -1,5 +1,13 @@
-import React from 'react'
+import React from "react";
 
-export default Search = () => {
-    return <div> Search Commponent</div>
-}
+const Search = () => {
+  return (
+    <input
+      id="q-and-a-search"
+      type="text"
+      placeholder="Have a question? Search for answers…"
+    />
+  );
+};
+
+export default Search;

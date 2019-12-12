@@ -7,7 +7,7 @@ export const getProductInfo = id => {
   return axios.get(`${greenfieldRoot}/products/${id}`);
 };
 
-export const getRelatedProducts = id => {
+export const getRelatedProductsIds = id => {
   return axios.get(`${greenfieldRoot}/products/${id}/related`);
 };
 
@@ -18,7 +18,7 @@ export const getProductStyles = id => {
 export const getQuestions = productId => {
   return axios
     .get(`${greenfieldRoot}/qa/${productId}`)
-    .then(({ data }) => data)
+    .then(({ data }) => data.results)
     .catch(err => console.log(err));
 };
 

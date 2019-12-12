@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import reducerExample from './reducerExample';
+import { combineReducers } from 'redux'; //root reducer
 import questionsReducer from './questions';
+import otherItems from './otherItems.js';
 import productReducer from './product';
 
 export default combineReducers({
-  reducerExample,
   questionsReducer,
-  product: productReducer
+  product: productReducer,
+  otherItems
 });
