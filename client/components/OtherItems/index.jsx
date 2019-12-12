@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import ProductsCarousel from './ProductsCarousel.jsx';
-import helpers from '../../greenfieldAPI/index.js';
-
-const {getProductInfo, getRelatedProducts} = helpers;
+import {
+  getProductInfo,
+  getRelatedProducts
+} from '../../greenfieldAPI/index.js';
 
 class OtherItems extends React.Component {
   constructor(props) {
@@ -33,18 +34,18 @@ class OtherItems extends React.Component {
   //       relatedProducts: products
   //     })
   //   })
-  //   .catch(error => console.error(error))  
+  //   .catch(error => console.error(error))
   // }
 
   render() {
     return (
-      <div className='otherItems'>
-        <div className='otherItemsContainer'>
+      <div className="otherItems">
+        <div className="otherItemsContainer">
           <ProductsCarousel products={this.props.myOutfit} />
         </div>
       </div>
-    )
+    );
   }
-};
+}
 
 export default OtherItems;
