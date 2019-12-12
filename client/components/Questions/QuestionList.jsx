@@ -18,8 +18,8 @@ const QuestionList = ({ questions }) => {
             </div>
           );
         })}
-        <button>More Answered Questions</button>
-        <button>Add a Question</button>
+        <button className="action-button">More Answered Questions</button>
+        <button className="action-button">Add a Question</button>
       </div>
     );
   } else {
