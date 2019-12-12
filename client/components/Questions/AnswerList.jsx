@@ -1,5 +1,5 @@
 import React from "react";
-import { removeHTMLTags } from "./../../helpers"
+import { removeHTMLTags } from "../../utils"
 const AnswerList = ({ answers, expanded }) => {
   //TODO: Add expanded var into store & allow answers to be expanded
 
