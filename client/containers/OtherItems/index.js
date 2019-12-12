@@ -9,10 +9,10 @@ const mapStateToProps = (store) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getRelatedProducts: (id) => {
-    dispatch(getRelatedProducts(id))
+    dispatch(getRelatedProducts(id));
   },
   getMyOutfit: () => {
-    dispatch(() => console.log('get outfit!')) // TODO: CREATE ACTION
+    dispatch(() => console.log('get outfit!')); // TODO: CREATE ACTION
   }
 });
 

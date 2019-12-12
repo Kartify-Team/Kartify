@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getProductRatings } from './reviews.js';
+// import { getProductRatings } from './reviews.js';
 
 const greenfieldRoot = 'http://3.134.102.30';
 

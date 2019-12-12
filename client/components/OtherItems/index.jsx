@@ -17,7 +17,9 @@ const OtherItems = ({
   return (
     <div id="otherItems">
       <div className="otherItemsContainer">
+        <h3>Related Products</h3>
         <ProductsCarousel products={relatedProducts} />
+        <h3>Your Outfit</h3>
         {/* <ProductsCarousel products={myOutfit} /> */}
       </div>
     </div>
