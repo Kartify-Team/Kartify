@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import StarStats from './StarStats';
 import SizeRating from './SizeRating';
 import ComfortRating from './ComfortRating';
+import { getProductRatings } from '../../greenfieldAPI/reviews';
 
-const ReviewStats = props => (
-  <div id="review-stats-container">
-    <StarStats />
-    <SizeRating />
-    <ComfortRating />
-  </div>
-);
+const ReviewStats = ({ productId }) => {
+  const [rating, setRating] = useState(0);
+  useEffect(() => {
+    getProductRatings(productId).then(ratingData => setRating(ratingData));
+  }, []);
+
+  return (
+    <div id="review-stats-container">
+      <StarStats rating={rating.average} />
+      <SizeRating />
+      <ComfortRating />
+    </div>
+  );
+};
 
 export default ReviewStats;

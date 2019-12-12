@@ -3,21 +3,21 @@ import QuestionListContainer from "../../containers/Questions/QuestionList";
 import AnswerForm from "./AnswerForm";
 import Search from "./Search";
 
-import greenfieldAPI from "./../../greenfieldAPI";
-import { productData } from "./sampleData";
+// import { productData } from "./sampleData";
 
-const Questions = ({ addQuestionList }) => {
-  const [product, setProduct] = useState(productData);
+const Questions = ({ product, addQuestionList }) => {
+  // const [product, setProduct] = useState(productData);
 
   useEffect(() => {
-    addQuestionList(product.id);
+    if (product) {
+      addQuestionList(product.id);
+    }
   }, [product]);
   return (
     <div className="component" id="q-and-a-container">
       <h3>Questions & Answers</h3>
       <Search />
       <QuestionListContainer />
-
       <AnswerForm />
     </div>
   );

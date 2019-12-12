@@ -15,13 +15,14 @@ export const getProductRatings = productId => {
     const fiveCount = ratings[5] || 0;
     const sum = oneCount + twoCount + threeCount + fourCount + fiveCount;
 
-    const average =
+    const average = (
       (oneCount +
         twoCount * 2 +
         threeCount * 3 +
         fourCount * 4 +
         fiveCount * 5) /
-      sum;
+      sum
+    ).toFixed(2);
 
     return {
       ...ratings,

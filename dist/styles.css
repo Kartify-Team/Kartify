@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
 
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
@@ -97,7 +97,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 article,
 aside,
@@ -128,7 +128,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -300,6 +300,9 @@ h3 {
 }
 
 #right-description {
+  display: flex;
+  align-items: center;
+  height: 100%;
   margin-left: 8px;
   border-left: 3px solid black;
 }
@@ -320,8 +323,8 @@ h3 {
 #cart-container {
   display: grid;
   grid-template-areas:
-    "size size size qty qty"
-    "add add add add star";
+    'size size size qty qty'
+    'add add add add star';
   align-content: center;
   justify-content: center;
 }
@@ -465,7 +468,7 @@ h3 {
   margin: 0 auto;
   display: grid;
   width: 80%;
-  height: 800px;
+  
 }
 #q-and-a-search {
   border: black 1px solid;
@@ -475,6 +478,8 @@ h3 {
 #question-list-container {
   border: black 1px solid;
   margin: 10px 5px 5px 10px;
+  max-height: 600px;
+  overflow: scroll;
 }
 #question-container {
   border: black 1px solid;
@@ -542,6 +547,16 @@ h3 {
   height: 40%;
 }
 
+.avg-rating-header {
+  font-size: 50px;
+  font-weight: 800;
+  display: inline;
+}
+
+#avg-rating-stars {
+  display: inline-block;
+}
+
 /* Stars Component */
 
 .star-container {
@@ -555,7 +570,7 @@ h3 {
   top: 0;
   left: 0;
   height: 100px;
-  width: 100px;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -569,4 +584,5 @@ h3 {
   display: inline-block;
   color: black;
   width: 100%;
+  float: left;
 }

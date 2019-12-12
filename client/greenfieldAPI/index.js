@@ -17,7 +17,7 @@ export const getProductStyles = id => {
 
 export const getQuestions = productId => {
   return axios
-    .get(`${greenfieldRoot}/qa/${productId}`)
+    .get(`${greenfieldRoot}/qa/${productId}?count=20`)
     .then(({ data }) => data.results)
     .catch(err => console.log(err));
 };
