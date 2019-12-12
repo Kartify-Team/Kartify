@@ -1,13 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import App from '../client/components/App.jsx';
 import AppContainer from '../client/containers/App';
-import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { MemoryRouter } from 'react-router-dom';
-import OverviewContainer from '../client/containers/Overview/index.jsx';
 import thunk from 'redux-thunk';
-import { changeProduct } from '../client/actions/creators/changeProduct';
 
 const mockStore = configureStore([thunk]);
 
