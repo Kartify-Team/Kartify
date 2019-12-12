@@ -160,7 +160,8 @@ h2 {
   font-weight: 800;
   color: --primary-accent-color;
 }
-.component {
+
+button .component {
   margin: 0 auto;
   display: grid;
   width: 80%;
