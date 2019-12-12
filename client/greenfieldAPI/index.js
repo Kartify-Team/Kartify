@@ -7,13 +7,12 @@ export default {
   getProductInfo: id => {
     return axios.get(`${greenfieldRoot}/products/${id}`);
   },
-  getRelatedProducts: id => {
+  getRelatedProductsIds: id => {
     return axios.get(`${greenfieldRoot}/products/${id}/related`);
   },
   getProductStyles: id => {
     return axios.get(`${greenfieldRoot}/products/${id}/styles`);
   },
-
   getQuestions: productId => {
     return axios
       .get(`${greenfieldRoot}/qa/${productId}`)

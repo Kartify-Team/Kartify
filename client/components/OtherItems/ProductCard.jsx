@@ -13,7 +13,7 @@ const ProductCard = ({product}) => {
   } else {
     return (
       <div className='productCard'>
-        {product}
+        {product.name}
         <div className='productCardImage'>
           {/* <img src='' /> */}
         </div>
