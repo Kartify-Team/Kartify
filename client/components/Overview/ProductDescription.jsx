@@ -12,7 +12,7 @@ const ProductDescription = ({ product }) => (
         {/* Features List */}
         {product.features.map(feature => {
           return (
-            <li>
+            <li key={feature.value}>
               {feature.feature} : {feature.value}
             </li>
           );
