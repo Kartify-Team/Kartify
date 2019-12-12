@@ -17,7 +17,7 @@ export default {
   getQuestions: productId => {
     return axios
       .get(`${greenfieldRoot}/qa/${productId}`)
-      .then(({ data }) => data)
+      .then(({ data }) => data.results)
       .catch(err => console.log(err));
   },
   getAnswers: questionId => {
