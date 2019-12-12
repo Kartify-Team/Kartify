@@ -5,11 +5,21 @@ import AddQuestionModal from "./AddQuestionModal.jsx"
 
 const QuestionList = ({ questions }) => {
   const [maxQs, setMaxQs] = useState(4);
+  const [maxAs, setMaxAs] = useState({});
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    if (questions.length > 0) {
+      const maxTemp = {};
+      questions.forEach((question) => maxTemp[question.question_id] = 2)
+      setMaxAs(maxTemp)
+      setLoading(false)
+    }
 
+  }, [questions])
 
   let addMoreQuestions = false;
-  if (questions.length > 0) {
+  if (!loading) {
     let count = 0;
     return (
       <div id="question-list-container">
@@ -18,18 +28,13 @@ const QuestionList = ({ questions }) => {
             Object.keys(question.answers).length > 0) {
             count++;
             return (
-              <div id="question-container" key={question.question_id}>
-                <h2>Q: {removeHTMLTags(question.question_body)}</h2>
-                <div>
-                  <AnswerList answers={question.answers} />
-                </div>
-              </div>
+              <AnswerList question={question} key={question.question_id} />
             );
           }
           if (count === maxQs) {
             count++;
             return <button className="action-button"
-              onClick={() => setMaxQs(maxQs + 2)}>
+              onClick={() => setMaxQs(maxQs + 2)} key={question.question_id}>
               More Answered Questions
             </button>
           }

@@ -1,10 +1,10 @@
-import Redux from 'redux';
+// import Redux from 'redux';
 
 export default (state = null, action) => {
   switch (action.type) {
-    case 'CHANGE_PRODUCT':
-      return action.info;
-    default:
-      return state;
+  case 'CHANGE_PRODUCT':
+    return action.info;
+  default:
+    return state;
   }
 };

@@ -1,3 +1,3 @@
 export const removeHTMLTags = (str) => {
-    return str.replace(/(<([^>]+)>)/ig, '');
-}
+  return str.replace(/(<([^>]+)>)/ig, '');
+};
