@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const AskForm = () =>{
-    return <div>AskForm Component</div>
-}
+const AskForm = () => {
+  return <div className="placeholder-component">AskForm Component</div>;
+};
 
-export default AskForm
+export default AskForm;

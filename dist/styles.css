@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
 
-/* Style Resets */
+/* _______  _______  _______  _______ _________ _______ 
+(  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
+| (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
+| (____)|| (__    | (_____ | (__       | |   | (_____ 
+|     __)|  __)   (_____  )|  __)      | |   (_____  )
+| (\ (   | (            ) || (         | |         ) |
+| ) \ \__| (____/\/\____) || (____/\   | |   /\____) |
+|/   \__/(_______/\_______)(_______/   )_(   \_______)
+                                                       */
 
 html,
 body,
@@ -106,6 +114,7 @@ section {
 }
 body {
   line-height: 1;
+  font-size: 8pt;
 }
 ol,
 ul {
@@ -127,12 +136,22 @@ table {
   border-spacing: 0;
 }
 
-/* Styles */
+/* 
+ _______           _______  _______  _______  ______  
+(  ____ \|\     /|(  ___  )(  ____ )(  ____ \(  __  \ 
+| (    \/| )   ( || (   ) || (    )|| (    \/| (  \  )
+| (_____ | (___) || (___) || (____)|| (__    | |   ) |
+(_____  )|  ___  ||  ___  ||     __)|  __)   | |   | |
+      ) || (   ) || (   ) || (\ (   | (      | |   ) |
+/\____) || )   ( || )   ( || ) \ \__| (____/\| (__/  )
+\_______)|/     \||/     \||/   \__/(_______/(______/ 
+                                                      
+ */
 
 :root {
-  --color: #000000;
+  --color: rgb(238, 238, 238);
   --background-color: #ffffff;
-  --primary-accent-color: #000fff;
+  --primary-accent-color: #000000;
   --secondary-accent-color: #00ffff;
 }
 
@@ -150,14 +169,52 @@ table {
   justify-content: center;
 }
 
-.productCard {
-  margin: 15px;
-  padding: 4px;
-  border: black;
-  border-style: solid;
+.component {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  height: 800px;
 }
 
-/* Overview Component */
+.placeholder-component {
+  background-color: rgb(238, 238, 238);
+  margin: 10px 5px 5px 10px;
+  color: gray;
+}
+h3 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: --color;
+}
+h2 {
+  font-size: 1em;
+  font-weight: 800;
+  color: --primary-accent-color;
+}
+
+body {
+  font-size: 1;
+}
+
+button {
+  border: black 1px solid;
+  display: inline-block;
+  width: auto;
+  padding: 15px;
+  margin: 5px 15px;
+}
+
+/* 
+ _______           _______  _______          _________ _______          
+(  ___  )|\     /|(  ____ \(  ____ )|\     /|\__   __/(  ____ \|\     /|
+| (   ) || )   ( || (    \/| (    )|| )   ( |   ) (   | (    \/| )   ( |
+| |   | || |   | || (__    | (____)|| |   | |   | |   | (__    | | _ | |
+| |   | |( (   ) )|  __)   |     __)( (   ) )   | |   |  __)   | |( )| |
+| |   | | \ \_/ / | (      | (\ (    \ \_/ /    | |   | (      | || || |
+| (___) |  \   /  | (____/\| ) \ \__  \   /  ___) (___| (____/\| () () |
+(_______)   \_/   (_______/|/   \__/   \_/   \_______/(_______/(_______)
+                                                                        
+ */
 
 #overview-container {
   margin: 0 auto;
@@ -288,7 +345,129 @@ h3 {
   border: 1px solid black;
 }
 
+/* 
+ _______ _________          _______  _______   __________________ _______  _______  _______ 
+(  ___  )\__   __/|\     /|(  ____ \(  ____ )  \__   __/\__   __/(  ____ \(       )(  ____ \
+| (   ) |   ) (   | )   ( || (    \/| (    )|     ) (      ) (   | (    \/| () () || (    \/
+| |   | |   | |   | (___) || (__    | (____)|     | |      | |   | (__    | || || || (_____ 
+| |   | |   | |   |  ___  ||  __)   |     __)     | |      | |   |  __)   | |(_)| |(_____  )
+| |   | |   | |   | (   ) || (      | (\ (        | |      | |   | (      | |   | |      ) |
+| (___) |   | |   | )   ( || (____/\| ) \ \__  ___) (___   | |   | (____/\| )   ( |/\____) |
+(_______)   )_(   |/     \|(_______/|/   \__/  \_______/   )_(   (_______/|/     \|\_______)
+                                                                                            
+ */
+
 /* Reviews Component */
+#otherItems {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  height: 400px;
+}
+
+.otherItemsContainer {
+  height: 100%;
+}
+
+.sliderContainer {
+  height: 100%;
+}
+
+.slick-slider {
+  height: 100%;
+}
+.slick-initialized {
+  height: 100%;
+}
+
+#slider {
+  height: 100%;
+}
+
+.productCard {
+  height: 350px;
+  width: 190px;
+  margin: 15px;
+  padding: 4px;
+  border: black;
+  border-style: solid;
+  border-width: thin;
+  float: left;
+}
+
+/* 
+ _______      __      _______ 
+(  ___  )    /__\    (  ___  )
+| (   ) |   ( \/ )   | (   ) |
+| |   | |    \  /    | (___) |
+| |   | |    /  \/\  |  ___  |
+| | /\| |   / /\  /  | (   ) |
+| (_\ \ |  (  \/  \  | )   ( |
+(____\/_)   \___/\/  |/     \|
+                              
+*/
+
+.productCardImage {
+  width: 100%;
+  height: 70%;
+  background-color: lightgray;
+  position: relative;
+}
+
+.productCardDescription {
+  width: 100%;
+  height: 30%;
+}
+
+.cardButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background-color: darkgray;
+}
+
+#q-and-a-container {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  height: 800px;
+}
+#q-and-a-search {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  padding: 0px;
+}
+#question-list-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+}
+#question-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  padding: 5px;
+}
+/* 
+ _______  _______          _________ _______           _______ 
+(  ____ )(  ____ \|\     /|\__   __/(  ____ \|\     /|(  ____ \
+| (    )|| (    \/| )   ( |   ) (   | (    \/| )   ( || (    \/
+| (____)|| (__    | |   | |   | |   | (__    | | _ | || (_____ 
+|     __)|  __)   ( (   ) )   | |   |  __)   | |( )| |(_____  )
+| (\ (   | (       \ \_/ /    | |   | (      | || || |      ) |
+| ) \ \__| (____/\  \   /  ___) (___| (____/\| () () |/\____) |
+|/   \__/(_______/   \_/   \_______/(_______/(_______)\_______)
+                                                               
+ */
+
+#reviews-container,
+#review-list-container,
+#review-stats-container,
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+}
 
 #reviews-container {
   text-align: center;
@@ -301,32 +480,22 @@ h3 {
 }
 
 #review-list-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
 }
 
 #review-stats-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
   display: flex;
   flex-direction: column;
 }
 
 #size-rating-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
   height: 15%;
 }
 
 #comfort-rating-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
   height: 15%;
 }
 
 #star-stats-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
   height: 40%;
 }
 
