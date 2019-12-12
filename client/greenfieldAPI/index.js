@@ -7,17 +7,18 @@ export default {
   getProductInfo: id => {
     return axios.get(`${greenfieldRoot}/products/${id}`);
   },
-  getRelatedProducts: id => {
+  getRelatedProductsIds: id => {
     return axios.get(`${greenfieldRoot}/products/${id}/related`);
   },
   getProductStyles: id => {
     return axios.get(`${greenfieldRoot}/products/${id}/styles`);
   },
 
-  getQuestions: (productId) => {
-    return axios.get(`${greenfieldRoot}/qa/${productId}`)
-      .then(({ data }) => data.results)
-      .catch((err) => console.log(err))
+  getQuestions: productId => {
+    return axios
+      .get(`${greenfieldRoot}/qa/${productId}`)
+      .then(({ data }) => data)
+      .catch(err => console.log(err));
   },
   getAnswers: questionId => {
     return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);
