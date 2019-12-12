@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
 import ProductsCarousel from './ProductsCarousel.jsx';
 import 'regenerator-runtime';
 
