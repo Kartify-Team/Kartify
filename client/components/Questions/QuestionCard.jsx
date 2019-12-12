@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { removeHTMLTags } from "../../utils"
-const AnswerList = ({ question }) => {
+const QuestionCard = ({ question }) => {
   let [expanded, setExpanded] = useState(false);
   return <div id="question-container" key={question.question_id}
     onClick={() => setExpanded(!expanded)}>
@@ -33,4 +33,4 @@ const AnswerList = ({ question }) => {
 
 };
 
-export default AnswerList;
+export default QuestionCard;

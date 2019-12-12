@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { removeHTMLTags } from "../../utils"
-import AnswerList from "./AnswerList";
+import QuestionCard from "./QuestionCard";
 import AddQuestionModal from "./AddQuestionModal.jsx"
 
 const QuestionList = ({ questions }) => {
@@ -28,7 +28,7 @@ const QuestionList = ({ questions }) => {
             Object.keys(question.answers).length > 0) {
             count++;
             return (
-              <AnswerList question={question} key={question.question_id} />
+              <QuestionCard question={question} key={question.question_id} />
             );
           }
           if (count === maxQs) {
