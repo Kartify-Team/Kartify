@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
 
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
@@ -97,7 +97,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 article,
 aside,
@@ -128,7 +128,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -234,8 +234,9 @@ button {
 #product-interaction-container {
   border: black 1px solid;
   margin: 10px 10px 5px 5px;
-  display: grid;
-  grid-template-rows: 32% 32% 32%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 #product-description-container {
@@ -250,8 +251,33 @@ button {
 
 .interaction-item {
   border: black 1px solid;
-  margin: auto;
-  padding: 10px;
+  height: 33%;
+  width: 100%;
+}
+
+#overview-info {
+  display: grid;
+  grid-template-rows: 15% 15% 50% 15%;
+  text-align: left;
+  padding: auto;
+  justify-content: center;
+}
+
+#overview-info h1 {
+  font-size: 40px;
+  align-self: center;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+#stars-reviews {
+  display: flex;
+}
+
+#review-link-container {
+  justify-content: right;
 }
 
 #left-description,
@@ -273,6 +299,52 @@ button {
   font-size: 30px;
   margin-top: 10px;
 }
+
+.style-image {
+  width: 48px;
+  height: 48px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+#cart-container {
+  display: grid;
+  grid-template-areas:
+    'size size size qty qty'
+    'add add add add star';
+  align-content: center;
+  justify-content: center;
+}
+
+#add-button {
+  grid-area: add;
+  height: 50px;
+  width: 150px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+#size-button {
+  grid-area: size;
+  height: 50px;
+  margin: 5px;
+}
+
+#qty-button {
+  grid-area: qty;
+  margin: 5px;
+  height: 50px;
+}
+
+#star-button {
+  grid-area: star;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border: 1px solid black;
+}
+
 /* 
  _______ _________          _______  _______   __________________ _______  _______  _______ 
 (  ___  )\__   __/|\     /|(  ____ \(  ____ )  \__   __/\__   __/(  ____ \(       )(  ____ \
@@ -285,6 +357,7 @@ button {
                                                                                             
  */
 
+/* Reviews Component */
 #otherItems {
   margin: 0 auto;
   display: grid;
@@ -303,7 +376,7 @@ button {
 .slick-slider {
   height: 100%;
 }
-.slick-initialized  {
+.slick-initialized {
   height: 100%;
 }
 
@@ -319,7 +392,7 @@ button {
   border: black;
   border-style: solid;
   border-width: thin;
-  float: left
+  float: left;
 }
 
 /* 
@@ -332,8 +405,8 @@ button {
 | (_\ \ |  (  \/  \  | )   ( |
 (____\/_)   \___/\/  |/     \|
                               
- */
-=======
+*/
+
 .productCardImage {
   width: 100%;
   height: 70%;
