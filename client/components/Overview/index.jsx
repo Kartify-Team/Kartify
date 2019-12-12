@@ -4,18 +4,16 @@ import ProductInteraction from './ProductInteraction';
 import ProductDescription from './ProductDescription';
 import { productInfo, productStyles } from './testData';
 
-export default class Overview extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div id="overview-container">
+const Overview = ({ product }) => (
+  <div id="overview-container">
+    {!!product ? (
+      <>
         <ProductImage />
-        <ProductInteraction product={productInfo} styles={productStyles} />
-        <ProductDescription product={productInfo} />
-      </div>
-    );
-  }
-}
+        <ProductInteraction product={product} styles={productStyles} />
+        <ProductDescription product={product} />
+      </>
+    ) : null}
+  </div>
+);
+
+export default Overview;

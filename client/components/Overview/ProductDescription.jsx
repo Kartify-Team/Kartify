@@ -10,9 +10,9 @@ const ProductDescription = ({ product }) => (
     <span id="right-description">
       <ul>
         {/* Features List */}
-        {product.features.map(feature => {
+        {product.features.map((feature, idx) => {
           return (
-            <li key={feature.value}>
+            <li key={`feature-${idx}`}>
               {feature.feature} : {feature.value}
             </li>
           );
