@@ -15,7 +15,7 @@ const Questions = ({ questions, addQuestionList }) => {
   }, [product]);
   return (
     <div className="component" id="q-and-a-container">
-      <h1>Questions & Answers</h1>
+      <h3>Questions & Answers</h3>
       <Search />
       <QuestionListContainer />
       <AnswerForm />
