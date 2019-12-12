@@ -13,7 +13,7 @@ const OtherItems = ({relatedProducts, myOutfit, getRelatedProducts, getMyOutfit}
   }, [])
 
   return (
-    <div className='otherItems'>
+    <div id='otherItems'>
       <div className='otherItemsContainer'>
         <ProductsCarousel products={relatedProducts}/>
         {/* <ProductsCarousel products={myOutfit} /> */}

@@ -16,8 +16,8 @@ const ProductsCarousel = ({products}) => {
   }
   if (products) {
     return (
-      <div>
-        <Slider {...settings}>
+      <div className='sliderContainer'>
+        <Slider id='slider' {...settings}>
           {products.map(product => {
             return <ProductCard key={product.id} product={product} />
           })}
