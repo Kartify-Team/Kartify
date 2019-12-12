@@ -6,8 +6,8 @@ import thunk from 'redux-thunk';
 
 const mockStore = configureStore([thunk]);
 
+let store = mockStore();
 describe('App Component', () => {
-  let store;
   beforeEach(() => {
     store = mockStore({
       product: {
