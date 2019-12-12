@@ -28,7 +28,7 @@ export default class App extends Component {
             <div id="components-container">
               <OverviewContainer />
               <OtherItemsContainer />
-              {/* <QuestionsContainer /> */}
+              <QuestionsContainer />
               <ReviewsContainer />
             </div>
           </Route>
