@@ -40,6 +40,7 @@
     "react-slick": "^0.25.2",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.3",
     "slick-carousel": "^1.8.1"
