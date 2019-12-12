@@ -4,7 +4,7 @@ import { addQuestionList } from '../../actions/creators/addQuestionList';
 
 const mapStateToProps = store => ({
   product: store.product,
-  questions: store.questionsReducer.questions
+  questions: store.questions
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,25 +1,43 @@
 import React, { useState, useEffect } from "react";
+import { removeHTMLTags } from "../../utils"
 import AnswerList from "./AnswerList";
+import AddQuestionModal from "./AddQuestionModal.jsx"
 
 const QuestionList = ({ questions }) => {
   const [numQsDisplayed, setNumQsDisplayed] = useState(4);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
 
   let addMoreQuestions = false;
-  if (questions) {
+  if (questions.length > 0) {
+    let count = 0;
     return (
       <div id="question-list-container">
         {questions.map((question) => {
-          return (
-            <div id="question-container">
-              <h2>Q: {question.question_body}</h2>
-              <div>
-                <AnswerList answers={question.answers} />
+          if (count < numQsDisplayed &&
+            Object.keys(question.answers).length > 0) {
+            count++;
+            return (
+              <div id="question-container" key={question.question_id}>
+                <h2>Q: {removeHTMLTags(question.question_body)}</h2>
+                <div>
+                  <AnswerList answers={question.answers} />
+                </div>
               </div>
-            </div>
-          );
+            );
+          }
+
         })}
-        <button className="action-button">More Answered Questions</button>
-        <button className="action-button">Add a Question</button>
+        <button className="action-button"
+          onClick={() => setNumQsDisplayed(numQsDisplayed + 2)}>
+          More Answered Questions
+          </button>
+        <button className="action-button"
+          onClick={() => setIsOpen(true)}>
+          Add a Question
+          </button>
+        <AddQuestionModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} />
+
       </div>
     );
   } else {

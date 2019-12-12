@@ -4,7 +4,7 @@ import otherItems from './otherItems.js';
 import productReducer from './product';
 
 export default combineReducers({
-  questionsReducer,
+  questions: questionsReducer,
   product: productReducer,
   otherItems
 });
