@@ -12,12 +12,12 @@ const Cart = props => (
     <select id="qty-button">
       <option>1</option>
     </select>
-    <btn id="add-button" className="overview-button">
+    <button id="add-button" className="overview-button">
       ADD TO BAG
-    </btn>
-    <btn id="star-button" className="overview-button">
+    </button>
+    <button id="star-button" className="overview-button">
       O
-    </btn>
+    </button>
   </div>
 );
 

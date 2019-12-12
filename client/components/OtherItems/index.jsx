@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
 import ProductsCarousel from './ProductsCarousel.jsx';
-import helpers from '../../greenfieldAPI/index.js';
 import 'regenerator-runtime';
 
 const OtherItems = ({relatedProducts, myOutfit, getRelatedProducts, getMyOutfit}) => {
