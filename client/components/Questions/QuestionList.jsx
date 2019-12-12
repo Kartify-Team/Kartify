@@ -13,7 +13,7 @@ const QuestionList = ({ questions }) => {
             <div id="question-container">
               <h2>Q: {question.question_body}</h2>
               <div>
-                A: <AnswerList answers={question.answers} />
+                <AnswerList answers={question.answers} />
               </div>
             </div>
           );
