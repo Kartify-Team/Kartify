@@ -5,28 +5,28 @@ import React from 'react';
 import Slider from "react-slick";
 import ProductCard from './ProductCard.jsx';
 
-
 const ProductsCarousel = ({products}) => {
   const settings = {
     dots: false, // ?
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true
   }
   if (products) {
     return (
       <div className='sliderContainer'>
-        <Slider id='slider' {...settings}>
+        {/* <Slider id='slider' {...settings}> */}
           {products.map(product => {
             return <ProductCard key={product.id} product={product} />
           })}
-        </Slider>
+        {/* </Slider> */}
       </div>
     )
   } else {
     return (
-      <div>LOADING...</div>
+      <div className='sliderContainer'></div>
     )
   }
 }

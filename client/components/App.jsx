@@ -8,14 +8,12 @@ import QuestionsContainer from '../containers/Questions';
 const App = ({ changeProduct, productInfo }) => {
   changeProduct(useParams().id || 1);
   return (
-    <>
       <div id="components-container">
         <OverviewContainer />
         <OtherItemsContainer />
         <ReviewsContainer />
         <QuestionsContainer />
       </div>
-    </>
   );
 };
 
