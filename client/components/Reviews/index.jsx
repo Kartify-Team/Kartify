@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ReviewList from './ReviewList';
 import RatingBreakdown from './RatingBreakdown';
 
-const Reviews = ({ product, characteristics, setCharacteristics }) => {
+const Reviews = ({ product, characteristics, setCharacteristics, ratings }) => {
   if (product) {
     useEffect(() => {
       setCharacteristics(product.id);
@@ -16,7 +16,7 @@ const Reviews = ({ product, characteristics, setCharacteristics }) => {
       <>
         <h3>Ratings & Reviews</h3>
         <div id="reviews-container">
-          <RatingBreakdown productId={product.id} />
+          <RatingBreakdown productId={product.id} ratings={ratings} />
           <ReviewList />
         </div>
       </>
