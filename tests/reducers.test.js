@@ -1,18 +1,15 @@
 import {
   CHANGE_PRODUCT,
-<<<<<<< HEAD
   ADD_QUESTION_LIST
 } from '../client/actions';
-import productReducer from '../client/reducers/product';
 import questionsReducer from '../client/reducers/questions';
-=======
+import {
   SET_RATINGS,
   SET_CHARACTERISTICS
 } from '../client/actions';
 import productReducer from '../client/reducers/product';
 import ratingsReducer from '../client/reducers/ratings';
 
->>>>>>> 7b2c993a478a537140aa23b13daa4c4abc5bfc18
 describe('product reducer', () => {
   it('handles CHANGE_PRODUCT actions', () => {
     const action = {
