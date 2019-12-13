@@ -28,7 +28,7 @@ const QuestionList = ({ questions, product }) => {
             Object.keys(question.answers).length > 0) {
             count++;
             return (
-              <QuestionCard question={question} key={question.question_id} />
+              <QuestionCard question={question} product={product} key={question.question_id} />
             );
           }
           if (count === maxQs) {

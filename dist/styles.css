@@ -196,7 +196,7 @@ h3 {
 h2 {
   font-size: 1em;
   font-weight: 800;
-  margin: 1.3em 0 0 0;
+  margin: 0;
   color: var(--primary-accent-color);
 }
 
@@ -245,6 +245,12 @@ input[type="number"],
 textarea,
 select {
   border: black 1px solid;
+}
+
+.modal-header {
+  display: flex;
+  flex: 1 1;
+  justify-content: space-between
 }
 
 /* 
@@ -552,13 +558,13 @@ select {
 } */
 
 .answers {
-  margin: 10px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 .answers > span > #first {
-  /* margin: 10px 0px; */
+  margin: 1em 0px;
 }
 .answers >span > #more {
-  margin-left: 15px;
+  margin: 2em 0px 0.7em 15px;
 }
 .answers >span > #answerer {
   margin-left: 15px;
@@ -573,7 +579,7 @@ select {
   font-weight: 600;
 }
 
-.submit-question #question {
+.submit-question {
   width: 300px;
   height: 50px
 }
