@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, useParams } from 'react-router-dom';
 import OverviewContainer from '../containers/Overview';
 import OtherItemsContainer from '../containers/OtherItems';
@@ -9,6 +9,7 @@ const App = ({ changeProduct, productInfo, setRatings }) => {
   changeProduct(useParams().id || 1);
   setRatings(useParams().id);
 
+  console.log('APP RENDERING!'); // TODO: FIX APP INFINITE RENDERING
   return (
     <div id="components-container">
       <OverviewContainer />

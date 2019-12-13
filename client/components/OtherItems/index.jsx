@@ -3,6 +3,7 @@ import ProductsCarousel from './ProductsCarousel.jsx';
 import 'regenerator-runtime';
 
 const OtherItems = ({
+  productInfo,
   relatedProducts = [],
   myOutfit,
   getRelatedProducts,
@@ -12,22 +13,27 @@ const OtherItems = ({
   getMyOutfitImages
 }) => {
   useEffect(() => {
-    // get ID
-      getRelatedProducts(3); // TODO: CHANGE HARDCODED ID
-      getRelatedProductsStyles(3);
-    // get My Outfit from User
-  }, []);
+    if (productInfo) {
+      getRelatedProducts(productInfo.id);
+      getRelatedProductsStyles(productInfo.id);
+      // get My Outfit from User
+    }
+  }, [productInfo]);
 
-  return (
-    <div id="otherItems">
-      <div className="otherItemsContainer">
-        <h3>Related Products</h3>
-        <ProductsCarousel products={relatedProducts} />
-        <h3>Your Outfit</h3>
-        {/* <ProductsCarousel products={myOutfit} /> */}
+  if (productInfo === null) {
+    return <div></div>;
+  } else {
+    return (
+      <div id="otherItems">
+        <div className="otherItemsContainer">
+          <h3>Related Products</h3>
+          <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles}/>
+          <h3>Your Outfit</h3>
+          {/* <ProductsCarousel products={myOutfit} /> */}
+        </div>
       </div>
-    </div>
-  )
+    );
+  }
 };
 
 export default OtherItems;
