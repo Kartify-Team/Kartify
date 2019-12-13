@@ -6,7 +6,8 @@ const mapStateToProps = store => ({
   product: store.product,
   characteristics:
     store.ratings === undefined ? null : store.ratings.characteristics,
-  ratings: store.ratings
+  ratings: store.ratings,
+  reviewList: store.ratings.reviewList
 });
 
 const mapDispatchToProps = dispatch => ({
