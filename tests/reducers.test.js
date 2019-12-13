@@ -1,6 +1,9 @@
-import { CHANGE_PRODUCT } from '../client/actions';
+import {
+  CHANGE_PRODUCT,
+  ADD_QUESTION_LIST
+} from '../client/actions';
 import productReducer from '../client/reducers/product';
-
+import questionsReducer from '../client/reducers/questions';
 describe('product reducer', () => {
   it('handles CHANGE_PRODUCT actions', () => {
     const action = {
@@ -24,5 +27,19 @@ describe('product reducer', () => {
 
     const product = productReducer(null, action);
     expect(product.id).toEqual(2);
+  });
+});
+describe('questions reducer', () => {
+  it('handles ADD_QUESTION_LIST actions', () => {
+    const action = {
+      type: ADD_QUESTION_LIST,
+      questions: [{
+        question_id: 12,
+        question_body: "This is a fake question."
+      }]
+    };
+
+    const questions = questionsReducer(null, action);
+    expect(questions[0].question_body).toEqual("This is a fake question.");
   });
 });
