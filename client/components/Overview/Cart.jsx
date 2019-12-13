@@ -18,7 +18,7 @@ const Cart = props => (
       ADD TO BAG
     </button>
     <button id="star-button" className="overview-button">
-      O
+      ☆
     </button>
   </div>
 );

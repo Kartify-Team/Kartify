@@ -8,16 +8,19 @@ const ProductDescription = ({ product }) => (
       <p>{product.description}</p>
     </span>
     <span id="right-description">
-      <ul>
-        {/* Features List */}
-        {product.features.map((feature, idx) => {
-          return (
-            <li key={`feature-${idx}`}>
-              {feature.feature} : {feature.value}
-            </li>
-          );
-        })}
-      </ul>
+      {!product.features ? null : (
+        <ul>
+          {/* Features List */}
+          {product.features.map((feature, idx) => {
+            return (
+              <li key={`feature-${idx}`}>
+                {feature.feature}{' '}
+                {feature.value === 'null' ? null : `: ${feature.value}`}
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </span>
   </div>
 );
