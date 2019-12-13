@@ -19,7 +19,7 @@ export default (
     case 'SET_REVIEW_LIST':
       return { ...state, reviewList: action.reviewList };
     default:
-      console.log(state);
+      // console.log(state);
       return state;
   }
 };
