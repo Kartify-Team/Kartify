@@ -1,4 +1,8 @@
-import { CHANGE_PRODUCT, SET_RATINGS } from '../client/actions';
+import {
+  CHANGE_PRODUCT,
+  SET_RATINGS,
+  SET_CHARACTERISTICS
+} from '../client/actions';
 import productReducer from '../client/reducers/product';
 import ratingsReducer from '../client/reducers/ratings';
 
@@ -44,5 +48,33 @@ describe('ratings reducer', () => {
     expect(ratings[1]).toEqual(1);
     expect(ratings[3]).toEqual(1);
     expect(ratings[5]).toEqual(4);
+  });
+
+  it('handles SET_CHARACTERISTICS actions', () => {
+    const action = {
+      type: SET_CHARACTERISTICS,
+      characteristics: {
+        Fit: {
+          id: 1,
+          value: '3.8571'
+        },
+        Length: {
+          id: 2,
+          value: '3.7143'
+        },
+        Comfort: {
+          id: 3,
+          value: '4.1429'
+        },
+        Quality: {
+          id: 4,
+          value: '3.7143'
+        }
+      }
+    };
+
+    const { characteristics } = ratingsReducer({}, action);
+    expect(characteristics.Quality.id).toEqual(4);
+    expect(characteristics.Quality.value).toEqual('3.7143');
   });
 });
