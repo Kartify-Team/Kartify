@@ -15,7 +15,7 @@ export const getProductRatings = productId => {
     const fiveCount = ratings[5] || 0;
     const sum = oneCount + twoCount + threeCount + fourCount + fiveCount;
 
-    const average = (
+    let average = (
       (oneCount +
         twoCount * 2 +
         threeCount * 3 +
@@ -23,6 +23,8 @@ export const getProductRatings = productId => {
         fiveCount * 5) /
       sum
     ).toFixed(2);
+
+    if (isNaN(average)) average = 0;
 
     return {
       ...ratings,
@@ -35,4 +37,13 @@ export const getRatingMetadata = productId => {
   return axios
     .get(`${greenfieldRoot}/reviews/${productId}/meta`)
     .then(response => response.data);
+};
+
+export const getProductReviews = (productId, page, count) => {
+  return axios.get(`${greenfieldRoot}/reviews/${productId}/list`, {
+    params: {
+      page,
+      count
+    }
+  });
 };
