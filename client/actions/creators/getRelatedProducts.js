@@ -5,8 +5,13 @@ const getRelatedProducts = id => {
   return dispatch => {
     return getRelatedProductsIds(id)
       .then(({ data }) => {
-        let productPromises = data.map(id => {
-          return getProductInfo(id);
+        let uniqueProducts = {};
+        let productPromises = [];
+        data.forEach((id) => {
+          if (uniqueProducts[id] === undefined) {
+            uniqueProducts[id] = id;
+            productPromises.push(getProductInfo(id));
+          }
         });
         return Promise.all(productPromises);
       })

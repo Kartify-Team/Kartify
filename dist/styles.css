@@ -373,7 +373,7 @@ sub {
   margin: 0 auto;
   display: grid;
   width: 80%;
-  height: 400px;
+  height: 450px;
   overflow: scroll;
 }
 
