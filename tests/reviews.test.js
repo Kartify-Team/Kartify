@@ -3,7 +3,6 @@ import { shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import ReviewsContainer from '../client/containers/Reviews/index';
-import ReviewStats from '../client/components/Reviews/ReviewStats';
 
 const mockStore = configureStore([thunk]);
 let store = mockStore();
@@ -44,6 +43,6 @@ describe('ReviewStats component', () => {
 
   it('gets product id from store via props', () => {
     const wrapper = mount(<ReviewsContainer store={store} />);
-    expect(wrapper.find('ReviewStats').prop('productId')).toEqual(1);
+    expect(wrapper.find('RatingBreakdown').prop('productId')).toEqual(1);
   });
 });

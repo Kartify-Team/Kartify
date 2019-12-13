@@ -1,9 +1,18 @@
 import {
   CHANGE_PRODUCT,
+<<<<<<< HEAD
   ADD_QUESTION_LIST
 } from '../client/actions';
 import productReducer from '../client/reducers/product';
 import questionsReducer from '../client/reducers/questions';
+=======
+  SET_RATINGS,
+  SET_CHARACTERISTICS
+} from '../client/actions';
+import productReducer from '../client/reducers/product';
+import ratingsReducer from '../client/reducers/ratings';
+
+>>>>>>> 7b2c993a478a537140aa23b13daa4c4abc5bfc18
 describe('product reducer', () => {
   it('handles CHANGE_PRODUCT actions', () => {
     const action = {
@@ -41,5 +50,52 @@ describe('questions reducer', () => {
 
     const questions = questionsReducer(null, action);
     expect(questions[0].question_body).toEqual("This is a fake question.");
+  });
+});
+
+describe('ratings reducer', () => {
+  it('handles SET_RATINGS actions', () => {
+    const action = {
+      type: SET_RATINGS,
+      ratings: {
+        1: 1,
+        3: 1,
+        4: 1,
+        5: 4
+      }
+    };
+
+    const { ratings } = ratingsReducer({}, action);
+    expect(ratings[1]).toEqual(1);
+    expect(ratings[3]).toEqual(1);
+    expect(ratings[5]).toEqual(4);
+  });
+
+  it('handles SET_CHARACTERISTICS actions', () => {
+    const action = {
+      type: SET_CHARACTERISTICS,
+      characteristics: {
+        Fit: {
+          id: 1,
+          value: '3.8571'
+        },
+        Length: {
+          id: 2,
+          value: '3.7143'
+        },
+        Comfort: {
+          id: 3,
+          value: '4.1429'
+        },
+        Quality: {
+          id: 4,
+          value: '3.7143'
+        }
+      }
+    };
+
+    const { characteristics } = ratingsReducer({}, action);
+    expect(characteristics.Quality.id).toEqual(4);
+    expect(characteristics.Quality.value).toEqual('3.7143');
   });
 });

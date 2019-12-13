@@ -30,3 +30,9 @@ export const getProductRatings = productId => {
     };
   });
 };
+
+export const getRatingMetadata = productId => {
+  return axios
+    .get(`${greenfieldRoot}/reviews/${productId}/meta`)
+    .then(response => response.data);
+};

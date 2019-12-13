@@ -4,7 +4,7 @@ import SizeRating from './SizeRating';
 import ComfortRating from './ComfortRating';
 import { getProductRatings } from '../../greenfieldAPI/reviews';
 
-const ReviewStats = ({ productId }) => {
+const RatingBreakdown = ({ productId }) => {
   const [rating, setRating] = useState(0);
   useEffect(() => {
     getProductRatings(productId).then(ratingData => setRating(ratingData));
@@ -19,4 +19,4 @@ const ReviewStats = ({ productId }) => {
   );
 };
 
-export default ReviewStats;
+export default RatingBreakdown;

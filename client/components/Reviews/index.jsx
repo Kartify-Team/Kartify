@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import ReviewList from './ReviewList';
-import ReviewStats from './ReviewStats';
+import RatingBreakdown from './RatingBreakdown';
 
-export default class Reviews extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const Reviews = ({ product, characteristics, setCharacteristics }) => {
+  if (product) {
+    useEffect(() => {
+      setCharacteristics(product.id);
+    }, [product]);
   }
 
-  render() {
-    if (!this.props.product) {
-      return null;
-    } else {
-      return (
-        <>
-          <h3>Ratings & Reviews</h3>
-          <div id="reviews-container">
-
-            <ReviewStats productId={this.props.product.id} />
-            <ReviewList />
-          </div>
-        </>
-      );
-    }
+  if (!product) {
+    return null;
+  } else {
+    return (
+      <>
+        <h3>Ratings & Reviews</h3>
+        <div id="reviews-container">
+          <RatingBreakdown productId={product.id} />
+          <ReviewList />
+        </div>
+      </>
+    );
   }
-}
+};
+
+export default Reviews;
