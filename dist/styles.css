@@ -376,20 +376,26 @@ sub {
   display: grid;
   width: 80%;
   height: 450px;
-  overflow: scroll;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .otherItemsContainer {
   height: 100%;
+  width: 100%;
 }
 
 .sliderContainer {
   height: 100%;
+  width: 100%;
 }
 
 .slick-slider {
   height: 100%;
 }
+
 .slick-initialized {
   height: 100%;
 }
@@ -406,7 +412,11 @@ sub {
   border: black;
   border-style: solid;
   border-width: thin;
-  float: left;
+  /* float: left; */
+
+  display: inline-block;
+  /* transform: rotate(90deg);
+  transform-origin: right top; */
 }
 
 .productCardImage {
@@ -452,7 +462,7 @@ sub {
 }
 .productCardRating {
   position: absolute;
-  top: 50px;
+  bottom: 0px;
   left: 5%;
 }
 
