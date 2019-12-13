@@ -28,13 +28,14 @@ const Reviews = ({
     return null;
   } else {
     return (
-      <>
+
+      <div className="component">
         <h3>Ratings & Reviews</h3>
         <div id="reviews-container">
           <RatingBreakdown productId={product.id} reviews={reviews.ratings} />
           <ReviewList reviews={reviewList} />
         </div>
-      </>
+      </div>
     );
   }
 };
