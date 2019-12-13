@@ -21,8 +21,5 @@ export const getAverageRating = ratings => {
     sum
   ).toFixed(2);
 
-  return {
-    ...ratings,
-    average
-  };
+  return average;
 };
