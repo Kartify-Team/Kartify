@@ -6,7 +6,7 @@ const Reviews = ({ product, characteristics, setCharacteristics }) => {
   if (product) {
     useEffect(() => {
       setCharacteristics(product.id);
-    }, []);
+    }, [product]);
   }
 
   if (!product) {
