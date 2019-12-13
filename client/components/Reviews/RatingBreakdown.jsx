@@ -4,21 +4,22 @@ import SizeRating from './SizeRating';
 import ComfortRating from './ComfortRating';
 import { getTotalRatings } from '../../utils';
 
-const RatingBreakdown = ({ productId, ratings }) => {
+const RatingBreakdown = ({ productId, reviews }) => {
   let [totalRatings, setTotalRatings] = useState(0);
   useEffect(() => {
-    if (ratings.ratings !== undefined && ratings.ratings !== null) {
-      setTotalRatings(getTotalRatings(ratings.ratings));
+    if (reviews.ratings !== null && reviews.ratings !== undefined) {
+      console.log(reviews.ratings, 'dfaf');
+      setTotalRatings(getTotalRatings(reviews.ratings));
     }
   }, []);
 
-  if (ratings === null || ratings === undefined) {
+  if (reviews.ratings === null || reviews.ratings === undefined) {
     return null;
   } else {
     return (
       <div id="review-stats-container">
         <StarStats
-          rating={ratings.ratings === null ? null : ratings.ratings.average}
+          rating={reviews.ratings === null ? null : reviews.ratings.average}
         />
         <SizeRating />
         <ComfortRating />

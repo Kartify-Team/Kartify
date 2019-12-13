@@ -7,6 +7,6 @@ import ratingsReducer from './ratings';
 export default combineReducers({
   questions: questionsReducer,
   product: productReducer,
-  ratings: ratingsReducer,
+  reviews: ratingsReducer,
   otherItems
 });
