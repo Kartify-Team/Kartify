@@ -10,7 +10,9 @@ const ProductInteraction = ({ product, styles, average }) => (
     <div id="overview-info" className="interaction-item">
       <span id="stars-reviews">
         <Stars stars={average || 3} />
-        <a id="review-link-container">Read All Reviews</a>
+        <a id="review-link" href="#reviews-container">
+          Read All Reviews
+        </a>
       </span>
       <h3>{product.category}</h3>
       <h1>{product.name}</h1>
