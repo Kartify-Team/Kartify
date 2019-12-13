@@ -15,7 +15,7 @@ const Reviews = ({
     }, [product]);
   }
 
-  if (!product || !reviews.ratings) {
+  if (!product || !reviews || !reviews.ratings) {
     return null;
   } else {
     return (

@@ -5,9 +5,9 @@ import { setCharacteristics } from '../../actions/creators/setCharacteristics';
 const mapStateToProps = store => ({
   product: store.product,
   characteristics:
-    store.reviews === null ? null : store.reviews.characteristics,
+    store.reviews === undefined ? null : store.reviews.characteristics,
   reviews: store.reviews,
-  reviewList: store.reviews.reviewList
+  reviewList: store.reviews !== undefined ? store.reviews.reviewList : null
 });
 
 const mapDispatchToProps = dispatch => ({
