@@ -8,7 +8,7 @@ const Overview = ({ product, average }) => {
   console.log('PRODUCT', product);
   return (
     <div id="overview-container">
-      {product !== null ? (
+      {product !== null && product !== undefined ? (
         <>
           <ProductImage imageInfo={product.imageInfo} />
           <ProductInteraction
