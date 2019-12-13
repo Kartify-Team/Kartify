@@ -1,5 +1,11 @@
 import React from 'react';
+import ReviewItem from './ReviewItem';
 
-const ReviewList = props => <div id="review-list-container">Review List</div>;
+const ReviewList = ({ reviews }) => (
+  <div id="review-list-container">
+    Review List
+    {reviews.map(review => ReviewItem(review))}
+  </div>
+);
 
 export default ReviewList;
