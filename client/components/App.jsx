@@ -5,8 +5,9 @@ import OtherItemsContainer from '../containers/OtherItems';
 import ReviewsContainer from '../containers/Reviews';
 import QuestionsContainer from '../containers/Questions';
 
-const App = ({ changeProduct, productInfo }) => {
+const App = ({ changeProduct, productInfo, setRatings }) => {
   changeProduct(useParams().id || 1);
+  setRatings(useParams().id);
 
   return (
     <div id="components-container">

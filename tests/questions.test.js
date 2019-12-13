@@ -1,15 +1,20 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import QuestionsContainer from '../client/containers/Questions';
-import { Provider } from 'react-redux';
-import store from '../client/store';
+import QuestionListContainer from '../client/containers/Questions/QuestionList';
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import { questionData } from "./testData";
 
-describe('Questions Component', () => {
-  it('renders', () => {
-    shallow(<Provider store={store}><QuestionsContainer /></Provider>);
+const mockStore = configureStore([thunk]);
+
+let store = mockStore();
+describe('App Component', () => {
+  beforeEach(() => {
+    store = mockStore({ questions: questionData });
   });
 
-  it('renders all child components', () => {
-    mount(<Provider store={store}><QuestionsContainer /></Provider>);
+  it('passes question data from store to QuestionList props', () => {
+    const wrapper = shallow(<QuestionListContainer store={store} />);
+    expect(wrapper.find('QuestionList').prop('questions').length).toEqual(4);
   });
 });

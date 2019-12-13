@@ -1,4 +1,4 @@
-import Redux from 'redux';
+// import Redux from 'redux';
 
 const otherItemsReducer = (state = {}, action) => {
   switch (action.type) {
@@ -7,7 +7,7 @@ const otherItemsReducer = (state = {}, action) => {
   case 'CHANGE_RELATED_PRODUCTS_STYLES':
     return Object.assign({}, state, {relatedProductsStyles: action.products});
   case 'CHANGE_MY_OUTFIT':
-    return Object.assign({}, state, {myOutfit: action.products});
+    return Object.assign({}, state, { myOutfit: action.products });
   default:
     return state;
   }

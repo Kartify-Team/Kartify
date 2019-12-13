@@ -18,18 +18,16 @@ const OtherItems = ({
     // get My Outfit from User
   }, []);
 
-    console.log('RE RENDER! OTHER ITEMS!!!')
-    return (
-      <div id="otherItems">
-        <div className="otherItemsContainer">
-          <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} />
-          {/* <ProductsCarousel products={myOutfit} /> */}
-        </div>
+  return (
+    <div id="otherItems">
+      <div className="otherItemsContainer">
+        <h3>Related Products</h3>
+        <ProductsCarousel products={relatedProducts} />
+        <h3>Your Outfit</h3>
+        {/* <ProductsCarousel products={myOutfit} /> */}
       </div>
-    )
-  
-  
-
+    </div>
+  )
 };
 
 export default OtherItems;
