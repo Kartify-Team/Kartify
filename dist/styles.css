@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -163,6 +163,13 @@ table {
   width: 100%;
 }
 
+#site-title {
+  font-size: 3em;
+  padding: 15px;
+  font-family: 'Rock Salt', cursive;
+  
+}
+
 #components-container {
   display: flex;
   flex-direction: column;
@@ -183,12 +190,13 @@ table {
 h3 {
   text-transform: uppercase;
   font-size: 1em;
-  margin: 2em 0 0.5em 0;
+  margin: 1em 0 0.5em 0;
   color: var(--color);
 }
 h2 {
   font-size: 1em;
   font-weight: 800;
+  margin: 1.3em 0 0 0;
   color: var(--primary-accent-color);
 }
 
@@ -210,7 +218,33 @@ sub {
   display: inline-block;
   width: auto;
   padding: 15px;
-  margin: 5px 15px;
+  /* margin: 5px 15px; */
+}
+/*
+ _______  _______  _______  _______  _______ 
+(  ____ \(  ___  )(  ____ )(       )(  ____ \
+| (    \/| (   ) || (    )|| () () || (    \/
+| (__    | |   | || (____)|| || || || (_____ 
+|  __)   | |   | ||     __)| |(_)| |(_____  )
+| (      | |   | || (\ (   | |   | |      ) |
+| )      | (___) || ) \ \__| )   ( |/\____) |
+|/       (_______)|/   \__/|/     \|\_______)
+                                             
+*/
+form {
+  /* padding: 15px; */
+}
+label {
+  margin: 0.8em 0 0.2em 0;
+  font-weight: bold;
+  display: flex;
+}
+input[type="email"],
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  border: black 1px solid;
 }
 
 /* 
@@ -467,15 +501,17 @@ sub {
 }
 
 /* 
- _______      __      _______ 
-(  ___  )    /__\    (  ___  )
-| (   ) |   ( \/ )   | (   ) |
-| |   | |    \  /    | (___) |
-| |   | |    /  \/\  |  ___  |
-| | /\| |   / /\  /  | (   ) |
-| (_\ \ |  (  \/  \  | )   ( |
-(____\/_)   \___/\/  |/     \|
-                              
+
+ _______           _______  _______ __________________ _______  _        _______ 
+(  ___  )|\     /|(  ____ \(  ____ \\__   __/\__   __/(  ___  )( (    /|(  ____ \
+| (   ) || )   ( || (    \/| (    \/   ) (      ) (   | (   ) ||  \  ( || (    \/
+| |   | || |   | || (__    | (_____    | |      | |   | |   | ||   \ | || (_____ 
+| |   | || |   | ||  __)   (_____  )   | |      | |   | |   | || (\ \) |(_____  )
+| | /\| || |   | || (            ) |   | |      | |   | |   | || | \   |      ) |
+| (_\ \ || (___) || (____/\/\____) |   | |   ___) (___| (___) || )  \  |/\____) |
+(____\/_)(_______)(_______/\_______)   )_(   \_______/(_______)|/    )_)\_______)
+                                                                                 
+                            
  */
 #q-and-a-container {
   margin: 0 auto;
@@ -499,14 +535,55 @@ sub {
   margin: 10px 5px 5px 10px;
   padding: 5px;
 }
-#first-answer {
-  margin: 10px 0px;
+
+#question {
+  display: flex;
+  flex: 1 1;
+  justify-content: space-between
 }
-#more-answers {
-  margin: 10px 0px 10px 15px;
+
+
+
+#q-list {
+  margin: 10px;
 }
-#answerer {
-  margin: 5px 0px 10px 15px;
+/* #question > h2 {
+  align
+} */
+
+.answers {
+  margin: 10px 0px 0px;
+}
+.answers > span > #first {
+  /* margin: 10px 0px; */
+}
+.answers >span > #more {
+  margin-left: 15px;
+}
+.answers >span > #answerer {
+  margin-left: 15px;
+}
+
+.answers > #load-more {
+  margin-top: 1.2em;
+  margin-left: 15px;
+  font-size: 0.8em;
+  color: var(--color);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.submit-question #question {
+  width: 300px;
+  height: 50px
+}
+
+#add-question-form > input, 
+#add-question-form > textarea {
+  width: 400px;
+}
+#submit {
+  margin: 10px 10px 0px 0px;
 }
 /* 
  _______  _______          _________ _______           _______ 
@@ -593,7 +670,7 @@ sub {
   left: 0;
   overflow: hidden;
   white-space: nowrap;
-  z-index: 10;
+  /* z-index: 10; */
   display: inline-block;
   color: black;
   width: 100%;

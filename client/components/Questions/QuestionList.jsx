@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { removeHTMLTags } from "../../utils"
 import QuestionCard from "./QuestionCard";
-import AddQuestionModal from "./AddQuestionModal.jsx"
+import AddQuestion from "./AddQuestion"
 
-const QuestionList = ({ questions }) => {
+const QuestionList = ({ questions, product }) => {
   const [maxQs, setMaxQs] = useState(4);
   const [maxAs, setMaxAs] = useState({});
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -33,18 +33,18 @@ const QuestionList = ({ questions }) => {
           }
           if (count === maxQs) {
             count++;
-            return <button className="action-button"
+            return <button className="action-button" id="q-list"
               onClick={() => setMaxQs(maxQs + 2)} key={question.question_id}>
               More Answered Questions
             </button>
           }
 
         })}
-        <button className="action-button"
+        <button className="action-button" id="q-list"
           onClick={() => setIsOpen(true)}>
           Add a Question
           </button>
-        <AddQuestionModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} />
+        <AddQuestion setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} />
 
       </div>
     );
