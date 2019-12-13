@@ -7,20 +7,17 @@ import { getTotalRatings } from '../../utils';
 const RatingBreakdown = ({ productId, reviews }) => {
   let [totalRatings, setTotalRatings] = useState(0);
   useEffect(() => {
-    if (reviews.ratings !== null && reviews.ratings !== undefined) {
-      console.log(reviews.ratings, 'dfaf');
-      setTotalRatings(getTotalRatings(reviews.ratings));
+    if (reviews !== null && reviews !== undefined) {
+      setTotalRatings(getTotalRatings(reviews));
     }
   }, []);
 
-  if (reviews.ratings === null || reviews.ratings === undefined) {
+  if (reviews === null || reviews === undefined) {
     return null;
   } else {
     return (
       <div id="review-stats-container">
-        <StarStats
-          rating={reviews.ratings === null ? null : reviews.ratings.average}
-        />
+        <StarStats rating={reviews === null ? null : reviews.average} />
         <SizeRating />
         <ComfortRating />
       </div>

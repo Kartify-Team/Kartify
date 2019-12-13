@@ -5,9 +5,10 @@ import ProductDescription from './ProductDescription';
 import { productStyles } from './testData';
 
 const Overview = ({ product, average }) => {
+  console.log('PRODUCT', product);
   return (
     <div id="overview-container">
-      {!!product ? (
+      {product !== null && product !== undefined ? (
         <>
           <ProductImage imageInfo={product.imageInfo} />
           <ProductInteraction
