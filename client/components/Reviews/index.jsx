@@ -15,9 +15,10 @@ const Reviews = ({
     }, [product]);
   }
 
-  if (!product || !reviews || !reviews.ratings) {
+  if (product === null || reviews === null || reviews.ratings === null) {
     return null;
   } else {
+    console.log(reviews, 'REVIEWS');
     return (
       <>
         <h3>Ratings & Reviews</h3>
