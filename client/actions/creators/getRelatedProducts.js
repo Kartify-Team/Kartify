@@ -7,10 +7,10 @@ const getRelatedProducts = id => {
       .then(({ data }) => {
         let uniqueProducts = {};
         let productPromises = [];
-        data.forEach((id) => {
-          if (uniqueProducts[id] === undefined) {
-            uniqueProducts[id] = id;
-            productPromises.push(getProductInfo(id));
+        data.forEach((currentId) => {
+          if (uniqueProducts[currentId] === undefined && id !== currentId) {
+            uniqueProducts[currentId] = currentId;
+            productPromises.push(getProductInfo(currentId));
           }
         });
         return Promise.all(productPromises);

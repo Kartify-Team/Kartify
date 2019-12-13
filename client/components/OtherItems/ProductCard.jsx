@@ -1,7 +1,7 @@
 import React from 'react';
 import RatingStars from '../Reviews/Stars.jsx';
 
-const ProductCard = ({ product, style }) => {
+const ProductCard = ({ product, style, rating }) => {
   if (product === null) {
     return (
       <div className='productCard'>
@@ -24,7 +24,7 @@ const ProductCard = ({ product, style }) => {
             ${product.default_price}
           </div>
           <div className='productCardRating'>
-            <RatingStars stars={3.5}/>
+            <RatingStars stars={rating === undefined ? 0 : rating}/>
           </div>
         </div>
       </div>

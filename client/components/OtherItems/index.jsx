@@ -9,6 +9,8 @@ const OtherItems = ({
   getRelatedProducts,
   getRelatedProductsStyles,
   relatedProductsStyles = [],
+  relatedProductsRatings = [],
+  getRelatedProductsRatings,
   getMyOutfit,
   getMyOutfitImages
 }) => {
@@ -16,6 +18,7 @@ const OtherItems = ({
     if (productInfo) {
       getRelatedProducts(productInfo.id);
       getRelatedProductsStyles(productInfo.id);
+      getRelatedProductsRatings(productInfo.id);
       // get My Outfit from User
     }
   }, [productInfo]);
@@ -27,7 +30,7 @@ const OtherItems = ({
       <div id="otherItems">
         <div className="otherItemsContainer">
           <h3>Related Products</h3>
-          <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles}/>
+          <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} />
           <h3>Your Outfit</h3>
           {/* <ProductsCarousel products={myOutfit} /> */}
         </div>

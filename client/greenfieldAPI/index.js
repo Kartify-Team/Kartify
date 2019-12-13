@@ -11,6 +11,10 @@ export const getRelatedProductsIds = id => {
   return axios.get(`${greenfieldRoot}/products/${id}/related`);
 };
 
+export const getProductReviews = id => {
+  return axios.get(`${greenfieldRoot}/reviews/${id}/meta`);
+};
+
 export const getProductStyles = id => {
   return axios.get(`${greenfieldRoot}/products/${id}/styles`);
 };
