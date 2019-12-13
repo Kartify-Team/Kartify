@@ -18,7 +18,7 @@ describe('Reviews Component', () => {
   });
 });
 
-describe('ReviewStats component', () => {
+xdescribe('ReviewStats component', () => {
   let store;
   beforeEach(() => {
     store = mockStore({
