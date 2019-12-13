@@ -1,8 +1,16 @@
 import { connect } from 'react-redux';
 import Reviews from '../../components/Reviews';
-// import store from '../../store.js';
+import { setCharacteristics } from '../../actions/creators/setCharacteristics';
 
-const mapStateToProps = store => ({ product: store.product });
+const mapStateToProps = store => ({
+  product: store.product,
+  characteristics:
+    store.ratings === undefined ? null : store.ratings.characteristics
+});
 
-const ReviewsContainer = connect(mapStateToProps)(Reviews);
+const mapDispatchToProps = dispatch => ({
+  setCharacteristics: productId => dispatch(setCharacteristics(productId))
+});
+
+const ReviewsContainer = connect(mapStateToProps, mapDispatchToProps)(Reviews);
 export default ReviewsContainer;
