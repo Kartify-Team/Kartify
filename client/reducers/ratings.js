@@ -11,6 +11,8 @@ export default (
       return { ...state, characteristics: action.characteristics };
     case 'SET_TOTAL_REVIEWS':
       return { ...state, totalReviews: action.totalReviews };
+    case 'SET_REVIEW_LIST':
+      return { ...state, reviewList: action.reviewList };
     default:
       return state;
   }
