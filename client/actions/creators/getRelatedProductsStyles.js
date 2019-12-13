@@ -6,8 +6,13 @@ const getRelatedProductsStyles = id => {
   return dispatch => {
     return getRelatedProductsIds(id)
       .then(({ data }) => {
-        let productPromises = data.map(id => {
-          return getProductStyles(id);
+        let uniqueProducts = {};
+        let productPromises = [];
+        data.forEach((currentId) => {
+          if (uniqueProducts[currentId] === undefined && id !== currentId) {
+            uniqueProducts[currentId] = currentId;
+            productPromises.push(getProductStyles(currentId));
+          }
         });
         return Promise.all(productPromises);
       })
