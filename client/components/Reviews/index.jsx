@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReviewList from './ReviewList';
-import ReviewStats from './ReviewStats';
+import RatingBreakdown from './RatingBreakdown';
 
 export default class Reviews extends Component {
   constructor(props) {
@@ -16,8 +16,7 @@ export default class Reviews extends Component {
         <>
           <h3>Ratings & Reviews</h3>
           <div id="reviews-container">
-
-            <ReviewStats productId={this.props.product.id} />
+            <RatingBreakdown productId={this.props.product.id} />
             <ReviewList />
           </div>
         </>
