@@ -22,5 +22,9 @@ export const getAverageRating = ratings => {
     sum
   ).toFixed(2);
 
-  return average;
+  if (isNaN(average)) {
+    return 0;
+  } else {
+    return average;
+  }
 };

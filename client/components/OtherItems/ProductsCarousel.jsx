@@ -5,7 +5,7 @@ import React from 'react';
 import Slider from "react-slick";
 import ProductCard from './ProductCard.jsx';
 
-const ProductsCarousel = ({products, styles}) => {
+const ProductsCarousel = ({products, styles, ratings}) => {
   const settings = {
     dots: false, // ?
     infinite: false,
@@ -18,7 +18,7 @@ const ProductsCarousel = ({products, styles}) => {
     return (
       <div className='sliderContainer'>
         {products.map((product, i) => {
-          return <ProductCard key={product.id} product={product} style={styles[i]} />;
+          return <ProductCard key={product.id} product={product} style={styles[i]} rating={ratings[i]} />;
         })}
       </div>
     );

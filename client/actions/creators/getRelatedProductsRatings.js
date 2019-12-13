@@ -1,6 +1,6 @@
-import changeRelatedProductsStyles from './relatedProductsStyles.js';
-import { getProductStyles, getRelatedProductsIds } from '../../greenfieldAPI';
-import getDefaultStyle from '../../utils/getCoverImage.js';
+import changeRelatedProductsRating from './relatedProductsRatings.js';
+import { getProductReviews, getRelatedProductsIds } from '../../greenfieldAPI';
+import { getAverageRating } from '../../utils/index.js';
 
 const getRelatedProductsStyles = id => {
   return dispatch => {
@@ -11,17 +11,17 @@ const getRelatedProductsStyles = id => {
         data.forEach((currentId) => {
           if (uniqueProducts[currentId] === undefined && id !== currentId) {
             uniqueProducts[currentId] = currentId;
-            productPromises.push(getProductStyles(currentId));
+            productPromises.push(getProductReviews(currentId));
           }
         });
         return Promise.all(productPromises);
       })
       .then(results => {
         let products = results.map(product => {
-          let defaultStyle = getDefaultStyle(product.data);
-          return defaultStyle;
+          let rating = getAverageRating(product.data.ratings);
+          return rating;
         });
-        dispatch(changeRelatedProductsStyles(products));
+        dispatch(changeRelatedProductsRating(products));
       })
       .catch(error => console.error(error));
   };
