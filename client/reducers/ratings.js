@@ -9,7 +9,6 @@ export default (
   },
   action
 ) => {
-  console.log(action);
   switch (action.type) {
     case 'SET_RATINGS':
       return { ...state, ratings: action.ratings };

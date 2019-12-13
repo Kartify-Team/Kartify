@@ -18,7 +18,6 @@ const Reviews = ({
   if (product === null || reviews === null || reviews.ratings === null) {
     return null;
   } else {
-    console.log(reviews, 'REVIEWS');
     return (
       <>
         <h3>Ratings & Reviews</h3>
