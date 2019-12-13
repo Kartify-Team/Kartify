@@ -5,6 +5,7 @@ export const removeHTMLTags = str => {
 export const getTotalRatings = ratings => {
   return Object.values(ratings).reduce((acc, curr) => {
     if (curr !== undefined) return acc + curr;
+    else return acc;
   });
 };
 
