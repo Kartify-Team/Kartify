@@ -617,7 +617,7 @@ select {
   display: grid;
   grid-template-columns: 35% 65%;
   margin: 0 auto;
-  width: 80%;
+
   height: 800px;
 }
 
