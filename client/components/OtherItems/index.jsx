@@ -9,6 +9,8 @@ const OtherItems = ({
   getRelatedProducts,
   getRelatedProductsStyles,
   relatedProductsStyles = [],
+  relatedProductsRatings,
+  getRelatedProductsRatings,
   getMyOutfit,
   getMyOutfitImages
 }) => {
@@ -16,6 +18,7 @@ const OtherItems = ({
     if (productInfo) {
       getRelatedProducts(productInfo.id);
       getRelatedProductsStyles(productInfo.id);
+      getRelatedProductsRatings(productInfo.id);
       // get My Outfit from User
     }
   }, [productInfo]);

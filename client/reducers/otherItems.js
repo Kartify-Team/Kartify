@@ -6,6 +6,8 @@ const otherItemsReducer = (state = {}, action) => {
     return Object.assign({}, state, {relatedProducts: action.products});
   case 'CHANGE_RELATED_PRODUCTS_STYLES':
     return Object.assign({}, state, {relatedProductsStyles: action.products});
+  case 'CHANGE_RELATED_PRODUCTS_RATINGS':
+    return Object.assign({}, state, {relatedProductsRatings: action.products});
   case 'CHANGE_MY_OUTFIT':
     return Object.assign({}, state, { myOutfit: action.products });
   default:
