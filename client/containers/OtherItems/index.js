@@ -7,7 +7,7 @@ import getRelatedProductsRatings from '../../actions/creators/getRelatedProducts
 const mapStateToProps = (store) => ({
   relatedProducts: store.otherItems.relatedProducts,
   relatedProductsStyles: store.otherItems.relatedProductsStyles,
-  relatedProductsRatings: store.otherItems.relatedProductsRating,
+  relatedProductsRatings: store.otherItems.relatedProductsRatings,
   productInfo: store.product,
   myOutfit: ['product 1', null, 'product 2', 'product 3']
 });

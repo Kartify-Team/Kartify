@@ -18,8 +18,8 @@ const getRelatedProductsStyles = id => {
       })
       .then(results => {
         let products = results.map(product => {
-          let defaultStyle = getAverageRating(product.data.ratings); // TODO: get ratings
-          return defaultStyle;
+          let rating = getAverageRating(product.data.ratings);
+          return rating;
         });
         dispatch(changeRelatedProductsRating(products));
       })

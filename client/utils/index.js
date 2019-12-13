@@ -21,6 +21,10 @@ export const getAverageRating = ratings => {
     (oneCount + twoCount * 2 + threeCount * 3 + fourCount * 4 + fiveCount * 5) /
     sum
   ).toFixed(2);
-  
-  return average;
+
+  if (isNaN(average)) {
+    return 0;
+  } else {
+    return average;
+  }
 };
