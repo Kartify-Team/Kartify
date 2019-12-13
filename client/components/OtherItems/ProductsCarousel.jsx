@@ -17,11 +17,9 @@ const ProductsCarousel = ({products, styles}) => {
   if (products) {
     return (
       <div className='sliderContainer'>
-        {/* <Slider id='slider' {...settings}> */}
-          {products.map((product, i) => {
-            return <ProductCard key={product.id} product={product} style={styles[i]} />;
-          })}
-        {/* </Slider> */}
+        {products.map((product, i) => {
+          return <ProductCard key={product.id} product={product} style={styles[i]} />;
+        })}
       </div>
     );
   } else {
