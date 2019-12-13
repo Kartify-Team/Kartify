@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -165,7 +165,9 @@ table {
 
 #site-title {
   font-size: 3em;
-  padding: 5px;
+  padding: 15px;
+  font-family: 'Rock Salt', cursive;
+  
 }
 
 #components-container {
@@ -540,9 +542,7 @@ select {
   justify-content: space-between
 }
 
-#submit {
-  margin: 10px 10px 0px;
-}
+
 
 #q-list {
   margin: 10px;
@@ -581,6 +581,9 @@ select {
 #add-question-form > input, 
 #add-question-form > textarea {
   width: 400px;
+}
+#submit {
+  margin: 10px 10px 0px 0px;
 }
 /* 
  _______  _______          _________ _______           _______ 

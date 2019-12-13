@@ -10,7 +10,9 @@ const AddQuestionForm = () => {
         }
     });
     return (
+
         <form id="add-question-form" onSubmit={formik.handleSubmit}>
+            <br />
             <label htmlFor="question">Your Question</label>
             <textarea
                 id="question"
