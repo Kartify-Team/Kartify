@@ -1,7 +1,8 @@
 import changeRelatedProductsStyles from './relatedProductsStyles.js';
 import { getProductStyles, getRelatedProductsIds } from '../../greenfieldAPI';
+import getDefaultStyle from '../../utils/getCoverImage.js';
 
-const getRelatedProducts = id => {
+const getRelatedProductsStyles = id => {
   return dispatch => {
     return getRelatedProductsIds(id)
       .then(({ data }) => {
@@ -12,22 +13,8 @@ const getRelatedProducts = id => {
       })
       .then(results => {
         let products = results.map(product => {
-          console.log(product)
-          let newProduct = {
-            id: product.data.product_id,
-            imageUrl: product.data.results[0].photos[0].thumbnail_url,
-            price: product.data.results[0].original_price,
-            salePrice: product.data.results[0].sale_price
-          };
-          console.log(newProduct)
-          product.data.results.forEach((style) => {
-            if (style['default?'] === 1 && (style.photos[0].thumbnail_url !== null)) {
-              newProduct.imageUrl = style.photos[0].thumbnail_url;
-              newProduct.price = style.original_price;
-              newProduct.salePrice = style.sale_price;
-            }
-          });
-          return newProduct;
+          let defaultStyle = getDefaultStyle(product.data);
+          return defaultStyle;
         });
         dispatch(changeRelatedProductsStyles(products));
       })
@@ -35,4 +22,4 @@ const getRelatedProducts = id => {
   };
 };
 
-export default getRelatedProducts;
+export default getRelatedProductsStyles;

@@ -3,29 +3,33 @@ import ProductsCarousel from './ProductsCarousel.jsx';
 import 'regenerator-runtime';
 
 const OtherItems = ({
-  relatedProducts,
+  relatedProducts = [],
   myOutfit,
   getRelatedProducts,
   getRelatedProductsStyles,
-  relatedProductsStyles,
+  relatedProductsStyles = [],
   getMyOutfit,
   getMyOutfitImages
 }) => {
   useEffect(() => {
     // get ID
-    getRelatedProducts(3); // TODO: CHANGE HARDCODED ID
-    getRelatedProductsStyles(3);
+      getRelatedProducts(3); // TODO: CHANGE HARDCODED ID
+      getRelatedProductsStyles(3);
     // get My Outfit from User
   }, []);
 
-  return (
-    <div id="otherItems">
-      <div className="otherItemsContainer">
-        <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} />
-        {/* <ProductsCarousel products={myOutfit} /> */}
+    console.log('RE RENDER! OTHER ITEMS!!!')
+    return (
+      <div id="otherItems">
+        <div className="otherItemsContainer">
+          <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} />
+          {/* <ProductsCarousel products={myOutfit} /> */}
+        </div>
       </div>
-    </div>
-  );
+    )
+  
+  
+
 };
 
 export default OtherItems;

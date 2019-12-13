@@ -11,7 +11,7 @@ const ProductCard = ({ product, style }) => {
     return (
       <div className='productCard'>
         <div className='productCardImage'>
-          <img className='cardImage' src={style.imageUrl} />
+          <img className='cardImage' src={style.thumbnail} />
           <button className='cardButton' type='button' onClick={() => console.log('action')} src=''>X</button>
         </div>
         <div className='productCardDescription'>
