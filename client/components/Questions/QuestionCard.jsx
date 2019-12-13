@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { removeHTMLTags } from "../../utils"
-const QuestionCard = ({ question }) => {
+import AddAnswer from "./AddAnswer"
+const QuestionCard = ({ question, product }) => {
   let [expanded, setExpanded] = useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
   return <div id="question-container" key={question.question_id}
     onClick={() => expanded ? setExpanded(false) : null}>
     <div id="question">
       <h2>Q: {removeHTMLTags(question.question_body)}</h2>
-      <sub>Helpful? Yes ({question.question_helpfulness}) | Add Answer</sub>
+      <sub>Helpful? Yes ({question.question_helpfulness}) | <span onClick={() => setIsOpen(true)}>Add Answer</span></sub>
+
+      <AddAnswer setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} />
+
     </div>
 
     <div className="answers">

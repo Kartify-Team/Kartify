@@ -1,8 +1,8 @@
 import Modal from 'react-modal';
 import React from 'react';
-import AddQuestionForm from './AddQuestionForm'
+import AddAnswerForm from './AddAnswerForm'
 
-const AddQuestion = ({ setIsOpen, modalIsOpen, product }) => {
+const AddAnswer = ({ setIsOpen, modalIsOpen, question, product }) => {
     var subtitle;
     const customStyles = {
         content: {
@@ -27,15 +27,13 @@ const AddQuestion = ({ setIsOpen, modalIsOpen, product }) => {
             onRequestClose={() => setIsOpen(false)}
             style={customStyles}
             contentLabel="Example Modal">
-            <div className="modal-header">
-                <h2 ref={_subtitle => (subtitle = _subtitle)}>Ask Your Question About the {product.name}</h2>
-                <button onClick={() => setIsOpen(false)}>X</button>
 
-            </div>
+            <div className="modal-header"><h2 ref={_subtitle => (subtitle = _subtitle)}>{product.name}: {question.question_body}</h2>
+                <button onClick={() => setIsOpen(false)}>X</button></div>
 
-            <AddQuestionForm />
+            <AddAnswerForm />
         </Modal >
     )
 }
 
-export default AddQuestion
+export default AddAnswer
