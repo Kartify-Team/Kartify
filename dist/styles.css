@@ -136,6 +136,12 @@ table {
   border-spacing: 0;
 }
 
+a { text-decoration: none; color: black}
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+
 /* 
  _______           _______  _______  _______  ______  
 (  ____ \|\     /|(  ___  )(  ____ )(  ____ \(  __  \ 
@@ -460,6 +466,10 @@ select {
   display: inline-block;
   /* transform: rotate(90deg);
   transform-origin: right top; */
+}
+
+.productCard:hover {
+  background-color: lightgray;
 }
 
 .productCardImage {
