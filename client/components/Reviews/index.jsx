@@ -8,7 +8,7 @@ const Reviews = ({
   setCharacteristics,
   reviews,
   reviewList,
-  id
+  setReviewList
 }) => {
   if (product) {
     useEffect(() => {
@@ -18,6 +18,7 @@ const Reviews = ({
 
   if (
     product === null ||
+    product === undefined ||
     reviews === null ||
     reviews === undefined ||
     reviews.ratings === undefined ||
@@ -31,8 +32,16 @@ const Reviews = ({
       <div className="component">
         <h3>Ratings & Reviews</h3>
         <div id="reviews-container">
-          <RatingBreakdown productId={product.id} reviews={reviews.ratings} />
-          <ReviewList reviews={reviewList} />
+          <RatingBreakdown
+            product={product}
+            reviews={reviews.ratings}
+            characteristics={characteristics}
+          />
+          <ReviewList
+            reviews={reviewList}
+            setReviewList={setReviewList}
+            product={product}
+          />
         </div>
       </div>
     );
