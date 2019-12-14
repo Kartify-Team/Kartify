@@ -1,31 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import StarStats from './StarStats';
-import SizeRating from './SizeRating';
-import ComfortRating from './ComfortRating';
-import { getTotalRatings } from '../../utils';
+import Characteristic from './characteristic';
 
-const RatingBreakdown = ({ productId, reviews, characteristics }) => {
-  let [totalRatings, setTotalRatings] = useState(0);
-  useEffect(() => {
-    if (reviews !== null && reviews !== undefined) {
-      setTotalRatings(getTotalRatings(reviews));
-    }
-  }, []);
-
-  if (
-    reviews === null ||
-    reviews === undefined ||
-    characteristics === null ||
-    characteristics.Size === undefined ||
-    characteristics.Comfort === undefined
-  ) {
+const RatingBreakdown = ({
+  productId,
+  ratings,
+  characteristics,
+  totalRatings
+}) => {
+  // let [totalRatings, setTotalRatings] = useState(0);
+  // useEffect(() => {
+  //   if (reviews !== null && reviews !== undefined) {
+  //     setTotalRatings(getTotalRatings(reviews));
+  //   }
+  // }, []);
+  const ratingsWithoutAvg = { ...ratings };
+  delete ratingsWithoutAvg.average;
+  if (!ratings || !characteristics) {
     return null;
   } else {
     return (
       <div id="review-stats-container">
-        <StarStats rating={reviews === null ? null : reviews.average} />
-        <SizeRating rating={characteristics.Size.value} />
-        <ComfortRating rating={characteristics.Comfort.value} />
+        <StarStats
+          rating={ratings === null ? null : ratings.average}
+          total={totalRatings}
+          ratings={ratingsWithoutAvg}
+        />
+        {Object.keys(characteristics).map(characteristic => (
+          <Characteristic
+            type={characteristic}
+            value={characteristics[characteristic].value}
+            key={characteristic.id}
+          />
+        ))}
       </div>
     );
   }

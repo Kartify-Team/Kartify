@@ -32,5 +32,5 @@ export const getAnswers = questionId => {
 
 export const submitAQuestion = (product, body) => {
   return axios
-    .post(`${greenfieldRoot}/qa/${product.id}`, body)
-}
+    .post(`${greenfieldRoot}/qa/${product.id}`, body);
+};

@@ -3,7 +3,7 @@ const getCoverImage = styleObj => {
     if (defaultStyle === null) {
       for (const style of styles) {
         for (const photo of style.photos) {
-          if (Boolean(photo.url)) {
+          if (photo.url) {
             result.style_id = style.style_id;
             result.url = photo.url;
             result.thumbnail = photo.thumbnail_url;
@@ -39,7 +39,7 @@ const getCoverImage = styleObj => {
     findPhoto();
   } else {
     for (const photo of defaultStyle.photos) {
-      if (Boolean(photo.url)) {
+      if (photo.url) {
         result.style_id = defaultStyle.style_id;
         result.url = photo.url;
         result.thumbnail = photo.thumbnail_url;

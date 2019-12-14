@@ -3,7 +3,8 @@ export const removeHTMLTags = str => {
 };
 
 export const getTotalRatings = ratings => {
-  return Object.values(ratings).reduce((acc, curr) => {
+  const RatingsWithoutAverage = { ...ratings, average: 0 };
+  return Object.values(RatingsWithoutAverage).reduce((acc, curr) => {
     if (curr !== undefined) return acc + curr;
     else return acc;
   });
