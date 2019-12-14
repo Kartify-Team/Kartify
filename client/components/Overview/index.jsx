@@ -9,7 +9,7 @@ const Overview = ({ product, average }) => {
     <div id="overview-container">
       {product !== null && product !== undefined ? (
         <>
-          <ProductImage imageInfo={product.imageInfo} />
+          <ProductImage product={product} />
           <ProductInteraction
             product={product}
             // Test Data **
