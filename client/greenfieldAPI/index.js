@@ -32,11 +32,11 @@ export const getAnswers = questionId => {
 
 export const submitAQuestion = (product, question, body) => {
   return axios
-    .post(`${greenfieldRoot}/qa/${product.id}`, body)
-}
+    .post(`${greenfieldRoot}/qa/${product.id}`, body);
+};
 
 export const submitAnAnswer = (product, question, body) => {
-  console.log(`${greenfieldRoot}/qa/${question.question_id}/answers`, body)
+  console.log(`${greenfieldRoot}/qa/${question.question_id}/answers`, body);
   return axios
-    .post(`${greenfieldRoot}/qa/${question.question_id}/answers`, body)
-}
+    .post(`${greenfieldRoot}/qa/${question.question_id}/answers`, body);
+};

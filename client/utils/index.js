@@ -3,12 +3,11 @@ export const removeHTMLTags = str => {
 };
 
 export const isValidEmail = emailAddress => {
-  return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress))
-}
+  return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress));
+};
 export const getTotalRatings = ratings => {
   return Object.values(ratings).reduce((acc, curr) => {
-    if (curr !== undefined) return acc + curr;
-    else return acc;
+    if (curr !== undefined) { return acc + curr; } else { return acc; }
   });
 };
 

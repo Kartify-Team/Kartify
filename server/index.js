@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const server = express();
-const root = 'http://127.0.0.1'
+const root = 'http://127.0.0.1';
 const port = process.env.PORT;
 
 server.use(express.static(path.join(__dirname, '../dist')));
