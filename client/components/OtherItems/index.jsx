@@ -4,6 +4,7 @@ import 'regenerator-runtime';
 
 const OtherItems = ({
   productInfo,
+  changeProduct,
   relatedProducts = [],
   myOutfit,
   getRelatedProducts,
@@ -30,7 +31,7 @@ const OtherItems = ({
       <div id="otherItems">
         <div className="otherItemsContainer">
           <h3>Related Products</h3>
-          <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} />
+          <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} changeProduct={changeProduct}/>
           <h3>Your Outfit</h3>
           {/* <ProductsCarousel products={myOutfit} /> */}
         </div>
