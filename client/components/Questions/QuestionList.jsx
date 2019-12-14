@@ -6,7 +6,7 @@ import AddQuestion from "./AddQuestion"
 const QuestionList = ({ questions, product, query }) => {
   const [maxQs, setMaxQs] = useState(4);
   const [maxAs, setMaxAs] = useState({});
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (questions.length > 0) {

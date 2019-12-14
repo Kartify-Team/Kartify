@@ -2,7 +2,7 @@ import React from 'react';
 import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
 
-const ProductCard = ({ product, style, rating }) => {
+const ProductCard = ({ product, style, rating, changeProduct }) => {
   if (product === null) {
     return (
       <div className="productCard">
@@ -18,7 +18,7 @@ const ProductCard = ({ product, style, rating }) => {
     );
   } else {
     return (
-      <div className="productCard">
+      <div className="productCard" onClick={() => changeProduct(product.id)} >
         <div className="productCardImage">
           <img
             className="cardImage"
@@ -45,9 +45,8 @@ const ProductCard = ({ product, style, rating }) => {
             {product.name}
           </div>
           <div className="productCardPrice">
-            {/* ${product.default_price} */}
             <Price originalPrice={product.default_price} salePrice={style ? style.salePrice : null} />
-            </div>
+          </div>
           <div className="productCardRating">
             <RatingStars stars={rating === undefined ? 0 : rating} />
           </div>

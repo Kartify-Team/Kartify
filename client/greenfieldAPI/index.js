@@ -1,6 +1,5 @@
 import axios from 'axios';
 // import { getProductRatings } from './reviews.js';
-
 const greenfieldRoot = 'http://3.134.102.30';
 
 export const getProductInfo = id => {
@@ -32,8 +31,6 @@ export const getAnswers = questionId => {
 };
 
 export const submitAQuestion = (product, body) => {
-  console.log(product, body)
   return axios
     .post(`${greenfieldRoot}/qa/${product.id}`, body)
-    .then(() => console.log("success"))
 }

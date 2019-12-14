@@ -30,10 +30,8 @@ const AddQuestion = ({ setIsOpen, modalIsOpen, product }) => {
             <div className="modal-header">
                 <h2 ref={_subtitle => (subtitle = _subtitle)}>Ask Your Question About the {product.name}</h2>
                 <button onClick={() => setIsOpen(false)}>X</button>
-
             </div>
-
-            <AddQuestionFormContainer />
+            <AddQuestionFormContainer setIsOpen={setIsOpen} />
         </Modal >
     )
 }
