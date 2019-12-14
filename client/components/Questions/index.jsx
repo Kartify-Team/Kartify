@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import QuestionListContainer from "../../containers/Questions/QuestionList";
-import Search from "./Search";
+import SearchContainer from "../../containers/Questions/Search";
 
 // import { productData } from "./sampleData";
 
@@ -15,7 +15,7 @@ const Questions = ({ product, addQuestionList }) => {
   return (
     <div className="component" id="q-and-a-container">
       <h3>Questions & Answers</h3>
-      <Search />
+      <SearchContainer />
       <QuestionListContainer />
     </div>
   );

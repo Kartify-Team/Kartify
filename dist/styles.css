@@ -617,7 +617,7 @@ select {
   grid-template-columns: 35% 65%;
   border: black 1px solid;
   margin: 5px auto;
-  width: 90%;
+  /* width: 90%; */
   height: 800px;
 }
 
