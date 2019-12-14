@@ -25,8 +25,9 @@ const ProductsCarousel = ({products, styles, ratings, changeProduct}) => {
     return (
       <div className='sliderContainer'>
         {products.map((product, i) => {
+          console.log(product.id)
           return (
-            <Link key={product.id} to={product.id}>
+            <Link key={product.id} to={`${product.id}`}>
               <ProductCard product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct}/>
             </Link>
           );
