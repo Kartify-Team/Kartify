@@ -19,7 +19,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
   }, [questions])
 
   const handleHelpful = (type, id) => {
-    markAsHelpful(type, id)
+    markAsHelpful(id, type)
       .then(() => addQuestionList(product.id))
   }
   let addMoreQuestions = false;

@@ -1,8 +1,9 @@
 import {connect} from 'react-redux';
 import OtherItems from '../../components/OtherItems/index.jsx';
-import getRelatedProducts from '../../actions/creators/getRelatedProducts.js';
-import getRelatedProductsStyles from '../../actions/creators/getRelatedProductsStyles.js';
-import getRelatedProductsRatings from '../../actions/creators/getRelatedProductsRatings.js';
+import getRelatedProducts from '../../actions/dispatchers/getRelatedProducts.js';
+import getRelatedProductsStyles from '../../actions/dispatchers/getRelatedProductsStyles.js';
+import getRelatedProductsRatings from '../../actions/dispatchers/getRelatedProductsRatings.js';
+import { changeProduct } from '../../actions/creators/changeProduct.js';
 
 const mapStateToProps = (store) => ({
   relatedProducts: store.otherItems.relatedProducts,
@@ -13,6 +14,9 @@ const mapStateToProps = (store) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  changeProduct: (id) => {
+    dispatch(changeProduct(id));
+  },
   getRelatedProducts: (id) => {
     dispatch(getRelatedProducts(id));
   },

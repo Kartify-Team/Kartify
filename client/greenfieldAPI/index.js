@@ -40,6 +40,10 @@ export const submitAQuestion = (body, form, product, question) => {
   }
 };
 
-export const markAsHelpful = (type, id) => {
+export const markAsHelpful = (id, type = "question") => {
   return axios.put(`${greenfieldRoot}/qa/${type}/${id}/helpful`)
+}
+
+export const reportPost = (id, type = "answer") => {
+  return axios.put(`${greenfieldRoot}/qa/${type}/${id}/report`)
 }

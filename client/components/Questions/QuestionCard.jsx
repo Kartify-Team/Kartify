@@ -1,17 +1,29 @@
 import React, { useState } from "react";
 import { removeHTMLTags } from "../../utils"
 import AddQuestion from "./AddQuestion"
+import { reportPost } from "../../greenfieldAPI/"
 const QuestionCard = ({ question, product, handleHelpful }) => {
   let [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  return <div id="question-container" key={question.question_id}
-    onClick={() => expanded ? setExpanded(false) : null}>
+  const [reported, setReported] = useState({});
+
+  useState(() => {
+    const reported = {};
+    question.answers.forEach((answer) => reported[answer.id] = false)
+  }, [question])
+  const handleReport = (id) => {
+    reportPost(id)
+      .then(() => {
+        const reportedCopy = { ...reported };
+        reportedCopy[id] = true;
+        setReported(reportedCopy)
+      })
+  }
+  return <div id="question-container" key={question.question_id}>
     <div id="question">
       <h2>Q: {removeHTMLTags(question.question_body)}</h2>
       <sub><a onClick={() => handleHelpful("question", question.question_id)}>Helpful?</a> Yes ({question.question_helpfulness}) | <a onClick={() => setIsOpen(true)}>Add Answer</a></sub>
-
       <AddQuestion setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} formType="addAnswer" />
-
     </div>
 
     <div className="answers">
@@ -31,16 +43,23 @@ const QuestionCard = ({ question, product, handleHelpful }) => {
                   dateStyle: "long"
                 })}
                 &nbsp; | &nbsp; <a onClick={() => handleHelpful("answer", answer.id)}>Helpful?</a> Yes ({answer.helpfulness})
-                &nbsp; | &nbsp; Report
+                &nbsp; | &nbsp; {reported[answer.id] ? <>Reported</> : <a onClick={() => handleReport(answer.id)}>Report</a>}
               </sub>
             </span>
           );
-        } else if (index === 2) {
-          return <div id="load-more" key={answer.id} onClick={() => setExpanded(true)}>
-            Load More Answers
-          </div>
         }
       })}
+      {expanded ?
+        <div id="load-more" onClick={() => setExpanded(false)}>
+          Collapse Answers
+    </div>
+        : <>{question.answers.length > 2 ?
+          <div id="load-more" onClick={() => setExpanded(true)}>
+            Load More Answers
+        </div>
+          : <></>}</>
+
+      }
     </div>
   </div>
 };

@@ -1,11 +1,15 @@
 import React from 'react';
+import {
+  Link,
+  useRouteMatch
+} from "react-router-dom";
 // import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 // import { Carousel } from 'react-responsive-carousel';
 // import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import Slider from "react-slick";
 import ProductCard from './ProductCard.jsx';
 
-const ProductsCarousel = ({products, styles, ratings}) => {
+const ProductsCarousel = ({products, styles, ratings, changeProduct}) => {
   const settings = {
     dots: false, // ?
     infinite: false,
@@ -18,7 +22,11 @@ const ProductsCarousel = ({products, styles, ratings}) => {
     return (
       <div className='sliderContainer'>
         {products.map((product, i) => {
-          return <ProductCard key={product.id} product={product} style={styles[i]} rating={ratings[i]} />;
+          return (
+            <Link key={product.id} to={`${product.id}`}>
+              <ProductCard product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct}/>
+            </Link>
+          );
         })}
       </div>
     );

@@ -2,15 +2,14 @@ import React from 'react';
 import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
 
-const ProductCard = ({ product, style, rating }) => {
+const ProductCard = ({ product, style, rating, changeProduct }) => {
   if (product === null) {
     return (
       <div className="productCard">
         <button
           className="cardButton"
           type="button"
-          onClick={() => console.log('action')}
-          src=""
+          src="" // TODO: ADD ICON TO BUTTON
         >
           X
         </button>
@@ -18,7 +17,17 @@ const ProductCard = ({ product, style, rating }) => {
     );
   } else {
     return (
-      <div className="productCard">
+      <div className="productCard" 
+        onClick={
+          (e) => {
+            if (e.target.className === 'cardButton') {
+              e.preventDefault();
+            } else {
+              changeProduct(product.id); 
+            }
+          }
+        }
+      >
         <div className="productCardImage">
           <img
             className="cardImage"
@@ -31,10 +40,10 @@ const ProductCard = ({ product, style, rating }) => {
           <button
             className="cardButton"
             type="button"
-            onClick={() => console.log('action')}
+            onClick={() => console.log('clicked')} //TODO: OPEN MODAL
             src=""
           >
-            X
+            ★
           </button>
         </div>
         <div className="productCardDescription">
@@ -45,9 +54,8 @@ const ProductCard = ({ product, style, rating }) => {
             {product.name}
           </div>
           <div className="productCardPrice">
-            {/* ${product.default_price} */}
             <Price originalPrice={product.default_price} salePrice={style ? style.salePrice : null} />
-            </div>
+          </div>
           <div className="productCardRating">
             <RatingStars stars={rating === undefined ? 0 : rating} />
           </div>

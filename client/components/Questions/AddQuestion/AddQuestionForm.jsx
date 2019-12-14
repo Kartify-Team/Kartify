@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useFormik } from "formik";
-import { submitAQuestion, submitAnAnswer } from "../../../greenfieldAPI/"
+import { submitAQuestion } from "../../../greenfieldAPI/"
 import { isValidEmail } from "../../../utils/"
 
 const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
