@@ -222,6 +222,11 @@ a{
   text-decoration: underline;
 }
 
+b {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
 .action-button {
   border: black 1px solid;
   display: inline-block;
@@ -257,7 +262,8 @@ input[type='text'],
 input[type='number'],
 textarea,
 select {
-  border: black 1px solid;
+  border: var(--color) 1px solid;
+  padding: 0.5em;
 }
 
 .modal-header {
@@ -545,9 +551,7 @@ select {
   width: 80%;
 }
 #q-and-a-search {
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
-  padding: 0px;
   height: 2em;
 }
 #question-list-container {

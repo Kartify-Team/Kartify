@@ -9,7 +9,7 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
     const [errorsOn, setErrorsOn] = useState(false)
     const display = {
         addQuestion: "Your Question",
-        addAnswer: "Your Answer"
+        addAnswer: "Submit your answer"
     }
     const formik = useFormik({
         initialValues: { question: "", nickname: "", email: "" },
@@ -50,6 +50,7 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
                 name="body"
                 onChange={formik.handleChange}
                 value={formik.values.body}
+                placeholder="Enter up to 1000 characters."
             />
             {errorsOn && formik.errors.body ? <div className="form-error">{formik.errors.body}</div> : <div></div>}
             <label htmlFor="nickname">What is your nickname?</label>
@@ -59,6 +60,7 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
                 type="text"
                 onChange={formik.handleChange}
                 value={formik.values.nickname}
+                placeholder="Example: jack543!"
             />
             {errorsOn && formik.errors.nickname ? <div className="form-error">{formik.errors.nickname}</div> : <div></div>}
             <sub>For privacy reasons, do not use your full name or email address</sub>
@@ -69,6 +71,7 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
                 type="email"
                 onChange={formik.handleChange}
                 value={formik.values.email}
+                placeholder="Example: jack@gmail.com"
             />
             {errorsOn && formik.errors.email ? <div className="form-error">{formik.errors.email}</div> : <div></div>}
 

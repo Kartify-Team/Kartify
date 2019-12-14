@@ -50,7 +50,7 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
                   <p id="more">{removeHTMLTags(answer.body)}</p>
                 )}
               <sub id="answerer">
-                by {answer.answerer_name},{" "}
+                by {answer.answerer_name === "Seller" ? <b>{answer.answerer_name}</b> : <>{answer.answerer_name}</>},{" "}
                 {new Date(answer.date).toLocaleDateString("en-US", {
                   dateStyle: "long"
                 })}
