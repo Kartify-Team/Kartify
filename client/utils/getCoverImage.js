@@ -1,5 +1,4 @@
-const getCoverImage = (styleObj) => {
- 
+const getCoverImage = styleObj => {
   const findPhoto = (defaultStyleId = 0) => {
     if (defaultStyle === null) {
       for (const style of styles) {
@@ -29,9 +28,7 @@ const getCoverImage = (styleObj) => {
     salePrice: styles[0].sale_price
   };
 
-
   for (const style of styles) {
-    console.log(style)
     if (style['default?'] === 1) {
       defaultStyle = style;
       break;
@@ -53,7 +50,6 @@ const getCoverImage = (styleObj) => {
     }
     findPhoto(defaultStyle.style_id);
   }
-  console.log(result)
   return result;
 };
 

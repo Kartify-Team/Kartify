@@ -1,9 +1,8 @@
 import React from 'react';
-// import Stars from 'future stars component';
-// import Price from 'future price component';
 import StyleSelector from './StyleSelector';
 import Cart from './Cart';
 import Stars from '../Reviews/Stars';
+import Price from '../Price';
 
 const ProductInteraction = ({ product, styles, average }) => (
   <div id="product-interaction-container">
@@ -16,7 +15,12 @@ const ProductInteraction = ({ product, styles, average }) => (
       </span>
       <h3>{product.category}</h3>
       <h1>{product.name}</h1>
-      <p>Price Component</p>
+      {!product.imageInfo ? null : (
+        <Price
+          originalPrice={product.imageInfo.originalPrice}
+          salePrice={product.imageInfo.salePrice}
+        />
+      )}
     </div>
     <StyleSelector styles={styles} />
     <Cart />
