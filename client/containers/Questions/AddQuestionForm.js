@@ -1,18 +1,15 @@
 import { connect } from 'react-redux';
-import Questions from '../../components/Questions';
+import AddQuestionForm from '../../components/Questions/AddQuestion/AddQuestionForm';
 import { addQuestionList } from '../../actions/creators/addQuestionList';
-
 const mapStateToProps = store => ({
   product: store.product,
-  questions: store.questions.list
 });
 
 const mapDispatchToProps = dispatch => ({
   addQuestionList: productId => dispatch(addQuestionList(productId))
 });
-
-const QuestionsContainer = connect(
+const AddQuestionFormContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Questions);
-export default QuestionsContainer;
+)(AddQuestionForm);
+export default AddQuestionFormContainer;

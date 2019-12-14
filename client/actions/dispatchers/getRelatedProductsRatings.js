@@ -1,4 +1,4 @@
-import changeRelatedProductsRating from './relatedProductsRatings.js';
+import changeRelatedProductsRating from '../creators/relatedProductsRatings.js';
 import { getProductReviews, getRelatedProductsIds } from '../../greenfieldAPI';
 import { getAverageRating } from '../../utils/index.js';
 

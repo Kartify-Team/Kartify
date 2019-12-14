@@ -6,7 +6,7 @@ import AddQuestion from "./AddQuestion"
 const QuestionList = ({ questions, product, query }) => {
   const [maxQs, setMaxQs] = useState(4);
   const [maxAs, setMaxAs] = useState({});
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (questions.length > 0) {
@@ -24,12 +24,15 @@ const QuestionList = ({ questions, product, query }) => {
     return (
       <div id="question-list-container">
         {questions.map((question) => {
-          if (count < maxQs &&
-            Object.keys(question.answers).length > 0) {
-            count++;
-            return (
-              <QuestionCard question={question} product={product} key={question.question_id} />
-            );
+          if (count < maxQs
+            // && Object.keys(question.answers).length > 0
+          ) {
+            if (query === "" || question.question_body.toUpperCase().indexOf(query.toUpperCase()) !== -1) {
+              count++;
+              return (
+                <QuestionCard question={question} product={product} key={question.question_id} />
+              );
+            }
           }
           if (count === maxQs) {
             count++;
