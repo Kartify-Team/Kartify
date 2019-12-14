@@ -26,17 +26,20 @@ export const getQuestions = productId => {
     .catch(err => console.log(err));
 };
 
-export const getAnswers = questionId => {
-  return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);
+// export const getAnswers = questionId => {
+//   return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);
+// };
+
+export const submitAQuestion = (body, form, product, question) => {
+  if (form === "addQuestion") {
+    return axios
+      .post(`${greenfieldRoot}/qa/${product.id}`, body);
+  } else {
+    return axios
+      .post(`${greenfieldRoot}/qa/${question.question_id}/answers`, body);
+  }
 };
 
-export const submitAQuestion = (product, question, body) => {
-  return axios
-    .post(`${greenfieldRoot}/qa/${product.id}`, body);
-};
-
-export const submitAnAnswer = (product, question, body) => {
-  console.log(`${greenfieldRoot}/qa/${question.question_id}/answers`, body);
-  return axios
-    .post(`${greenfieldRoot}/qa/${question.question_id}/answers`, body);
-};
+export const markAsHelpful = (type, id) => {
+  return axios.put(`${greenfieldRoot}/qa/${type}/${id}/helpful`)
+}

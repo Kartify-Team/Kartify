@@ -212,6 +212,10 @@ sub {
   color: var(--color);
 }
 
+a{
+  text-decoration: underline;
+}
+
 .action-button {
   border: black 1px solid;
   display: inline-block;

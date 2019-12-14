@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { removeHTMLTags } from "../../utils"
+
 import QuestionCard from "./QuestionCard";
 import AddQuestion from "./AddQuestion"
+import { markAsHelpful } from "../../greenfieldAPI/"
 
-const QuestionList = ({ questions, product, query }) => {
+const QuestionList = ({ questions, product, query, addQuestionList }) => {
   const [maxQs, setMaxQs] = useState(4);
   const [maxAs, setMaxAs] = useState({});
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -15,9 +16,12 @@ const QuestionList = ({ questions, product, query }) => {
       setMaxAs(maxTemp)
       setLoading(false)
     }
-
   }, [questions])
 
+  const handleHelpful = (type, id) => {
+    markAsHelpful(type, id)
+      .then(() => addQuestionList(product.id))
+  }
   let addMoreQuestions = false;
   if (!loading) {
     let count = 0;
@@ -29,9 +33,8 @@ const QuestionList = ({ questions, product, query }) => {
           ) {
             if (query === "" || question.question_body.toUpperCase().indexOf(query.toUpperCase()) !== -1) {
               count++;
-              return (
-                <QuestionCard question={question} product={product} key={question.question_id} />
-              );
+              return (<QuestionCard question={question}
+                product={product} key={question.question_id} handleHelpful={handleHelpful} />);
             }
           }
           if (count === maxQs) {

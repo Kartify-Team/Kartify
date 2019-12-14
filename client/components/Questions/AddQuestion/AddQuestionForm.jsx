@@ -7,24 +7,16 @@ import { isValidEmail } from "../../../utils/"
 const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
 
     const [errorsOn, setErrorsOn] = useState(false)
-    const formTypeOptions = {
-        addQuestion: {
-            display: "Your Question",
-            submit: submitAQuestion
-        },
-        addAnswer: {
-            display: "Your Answer",
-            submit: submitAnAnswer
-        }
+    const display = {
+        addQuestion: "Your Question",
+        addAnswer: "Your Answer"
     }
     const formik = useFormik({
         initialValues: { question: "", nickname: "", email: "" },
         onSubmit: ({ body, nickname, email }) => {
-            return formTypeOptions[formType].submit(product, question, {
-                body,
-                name: nickname,
-                email
-            }).then(() => addQuestionList(product.id))
+            return submitAQuestion({ body, name: nickname, email },
+                formType, product, question)
+                .then(() => addQuestionList(product.id))
                 .then(() => setIsOpen(false))
                 .catch((err) => console.log(err))
 
@@ -52,7 +44,7 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
     return (
         <form id="add-question-form" onSubmit={formik.handleSubmit} >
             <br />
-            <label htmlFor="body">{formTypeOptions[formType].display}</label>
+            <label htmlFor="body">{display[formType]}</label>
             <textarea
                 id="body"
                 name="body"
