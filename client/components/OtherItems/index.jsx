@@ -6,14 +6,13 @@ const OtherItems = ({
   productInfo,
   changeProduct,
   relatedProducts = [],
-  myOutfit,
-  getRelatedProducts,
-  getRelatedProductsStyles,
   relatedProductsStyles = [],
   relatedProductsRatings = [],
+  myOutfit = [],
+  getRelatedProducts,
+  getRelatedProductsStyles,
   getRelatedProductsRatings,
   getMyOutfit,
-  getMyOutfitImages
 }) => {
   useEffect(() => {
     if (productInfo) {
