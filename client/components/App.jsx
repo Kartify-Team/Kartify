@@ -5,18 +5,11 @@ import OtherItemsContainer from '../containers/OtherItems';
 import ReviewsContainer from '../containers/Reviews';
 import QuestionsContainer from '../containers/Questions';
 
-const App = ({
-  changeProduct,
-  setRatings,
-  setProductImageInfo,
-  setReviewList,
-  setProductStyles
-}) => {
+const App = ({ changeProduct, setRatings, setReviewList }) => {
   const id = useParams().id;
+
   useEffect(() => {
     changeProduct(id);
-    setProductImageInfo(id);
-    setProductStyles(id);
     setRatings(id);
     setReviewList(id);
   }, []);

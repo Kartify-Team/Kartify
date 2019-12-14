@@ -253,7 +253,7 @@ select {
 }
 
 .form-error {
-  color: red
+  color: red;
 }
 
 /* 
@@ -305,6 +305,7 @@ select {
   border: black 1px solid;
   height: 33%;
   width: 100%;
+  overflow: scroll;
 }
 
 #overview-info {
@@ -357,10 +358,17 @@ select {
   margin-top: 10px;
 }
 
-.style-image {
-  width: 48px;
-  height: 48px;
+#style-selector-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 5px;
+}
+
+.style-image {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  margin: 3px;
   border-radius: 50%;
   border: 2px solid black;
 }
@@ -690,9 +698,6 @@ select {
   width: 100%;
   float: left;
 }
-
-
-
 
 /* PRICE COMPONENT*/
 
