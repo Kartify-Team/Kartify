@@ -26,10 +26,12 @@ const QuestionList = ({ questions, product, query }) => {
         {questions.map((question) => {
           if (count < maxQs &&
             Object.keys(question.answers).length > 0) {
-            count++;
-            return (
-              <QuestionCard question={question} product={product} key={question.question_id} />
-            );
+            if (query === "" || question.question_body.toUpperCase().indexOf(query.toUpperCase()) !== -1) {
+              count++;
+              return (
+                <QuestionCard question={question} product={product} key={question.question_id} />
+              );
+            }
           }
           if (count === maxQs) {
             count++;
