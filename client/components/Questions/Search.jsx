@@ -5,6 +5,7 @@ const Search = ({ handleSearch }) => {
   const [query, setQuery] = useState("")
   useEffect(() => {
     if (text.length > 2 || query != "") {
+      setQuery(text)
       handleSearch(text);
     }
   }, [text])
