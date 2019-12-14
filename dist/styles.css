@@ -693,7 +693,7 @@ select {
 /* PRICE COMPONENT*/
 
 .regularPriceDiscount {
-  color: lightgray;
+  color: gray;
   text-decoration: line-through;
 }
 
