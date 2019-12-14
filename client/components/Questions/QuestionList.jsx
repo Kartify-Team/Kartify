@@ -34,7 +34,9 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
             if (query === "" || question.question_body.toUpperCase().indexOf(query.toUpperCase()) !== -1) {
               count++;
               return (<QuestionCard question={question}
-                product={product} key={question.question_id} handleHelpful={handleHelpful} />);
+                product={product} key={question.question_id}
+                query={query}
+                handleHelpful={handleHelpful} />);
             }
           }
           if (count === maxQs) {

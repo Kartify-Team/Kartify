@@ -229,6 +229,10 @@ a{
   padding: 15px;
   /* margin: 5px 15px; */
 }
+
+.highlighted {
+  background-color: #FFFF00
+}
 /*
  _______  _______  _______  _______  _______ 
 (  ____ \(  ___  )(  ____ )(       )(  ____ \
