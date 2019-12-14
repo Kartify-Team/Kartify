@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Reviews from '../../components/Reviews';
 import { setCharacteristics } from '../../actions/creators/setCharacteristics';
+import { setReviewList } from '../../actions/creators/setReviewList';
 
 const mapStateToProps = store => ({
   product: store.product,
@@ -11,7 +12,9 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setCharacteristics: productId => dispatch(setCharacteristics(productId))
+  setCharacteristics: productId => dispatch(setCharacteristics(productId)),
+  setReviewList: (productId, page, count) =>
+    dispatch(setReviewList(productId, page, count))
 });
 
 const ReviewsContainer = connect(mapStateToProps, mapDispatchToProps)(Reviews);
