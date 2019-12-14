@@ -1,7 +1,8 @@
-import changeRelatedProducts from './relatedProducts.js';
-import { getProductInfo, getRelatedProductsIds } from '../../greenfieldAPI';
+import changeRelatedProductsStyles from '../creators/relatedProductsStyles.js';
+import { getProductStyles, getRelatedProductsIds } from '../../greenfieldAPI';
+import getDefaultStyle from '../../utils/getCoverImage.js';
 
-const getRelatedProducts = id => {
+const getRelatedProductsStyles = id => {
   return dispatch => {
     return getRelatedProductsIds(id)
       .then(({ data }) => {
@@ -10,19 +11,20 @@ const getRelatedProducts = id => {
         data.forEach((currentId) => {
           if (uniqueProducts[currentId] === undefined && id !== currentId) {
             uniqueProducts[currentId] = currentId;
-            productPromises.push(getProductInfo(currentId));
+            productPromises.push(getProductStyles(currentId));
           }
         });
         return Promise.all(productPromises);
       })
       .then(results => {
         let products = results.map(product => {
-          return product.data;
+          let defaultStyle = getDefaultStyle(product.data);
+          return defaultStyle;
         });
-        dispatch(changeRelatedProducts(products));
+        dispatch(changeRelatedProductsStyles(products));
       })
       .catch(error => console.error(error));
   };
 };
 
-export default getRelatedProducts;
+export default getRelatedProductsStyles;

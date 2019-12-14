@@ -1,8 +1,5 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
   useRouteMatch
 } from "react-router-dom";
@@ -26,7 +23,7 @@ const ProductsCarousel = ({products, styles, ratings, changeProduct}) => {
       <div className='sliderContainer'>
         {products.map((product, i) => {
           return (
-            <Link key={product.id} to={product.id}>
+            <Link key={product.id} to={`${product.id}`}>
               <ProductCard product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct}/>
             </Link>
           );
