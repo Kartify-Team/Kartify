@@ -616,8 +616,8 @@ select {
   text-align: center;
   display: grid;
   grid-template-columns: 35% 65%;
-  margin: 0 auto;
 
+  margin: 0 auto;
   height: 800px;
 }
 

@@ -3,7 +3,7 @@ import { removeHTMLTags } from "../../utils"
 import QuestionCard from "./QuestionCard";
 import AddQuestion from "./AddQuestion"
 
-const QuestionList = ({ questions, product }) => {
+const QuestionList = ({ questions, product, query }) => {
   const [maxQs, setMaxQs] = useState(4);
   const [maxAs, setMaxAs] = useState({});
   const [modalIsOpen, setIsOpen] = React.useState(false);

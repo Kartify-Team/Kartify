@@ -4,7 +4,8 @@ import QuestionList from '../../components/Questions/QuestionList';
 
 const mapStateToProps = (store) => ({
   product: store.product,
-  questions: store.questions
+  questions: store.questions.list,
+  query: store.questions.searchQuery
 });
 
 //mapDispatchToProps
