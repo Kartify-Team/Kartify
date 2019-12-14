@@ -24,7 +24,7 @@ const OtherItems = ({
   }, [productInfo]);
 
   if (productInfo === null) {
-    return <div></div>;
+    return <div id="otherItems"></div>;
   } else {
     return (
       <div id="otherItems">
