@@ -32,7 +32,6 @@ const OtherItems = ({
           <h3>Related Products</h3>
           <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} changeProduct={changeProduct}/>
           <h3>Your Outfit</h3>
-          {/* <ProductsCarousel products={myOutfit} /> */}
         </div>
       </div>
     );

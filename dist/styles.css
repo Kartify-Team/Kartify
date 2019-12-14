@@ -424,7 +424,7 @@ select {
   margin: 0 auto;
   display: grid;
   width: 80%;
-  height: 450px;
+  height: 410px;
 
   overflow-x: scroll;
   overflow-y: hidden;
@@ -455,17 +455,13 @@ select {
 
 .productCard {
   height: 350px;
-  width: 190px;
+  width: 220px;
   margin: 15px;
   padding: 0;
   border: black;
   border-style: solid;
   border-width: thin;
-  /* float: left; */
-
   display: inline-block;
-  /* transform: rotate(90deg);
-  transform-origin: right top; */
 }
 
 .productCard:hover {
@@ -483,11 +479,14 @@ select {
 }
 
 .cardButton {
+  height: 7%;
+  width: 7%;
   position: absolute;
   top: 5%;
   right: 7%;
   z-index: 100;
-  background-color: darkgray;
+  background: transparent;
+  color: goldenrod
 }
 
 .cardImage {
