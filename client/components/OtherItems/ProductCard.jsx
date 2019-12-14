@@ -45,9 +45,8 @@ const ProductCard = ({ product, style, rating }) => {
             {product.name}
           </div>
           <div className="productCardPrice">
-            {/* ${product.default_price} */}
             <Price originalPrice={product.default_price} salePrice={style ? style.salePrice : null} />
-            </div>
+          </div>
           <div className="productCardRating">
             <RatingStars stars={rating === undefined ? 0 : rating} />
           </div>
