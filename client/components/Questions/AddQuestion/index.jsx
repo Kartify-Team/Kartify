@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import React from 'react';
-import AddQuestionForm from './AddQuestionForm'
+import AddQuestionFormContainer from '../../../containers/Questions/AddQuestionForm'
 
 const AddQuestion = ({ setIsOpen, modalIsOpen, product }) => {
     var subtitle;
@@ -33,7 +33,7 @@ const AddQuestion = ({ setIsOpen, modalIsOpen, product }) => {
 
             </div>
 
-            <AddQuestionForm />
+            <AddQuestionFormContainer />
         </Modal >
     )
 }

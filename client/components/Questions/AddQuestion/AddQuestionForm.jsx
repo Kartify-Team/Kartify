@@ -1,16 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useFormik } from "formik";
+import { submitAQuestion } from "../../../greenfieldAPI/"
 
-const AddQuestionForm = () => {
+const AddQuestionForm = ({ product }) => {
     const formik = useFormik({
         initialValues: { question: "", nickname: "", email: "" },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+        onSubmit: ({ question, nickname, email }) => {
+            return submitAQuestion(product, {
+                body: question,
+                name: nickname,
+                email
+            })
         }
     });
     return (
-
         <form id="add-question-form" onSubmit={formik.handleSubmit}>
             <br />
             <label htmlFor="question">Your Question</label>

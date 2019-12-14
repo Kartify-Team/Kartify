@@ -30,3 +30,10 @@ export const getQuestions = productId => {
 export const getAnswers = questionId => {
   return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);
 };
+
+export const submitAQuestion = (product, body) => {
+  console.log(product, body)
+  return axios
+    .post(`${greenfieldRoot}/qa/${product.id}`, body)
+    .then(() => console.log("success"))
+}
