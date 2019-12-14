@@ -30,7 +30,13 @@ export const getAnswers = questionId => {
   return axios.get(`${greenfieldRoot}/qa/${questionId}/answers`);
 };
 
-export const submitAQuestion = (product, body) => {
+export const submitAQuestion = (product, question, body) => {
   return axios
     .post(`${greenfieldRoot}/qa/${product.id}`, body)
+}
+
+export const submitAnAnswer = (product, question, body) => {
+  console.log(`${greenfieldRoot}/qa/${question.question_id}/answers`, body)
+  return axios
+    .post(`${greenfieldRoot}/qa/${question.question_id}/answers`, body)
 }

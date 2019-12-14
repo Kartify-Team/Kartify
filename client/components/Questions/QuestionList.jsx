@@ -47,7 +47,7 @@ const QuestionList = ({ questions, product, query }) => {
           onClick={() => setIsOpen(true)}>
           Add a Question
           </button>
-        <AddQuestion setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} />
+        <AddQuestion setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} formType="addQuestion" />
 
       </div>
     );

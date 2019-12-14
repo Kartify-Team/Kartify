@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { removeHTMLTags } from "../../utils"
-import AddAnswer from "./AddAnswer"
+import AddQuestion from "./AddQuestion"
 const QuestionCard = ({ question, product }) => {
   let [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -10,7 +10,7 @@ const QuestionCard = ({ question, product }) => {
       <h2>Q: {removeHTMLTags(question.question_body)}</h2>
       <sub>Helpful? Yes ({question.question_helpfulness}) | <span onClick={() => setIsOpen(true)}>Add Answer</span></sub>
 
-      <AddAnswer setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} />
+      <AddQuestion setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} formType="addAnswer" />
 
     </div>
 
