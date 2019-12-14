@@ -686,3 +686,46 @@ select {
   width: 100%;
   float: left;
 }
+
+.star-bar-container {
+  position: relative;
+  height: 15px;
+  width: 50%;
+  margin: 0px 3px 0px 0px;
+}
+
+.star-bar-static {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 10px;
+  display: inline-block;
+  background-color: #ededed;
+}
+
+.star-bar-dynamic {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+  float: left;
+  height: 10px;
+  background-color: black;
+  display: inline-block;
+}
+
+.stars-breakdown {
+  margin: 0 auto;
+  margin-top: 6%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  flex-direction: column;
+}
+
+.star-bar-label {
+  margin-right: 3%;
+  font-size: 1.5em;
+  text-decoration: underline;
+  cursor: pointer;
+}
