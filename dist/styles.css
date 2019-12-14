@@ -496,7 +496,7 @@ select {
 
 .productCardPrice {
   position: absolute;
-  top: 60px;
+  top: 45px;
   left: 5%;
 }
 .productCardRating {
@@ -685,4 +685,20 @@ select {
   color: black;
   width: 100%;
   float: left;
+}
+
+
+
+
+/* PRICE COMPONENT*/
+
+.regularPriceDiscount {
+  color: lightgray;
+  text-decoration: line-through;
+}
+
+.priceDiscount {
+  color: red;
+  font-weight: 500;
+  margin-right: 5px;
 }
