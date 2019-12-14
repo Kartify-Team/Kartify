@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ReviewList from './ReviewList';
 import RatingBreakdown from './RatingBreakdown';
+import { useParams } from 'react-router-dom';
 
 const Reviews = ({
   product,
@@ -8,12 +9,16 @@ const Reviews = ({
   setCharacteristics,
   reviews,
   reviewList,
-  setReviewList
+  setReviewList,
+  totalRatings,
+  setTotalRatings
 }) => {
-  if (product) {
+  if (product && reviews && reviews.ratings) {
+    const id = useParams().id;
     useEffect(() => {
-      setCharacteristics(product.id);
-    }, [product]);
+      setCharacteristics(id);
+      setTotalRatings(reviews.ratings);
+    }, []);
   }
 
   if (
@@ -34,8 +39,9 @@ const Reviews = ({
         <div id="reviews-container">
           <RatingBreakdown
             product={product}
-            reviews={reviews.ratings}
+            ratings={reviews.ratings}
             characteristics={characteristics}
+            totalRatings={totalRatings}
           />
           <ReviewList
             reviews={reviewList}
