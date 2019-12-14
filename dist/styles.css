@@ -136,11 +136,23 @@ table {
   border-spacing: 0;
 }
 
-a { text-decoration: none; color: black}
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:focus { text-decoration: none; }
-a:hover, a:active { text-decoration: none; }
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+}
 
 /* 
  _______           _______  _______  _______  ______  
@@ -273,7 +285,7 @@ select {
 }
 
 .form-error {
-  color: red
+  color: red;
 }
 
 /* 
@@ -500,7 +512,7 @@ select {
   right: 7%;
   z-index: 100;
   background: transparent;
-  color: goldenrod
+  color: goldenrod;
 }
 
 .cardImage {
@@ -712,8 +724,48 @@ select {
   float: left;
 }
 
+.star-bar-container {
+  position: relative;
+  height: 15px;
+  width: 50%;
+  margin: 0px 3px 0px 0px;
+}
 
+.star-bar-static {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 10px;
+  display: inline-block;
+  background-color: #ededed;
+}
 
+.star-bar-dynamic {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+  float: left;
+  height: 10px;
+  background-color: black;
+  display: inline-block;
+}
+
+.stars-breakdown {
+  margin: 0 auto;
+  margin-top: 6%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  flex-direction: column;
+}
+
+.star-bar-label {
+  margin-right: 3%;
+  font-size: 1.5em;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 /* PRICE COMPONENT*/
 
