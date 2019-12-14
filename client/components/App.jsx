@@ -9,14 +9,16 @@ const App = ({
   changeProduct,
   setRatings,
   setProductImageInfo,
-  setReviewList
+  setReviewList,
+  setProductStyles
 }) => {
   const id = useParams().id;
   useEffect(() => {
     changeProduct(id);
+    setProductImageInfo(id);
+    setProductStyles(id);
     setRatings(id);
     setReviewList(id);
-    setProductImageInfo(id);
   }, []);
 
   return (
