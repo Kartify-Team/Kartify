@@ -167,7 +167,6 @@ table {
   font-size: 3em;
   padding: 15px;
   font-family: 'Rock Salt', cursive;
-  
 }
 
 #components-container {
@@ -239,9 +238,9 @@ label {
   font-weight: bold;
   display: flex;
 }
-input[type="email"],
-input[type="text"],
-input[type="number"],
+input[type='email'],
+input[type='text'],
+input[type='number'],
 textarea,
 select {
   border: black 1px solid;
@@ -250,7 +249,7 @@ select {
 .modal-header {
   display: flex;
   flex: 1 1;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 /* 
@@ -446,7 +445,7 @@ select {
 
 .productCard {
   height: 350px;
-  width: 250px;
+  width: 190px;
   margin: 15px;
   padding: 0;
   border: black;
@@ -545,7 +544,7 @@ select {
 #question {
   display: flex;
   flex: 1 1;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 #q-list {
@@ -561,10 +560,10 @@ select {
 .answers > span > #first {
   margin: 1em 0px;
 }
-.answers >span > #more {
+.answers > span > #more {
   margin: 2em 0px 0.7em 15px;
 }
-.answers >span > #answerer {
+.answers > span > #answerer {
   margin-left: 15px;
 }
 
@@ -579,10 +578,10 @@ select {
 
 .submit-question {
   width: 300px;
-  height: 50px
+  height: 50px;
 }
 
-#add-question-form > input, 
+#add-question-form > input,
 #add-question-form > textarea {
   width: 400px;
 }
@@ -601,9 +600,6 @@ select {
                                                                
  */
 
-#reviews-container,
-#review-list-container,
-#review-stats-container,
 #size-rating-container,
 #comfort-rating-container,
 #star-stats-container {
@@ -611,13 +607,17 @@ select {
   margin: 10px 5px 5px 10px;
 }
 
+#review-list-container,
+#review-stats-container {
+  margin: 10px 5px 5px 10px;
+}
+
 #reviews-container {
   text-align: center;
   display: grid;
   grid-template-columns: 35% 65%;
-  border: black 1px solid;
-  margin: 5px auto;
-  /* width: 90%; */
+
+  margin: 0 auto;
   height: 800px;
 }
 
