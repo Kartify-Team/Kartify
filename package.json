@@ -39,7 +39,6 @@
     "pure-react-carousel": "^1.24.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-dropzone": "^10.2.1",
     "react-modal": "^3.11.1",
     "react-progress-button": "^5.1.0",
     "react-redux": "^7.1.3",
