@@ -30,7 +30,7 @@ const ProductInteraction = ({
         )}
       </div>
       <StyleSelector styles={product.styles} changeStyle={changeStyle} />
-      {!product.styles ? null : <Cart currentStyle={currentStyle} />}
+      {!currentStyle ? null : <Cart inventory={currentStyle.skus} />}
     </div>
   );
 };

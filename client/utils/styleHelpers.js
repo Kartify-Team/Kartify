@@ -14,3 +14,22 @@ export const getDefaultStyle = stylesObj => {
     return null;
   }
 };
+
+export const checkInventory = skus => {
+  for (const size in skus) {
+    if (skus[size] > 0) {
+      return true;
+    }
+  }
+  return false;
+};
+
+export const getInventory = skus => {
+  const availableSizes = [];
+  for (const size in skus) {
+    if (skus[size] > 0) {
+      availableSizes.push([size, skus[size]]);
+    }
+  }
+  return availableSizes;
+};
