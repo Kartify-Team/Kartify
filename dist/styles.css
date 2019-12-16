@@ -136,6 +136,24 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
 /* 
  _______           _______  _______  _______  ______  
 (  ____ \|\     /|(  ___  )(  ____ )(  ____ \(  __  \ 
@@ -212,12 +230,25 @@ sub {
   color: var(--color);
 }
 
+a {
+  text-decoration: underline;
+}
+
+b {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
 .action-button {
   border: black 1px solid;
   display: inline-block;
   width: auto;
   padding: 15px;
   /* margin: 5px 15px; */
+}
+
+.highlighted {
+  background-color: #ffff00;
 }
 /*
  _______  _______  _______  _______  _______ 
@@ -243,7 +274,8 @@ input[type='text'],
 input[type='number'],
 textarea,
 select {
-  border: black 1px solid;
+  border: var(--color) 1px solid;
+  padding: 0.5em;
 }
 
 .modal-header {
@@ -426,7 +458,7 @@ select {
   margin: 0 auto;
   display: grid;
   width: 80%;
-  height: 450px;
+  height: 410px;
 
   overflow-x: scroll;
   overflow-y: hidden;
@@ -457,17 +489,17 @@ select {
 
 .productCard {
   height: 350px;
-  width: 190px;
+  width: 220px;
   margin: 15px;
   padding: 0;
   border: black;
   border-style: solid;
   border-width: thin;
-  /* float: left; */
-
   display: inline-block;
-  /* transform: rotate(90deg);
-  transform-origin: right top; */
+}
+
+.productCard:hover {
+  background-color: lightgray;
 }
 
 .productCardImage {
@@ -481,11 +513,14 @@ select {
 }
 
 .cardButton {
+  height: 7%;
+  width: 7%;
   position: absolute;
   top: 5%;
   right: 7%;
   z-index: 100;
-  background-color: darkgray;
+  background: transparent;
+  color: goldenrod;
 }
 
 .cardImage {
@@ -536,9 +571,7 @@ select {
   width: 80%;
 }
 #q-and-a-search {
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
-  padding: 0px;
   height: 2em;
 }
 #question-list-container {
@@ -697,6 +730,49 @@ select {
   color: black;
   width: 100%;
   float: left;
+}
+
+.star-bar-container {
+  position: relative;
+  height: 15px;
+  width: 50%;
+  margin: 0px 3px 0px 0px;
+}
+
+.star-bar-static {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 10px;
+  display: inline-block;
+  background-color: #ededed;
+}
+
+.star-bar-dynamic {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+  float: left;
+  height: 10px;
+  background-color: black;
+  display: inline-block;
+}
+
+.stars-breakdown {
+  margin: 0 auto;
+  margin-top: 6%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  flex-direction: column;
+}
+
+.star-bar-label {
+  margin-right: 3%;
+  font-size: 1.5em;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* PRICE COMPONENT*/

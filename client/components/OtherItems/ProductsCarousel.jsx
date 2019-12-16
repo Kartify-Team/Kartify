@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch
-} from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 // import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 // import { Carousel } from 'react-responsive-carousel';
 // import Carousel, { Dots } from '@brainhubeu/react-carousel';

@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useFormik } from "formik";
 import { submitAQuestion } from "../../../greenfieldAPI/"
+import { isValidEmail } from "../../../utils/"
 
-const AddQuestionForm = ({ product, addQuestionList, setIsOpen }) => {
+const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
+
+    const [errorsOn, setErrorsOn] = useState(false)
+    const display = {
+        addQuestion: "Your Question",
+        addAnswer: "Submit your answer"
+    }
+
+
     const formik = useFormik({
         initialValues: { question: "", nickname: "", email: "" },
-        onSubmit: ({ question, nickname, email }) => {
-            return submitAQuestion(product, {
-                body: question,
-                name: nickname,
-                email
-            }).then(() => addQuestionList(product.id))
+        onSubmit: ({ body, nickname, email }) => {
+            return submitAQuestion({ body, name: nickname, email },
+                formType, product, question)
+                .then(() => addQuestionList(product.id))
                 .then(() => setIsOpen(false))
                 .catch((err) => console.log(err))
+
         },
-        validate: ({ question, nickname, email }) => {
+        validate: ({ body, nickname, email }) => {
             const errors = {};
-            if (!question) {
-                errors.question = 'Required';
+            if (!body) {
+                errors.body = 'Required';
             }
             if (!nickname) {
                 errors.nickname = 'Required';
@@ -29,20 +37,24 @@ const AddQuestionForm = ({ product, addQuestionList, setIsOpen }) => {
             if (!email) {
                 errors.email = 'Required';
             }
+            if (!isValidEmail(email)) {
+                errors.email = "That does not look like a valid email address."
+            }
             return errors;
         }
     });
     return (
-        <form id="add-question-form" onSubmit={formik.handleSubmit}>
+        <form id="add-question-form" onSubmit={formik.handleSubmit} >
             <br />
-            <label htmlFor="question">Your Question</label>
+            <label htmlFor="body">{display[formType]}</label>
             <textarea
-                id="question"
-                name="question"
+                id="body"
+                name="body"
                 onChange={formik.handleChange}
-                value={formik.values.question}
+                value={formik.values.body}
+                placeholder="Enter up to 1000 characters."
             />
-            {formik.errors.question ? <div className="form-error">{formik.errors.question}</div> : <div></div>}
+            {errorsOn && formik.errors.body ? <div className="form-error">{formik.errors.body}</div> : <div></div>}
             <label htmlFor="nickname">What is your nickname?</label>
             <input
                 id="nickname"
@@ -50,8 +62,9 @@ const AddQuestionForm = ({ product, addQuestionList, setIsOpen }) => {
                 type="text"
                 onChange={formik.handleChange}
                 value={formik.values.nickname}
+                placeholder="Example: jack543!"
             />
-            {formik.errors.nickname ? <div className="form-error">{formik.errors.nickname}</div> : <div></div>}
+            {errorsOn && formik.errors.nickname ? <div className="form-error">{formik.errors.nickname}</div> : <div></div>}
             <sub>For privacy reasons, do not use your full name or email address</sub>
             <label htmlFor="email">Your email</label>
             <input
@@ -60,13 +73,14 @@ const AddQuestionForm = ({ product, addQuestionList, setIsOpen }) => {
                 type="email"
                 onChange={formik.handleChange}
                 value={formik.values.email}
+                placeholder="Example: jack@gmail.com"
             />
-            {formik.errors.email ? <div className="form-error">{formik.errors.email}</div> : <div></div>}
+            {errorsOn && formik.errors.email ? <div className="form-error">{formik.errors.email}</div> : <div></div>}
 
             <sub>For authentication reasons, you will not be emailed</sub>
             <br />
-            <button id="submit" type="submit" className="action-button">Submit</button>
-        </form>
+            <button id="submit" type="submit" className="action-button" onClick={() => setErrorsOn(true)}>Submit</button>
+        </form >
     );
 };
 

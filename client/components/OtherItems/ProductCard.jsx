@@ -9,8 +9,7 @@ const ProductCard = ({ product, style, rating, changeProduct }) => {
         <button
           className="cardButton"
           type="button"
-          onClick={() => console.log('action')}
-          src=""
+          src="" // TODO: ADD ICON TO BUTTON
         >
           X
         </button>
@@ -18,7 +17,17 @@ const ProductCard = ({ product, style, rating, changeProduct }) => {
     );
   } else {
     return (
-      <div className="productCard" onClick={() => changeProduct(product.id)} >
+      <div className="productCard" 
+        onClick={
+          (e) => {
+            if (e.target.className === 'cardButton') {
+              e.preventDefault();
+            } else {
+              changeProduct(product.id); 
+            }
+          }
+        }
+      >
         <div className="productCardImage">
           <img
             className="cardImage"
@@ -31,10 +40,10 @@ const ProductCard = ({ product, style, rating, changeProduct }) => {
           <button
             className="cardButton"
             type="button"
-            onClick={() => console.log('action')}
+            onClick={() => console.log('clicked')} //TODO: OPEN MODAL
             src=""
           >
-            X
+            ★
           </button>
         </div>
         <div className="productCardDescription">
