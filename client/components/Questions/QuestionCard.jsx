@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { removeHTMLTags, formatDate } from "../../utils"
-import AddQuestion from "./AddQuestion"
+import AddModal from "./AddModal"
 import { reportPost } from "../../greenfieldAPI/"
+import ThumbnailGallery from './ThumbnailGallery'
+
+
 const QuestionCard = ({ question, product, handleHelpful, query }) => {
   let [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -35,7 +38,7 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
     <div id="question">
       <h2>Q: {questionHTML}</h2>
       <sub><a onClick={() => handleHelpful("question", question.question_id)}>Helpful?</a> Yes ({question.question_helpfulness}) | <a onClick={() => setIsOpen(true)}>Add Answer</a></sub>
-      <AddQuestion setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} formType="addAnswer" />
+      <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} formType="addAnswer" />
     </div>
 
     <div className="answers">
@@ -45,10 +48,11 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
 
             <span key={answer.id}>
               {index === 0 ? (
-                <p id="first">A: {removeHTMLTags(answer.body)}</p>
-              ) : (
+                <p id="first">A: {removeHTMLTags(answer.body)}</p>) : (
                   <p id="more">{removeHTMLTags(answer.body)}</p>
                 )}
+              <ThumbnailGallery imageURLs={answer.photos} />
+              <br />
               <sub id="answerer">
                 by {answer.answerer_name === "Seller" ? <b>{answer.answerer_name}</b> : <>{answer.answerer_name}</>},{" "}
                 {formatDate(answer.date)}
