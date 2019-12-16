@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useFormik } from "formik";
-import { submitAQuestion } from "../../../greenfieldAPI/"
-import { isValidEmail } from "../../../utils/"
+import { submitAQuestion } from "../../../greenfieldAPI"
+import { isValidEmail } from "../../../utils"
+import ImageUploader from "./ImageUploader"
 
 const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
 
@@ -79,6 +80,7 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
 
             <sub>For authentication reasons, you will not be emailed</sub>
             <br />
+            <ImageUploader />
             <button id="submit" type="submit" className="action-button" onClick={() => setErrorsOn(true)}>Submit</button>
         </form >
     );

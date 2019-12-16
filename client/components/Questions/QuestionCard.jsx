@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { removeHTMLTags, formatDate } from "../../utils"
-import AddQuestion from "./AddQuestion"
+import AddModal from "./AddModal"
 import { reportPost } from "../../greenfieldAPI/"
 const QuestionCard = ({ question, product, handleHelpful, query }) => {
   let [expanded, setExpanded] = useState(false);
@@ -35,7 +35,7 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
     <div id="question">
       <h2>Q: {questionHTML}</h2>
       <sub><a onClick={() => handleHelpful("question", question.question_id)}>Helpful?</a> Yes ({question.question_helpfulness}) | <a onClick={() => setIsOpen(true)}>Add Answer</a></sub>
-      <AddQuestion setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} formType="addAnswer" />
+      <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} formType="addAnswer" />
     </div>
 
     <div className="answers">

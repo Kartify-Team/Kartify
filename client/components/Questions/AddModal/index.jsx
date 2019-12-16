@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import React from 'react';
-import AddQuestionFormContainer from '../../../containers/Questions/AddQuestionForm'
+import AddFormContainer from '../../../containers/Questions/AddForm'
 
 const AddQuestion = ({ setIsOpen, modalIsOpen, product, formType, question }) => {
     var subtitle;
@@ -35,7 +35,7 @@ const AddQuestion = ({ setIsOpen, modalIsOpen, product, formType, question }) =>
                 {header[formType]}
                 <button onClick={() => setIsOpen(false)}>X</button>
             </div>
-            <AddQuestionFormContainer setIsOpen={setIsOpen} formType={formType} question={question} />
+            <AddFormContainer setIsOpen={setIsOpen} formType={formType} question={question} />
         </Modal >
     )
 }

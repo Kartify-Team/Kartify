@@ -625,6 +625,10 @@ select {
 #submit {
   margin: 10px 10px 0px 0px;
 }
+
+img.uploadIcon {
+  content:url('./img/upload.svg') !important;
+}
 /* 
  _______  _______          _________ _______           _______ 
 (  ____ )(  ____ \|\     /|\__   __/(  ____ \|\     /|(  ____ \

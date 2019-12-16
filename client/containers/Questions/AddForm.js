@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import AddQuestionForm from '../../components/Questions/AddQuestion/AddQuestionForm';
+import AddForm from '../../components/Questions/AddModal/AddForm';
 import { addQuestionList } from '../../actions/creators/addQuestionList';
 const mapStateToProps = store => ({
   product: store.product,
@@ -8,8 +8,8 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   addQuestionList: productId => dispatch(addQuestionList(productId))
 });
-const AddQuestionFormContainer = connect(
+const AddFormContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AddQuestionForm);
-export default AddQuestionFormContainer;
+)(AddForm);
+export default AddFormContainer;
