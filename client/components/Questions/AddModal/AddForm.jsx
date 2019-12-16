@@ -88,8 +88,11 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
 
             <sub>For authentication reasons, you will not be emailed</sub>
             <br />
-            {formType === "addAnswer" ?
-                <input id="file" name="file" type="file" onChange={getImageProps} /> : <></>}
+            {formType === "addAnswer" ? <>
+                <label htmlFor="email">Please upload images of your product</label>
+                <input id="file" name="file"
+                    type="file" onChange={getImageProps} multiple /></>
+                : <></>}
             <button id="submit" type="submit" className="action-button" onClick={() => setErrorsOn(true)}>Submit</button>
         </form >
     );

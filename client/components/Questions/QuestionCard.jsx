@@ -47,13 +47,11 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
           return (
 
             <span key={answer.id}>
-              {index === 0 ? (<>
-                <p id="first">A: {removeHTMLTags(answer.body)}</p>
-                <ThumbnailGallery imageURLs={answer.photos} />
-              </>) : (<>
-                <p id="more">{removeHTMLTags(answer.body)}</p>
-                <ThumbnailGallery imageURLs={answer.photos} />
-              </>)}
+              {index === 0 ? (
+                <p id="first">A: {removeHTMLTags(answer.body)}</p>) : (
+                  <p id="more">{removeHTMLTags(answer.body)}</p>
+                )}
+              <ThumbnailGallery imageURLs={answer.photos} />
               <br />
               <sub id="answerer">
                 by {answer.answerer_name === "Seller" ? <b>{answer.answerer_name}</b> : <>{answer.answerer_name}</>},{" "}

@@ -21,18 +21,20 @@ const RatingBreakdown = ({
   } else {
     return (
       <div id="review-stats-container">
-        <StarStats
-          rating={ratings === null ? null : ratings.average}
-          total={totalRatings}
-          ratings={ratingsWithoutAvg}
-        />
-        {Object.keys(characteristics).map(characteristic => (
-          <Characteristic
-            type={characteristic}
-            value={characteristics[characteristic].value}
-            key={characteristic.id}
+        <div id="breakdown">
+          <StarStats
+            rating={ratings === null ? null : ratings.average}
+            total={totalRatings}
+            ratings={ratingsWithoutAvg}
           />
-        ))}
+          {Object.keys(characteristics).map(characteristic => (
+            <Characteristic
+              type={characteristic}
+              value={characteristics[characteristic].value}
+              key={characteristics[characteristic].id}
+            />
+          ))}
+        </div>
       </div>
     );
   }

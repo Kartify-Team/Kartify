@@ -164,11 +164,15 @@ b {
 }
 
 .highlighted {
-  background-color: #FFFF00
+  background-color: #ffff00;
+}
+
+.thumbnailGallery {
+  margin-left: 20px;
 }
 
 .thumbnail {
-  margins: 10px;
+  margin-right: 10px;
   height: 50px;
   width: 50px;
 }
@@ -259,6 +263,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   border: black 1px solid;
   height: 33%;
   width: 100%;
+  overflow: scroll;
 }
 
 #overview-info {
@@ -310,10 +315,17 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin-top: 10px;
 }
 
-.style-image {
-  width: 48px;
-  height: 48px;
+#style-selector-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 5px;
+}
+
+.style-image {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  margin: 3px;
   border-radius: 50%;
   border: 2px solid black;
 }
@@ -570,7 +582,6 @@ img.uploadIcon {
  */
 
 #size-rating-container, #comfort-rating-container, #star-stats-container {
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
 }
 
@@ -679,13 +690,15 @@ img.uploadIcon {
   display: inline-block;
 }
 
-.stars-breakdown {
+#breakdown {
   margin: 0 auto;
   margin-top: 6%;
   display: flex;
-  justify-content: flex-start;
-  align-items: left;
+  justify-content: center;
   flex-direction: column;
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 500px;
 }
 
 .star-bar-label {
@@ -706,4 +719,52 @@ img.uploadIcon {
   color: red;
   font-weight: 500;
   margin-right: 5px;
+  <<<<<<< HEAD
 }
+
+=======
+}
+
+/* Characteristics */
+
+.characteristics-container {
+  height: 50px;
+  width: 60%;
+  margin: 0px 3px 0px 0px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.characteristics-sub-bar {
+  min-width: 32%;
+  max-width: 32%;
+  height: 10px;
+  display: inline-block;
+  background-color: #ebebeb;
+  margin: 0 auto;
+}
+
+.characteristic-type {
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+
+.pointer {
+  position: absolute;
+  top: -5.5%;
+  left: 0;
+  overflow: hidden;
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.characteristic {
+  height: 10%;
+}
+
+>>>>>>>6f03155e4213ac7123e0672cbebe11dd91cfdd6d
