@@ -4,6 +4,7 @@ import { changeProduct } from '../client/actions/creators/changeProduct';
 import { setRatings } from '../client/actions/creators/setRatings';
 import { addQuestionList } from '../client/actions/creators/addQuestionList';
 import { setCharacteristics } from '../client/actions/creators/setCharacteristics';
+import { searchQuestions } from "../client/actions/creators/searchQuestions"
 import 'regenerator-runtime';
 
 let mockStore = configureStore([thunk]);
@@ -71,3 +72,4 @@ describe('addQuestionList action creator', () => {
       .catch(e => console.error(e));
   });
 });
+

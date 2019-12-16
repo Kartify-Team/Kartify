@@ -1,6 +1,7 @@
 import {
   CHANGE_PRODUCT,
-  ADD_QUESTION_LIST
+  ADD_QUESTION_LIST,
+  SEARCH_QUESTIONS
 } from '../client/actions';
 import questionsReducer from '../client/reducers/questions';
 import {
@@ -44,9 +45,16 @@ describe('questions reducer', () => {
         question_body: "This is a fake question."
       }]
     };
-
-    const questions = questionsReducer(null, action);
-    // expect(questions[0].question_body).toEqual("This is a fake question.");
+    const questionsStore = questionsReducer(null, action);
+    expect(questionsStore.list[0].question_body).toEqual("This is a fake question.");
+  });
+  it('handles SEARCH_QUESTIONS actions', () => {
+    const action = {
+      type: SEARCH_QUESTIONS,
+      query: "How do I wash this"
+    };
+    const questionsStore = questionsReducer(null, action);
+    expect(questionsStore.searchQuery).toEqual("How do I wash this");
   });
 });
 
@@ -54,14 +62,8 @@ describe('ratings reducer', () => {
   it('handles SET_RATINGS actions', () => {
     const action = {
       type: SET_RATINGS,
-      ratings: {
-        1: 1,
-        3: 1,
-        4: 1,
-        5: 4
-      }
+      ratings: { 1: 1, 3: 1, 4: 1, 5: 4 }
     };
-
     const { ratings } = ratingsReducer({}, action);
     expect(ratings[1]).toEqual(1);
     expect(ratings[3]).toEqual(1);

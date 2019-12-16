@@ -230,12 +230,25 @@ sub {
   color: var(--color);
 }
 
+a{
+  text-decoration: underline;
+}
+
+b {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
 .action-button {
   border: black 1px solid;
   display: inline-block;
   width: auto;
   padding: 15px;
   /* margin: 5px 15px; */
+}
+
+.highlighted {
+  background-color: #FFFF00
 }
 /*
  _______  _______  _______  _______  _______ 
@@ -261,7 +274,8 @@ input[type='text'],
 input[type='number'],
 textarea,
 select {
-  border: black 1px solid;
+  border: var(--color) 1px solid;
+  padding: 0.5em;
 }
 
 .modal-header {
@@ -549,9 +563,7 @@ select {
   width: 80%;
 }
 #q-and-a-search {
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
-  padding: 0px;
   height: 2em;
 }
 #question-list-container {

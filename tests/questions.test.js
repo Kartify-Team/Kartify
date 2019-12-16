@@ -15,6 +15,6 @@ describe('App Component', () => {
 
   it('passes question data from store to QuestionList props', () => {
     const wrapper = shallow(<QuestionListContainer store={store} />);
-    // expect(wrapper.find('QuestionList').prop('questions').length).toEqual(4);
+    expect(wrapper.find('QuestionList').prop('questions').length).toEqual(4);
   });
 });
