@@ -12,10 +12,26 @@ const Characteristic = ({ type, value }) => {
   const style = {
     width: `${(value / 5) * 100}%`
   };
+
   return (
-    <div className="characteristic-container">
-      <div className="characteristic-static">
-        <div className="characteristic-dynamic" style={style}></div>
+    <div className="characteristic">
+      <h3 className="characteristic-type">{type}</h3>
+      <div className="characteristics-container">
+        <div className="pointer" style={style}>
+          <i
+            className="fa fa-caret-down fa-lg"
+            style={{ 'font-size': '1.9em' }}
+          ></i>
+        </div>
+        <div className="characteristics-sub-bar">
+          <h3 className="characteristic-label">{labels[0]}</h3>
+        </div>
+        <div className="characteristics-sub-bar">
+          <h3 className="characteristic-label">{labels[1]}</h3>
+        </div>
+        <div className="characteristics-sub-bar">
+          <h3 className="characteristic-label">{labels[2]}</h3>
+        </div>
       </div>
     </div>
   );
