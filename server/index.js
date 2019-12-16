@@ -24,8 +24,8 @@ server.get('*', (req, res) => {
 server.post('/img', (req, res) => {
   Promise.all(Object.values(req.files)
     .map(image => cloudinary.uploader.upload(image.path)))
-    .then(images => res.send(images.map(image => image.url)))
-    .catch(err => console.log(err))
+    .then(cloudResponse => res.send(cloudResponse.map(image => image.url)))
+    .catch(() => res.send(500))
 })
 
 

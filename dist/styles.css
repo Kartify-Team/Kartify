@@ -10,87 +10,7 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video,
-input,
-button,
-span {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -99,38 +19,29 @@ span {
   vertical-align: baseline;
   font-family: 'Open Sans', sans-serif;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
 body {
   line-height: 1;
   font-size: 8pt;
 }
-ol,
-ul {
+
+ol, ul {
   list-style: none;
 }
-blockquote,
-q {
+
+blockquote, q {
   quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -140,17 +51,20 @@ a {
   text-decoration: none;
   color: black;
 }
+
 a:visited {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 a:focus {
   text-decoration: none;
 }
-a:hover,
-a:active {
+
+a:hover, a:active {
   text-decoration: none;
 }
 
@@ -204,12 +118,14 @@ a:active {
   margin: 10px 5px 5px 10px;
   color: var(--secondary-accent-color);
 }
+
 h3 {
   text-transform: uppercase;
   font-size: 1em;
   margin: 1em 0 0.5em 0;
   color: var(--color);
 }
+
 h2 {
   font-size: 1em;
   font-weight: 800;
@@ -230,7 +146,7 @@ sub {
   color: var(--color);
 }
 
-a{
+a {
   text-decoration: underline;
 }
 
@@ -250,6 +166,13 @@ b {
 .highlighted {
   background-color: #FFFF00
 }
+
+.thumbnail {
+  margins: 10px;
+  height: 50px;
+  width: 50px;
+}
+
 /*
  _______  _______  _______  _______  _______ 
 (  ____ \(  ___  )(  ____ )(       )(  ____ \
@@ -261,19 +184,18 @@ b {
 |/       (_______)|/   \__/|/     \|\_______)
                                              
 */
+
 form {
   /* padding: 15px; */
 }
+
 label {
   margin: 0.8em 0 0.2em 0;
   font-weight: bold;
   display: flex;
 }
-input[type='email'],
-input[type='text'],
-input[type='number'],
-textarea,
-select {
+
+input[type='email'], input[type='text'], input[type='number'], textarea, select {
   border: var(--color) 1px solid;
   padding: 0.5em;
 }
@@ -366,8 +288,7 @@ select {
   justify-content: right;
 }
 
-#left-description,
-#right-description {
+#left-description, #right-description {
   text-align: left;
 }
 
@@ -399,9 +320,7 @@ select {
 
 #cart-container {
   display: grid;
-  grid-template-areas:
-    'size size size qty qty'
-    'add add add add star';
+  grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   justify-content: center;
 }
@@ -451,7 +370,6 @@ select {
   display: grid;
   width: 80%;
   height: 410px;
-
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -538,6 +456,7 @@ select {
   top: 45px;
   left: 5%;
 }
+
 .productCardRating {
   position: absolute;
   bottom: 0px;
@@ -557,21 +476,25 @@ select {
                                                                                  
                             
  */
+
 #q-and-a-container {
   margin: 0 auto;
   display: grid;
   width: 80%;
 }
+
 #q-and-a-search {
   margin: 10px 5px 5px 10px;
   height: 2em;
 }
+
 #question-list-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
   max-height: 600px;
   overflow: scroll;
 }
+
 #question-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
@@ -587,6 +510,7 @@ select {
 #q-list {
   margin: 10px;
 }
+
 /* #question > h2 {
   align
 } */
@@ -594,17 +518,20 @@ select {
 .answers {
   margin: 10px 0px 0px 0px;
 }
-.answers > span > #first {
+
+.answers>span>#first {
   margin: 1em 0px;
 }
-.answers > span > #more {
+
+.answers>span>#more {
   margin: 2em 0px 0.7em 15px;
 }
-.answers > span > #answerer {
+
+.answers>span>#answerer {
   margin-left: 15px;
 }
 
-.answers > #load-more {
+.answers>#load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -618,17 +545,18 @@ select {
   height: 50px;
 }
 
-#add-question-form > input,
-#add-question-form > textarea {
+#add-question-form>input, #add-question-form>textarea {
   width: 400px;
 }
+
 #submit {
   margin: 10px 10px 0px 0px;
 }
 
 img.uploadIcon {
-  content:url('./img/upload.svg') !important;
+  content: url('./img/upload.svg') !important;
 }
+
 /* 
  _______  _______          _________ _______           _______ 
 (  ____ )(  ____ \|\     /|\__   __/(  ____ \|\     /|(  ____ \
@@ -641,15 +569,12 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container,
-#comfort-rating-container,
-#star-stats-container {
+#size-rating-container, #comfort-rating-container, #star-stats-container {
   border: black 1px solid;
   margin: 10px 5px 5px 10px;
 }
 
-#review-list-container,
-#review-stats-container {
+#review-list-container, #review-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -662,8 +587,7 @@ img.uploadIcon {
   height: 800px;
 }
 
-#review-list-container {
-}
+#review-list-container {}
 
 .review_item {
   border: black 1px solid;

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { removeHTMLTags, formatDate } from "../../utils"
 import AddModal from "./AddModal"
 import { reportPost } from "../../greenfieldAPI/"
+import ThumbnailGallery from './ThumbnailGallery'
+
+
 const QuestionCard = ({ question, product, handleHelpful, query }) => {
   let [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -44,11 +47,14 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
           return (
 
             <span key={answer.id}>
-              {index === 0 ? (
+              {index === 0 ? (<>
                 <p id="first">A: {removeHTMLTags(answer.body)}</p>
-              ) : (
-                  <p id="more">{removeHTMLTags(answer.body)}</p>
-                )}
+                <ThumbnailGallery imageURLs={answer.photos} />
+              </>) : (<>
+                <p id="more">{removeHTMLTags(answer.body)}</p>
+                <ThumbnailGallery imageURLs={answer.photos} />
+              </>)}
+              <br />
               <sub id="answerer">
                 by {answer.answerer_name === "Seller" ? <b>{answer.answerer_name}</b> : <>{answer.answerer_name}</>},{" "}
                 {formatDate(answer.date)}
