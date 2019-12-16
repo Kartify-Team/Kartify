@@ -20,7 +20,7 @@ const Characteristic = ({ type, value }) => {
         <div className="pointer" style={style}>
           <i
             className="fa fa-caret-down fa-lg"
-            style={{ 'font-size': '1.9em' }}
+            style={{ fontSize: '1.9em' }}
           ></i>
         </div>
         <div className="characteristics-sub-bar">
