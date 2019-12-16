@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StyleSelector = ({ styles }) => {
+const StyleSelector = ({ styles, changeStyle }) => {
   if (!styles) {
     return null;
   } else {
@@ -14,6 +14,9 @@ const StyleSelector = ({ styles }) => {
               <img
                 className="style-image"
                 key={`${styles.product_id}-${style.style_id}`}
+                onClick={() => {
+                  changeStyle(style);
+                }}
                 src={style.photos[0].url || '/img/default.png'}
               />
             );
