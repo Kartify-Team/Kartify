@@ -5,21 +5,33 @@ import 'regenerator-runtime';
 const OtherItems = ({
   productInfo,
   changeProduct,
+  // Related Products
   relatedProducts = [],
   relatedProductsStyles = [],
   relatedProductsRatings = [],
-  myOutfit = [],
   getRelatedProducts,
   getRelatedProductsStyles,
   getRelatedProductsRatings,
+  // My Outfit
+  myOutfit = [null, null, null, null, null],
+  myOutfitStyles = [],
+  myOutfitRatings = [],
   getMyOutfit,
+  saveOutfit,
+  getMyOutfitStyles,
+  getMyOutfitRatings,
 }) => {
+
+  // Only call once
+
+
+  // Call every time product changes
   useEffect(() => {
     if (productInfo) {
       getRelatedProducts(productInfo.id);
       getRelatedProductsStyles(productInfo.id);
       getRelatedProductsRatings(productInfo.id);
-      // get My Outfit from User
+      getMyOutfit();
     }
   }, [productInfo]);
 
@@ -32,6 +44,7 @@ const OtherItems = ({
           <h3>Related Products</h3>
           <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} changeProduct={changeProduct}/>
           <h3>Your Outfit</h3>
+          <ProductsCarousel products={myOutfit} styles={myOutfitStyles} ratings={myOutfitRatings} changeProduct={changeProduct}/>
         </div>
       </div>
     );

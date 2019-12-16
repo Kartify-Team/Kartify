@@ -436,21 +436,18 @@ select {
   margin: 0 auto;
   display: grid;
   width: 80%;
-  height: 410px;
-
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
 }
 
 .otherItemsContainer {
+  overflow-y: hidden;
   height: 100%;
   width: 100%;
 }
 
 .sliderContainer {
-  height: 100%;
   width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 .slick-slider {
@@ -483,7 +480,6 @@ select {
 .productCardImage {
   width: 100%;
   height: 70%;
-  background-color: lightgray;
   position: relative;
   overflow: hidden;
   margin: 0;

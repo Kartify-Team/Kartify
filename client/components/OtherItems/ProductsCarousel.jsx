@@ -22,11 +22,15 @@ const ProductsCarousel = ({products, styles, ratings, changeProduct}) => {
     return (
       <div className='sliderContainer'>
         {products.map((product, i) => {
-          return (
-            <Link key={product.id} to={`${product.id}`}>
-              <ProductCard product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct}/>
-            </Link>
-          );
+          if (product === null) {
+            return <ProductCard product={product} />;
+          } else {
+            return (
+              <Link key={product.id} to={`${product.id}`}>
+                <ProductCard product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct}/>
+              </Link>
+            );
+          }
         })}
       </div>
     );
