@@ -648,7 +648,6 @@ select {
 #size-rating-container,
 #comfort-rating-container,
 #star-stats-container {
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
 }
 
@@ -759,13 +758,15 @@ select {
   display: inline-block;
 }
 
-.stars-breakdown {
+#breakdown {
   margin: 0 auto;
   margin-top: 6%;
   display: flex;
-  justify-content: flex-start;
-  align-items: left;
+  justify-content: center;
   flex-direction: column;
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 500px;
 }
 
 .star-bar-label {
@@ -786,4 +787,46 @@ select {
   color: red;
   font-weight: 500;
   margin-right: 5px;
+}
+
+/* Characteristics */
+
+.characteristics-container {
+  height: 50px;
+  width: 60%;
+  margin: 0px 3px 0px 0px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.characteristics-sub-bar {
+  min-width: 32%;
+  max-width: 32%;
+  height: 10px;
+  display: inline-block;
+  background-color: #ebebeb;
+  margin: 0 auto;
+}
+
+.characteristic-type {
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+
+.pointer {
+  position: absolute;
+  top: -5.5%;
+  left: 0;
+  overflow: hidden;
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.characteristic {
+  height: 10%;
 }

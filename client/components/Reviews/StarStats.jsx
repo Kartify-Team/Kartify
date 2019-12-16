@@ -7,13 +7,16 @@ const StarStats = ({ rating, total, ratings }) => {
     <div id="star-stats-container">
       Star Stats
       <AverageRating averageRating={rating} />
-      <div className="stars-breakdown">
-        {Object.keys(ratings).map(rating => {
-          return (
-            <StarBar count={ratings[rating]} total={total} label={rating} />
-          );
-        })}
-      </div>
+      {Object.keys(ratings).map(rating => {
+        return (
+          <StarBar
+            key={rating}
+            count={ratings[rating]}
+            total={total}
+            label={rating}
+          />
+        );
+      })}
     </div>
   );
 };
