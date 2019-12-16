@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { removeHTMLTags } from "../../utils"
+import { removeHTMLTags, formatDate } from "../../utils"
 import AddQuestion from "./AddQuestion"
 import { reportPost } from "../../greenfieldAPI/"
 const QuestionCard = ({ question, product, handleHelpful, query }) => {
@@ -51,9 +51,7 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
                 )}
               <sub id="answerer">
                 by {answer.answerer_name === "Seller" ? <b>{answer.answerer_name}</b> : <>{answer.answerer_name}</>},{" "}
-                {new Date(answer.date).toLocaleDateString("en-US", {
-                  dateStyle: "long"
-                })}
+                {formatDate(answer.date)}
                 &nbsp; | &nbsp; <a onClick={() => handleHelpful("answer", answer.id)}>Helpful?</a> Yes ({answer.helpfulness})
                 &nbsp; | &nbsp; {reported[answer.id] ? <>Reported</> : <a onClick={() => handleReport(answer.id)}>Report</a>}
               </sub>
