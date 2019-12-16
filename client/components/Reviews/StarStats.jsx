@@ -8,7 +8,14 @@ const StarStats = ({ rating, total, ratings }) => {
       Star Stats
       <AverageRating averageRating={rating} />
       {Object.keys(ratings).map(rating => {
-        return <StarBar count={ratings[rating]} total={total} label={rating} />;
+        return (
+          <StarBar
+            key={rating}
+            count={ratings[rating]}
+            total={total}
+            label={rating}
+          />
+        );
       })}
     </div>
   );

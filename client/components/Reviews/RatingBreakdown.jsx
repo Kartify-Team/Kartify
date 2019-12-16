@@ -31,7 +31,7 @@ const RatingBreakdown = ({
             <Characteristic
               type={characteristic}
               value={characteristics[characteristic].value}
-              key={characteristic.id}
+              key={characteristics[characteristic].id}
             />
           ))}
         </div>
