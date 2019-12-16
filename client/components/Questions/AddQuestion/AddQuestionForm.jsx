@@ -11,6 +11,8 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
         addQuestion: "Your Question",
         addAnswer: "Submit your answer"
     }
+
+
     const formik = useFormik({
         initialValues: { question: "", nickname: "", email: "" },
         onSubmit: ({ body, nickname, email }) => {
