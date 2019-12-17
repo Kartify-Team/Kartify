@@ -78,7 +78,7 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
                 <ThumbnailGallery imageURLs={answer.photos} />
                 <br />
                 <sub id="answerer">
-                  by {answer.answerer_name === "Seller" ? <b>{answer.answerer_name}</b> : <>{answer.answerer_name}</>},{" "}
+                  by {answer.answerer_name === "Seller" ? <strong>{answer.answerer_name}</strong> : <>{answer.answerer_name}</>},{" "}
                   {formatDate(answer.date)}
                   &nbsp; | &nbsp; {userActions.a && userActions.a[answer.id] ?
                     userActions.a[answer.id].helpful ?

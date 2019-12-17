@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import { submitAQuestion } from "../../../greenfieldAPI"
 import { isValidEmail } from "../../../utils"
 import axios from 'axios'
+import ImageUpload from './ImageUpload'
 
 const AddForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
 
@@ -13,14 +14,6 @@ const AddForm = ({ product = {}, addQuestionList, setIsOpen, formType, question 
         addAnswer: "Submit your answer"
     }
     const [photos, setPhotos] = useState([]);
-
-    const uploadImage = (event) => {
-        const files = Array.from(event.target.files)
-        const formData = new FormData()
-        files.forEach((file, i) => { formData.append(i, file) })
-        axios.post('/img', formData)
-            .then(res => setPhotos(res.data))
-    }
 
     const formik = useFormik({
         initialValues: { question: "", nickname: "", email: "" },
@@ -88,10 +81,7 @@ const AddForm = ({ product = {}, addQuestionList, setIsOpen, formType, question 
 
             <sub>For authentication reasons, you will not be emailed</sub>
             <br />
-            {formType === "addAnswer" ? <>
-                <label htmlFor="email">Please upload images of your product</label>
-                <input id="file" name="file"
-                    type="file" onChange={uploadImage} multiple /></>
+            {formType === "addAnswer" ? <ImageUpload updatePhotos={setPhotos} />
                 : <></>}
             <button id="submit" type="submit" className="action-button" onClick={() => setErrorsOn(true)}>Submit</button>
         </form >

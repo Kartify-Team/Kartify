@@ -64,6 +64,7 @@
     "eslint-plugin-react": "^7.17.0",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
+    "jest-puppeteer": "^4.3.0",
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
