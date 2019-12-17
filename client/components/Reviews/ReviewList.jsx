@@ -3,7 +3,7 @@ import ReviewItem from './ReviewItem';
 import AddReview from './addReview/index';
 
 let count = 4;
-const ReviewList = ({ reviews, setReviewList, product }) => {
+const ReviewList = ({ reviews, setReviewList, product, characteristics }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -25,7 +25,12 @@ const ReviewList = ({ reviews, setReviewList, product }) => {
         >
           Add Review
         </button>
-        <AddReview setIsOpen={setIsOpen} isOpen={isOpen} product={product} />
+        <AddReview
+          setIsOpen={setIsOpen}
+          isOpen={isOpen}
+          product={product}
+          characteristics={characteristics}
+        />
         <div>{reviews.map(review => ReviewItem(review))}</div>
       </div>
       <div id="review-list-container"></div>
