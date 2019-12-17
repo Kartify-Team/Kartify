@@ -632,6 +632,7 @@ select {
 }
 #submit {
   margin: 10px 10px 0px 0px;
+  display: block;
 }
 /* 
  _______  _______          _________ _______           _______ 
@@ -829,4 +830,19 @@ select {
 
 .characteristic {
   height: 10%;
+}
+
+/* Forms */
+
+.error {
+  color: red;
+}
+
+#add-review-form > input,
+#add-review-form > textarea {
+  width: 400px;
+}
+
+#add-review-form {
+  overflow: scroll;
 }
