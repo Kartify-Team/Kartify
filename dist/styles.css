@@ -10,7 +10,87 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+button,
+span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,7 +100,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-family: 'Open Sans', sans-serif;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -29,15 +119,20 @@ body {
   font-size: 8pt;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -64,7 +159,8 @@ a:focus {
   text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   text-decoration: none;
 }
 
@@ -199,7 +295,11 @@ label {
   display: flex;
 }
 
-input[type='email'], input[type='text'], input[type='number'], textarea, select {
+input[type='email'],
+input[type='text'],
+input[type='number'],
+textarea,
+select {
   border: var(--color) 1px solid;
   padding: 0.5em;
 }
@@ -293,7 +393,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   justify-content: right;
 }
 
-#left-description, #right-description {
+#left-description,
+#right-description {
   text-align: left;
 }
 
@@ -321,13 +422,20 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 5px;
 }
 
-.style-image {
+.image-container {
+  overflow: hidden;
   width: 70px;
   height: 70px;
   background-size: cover;
   margin: 3px;
   border-radius: 50%;
   border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.style-image {
+  max-width: 100%;
 }
 
 #cart-container {
@@ -365,6 +473,28 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   border: 1px solid black;
 }
 
+.selected-style-container {
+  position: relative;
+}
+
+#selected-style {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: 1000;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#selected-style i {
+}
+
 /* 
  _______ _________          _______  _______   __________________ _______  _______  _______ 
 (  ___  )\__   __/|\     /|(  ____ \(  ____ )  \__   __/\__   __/(  ____ \(       )(  ____ \
@@ -381,18 +511,18 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 0 auto;
   display: grid;
   width: 80%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
 }
 
 .otherItemsContainer {
+  overflow-y: hidden;
   height: 100%;
   width: 100%;
 }
 
 .sliderContainer {
   width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 .slick-slider {
@@ -425,7 +555,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 .productCardImage {
   width: 100%;
   height: 70%;
-  background-color: lightgray;
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -529,19 +658,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 10px 0px 0px 0px;
 }
 
-.answers>span>#first {
+.answers > span > #first {
   margin: 1em 0px;
 }
 
-.answers>span>#more {
+.answers > span > #more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers>span>#answerer {
+.answers > span > #answerer {
   margin-left: 15px;
 }
 
-.answers>#load-more {
+.answers > #load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -555,18 +684,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   height: 50px;
 }
 
-#add-question-form>input, #add-question-form>textarea {
+#add-question-form > input,
+#add-question-form > textarea {
   width: 400px;
 }
 
 #submit {
   margin: 10px 10px 0px 0px;
+  display: block;
 }
 
 img.uploadIcon {
   content: url('./img/upload.svg') !important;
 }
-
 /* 
  _______  _______          _________ _______           _______ 
 (  ____ )(  ____ \|\     /|\__   __/(  ____ \|\     /|(  ____ \
@@ -579,11 +709,14 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container, #comfort-rating-container, #star-stats-container {
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
-#review-list-container, #review-stats-container {
+#review-list-container,
+#review-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -596,7 +729,8 @@ img.uploadIcon {
   height: 800px;
 }
 
-#review-list-container {}
+#review-list-container {
+}
 
 .review_item {
   border: black 1px solid;
@@ -717,10 +851,6 @@ img.uploadIcon {
   color: red;
   font-weight: 500;
   margin-right: 5px;
-  <<<<<<< HEAD
-}
-
-=======
 }
 
 /* Characteristics */
@@ -765,4 +895,17 @@ img.uploadIcon {
   height: 10%;
 }
 
->>>>>>>6f03155e4213ac7123e0672cbebe11dd91cfdd6d
+/* Forms */
+
+.error {
+  color: red;
+}
+
+#add-review-form > input,
+#add-review-form > textarea {
+  width: 400px;
+}
+
+#add-review-form {
+  overflow: scroll;
+}

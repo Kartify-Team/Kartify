@@ -2,8 +2,7 @@ import Modal from 'react-modal';
 import React from 'react';
 import AddReviewForm from './AddReviewForm';
 
-const AddReview = ({ setIsOpen, isOpen, product }) => {
-  console.log('IS OPEN', isOpen);
+const AddReview = ({ setIsOpen, isOpen, product, characteristics }) => {
   var subtitle;
   const customStyles = {
     content: {
@@ -36,7 +35,7 @@ const AddReview = ({ setIsOpen, isOpen, product }) => {
         <button onClick={() => setIsOpen(false)}>X</button>
       </div>
 
-      <AddReviewForm />
+      <AddReviewForm characteristics={characteristics} />
     </Modal>
   );
 };
