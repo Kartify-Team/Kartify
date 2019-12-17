@@ -5,23 +5,42 @@ import 'regenerator-runtime';
 const OtherItems = ({
   productInfo,
   changeProduct,
+  getRelatedProducts,
+  getProductsRatings,
+  getProductsStyles,
+  getMyOutfit,
+  // Related Products
   relatedProducts = [],
   relatedProductsStyles = [],
   relatedProductsRatings = [],
+  // My Outfit
   myOutfit = [],
-  getRelatedProducts,
-  getRelatedProductsStyles,
-  getRelatedProductsRatings,
-  getMyOutfit,
+  myOutfitStyles = [],
+  myOutfitRatings = []
 }) => {
+
   useEffect(() => {
     if (productInfo) {
       getRelatedProducts(productInfo.id);
-      getRelatedProductsStyles(productInfo.id);
-      getRelatedProductsRatings(productInfo.id);
-      // get My Outfit from User
+      getMyOutfit();
     }
   }, [productInfo]);
+
+  // MY OUTFIT
+  useEffect(() => {
+    if (myOutfit.length > 0) {
+      getProductsRatings(myOutfit, 'myOutfit');
+      getProductsStyles(myOutfit, 'myOutfit');
+    }
+  }, [myOutfit]);
+
+  // RELATED PRODUCTS
+  useEffect(() => {
+    if (relatedProducts.length > 0) {
+      getProductsStyles(relatedProducts, 'relatedProducts');
+      getProductsRatings(relatedProducts, 'relatedProducts');
+    }
+  }, [relatedProducts]);
 
   if (productInfo === null) {
     return <div id="otherItems"></div>;
@@ -30,8 +49,10 @@ const OtherItems = ({
       <div id="otherItems">
         <div className="otherItemsContainer">
           <h3>Related Products</h3>
+
           <ProductsCarousel products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} changeProduct={changeProduct}/>
           <h3>Your Outfit</h3>
+          <ProductsCarousel products={myOutfit} styles={myOutfitStyles} ratings={myOutfitRatings} changeProduct={changeProduct}/>
         </div>
       </div>
     );

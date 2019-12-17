@@ -10,6 +10,10 @@ const otherItemsReducer = (state = {}, action) => {
     return Object.assign({}, state, {relatedProductsRatings: action.products});
   case 'CHANGE_MY_OUTFIT':
     return Object.assign({}, state, { myOutfit: action.products });
+  case 'CHANGE_MY_OUTFIT_STYLES':
+    return Object.assign({}, state, { myOutfitStyles: action.products });
+  case 'CHANGE_MY_OUTFIT_RATINGS': 
+    return Object.assign({}, state, { myOutfitRatings: action.products });
   default:
     return state;
   }

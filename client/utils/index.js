@@ -1,3 +1,5 @@
+import { getProductInfo } from '../greenfieldAPI/index.js';
+
 export const removeHTMLTags = str => {
   return str.replace(/(<([^>]+)>)/gi, '');
 };
@@ -35,4 +37,18 @@ export const getAverageRating = ratings => {
   } else {
     return average;
   }
+};
+
+export const getProductsInfo = ids => {
+  let productsPromises = ids.map((id) => {
+    return getProductInfo(id);
+  });
+  return Promise.all(productsPromises)
+  .then(results => {
+    let products = results.map((result) => {
+      return result.data;
+    })
+    return products;
+  })
+  .catch(error => console.error(error));
 };
