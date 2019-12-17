@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const StarsSelector = ({ stars, setRating }) => {
+const StarsSelector = ({ setRating }) => {
   const [percentage, setPercentage] = useState(0);
   const fontSize = '1.5em';
 
