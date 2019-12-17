@@ -10,7 +10,87 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+button,
+span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,7 +100,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-family: 'Open Sans', sans-serif;
 }
 
-<<<<<<< HEAD
 article,
 aside,
 details,
@@ -32,9 +111,6 @@ hgroup,
 menu,
 nav,
 section {
-=======
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
->>>>>>> 4bfbb993e16a975d2031d9fe9a53da5f835be4c2
   display: block;
 }
 
@@ -43,7 +119,6 @@ body {
   font-size: 8pt;
 }
 
-<<<<<<< HEAD
 ol,
 ul {
   list-style: none;
@@ -58,17 +133,6 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-=======
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
->>>>>>> 4bfbb993e16a975d2031d9fe9a53da5f835be4c2
   content: '';
   content: none;
 }
@@ -231,7 +295,11 @@ label {
   display: flex;
 }
 
-input[type='email'], input[type='text'], input[type='number'], textarea, select {
+input[type='email'],
+input[type='text'],
+input[type='number'],
+textarea,
+select {
   border: var(--color) 1px solid;
   padding: 0.5em;
 }
@@ -325,7 +393,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   justify-content: right;
 }
 
-#left-description, #right-description {
+#left-description,
+#right-description {
   text-align: left;
 }
 
@@ -560,19 +629,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 10px 0px 0px 0px;
 }
 
-.answers>span>#first {
+.answers > span > #first {
   margin: 1em 0px;
 }
 
-.answers>span>#more {
+.answers > span > #more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers>span>#answerer {
+.answers > span > #answerer {
   margin-left: 15px;
 }
 
-.answers>#load-more {
+.answers > #load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -586,7 +655,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   height: 50px;
 }
 
-#add-question-form>input, #add-question-form>textarea {
+#add-question-form > input,
+#add-question-form > textarea {
   width: 400px;
 }
 
@@ -594,7 +664,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 10px 10px 0px 0px;
   display: block;
 }
-
 
 img.uploadIcon {
   content: url('./img/upload.svg') !important;
@@ -611,11 +680,14 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container, #comfort-rating-container, #star-stats-container {
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
-#review-list-container, #review-stats-container {
+#review-list-container,
+#review-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -628,7 +700,8 @@ img.uploadIcon {
   height: 800px;
 }
 
-#review-list-container {}
+#review-list-container {
+}
 
 .review_item {
   border: black 1px solid;
