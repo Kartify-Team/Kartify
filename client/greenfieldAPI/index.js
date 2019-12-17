@@ -31,7 +31,7 @@ export const getQuestions = productId => {
 // };
 
 export const submitAQuestion = (body, form, product, question) => {
-  if (form === "addQuestion") {
+  if (form === 'addQuestion') {
     return axios
       .post(`${greenfieldRoot}/qa/${product.id}`, body);
   } else {
@@ -40,10 +40,10 @@ export const submitAQuestion = (body, form, product, question) => {
   }
 };
 
-export const markAsHelpful = (id, type = "question") => {
-  return axios.put(`${greenfieldRoot}/qa/${type}/${id}/helpful`)
-}
+export const markAsHelpful = (id, type = 'question') => {
+  return axios.put(`${greenfieldRoot}/qa/${type}/${id}/helpful`);
+};
 
-export const reportPost = (id, type = "answer") => {
-  return axios.put(`${greenfieldRoot}/qa/${type}/${id}/report`)
-}
+export const reportPost = (id, type = 'answer') => {
+  return axios.put(`${greenfieldRoot}/qa/${type}/${id}/report`);
+};

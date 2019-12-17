@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import React from 'react';
-import AddQuestionFormContainer from '../../../containers/Questions/AddQuestionForm'
+import AddFormContainer from '../../../containers/Questions/AddForm'
 
 const AddQuestion = ({ setIsOpen, modalIsOpen, product, formType, question }) => {
     var subtitle;
@@ -19,15 +19,10 @@ const AddQuestion = ({ setIsOpen, modalIsOpen, product, formType, question }) =>
         addAnswer: <h2 ref={_subtitle => (subtitle = _subtitle)}>{product.name}: {question ? question.question_body : ""}</h2>
     }
     Modal.setAppElement('#app')
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#f00';
-    }
 
     return (
         <Modal
             isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
             onRequestClose={() => setIsOpen(false)}
             style={customStyles}
             contentLabel="Example Modal">
@@ -35,7 +30,7 @@ const AddQuestion = ({ setIsOpen, modalIsOpen, product, formType, question }) =>
                 {header[formType]}
                 <button onClick={() => setIsOpen(false)}>X</button>
             </div>
-            <AddQuestionFormContainer setIsOpen={setIsOpen} formType={formType} question={question} />
+            <AddFormContainer setIsOpen={setIsOpen} formType={formType} question={question} />
         </Modal >
     )
 }

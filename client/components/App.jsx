@@ -12,7 +12,7 @@ const App = ({ changeProduct, setRatings, setReviewList }) => {
     changeProduct(id);
     setRatings(id);
     setReviewList(id);
-  }, []);
+  }, [id]);
 
   return (
     <div id="components-container">

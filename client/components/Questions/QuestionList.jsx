@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-
 import QuestionCard from "./QuestionCard";
-import AddQuestion from "./AddQuestion"
+import AddModal from "./AddModal"
 import { markAsHelpful } from "../../greenfieldAPI/"
 
 const QuestionList = ({ questions, product, query, addQuestionList }) => {
@@ -52,7 +51,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
           onClick={() => setIsOpen(true)}>
           Add a Question
           </button>
-        <AddQuestion setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} formType="addQuestion" />
+        <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} formType="addQuestion" />
 
       </div>
     );

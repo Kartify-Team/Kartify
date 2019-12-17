@@ -1,27 +1,36 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useFormik } from "formik";
-import { submitAQuestion } from "../../../greenfieldAPI/"
-import { isValidEmail } from "../../../utils/"
+import { submitAQuestion } from "../../../greenfieldAPI"
+import { isValidEmail } from "../../../utils"
+import axios from 'axios'
 
-const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
+const AddForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
 
     const [errorsOn, setErrorsOn] = useState(false)
     const display = {
         addQuestion: "Your Question",
         addAnswer: "Submit your answer"
     }
+    const [photos, setPhotos] = useState([]);
 
+    const uploadImage = (event) => {
+        const files = Array.from(event.target.files)
+        const formData = new FormData()
+        files.forEach((file, i) => { formData.append(i, file) })
+        axios.post('/img', formData)
+            .then(res => setPhotos(res.data))
+    }
 
     const formik = useFormik({
         initialValues: { question: "", nickname: "", email: "" },
         onSubmit: ({ body, nickname, email }) => {
-            return submitAQuestion({ body, name: nickname, email },
+            console.log({ body, name: nickname, email })
+            return submitAQuestion({ body, name: nickname, email, photos },
                 formType, product, question)
                 .then(() => addQuestionList(product.id))
                 .then(() => setIsOpen(false))
                 .catch((err) => console.log(err))
-
         },
         validate: ({ body, nickname, email }) => {
             const errors = {};
@@ -79,10 +88,13 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
 
             <sub>For authentication reasons, you will not be emailed</sub>
             <br />
+            {formType === "addAnswer" ? <>
+                <label htmlFor="email">Please upload images of your product</label>
+                <input id="file" name="file"
+                    type="file" onChange={uploadImage} multiple /></>
+                : <></>}
             <button id="submit" type="submit" className="action-button" onClick={() => setErrorsOn(true)}>Submit</button>
         </form >
     );
 };
-
-
-export default AddQuestionForm
+export default AddForm
