@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ProductImage from './ProductImage';
-import ProductInteraction from './ProductInteraction';
 import ProductDescription from './ProductDescription';
 import { getDefaultStyle } from '../../utils/styleHelpers';
 import ProductInteractionContainer from '../../containers/Overview/ProductInteraction';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StyleSelector = ({ styles, changeStyle }) => {
+const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
   if (!styles) {
     return null;
   } else {
@@ -11,14 +11,27 @@ const StyleSelector = ({ styles, changeStyle }) => {
         <div id="style-selector-container">
           {styles.results.map(style => {
             return (
-              <img
-                className="style-image"
+              <div
                 key={`${styles.product_id}-${style.style_id}`}
-                onClick={() => {
-                  changeStyle(style);
-                }}
-                src={style.photos[0].url || '/img/default.png'}
-              />
+                className={
+                  currentStyle === style ? 'selected-style-container ' : ''
+                }
+              >
+                <span className="image-container">
+                  <img
+                    className="style-image"
+                    onClick={() => {
+                      changeStyle(style);
+                    }}
+                    src={style.photos[0].url || '/img/default.png'}
+                  />
+                </span>
+                {currentStyle === style ? (
+                  <span id="selected-style">
+                    <i className="fa fa-check" />
+                  </span>
+                ) : null}
+              </div>
             );
           })}
         </div>

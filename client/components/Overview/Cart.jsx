@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getInventory } from '../../utils/styleHelpers';
+import { getIn } from 'formik';
 
 const Cart = ({ inventory }) => {
-  const availableSizes = getInventory(inventory);
+  const availableSizes = getInventory(inventory).sort(
+    (a, b) => Number(a[0]) - Number(b[0])
+  );
   const [availableInventory, setAvailableInventory] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedQty, setSelectedQty] = useState(null);

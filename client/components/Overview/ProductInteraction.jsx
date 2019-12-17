@@ -29,7 +29,11 @@ const ProductInteraction = ({
           />
         )}
       </div>
-      <StyleSelector styles={product.styles} changeStyle={changeStyle} />
+      <StyleSelector
+        styles={product.styles}
+        changeStyle={changeStyle}
+        currentStyle={currentStyle}
+      />
       {!currentStyle ? null : <Cart inventory={currentStyle.skus} />}
     </div>
   );
