@@ -10,7 +10,7 @@ const ProductImage = ({ currentStyle }) => {
 
   useEffect(() => {
     if (!!currentStyle) {
-      changeImage(currentStyle.photos[0].url);
+      changeImage(currentStyle.photos[0].url || '/img/default.png');
     }
   }, [currentStyle]);
 
