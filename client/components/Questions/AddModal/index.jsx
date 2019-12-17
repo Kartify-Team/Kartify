@@ -19,15 +19,10 @@ const AddQuestion = ({ setIsOpen, modalIsOpen, product, formType, question }) =>
         addAnswer: <h2 ref={_subtitle => (subtitle = _subtitle)}>{product.name}: {question ? question.question_body : ""}</h2>
     }
     Modal.setAppElement('#app')
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#f00';
-    }
 
     return (
         <Modal
             isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
             onRequestClose={() => setIsOpen(false)}
             style={customStyles}
             contentLabel="Example Modal">

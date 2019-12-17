@@ -174,7 +174,7 @@ b {
 .thumbnail {
   margin-right: 10px;
   height: 50px;
-  width: 50px;
+  width: auto;
 }
 
 /*
@@ -381,7 +381,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 0 auto;
   display: grid;
   width: 80%;
-  height: 410px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -393,7 +392,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 .sliderContainer {
-  height: 100%;
   width: 100%;
 }
 
@@ -503,7 +501,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 #question-list-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
-  max-height: 600px;
+  max-height: 60vh;
   overflow: scroll;
 }
 
