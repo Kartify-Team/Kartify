@@ -6,13 +6,18 @@ const ProductCard = ({ product, style, rating, changeProduct }) => {
   if (product === null) {
     return (
       <div className="productCard">
-        <button
-          className="cardButton"
-          type="button"
-          src="" // TODO: ADD ICON TO BUTTON
-        >
+        <div className="productCardImage">
+          <button
+            className="cardButton"
+            type="button"
+            src="" // TODO: ADD ICON TO BUTTON
+          >
           X
-        </button>
+          </button>
+        </div>
+        <div className="productCardDescription">
+          <div className="productCardInfo"></div>
+        </div>
       </div>
     );
   } else {
@@ -40,7 +45,7 @@ const ProductCard = ({ product, style, rating, changeProduct }) => {
           <button
             className="cardButton"
             type="button"
-            onClick={() => console.log('clicked')} //TODO: OPEN MODAL
+            onClick={() => {}} //TODO: OPEN MODAL
             src=""
           >
             ★
