@@ -11,7 +11,10 @@ const ThumbnailGallery = ({ imageURLs }) => {
             right: 'auto',
             bottom: 'auto',
             marginRight: '-50%',
-            transform: 'translate(-50%, -50%)'
+            transform: 'translate(-50%, -50%)',
+            height: '85vh',
+            width: 'auto',
+            overflow: 'hidden'
         }
     };
     Modal.setAppElement('#app')

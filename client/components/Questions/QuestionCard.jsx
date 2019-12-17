@@ -8,19 +8,38 @@ import ThumbnailGallery from './ThumbnailGallery'
 const QuestionCard = ({ question, product, handleHelpful, query }) => {
   let [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const [reported, setReported] = useState({});
   const [questionHTML, setQuestionHTML] = useState(<></>);
+  const [userActions, setUserActions] = useState({});
   useState(() => {
-    const reported = {};
-    question.answers.forEach((answer) => reported[answer.id] = false)
+    const q = false;
+    const a = {}
+    if (question.answers.length > 0) {
+      question.answers.forEach((answer) => {
+        a[answer.id] = { reported: false, helpful: false };
+      })
+    }
+    setUserActions({ q, a })
   }, [question])
   const handleReport = (id) => {
+
     reportPost(id)
       .then(() => {
-        const reportedCopy = { ...reported };
-        reportedCopy[id] = true;
-        setReported(reportedCopy)
+        const temp = { ...userActions };
+        temp.a[id].reported = true;
+        setUserActions(temp)
       })
+
+  }
+
+  const handleHelpfulClick = (type, id) => {
+    handleHelpful(type, id)
+    const temp = { ...userActions };
+    if (type === "question") {
+      temp.q = true;
+    } else {
+      temp.a[id].helpful = true;
+    }
+    setUserActions(temp)
   }
   useEffect(() => {
     const body = removeHTMLTags(question.question_body);
@@ -34,48 +53,67 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
       <span className="highlighted" key={i}>{char}</span> : <span key={i}>{char}</span>))
   }, [question, query])
 
-  return <div id="question-container" key={question.question_id}>
-    <div id="question">
-      <h2>Q: {questionHTML}</h2>
-      <sub><a onClick={() => handleHelpful("question", question.question_id)}>Helpful?</a> Yes ({question.question_helpfulness}) | <a onClick={() => setIsOpen(true)}>Add Answer</a></sub>
-      <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} formType="addAnswer" />
-    </div>
+  if (userActions) {
 
-    <div className="answers">
-      {question.answers.map((answer, index) => {
-        if (index < 2 || expanded) {
-          return (
+    return <div id="question-container" key={question.question_id}>
+      <div id="question">
+        <h2>Q: {questionHTML}</h2>
+        <sub>{userActions.q ?
+          <>This was helpful!</> :
+          <a onClick={() => handleHelpfulClick("question", question.question_id)}>Helpful?</a>}
+          &nbsp; Yes ({question.question_helpfulness}) | <a onClick={() => setIsOpen(true)}>Add Answer</a></sub>
+        <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} question={question} product={product} formType="addAnswer" />
+      </div>
 
-            <span key={answer.id}>
-              {index === 0 ? (
-                <p id="first">A: {removeHTMLTags(answer.body)}</p>) : (
-                  <p id="more">{removeHTMLTags(answer.body)}</p>
-                )}
-              <ThumbnailGallery imageURLs={answer.photos} />
-              <br />
-              <sub id="answerer">
-                by {answer.answerer_name === "Seller" ? <b>{answer.answerer_name}</b> : <>{answer.answerer_name}</>},{" "}
-                {formatDate(answer.date)}
-                &nbsp; | &nbsp; <a onClick={() => handleHelpful("answer", answer.id)}>Helpful?</a> Yes ({answer.helpfulness})
-                &nbsp; | &nbsp; {reported[answer.id] ? <>Reported</> : <a onClick={() => handleReport(answer.id)}>Report</a>}
-              </sub>
-            </span>
-          );
-        }
-      })}
-      {expanded ?
-        <div id="load-more" onClick={() => setExpanded(false)}>
-          Collapse Answers
+      <div className="answers">
+        {question.answers.map((answer, index) => {
+          if (index < 2 || expanded) {
+            return (
+
+              <span key={answer.id}>
+                {index === 0 ? (
+                  <p id="first">A: {removeHTMLTags(answer.body)}</p>) : (
+                    <p id="more">{removeHTMLTags(answer.body)}</p>
+                  )}
+                <ThumbnailGallery imageURLs={answer.photos} />
+                <br />
+                <sub id="answerer">
+                  by {answer.answerer_name === "Seller" ? <b>{answer.answerer_name}</b> : <>{answer.answerer_name}</>},{" "}
+                  {formatDate(answer.date)}
+                  &nbsp; | &nbsp; {userActions.a && userActions.a[answer.id] ?
+                    userActions.a[answer.id].helpful ?
+                      <>This was helpful!</> :
+                      <a onClick={() => handleHelpfulClick("answer", answer.id)}>Helpful?</a> :
+                    <></>}
+                  &nbsp; Yes ({answer.helpfulness})
+                &nbsp; | &nbsp; {userActions.a && userActions.a[answer.id] ?
+                    (userActions.a[answer.id].reported ?
+                      <>Reported</> :
+                      <a onClick={() => handleReport(answer.id)}>Report</a>) :
+                    <></>}
+                </sub>
+              </span>
+            );
+          }
+        })}
+        {expanded ?
+          <div id="load-more" onClick={() => setExpanded(false)}>
+            Collapse Answers
     </div>
-        : <>{question.answers.length > 2 ?
-          <div id="load-more" onClick={() => setExpanded(true)}>
-            Load More Answers
+          : <>{question.answers.length > 2 ?
+            <div id="load-more" onClick={() => setExpanded(true)}>
+              Load More Answers
         </div>
-          : <></>}</>
+            : <></>}</>
 
-      }
+        }
+      </div>
     </div>
-  </div>
+  } else {
+    return <div>Loading Question Card</div>
+  }
+
+
 };
 
 export default QuestionCard;

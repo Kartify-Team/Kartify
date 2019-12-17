@@ -14,7 +14,7 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
     }
     const [photos, setPhotos] = useState([]);
 
-    const getImageProps = (event) => {
+    const uploadImage = (event) => {
         const files = Array.from(event.target.files)
         const formData = new FormData()
         files.forEach((file, i) => { formData.append(i, file) })
@@ -91,12 +91,10 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
             {formType === "addAnswer" ? <>
                 <label htmlFor="email">Please upload images of your product</label>
                 <input id="file" name="file"
-                    type="file" onChange={getImageProps} multiple /></>
+                    type="file" onChange={uploadImage} multiple /></>
                 : <></>}
             <button id="submit" type="submit" className="action-button" onClick={() => setErrorsOn(true)}>Submit</button>
         </form >
     );
 };
-
-
 export default AddQuestionForm
