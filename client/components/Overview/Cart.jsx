@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { getInventory } from '../../utils/styleHelpers';
-import { getIn } from 'formik';
 
 const Cart = ({ inventory }) => {
   const availableSizes = getInventory(inventory).sort(
