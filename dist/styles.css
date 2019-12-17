@@ -10,87 +10,7 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video,
-input,
-button,
-span {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -99,38 +19,29 @@ span {
   vertical-align: baseline;
   font-family: 'Open Sans', sans-serif;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
 body {
   line-height: 1;
   font-size: 8pt;
 }
-ol,
-ul {
+
+ol, ul {
   list-style: none;
 }
-blockquote,
-q {
+
+blockquote, q {
   quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -140,17 +51,20 @@ a {
   text-decoration: none;
   color: black;
 }
+
 a:visited {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 a:focus {
   text-decoration: none;
 }
-a:hover,
-a:active {
+
+a:hover, a:active {
   text-decoration: none;
 }
 
@@ -204,12 +118,14 @@ a:active {
   margin: 10px 5px 5px 10px;
   color: var(--secondary-accent-color);
 }
+
 h3 {
   text-transform: uppercase;
   font-size: 1em;
   margin: 1em 0 0.5em 0;
   color: var(--color);
 }
+
 h2 {
   font-size: 1em;
   font-weight: 800;
@@ -230,6 +146,15 @@ sub {
   color: var(--color);
 }
 
+a {
+  text-decoration: underline;
+}
+
+b {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
 .action-button {
   border: black 1px solid;
   display: inline-block;
@@ -237,6 +162,21 @@ sub {
   padding: 15px;
   /* margin: 5px 15px; */
 }
+
+.highlighted {
+  background-color: #ffff00;
+}
+
+.thumbnailGallery {
+  margin-left: 20px;
+}
+
+.thumbnail {
+  margin-right: 10px;
+  height: 50px;
+  width: auto;
+}
+
 /*
  _______  _______  _______  _______  _______ 
 (  ____ \(  ___  )(  ____ )(       )(  ____ \
@@ -248,20 +188,20 @@ sub {
 |/       (_______)|/   \__/|/     \|\_______)
                                              
 */
+
 form {
   /* padding: 15px; */
 }
+
 label {
   margin: 0.8em 0 0.2em 0;
   font-weight: bold;
   display: flex;
 }
-input[type='email'],
-input[type='text'],
-input[type='number'],
-textarea,
-select {
-  border: black 1px solid;
+
+input[type='email'], input[type='text'], input[type='number'], textarea, select {
+  border: var(--color) 1px solid;
+  padding: 0.5em;
 }
 
 .modal-header {
@@ -323,6 +263,7 @@ select {
   border: black 1px solid;
   height: 33%;
   width: 100%;
+  overflow: scroll;
 }
 
 #overview-info {
@@ -352,8 +293,7 @@ select {
   justify-content: right;
 }
 
-#left-description,
-#right-description {
+#left-description, #right-description {
   text-align: left;
 }
 
@@ -375,19 +315,24 @@ select {
   margin-top: 10px;
 }
 
-.style-image {
-  width: 48px;
-  height: 48px;
+#style-selector-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 5px;
+}
+
+.style-image {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  margin: 3px;
   border-radius: 50%;
   border: 2px solid black;
 }
 
 #cart-container {
   display: grid;
-  grid-template-areas:
-    'size size size qty qty'
-    'add add add add star';
+  grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   justify-content: center;
 }
@@ -520,6 +465,7 @@ select {
   top: 45px;
   left: 5%;
 }
+
 .productCardRating {
   position: absolute;
   bottom: 0px;
@@ -539,23 +485,25 @@ select {
                                                                                  
                             
  */
+
 #q-and-a-container {
   margin: 0 auto;
   display: grid;
   width: 80%;
 }
+
 #q-and-a-search {
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
-  padding: 0px;
   height: 2em;
 }
+
 #question-list-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
-  max-height: 600px;
+  max-height: 60vh;
   overflow: scroll;
 }
+
 #question-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
@@ -571,6 +519,7 @@ select {
 #q-list {
   margin: 10px;
 }
+
 /* #question > h2 {
   align
 } */
@@ -578,17 +527,20 @@ select {
 .answers {
   margin: 10px 0px 0px 0px;
 }
-.answers > span > #first {
+
+.answers>span>#first {
   margin: 1em 0px;
 }
-.answers > span > #more {
+
+.answers>span>#more {
   margin: 2em 0px 0.7em 15px;
 }
-.answers > span > #answerer {
+
+.answers>span>#answerer {
   margin-left: 15px;
 }
 
-.answers > #load-more {
+.answers>#load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -602,13 +554,18 @@ select {
   height: 50px;
 }
 
-#add-question-form > input,
-#add-question-form > textarea {
+#add-question-form>input, #add-question-form>textarea {
   width: 400px;
 }
+
 #submit {
   margin: 10px 10px 0px 0px;
 }
+
+img.uploadIcon {
+  content: url('./img/upload.svg') !important;
+}
+
 /* 
  _______  _______          _________ _______           _______ 
 (  ____ )(  ____ \|\     /|\__   __/(  ____ \|\     /|(  ____ \
@@ -621,15 +578,11 @@ select {
                                                                
  */
 
-#size-rating-container,
-#comfort-rating-container,
-#star-stats-container {
-  border: black 1px solid;
+#size-rating-container, #comfort-rating-container, #star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
-#review-list-container,
-#review-stats-container {
+#review-list-container, #review-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -642,8 +595,7 @@ select {
   height: 800px;
 }
 
-#review-list-container {
-}
+#review-list-container {}
 
 .review_item {
   border: black 1px solid;
@@ -735,13 +687,15 @@ select {
   display: inline-block;
 }
 
-.stars-breakdown {
+#breakdown {
   margin: 0 auto;
   margin-top: 6%;
   display: flex;
-  justify-content: flex-start;
-  align-items: left;
+  justify-content: center;
   flex-direction: column;
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+  height: 500px;
 }
 
 .star-bar-label {
@@ -762,4 +716,50 @@ select {
   color: red;
   font-weight: 500;
   margin-right: 5px;
+  <<<<<<< HEAD
+}
+
+=======
+}
+
+/* Characteristics */
+
+.characteristics-container {
+  height: 50px;
+  width: 60%;
+  margin: 0px 3px 0px 0px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.characteristics-sub-bar {
+  min-width: 32%;
+  max-width: 32%;
+  height: 10px;
+  display: inline-block;
+  background-color: #ebebeb;
+  margin: 0 auto;
+}
+
+.characteristic-type {
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+
+.pointer {
+  position: absolute;
+  top: -5.5%;
+  left: 0;
+  overflow: hidden;
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.characteristic {
+  height: 10%;
 }

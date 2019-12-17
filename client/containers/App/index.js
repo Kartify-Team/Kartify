@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import App from '../../components/App';
 import { changeProduct } from '../../actions/creators/changeProduct';
-import { setRatings } from '../../actions/creators/setRatings';
 import { setReviewList } from '../../actions/creators/setReviewList';
-import { setProductImageInfo } from '../../actions/creators/setProductImageInfo';
+import { setRatings } from '../../actions/creators/setRatings';
 
 const mapStateToProps = state => ({
   productInfo: state.product
@@ -12,8 +11,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   changeProduct: productId => dispatch(changeProduct(productId)),
   setRatings: productId => dispatch(setRatings(productId)),
-  setReviewList: productId => dispatch(setReviewList(productId, 1, 2)),
-  setProductImageInfo: productId => dispatch(setProductImageInfo(productId))
+  setReviewList: productId => dispatch(setReviewList(productId, 1, 2))
 });
 
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);

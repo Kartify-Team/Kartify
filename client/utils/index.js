@@ -3,7 +3,14 @@ import { getProductInfo } from '../greenfieldAPI/index.js';
 export const removeHTMLTags = str => {
   return str.replace(/(<([^>]+)>)/gi, '');
 };
-
+export const formatDate = date => {
+  return new Date(date).toLocaleDateString("en-US", {
+    dateStyle: "long"
+  })
+}
+export const isValidEmail = emailAddress => {
+  return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress));
+};
 export const getTotalRatings = ratings => {
   const RatingsWithoutAverage = { ...ratings, average: 0 };
   return Object.values(RatingsWithoutAverage).reduce((acc, curr) => {

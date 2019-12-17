@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionList from '../../components/Questions/QuestionList';
-// import store from '../../store.js';
+import { addQuestionList } from '../../actions/creators/addQuestionList';
 
 const mapStateToProps = (store) => ({
   product: store.product,
@@ -8,7 +8,9 @@ const mapStateToProps = (store) => ({
   query: store.questions.searchQuery
 });
 
-//mapDispatchToProps
+const mapDispatchToProps = dispatch => ({
+  addQuestionList: productId => dispatch(addQuestionList(productId))
+});
 
-const QuestionListContainer = connect(mapStateToProps)(QuestionList);
+const QuestionListContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionList);
 export default QuestionListContainer;

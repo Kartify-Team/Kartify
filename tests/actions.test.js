@@ -4,7 +4,9 @@ import { changeProduct } from '../client/actions/creators/changeProduct';
 import { setRatings } from '../client/actions/creators/setRatings';
 import { addQuestionList } from '../client/actions/creators/addQuestionList';
 import { setCharacteristics } from '../client/actions/creators/setCharacteristics';
+import { searchQuestions } from "../client/actions/creators/searchQuestions"
 import 'regenerator-runtime';
+import { SEARCH_QUESTIONS } from '../client/actions';
 
 let mockStore = configureStore([thunk]);
 let store;
@@ -59,8 +61,10 @@ describe('setCharacteristics action creator', () => {
 });
 
 describe('addQuestionList action creator', () => {
-  let mockStore = configureStore([thunk]);
-  let store = mockStore();
+  let store;
+  beforeEach(() => {
+    store = mockStore();
+  });
   it('dispatches to store', () => {
     expect.assertions(1);
     return store
@@ -71,3 +75,15 @@ describe('addQuestionList action creator', () => {
       .catch(e => console.error(e));
   });
 });
+
+describe('searchQuestions action creator', () => {
+  it('dispatches to store', () => {
+    const query = 'Comfort'
+    const expectedAction = {
+      type: SEARCH_QUESTIONS,
+      query
+    }
+    expect(searchQuestions(query)).toEqual(expectedAction)
+  });
+});
+

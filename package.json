@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test_coverage": "jest --coverage",
     "test_start": "node server/index.js && jest",
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch"
@@ -29,14 +30,17 @@
     "@brainhubeu/react-carousel": "^1.10.30",
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
+    "cloudinary": "^1.18.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-form-data": "^2.0.10",
     "formik": "^2.0.8",
     "jest-fetch-mock": "^2.1.2",
     "pure-react-carousel": "^1.24.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-modal": "^3.11.1",
+    "react-progress-button": "^5.1.0",
     "react-redux": "^7.1.3",
     "react-responsive-carousel": "^3.1.51",
     "react-router-dom": "^5.1.2",
@@ -59,6 +63,7 @@
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint-plugin-react": "^7.17.0",
     "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
