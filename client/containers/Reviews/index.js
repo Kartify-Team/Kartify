@@ -10,7 +10,7 @@ const mapStateToProps = store => ({
     store.reviews === undefined ? null : store.reviews.characteristics,
   reviews: store.reviews,
   reviewList: store.reviews !== undefined ? store.reviews.reviewList : null,
-  totalRatings: store.reviews == undefined ? null : store.reviews.totalRatings
+  totalRatings: store.reviews === undefined ? null : store.reviews.totalRatings
 });
 
 const mapDispatchToProps = dispatch => ({

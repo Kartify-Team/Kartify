@@ -5,7 +5,7 @@ import { submitAQuestion } from "../../../greenfieldAPI"
 import { isValidEmail } from "../../../utils"
 import axios from 'axios'
 
-const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
+const AddForm = ({ product = {}, addQuestionList, setIsOpen, formType, question = {} }) => {
 
     const [errorsOn, setErrorsOn] = useState(false)
     const display = {
@@ -97,4 +97,4 @@ const AddQuestionForm = ({ product = {}, addQuestionList, setIsOpen, formType, q
         </form >
     );
 };
-export default AddQuestionForm
+export default AddForm
