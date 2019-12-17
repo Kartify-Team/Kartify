@@ -5,7 +5,11 @@ const getMyOutfit = () => {
   return dispatch => {
     let oldOutfit = localStorage.getItem('outfit');
     if (oldOutfit === null) {
-      return;
+      let defaultOutfit = [];
+      for (let i = 0; i < 5; i++) {
+        defaultOutfit.push(null);
+      }
+      dispatch(changeMyOutfit(defaultOutfit));
     } else {
       let newOutfit = JSON.parse(oldOutfit);
       getProductsInfo(newOutfit)
@@ -13,7 +17,6 @@ const getMyOutfit = () => {
           dispatch(changeMyOutfit(products));
         });
     }
-
   };
 };
 

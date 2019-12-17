@@ -1,19 +1,23 @@
 import {connect} from 'react-redux';
 import OtherItems from '../../components/OtherItems/index.jsx';
 import getRelatedProducts from '../../actions/dispatchers/getRelatedProducts.js';
-import getRelatedProductsStyles from '../../actions/dispatchers/getRelatedProductsStyles.js';
-import getRelatedProductsRatings from '../../actions/dispatchers/getRelatedProductsRatings.js';
+import getProductsStyles from '../../actions/dispatchers/getProductsStyles.js';
+import getProductsRatings from '../../actions/dispatchers/getProductsRatings.js';
 import getMyOutfit from '../../actions/dispatchers/getMyOutfit.js';
 import { changeProduct } from '../../actions/creators/changeProduct.js';
-import { saveOutfit } from '../../utils/localStorage.js'
+import { saveOutfit } from '../../utils/localStorage.js';
 
 
 const mapStateToProps = (store) => ({
+  productInfo: store.product,
+  // Related Products
   relatedProducts: store.otherItems.relatedProducts,
   relatedProductsStyles: store.otherItems.relatedProductsStyles,
   relatedProductsRatings: store.otherItems.relatedProductsRatings,
-  productInfo: store.product,
-  myOutfit: store.otherItems.myOutfit
+  // My Outfit
+  myOutfit: store.otherItems.myOutfit,
+  myOutfitStyles: store.otherItems.myOutfitStyles,
+  myOutfitRatings: store.otherItems.myOutfitRatings
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -23,11 +27,11 @@ const mapDispatchToProps = (dispatch) => ({
   getRelatedProducts: (id) => {
     dispatch(getRelatedProducts(id));
   },
-  getRelatedProductsStyles: (id) => {
-    dispatch(getRelatedProductsStyles(id));
+  getProductsStyles: (id, type) => {
+    dispatch(getProductsStyles(id, type));
   },
-  getRelatedProductsRatings: (id) => {
-    dispatch(getRelatedProductsRatings(id));
+  getProductsRatings: (id, type) => {
+    dispatch(getProductsRatings(id, type));
   },
   getMyOutfit: () => {
     dispatch(getMyOutfit());
