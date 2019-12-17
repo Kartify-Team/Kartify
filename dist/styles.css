@@ -422,13 +422,20 @@ select {
   margin: 5px;
 }
 
-.style-image {
+.image-container {
+  overflow: hidden;
   width: 70px;
   height: 70px;
   background-size: cover;
   margin: 3px;
   border-radius: 50%;
   border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.style-image {
+  max-width: 100%;
 }
 
 #cart-container {
@@ -464,6 +471,28 @@ select {
   width: 50px;
   margin: 5px;
   border: 1px solid black;
+}
+
+.selected-style-container {
+  position: relative;
+}
+
+#selected-style {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: 1000;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#selected-style i {
 }
 
 /* 
