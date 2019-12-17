@@ -25,7 +25,7 @@ server.post('/img', (req, res) => {
   Promise.all(Object.values(req.files)
     .map(image => cloudinary.uploader.upload(image.path)))
     .then(cloudResponse => res.send(cloudResponse.map(image => image.url)))
-    .catch((err) => res.send(err));
+    .catch((err) => res.status(500).send(err));
 });
 
 
