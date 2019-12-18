@@ -14,7 +14,8 @@
     "test_coverage": "jest --coverage",
     "test_start": "node server/index.js && jest",
     "start": "nodemon server/index.js",
-    "build": "webpack -d --watch"
+    "build-dev": "webpack -d --watch",
+    "build-prod": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
