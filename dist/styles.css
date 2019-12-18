@@ -1049,3 +1049,8 @@ img.uploadIcon {
 #sort-menu > select:focus {
   outline: none;
 }
+
+.underline-clickable {
+  text-decoration: underline;
+  cursor: pointer;
+}
