@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const ImageGallery = ({ images, currentImage, changeImage }) => {
+const ImageGallery = ({ images, currentImage, changeImage, currentIndex }) => {
   const [topIndex, setTopIndex] = useState(0);
 
-  const changeImageGalleryIndex = (type = "down") => {
+  const updateTopIndex = type => {
     if (type === "down") {
-      if (topIndex + 8 < images.length) {
+      if (topIndex + 7 < images.length) {
         setTopIndex(topIndex + 1);
       }
     } else {
@@ -16,23 +16,33 @@ const ImageGallery = ({ images, currentImage, changeImage }) => {
   };
 
   useEffect(() => {
-    setTopIndex(0);
-  }, [images]);
+    if (!!images && images.length > 1) {
+      if (topIndex < currentIndex && topIndex > currentIndex - 7) {
+        return;
+      } else {
+        if (topIndex > currentIndex) {
+          setTopIndex(currentIndex);
+        } else if (currentIndex > images.length - 7) {
+          setTopIndex(images.length - 7);
+        }
+      }
+    }
+  }, [currentIndex]);
 
   return (
     <div id="image-gallery">
       <i
         className="fa fa-chevron-up fa-2x gallery-arrow"
         onClick={() => {
-          changeImageGalleryIndex("up");
+          updateTopIndex("up");
         }}
         style={{
-          visibility: images.length > 7 && topIndex > 0 ? "visible" : "hidden"
+          visibility: topIndex > 0 && images.length > 7 ? "visible" : "hidden"
         }}
       />
       {images.length > 1
         ? images.map((image, idx) => {
-            if (idx >= topIndex && idx < topIndex + 7) {
+            if (images.length < 7 || (idx < topIndex + 7 && idx >= topIndex)) {
               return (
                 <div
                   key={`image-gallery-thumbnail-${idx}`}
@@ -55,11 +65,11 @@ const ImageGallery = ({ images, currentImage, changeImage }) => {
       <i
         className="fa fa-chevron-down fa-2x gallery-arrow"
         onClick={() => {
-          changeImageGalleryIndex("down");
+          updateTopIndex("down");
         }}
         style={{
           visibility:
-            images.length > 7 && topIndex + 8 < images.length
+            images.length > 7 && topIndex + 7 < images.length
               ? "visible"
               : "hidden"
         }}

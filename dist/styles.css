@@ -336,12 +336,6 @@ select {
   grid-template-rows: 75% 25%;
 }
 
-#product-image-container {
-  position: relative;
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
-}
-
 #product-interaction-container {
   border: black 1px solid;
   margin: 10px 10px 5px 5px;
@@ -502,6 +496,12 @@ select {
 
 /* Image Gallery */
 
+#product-image-container {
+  position: relative;
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
+}
+
 #main-product-image {
   width: 100%;
   height: 100%;
@@ -539,6 +539,18 @@ select {
 .selected-thumbnail {
   padding-bottom: 3px;
   border-bottom: 5px solid black;
+}
+
+#image-left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 16%;
+}
+
+#image-right-arrow {
+  position: absolute;
+  top: 50%;
+  left: 95%;
 }
 
 /* 
