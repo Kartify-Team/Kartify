@@ -26,14 +26,16 @@ const ProductImage = ({ currentStyle }) => {
       for (let i = 0; i < currentStyle.photos.length; i++) {
         if (currentStyle.photos[i].url === currentImage) {
           setCurrentIndex(i);
+          return;
         }
       }
+      setCurrentIndex(0);
     }
   }, [currentImage]);
 
   useEffect(() => {
     if (!!currentStyle) {
-      changeImage(currentStyle.photos[currentIndex].url);
+      changeImage(currentStyle.photos[0].url);
       setCurrentIndex(0);
     }
   }, [currentStyle]);
@@ -45,7 +47,6 @@ const ProductImage = ({ currentStyle }) => {
         currentImage={currentImage}
         changeImage={changeImage}
         currentIndex={currentIndex}
-        updateIndex={updateIndex}
       />
       <img id="main-product-image" src={currentImage} />
       <i
