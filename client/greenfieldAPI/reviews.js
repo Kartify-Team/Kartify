@@ -71,3 +71,11 @@ export const postReview = (
     characteristics
   });
 };
+
+export const incrementHelpfulness = reviewId => {
+  return axios.put(`${greenfieldRoot}/reviews/helpful/${reviewId}`);
+};
+
+export const reportReview = reviewId => {
+  return axios.put(`${greenfieldRoot}/reviews/report/${reviewId}`);
+};
