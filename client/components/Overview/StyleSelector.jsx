@@ -7,7 +7,7 @@ const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
     return (
       <div className="interaction-item">
         <br />
-        <p>STYLE > SELECTED STYLE</p>
+        <p>STYLE > {!!currentStyle ? currentStyle.name : null}</p>
         <div id="style-selector-container">
           {styles.results.map(style => {
             return (
