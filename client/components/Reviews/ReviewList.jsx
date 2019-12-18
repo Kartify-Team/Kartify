@@ -3,13 +3,30 @@ import ReviewItem from './ReviewItem';
 import AddReview from './addReview/index';
 
 let count = 2;
-const ReviewList = ({ reviews, setReviewList, product }) => {
+const ReviewList = ({
+  reviews,
+  setReviewList,
+  product,
+  filters,
+  toggleFilter
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [sort, setSort] = useState('helpful');
 
   useEffect(() => {
     setReviewList(product.id, 1, sort);
   }, [sort]);
+
+  let filterDisplay;
+  if (filters.length > 0) {
+    filterDisplay = filters.map(filter => (
+      <div key={filter} className="filter" onClick={() => toggleFilter(filter)}>
+        {filter} star{filter === '1' ? '' : 's'}
+      </div>
+    ));
+  } else {
+    filterDisplay = <h3>No filters applied</h3>;
+  }
 
   return (
     <>
@@ -31,19 +48,46 @@ const ReviewList = ({ reviews, setReviewList, product }) => {
         >
           Add Review
         </button>
+
         <AddReview
           setIsOpen={setIsOpen}
           isOpen={isOpen}
           product={product}
           sort={sort}
         />
-        <h2>{reviews.length} reviews, sorted by</h2>
-        <select onChange={e => setSort(e.target.value)} value={sort}>
-          <option value="helpful">Helpful</option>
-          <option value="newest">Newest</option>
-          <option value="relevant">Relevant</option>
-        </select>
-        <div>{reviews.slice(0, count).map(review => ReviewItem(review))}</div>
+
+        <div id="sort-menu">
+          <h2 className="inline">{reviews.length} reviews, sorted by</h2>
+          <select
+            onChange={e => setSort(e.target.value)}
+            value={sort}
+            className="inline"
+          >
+            <option value="helpful">Helpful</option>
+            <option value="newest">Newest</option>
+            <option value="relevant">Relevant</option>
+          </select>
+        </div>
+
+        <div id="filter-container">{filterDisplay}</div>
+
+        <div>
+          {reviews
+            .filter(review => {
+              if (filters.length > 0) {
+                for (let filter of filters) {
+                  if (review.rating.toString() === filter) {
+                    return true;
+                  }
+                }
+                return false;
+              } else {
+                return true;
+              }
+            })
+            .slice(0, count)
+            .map(review => ReviewItem(review))}
+        </div>
       </div>
       <div id="review-list-container"></div>
     </>

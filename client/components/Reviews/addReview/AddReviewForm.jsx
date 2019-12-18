@@ -68,7 +68,9 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
 
     validate: values => {
       const errors = {};
-      if (!rating) errors.rating = 'Required';
+      if (!rating) {
+        errors.rating = 'Required';
+      }
       if (!values.recommendation) {
         errors.recommendation = 'Required';
       }
@@ -78,6 +80,9 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
       if (values.body.length > 1000) {
         errors.body =
           'Max characters reached. Maximum allowed characters is 1000';
+      }
+      if (values.body.length < 50) {
+        errors.body = 'Minimum of 50 characters required';
       }
       if (values.summary.length > 60) {
         errors.summary =

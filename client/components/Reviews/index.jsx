@@ -11,10 +11,12 @@ const Reviews = ({
   reviewList,
   setReviewList,
   totalRatings,
-  setTotalRatings
+  setTotalRatings,
+  filters,
+  toggleFilter
 }) => {
   if (product && reviews && reviews.ratings) {
-    const id = useParams().id;
+    const id = product.id || useParams().id;
     useEffect(() => {
       setCharacteristics(id);
       setTotalRatings(reviews.ratings);
@@ -43,11 +45,14 @@ const Reviews = ({
             ratings={reviews.ratings}
             characteristics={characteristics}
             totalRatings={totalRatings}
+            toggleFilter={toggleFilter}
           />
           <ReviewList
             reviews={reviewList}
             setReviewList={setReviewList}
             product={product}
+            filters={filters}
+            toggleFilter={toggleFilter}
           />
         </div>
       </div>
