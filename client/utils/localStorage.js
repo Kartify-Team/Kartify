@@ -12,15 +12,15 @@ export const getOutfits = () => {
 
 export const saveOutfit = (id) => {
   return dispatch => { 
-  let oldOutfit = localStorage.getItem('outfit');
-  if (oldOutfit === null) {
-    let newOutfit = [id];
-    localStorage.setItem('outfit', JSON.stringify(newOutfit));
-  } else {
-    let parsedOutfit = JSON.parse(oldOutfit);
-    let newOutfit = parsedOutfit.slice();
-    newOutfit.push(id);
-    localStorage.setItem('outfit', JSON.stringify(newOutfit));
-  }
-  }
+    let oldOutfit = localStorage.getItem('outfit');
+    if (oldOutfit === null) {
+      let newOutfit = [id];
+      localStorage.setItem('outfit', JSON.stringify(newOutfit));
+    } else {
+      let parsedOutfit = JSON.parse(oldOutfit);
+      let newOutfit = parsedOutfit.slice();
+      newOutfit.push(id);
+      localStorage.setItem('outfit', JSON.stringify(newOutfit));
+    }
+  };
 };
