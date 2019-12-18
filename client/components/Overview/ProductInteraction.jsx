@@ -1,8 +1,8 @@
-import React from 'react';
-import StyleSelector from './StyleSelector';
-import Cart from './Cart';
-import Stars from '../Reviews/Stars';
-import Price from '../Price';
+import React from "react";
+import StyleSelector from "./StyleSelector";
+import Cart from "./Cart";
+import Stars from "../Reviews/Stars";
+import Price from "../Price";
 
 const ProductInteraction = ({
   product,

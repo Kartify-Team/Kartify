@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ImageGallery from "./ImageGallery";
+import Modal from "react-modal";
 
 const ProductImage = ({ currentStyle }) => {
   const changeImage = image => {
@@ -8,6 +9,7 @@ const ProductImage = ({ currentStyle }) => {
 
   const [currentImage, setCurrentImage] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   const updateIndex = (type = "right") => {
     if (type === "right") {
@@ -77,6 +79,23 @@ const ProductImage = ({ currentStyle }) => {
               : "hidden"
         }}
       />
+      <i
+        className="fa fa-expand"
+        id="image-expand"
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      />
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+        className="expanded-image-modal"
+        overlayClassName="expanded-image-modal-overlay"
+      >
+        <div>
+          <img id="expanded-image" src={currentImage} />
+        </div>
+      </Modal>
     </div>
   );
 };
