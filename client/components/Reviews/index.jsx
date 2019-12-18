@@ -48,7 +48,6 @@ const Reviews = ({
             reviews={reviewList}
             setReviewList={setReviewList}
             product={product}
-            characteristics={characteristics}
           />
         </div>
       </div>
