@@ -29,7 +29,8 @@ const Reviews = ({
     reviews.ratings === undefined ||
     reviews.ratings === null ||
     reviews.reviewList === null ||
-    reviews.reviewList === undefined
+    reviews.reviewList === undefined ||
+    !characteristics
   ) {
     return null;
   } else {
@@ -47,6 +48,7 @@ const Reviews = ({
             reviews={reviewList}
             setReviewList={setReviewList}
             product={product}
+            characteristics={characteristics}
           />
         </div>
       </div>

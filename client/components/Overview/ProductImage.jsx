@@ -1,26 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ImageGallery from './ImageGallery';
 
-const ProductImage = ({ product }) => {
-  if (!product) {
-    return null;
-  } else {
-    if (!product.imageInfo) {
-      return null;
-    } else {
-      return (
-        <div id="product-image-container">
-          <img
-            id="main-product-image"
-            src={
-              !!product.imageInfo.url
-                ? product.imageInfo.url
-                : '/img/default.png'
-            }
-          />
-        </div>
-      );
+const ProductImage = ({ currentStyle }) => {
+  const changeImage = (image = '/img/default.png') => {
+    setCurrentImage(image);
+  };
+
+  const [currentImage, setCurrentImage] = useState('');
+
+  useEffect(() => {
+    if (!!currentStyle) {
+      changeImage(currentStyle.photos[0].url);
     }
-  }
+  }, [currentStyle]);
+
+  return (
+    <div id="product-image-container">
+      <img id="main-product-image" src={currentImage} />
+    </div>
+  );
 };
 
 export default ProductImage;
