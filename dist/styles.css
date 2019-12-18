@@ -26,7 +26,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  font-size: 8pt;
+  font-size: 1rem;
 }
 
 ol, ul {
@@ -651,11 +651,15 @@ img.uploadIcon {
 #review-list-container {}
 
 .review_item {
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
   padding: 5px;
+  text-align: left;
+  padding: 3%;
 }
 
+.summary {
+  font-weight: bold;
+}
 #review-stats-container {
   display: flex;
   flex-direction: column;
@@ -671,6 +675,7 @@ img.uploadIcon {
 
 #star-stats-container {
   height: 40%;
+  width: 100%;
 }
 
 .avg-rating-header {
@@ -744,11 +749,19 @@ img.uploadIcon {
   margin: 0 auto;
   margin-top: 6%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-direction: column;
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
   height: 500px;
+  align-items: flex-start;
+}
+
+#avg-rating-container {
+  justify-content: flex-start;
+  display: flex;
+  width: 40%;
+  padding-left: 20%;
+  margin-top: 5%;
 }
 
 .star-bar-label {
@@ -811,6 +824,15 @@ img.uploadIcon {
 
 .characteristic {
   height: 10%;
+  padding-left: 21%;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.characteristic-label {
+  font-size: 0.8em;
+  width: 80%;
+  overflow: ;
 }
 
 /* Forms */
@@ -822,7 +844,10 @@ img.uploadIcon {
 #add-review-form>input, #add-review-form>textarea {
   width: 400px;
 }
+<<<<<<< HEAD
 
 #add-review-form {
   overflow: scroll;
 }
+=======
+>>>>>>> 04305fd81cf3dbdb5d37c49ed349fc0df193ee2d
