@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import ImageGallery from "./ImageGallery";
 
 const ProductImage = ({ currentStyle }) => {
-  const changeImage = (image = "/img/default.png") => {
-    setCurrentImage(image);
+  const changeImage = image => {
+    setCurrentImage(image || "/img/default.png");
   };
 
   const [currentImage, setCurrentImage] = useState("");
@@ -37,12 +37,6 @@ const ProductImage = ({ currentStyle }) => {
       setCurrentIndex(0);
     }
   }, [currentStyle]);
-
-  // useEffect(() => {
-  //   if (!!currentStyle) {
-  //     changeImage(currentStyle.photos[currentIndex].url);
-  //   }
-  // }, [currentIndex]);
 
   return (
     <div id="product-image-container">

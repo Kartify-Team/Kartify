@@ -20,10 +20,12 @@ const ImageGallery = ({ images, currentImage, changeImage, currentIndex }) => {
       if (topIndex < currentIndex && topIndex > currentIndex - 7) {
         return;
       } else {
-        if (topIndex > currentIndex) {
+        if (topIndex === currentIndex) {
+          return;
+        } else if (topIndex > currentIndex) {
           setTopIndex(currentIndex);
         } else {
-          if (topIndex + 1 < images.length - 7) {
+          if (topIndex < images.length - 7) {
             if (currentIndex === 0) {
               setTopIndex(currentIndex);
             } else {
