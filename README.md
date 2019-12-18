@@ -9,14 +9,18 @@ To build the files, run `npm build`.
 To specify which port the server will listen on, assign the desired port number to the `process.env.PORT` environment variable or
 create a `.env` file and assign the port number to the PORT variable there.
 #### Configuring dotenv
-If you wish to specify the port number in a .env file, do the following:
-1. create a file in the root directory named `.env`.
-2. in the `.env` file, specify the port number.
+1. Create a file in the root directory named `.env`.
+2. In the `.env` file, specify the port number & root.
+3. Image uploads require an API key from Cloudinary. Sign up for a freeaccount [here](https://cloudinary.com/) and obtain an name, API key, and secret.
 
 Example:
 ```
 // .env file
-PORT=YOUR_PORT_NUMBER_HERE
+PORT=YOUR_PORT_HERE
+ROOT=http://127.0.0.1
+CLOUD_NAME=YOUR_CLOUD_NAME_HERE
+CLOUD_API_KEY=YOUR_CLOUD_API_KEY_HERE
+CLOUD_API_SECRET=YOUR_CLOUD_API_SECRET
 ```
 ### Starting the server
 To start the server, run `npm start`.
