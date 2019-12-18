@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -97,7 +97,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 article,
@@ -133,7 +133,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -194,7 +194,7 @@ a:active {
 #site-title {
   font-size: 3em;
   padding: 15px;
-  font-family: "Rock Salt", cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 #components-container {
@@ -295,9 +295,9 @@ label {
   display: flex;
 }
 
-input[type="email"],
-input[type="text"],
-input[type="number"],
+input[type='email'],
+input[type='text'],
+input[type='number'],
 textarea,
 select {
   border: var(--color) 1px solid;
@@ -485,7 +485,7 @@ select {
 
 #cart-container {
   display: grid;
-  grid-template-areas: "size size size qty qty" "add add add add star";
+  grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   justify-content: center;
 }
@@ -777,7 +777,7 @@ select {
 }
 
 img.uploadIcon {
-  content: url("./img/upload.svg") !important;
+  content: url('./img/upload.svg') !important;
 }
 
 /* 
@@ -812,7 +812,27 @@ img.uploadIcon {
   height: 800px;
 }
 
-#review-list-container {
+#filter-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
+  padding-left: 20%;
+  padding-right: 20%;
+  height: 5%;
+  overflow: hidden;
+}
+
+.filter {
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  padding: 7px;
+}
+
+.filter:hover {
+  cursor: pointer;
 }
 
 .review_item {
@@ -1009,4 +1029,22 @@ img.uploadIcon {
 #add-review-form > input,
 #add-review-form > textarea {
   width: 400px;
+}
+
+#sort-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sort-menu > select {
+  margin-left: 1%;
+  border: none;
+  background-color: white;
+  border-bottom: 2px solid black;
+  font-size: 1rem;
+}
+
+#sort-menu > select:focus {
+  outline: none;
 }
