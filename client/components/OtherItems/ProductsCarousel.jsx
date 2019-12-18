@@ -6,7 +6,7 @@ import { Link, useRouteMatch } from 'react-router-dom';
 import Slider from 'react-slick';
 import ProductCard from './ProductCard.jsx';
 
-const ProductsCarousel = ({ type, currentId, products, styles, ratings, changeProduct, getMyOutfit }) => {
+const ProductsCarousel = ({ type, currentProduct, products, styles, ratings, changeProduct, getMyOutfit }) => {
   const settings = {
     dots: false, // ?
     infinite: false,
@@ -20,11 +20,11 @@ const ProductsCarousel = ({ type, currentId, products, styles, ratings, changePr
       <div className="sliderContainer">
         {products.map((product, i) => {
           if (product === null) {
-            return <ProductCard key={0} currentId={currentId} product={product} getMyOutfit={getMyOutfit} />;
+            return <ProductCard key={0} currentProduct={currentProduct} product={product} getMyOutfit={getMyOutfit} />;
           } else {
             return (
               <Link key={product.id} to={`${product.id}`}>
-                <ProductCard type={type} product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct} getMyOutfit={getMyOutfit}/>
+                <ProductCard type={type} currentProduct={currentProduct} product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct} getMyOutfit={getMyOutfit}/>
               </Link>
             );
           }

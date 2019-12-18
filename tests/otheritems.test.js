@@ -10,8 +10,12 @@ describe('OtherItems Component', () => {
 
   it('renders all child components', async () => {
     const props = {
+      productInfo: {id: 1},
       products: ['product1', 'product2', 'product3'],
       getRelatedProducts: () => {
+        return;
+      },
+      getMyOutfit: () => {
         return;
       }
     }

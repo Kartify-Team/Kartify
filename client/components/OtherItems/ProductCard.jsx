@@ -3,7 +3,7 @@ import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
 import { addOutfitProduct, removeOutfitProduct } from '../../utils/localStorage.js';
 
-const ProductCard = ({ type, currentId, product, style, rating, changeProduct, getMyOutfit }) => {
+const ProductCard = ({ type, currentProduct, product, style, rating, changeProduct, getMyOutfit }) => {
 
   const defineButtonStyle = () => {
     if (type === 'relatedProduct') {
@@ -25,7 +25,7 @@ const ProductCard = ({ type, currentId, product, style, rating, changeProduct, g
   if (product === null) {
     return (
       <div className="productCard" onClick={() => {
-        addOutfitProduct(currentId);
+        addOutfitProduct(currentProduct.id);
         getMyOutfit();
       }}>
         <div className="productCardImage">

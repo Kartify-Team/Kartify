@@ -50,9 +50,9 @@ const OtherItems = ({
         <div className="otherItemsContainer">
           <h3>Related Products</h3>
 
-          <ProductsCarousel type={'relatedProduct'} currentId={productInfo.id} products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} changeProduct={changeProduct}/>
+          <ProductsCarousel type={'relatedProduct'} currentProduct={productInfo} products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} changeProduct={changeProduct}/>
           <h3>Your Outfit</h3>
-          <ProductsCarousel type={'outfitProduct'} currentId={productInfo.id} products={myOutfit} styles={myOutfitStyles} ratings={myOutfitRatings} changeProduct={changeProduct} getMyOutfit={getMyOutfit}/>
+          <ProductsCarousel type={'outfitProduct'} currentProduct={productInfo} products={myOutfit} styles={myOutfitStyles} ratings={myOutfitRatings} changeProduct={changeProduct} getMyOutfit={getMyOutfit}/>
         </div>
       </div>
     );
