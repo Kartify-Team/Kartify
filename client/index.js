@@ -13,7 +13,7 @@ const App = () => (<Provider store={store}>
       </Route>
     </Switch>
   </Router>
-</Provider>)
+</Provider>);
 
 // console.log("env" + process.env.REACT_APP_IS_E2E_TEST)
 // if (process.env.REACT_APP_IS_E2E_TEST) {
