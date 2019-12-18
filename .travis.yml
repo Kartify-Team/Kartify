@@ -24,8 +24,6 @@ node_js:
   - node
 env:
   secure: D523bsmBvgQIuVUiXbS8FBTvYrpE1AcYk2w1fHJiCVJ4Y0R9QgWPAopULoxA+DRmb0D9ZpDLw7rDZRwihNv9XoPzflbC/bxRghjDnGNKdlwwQizMXFM0M0WzLHkbKWz11LVsAwx9+g3reHosL5+TssKT/UMeLMTP6WgTCu8blZm0wYpF3JataZkfkI3gWKobuVlBXTiRJtqVJ+Q1L7U/hPQROIF7K2EImkRBWAEWIJe/WbDYqmp/X5GTGKl/eFqskaRO3DqLfJb61nueUxxdP2iDtqSig683YOR71PmSGQg04STTWuL01HA1ReYUhmN4OD0SOEy/yGSdPuVilmD9g2NcW+5OkmYNA9ekhWbVp0N2lQpqYB2KBfdShuV4do1NaaimpzLNmQpX0Fy79jgnz8deE94j/4Bp22repJc3gTtkPUl0MItF1OD0qVJvWVOO3Zf/7Yd/4+hfBWFB+tdTZvbLV/UQAPJL4fQUUg+ByYaF05zE3/hzrgbbslv9ncimsOU1GoZuHUatQ8eXXcM/0s7YIoQFur1S7WO/qLalJPZbwaWxLgfaloc6I6+ok4JeEMMQmJfp2Tiu6T4+bkJG+L2wygL1xwoRvsHpV1tUCF7u3//vmpTuMWnhZMSScJ0MUE39OHp35guSuXjnV8faW/q0YWxeYwOPNiPHi9lqdqQ=
-  global:
-    - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 # allow headful tests
 before_install:
   # Enable user namespace cloning
