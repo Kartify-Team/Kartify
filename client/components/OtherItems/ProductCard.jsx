@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
 import { addOutfitProduct, removeOutfitProduct } from '../../utils/localStorage.js';
+import ComparisonModal from './Related Products/ComparisonModal.jsx';
 
 const ProductCard = ({ type, currentProduct, product, style, rating, changeProduct, getMyOutfit }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const defineButtonStyle = () => {
     if (type === 'relatedProduct') {
@@ -13,9 +15,11 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
     }
   };
 
-  const handleActionButtonClick = (id) => {
+  const handleActionButtonClick = (e, id) => {
+    e.preventDefault();
     if (type === 'relatedProduct') {
-      // TODO: OPEN 
+      setIsOpen(true);
+      e.preventDefault();
     } else if (type === 'outfitProduct') {
       removeOutfitProduct(id);
       getMyOutfit();
@@ -43,18 +47,25 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
       </div>
     );
   } else {
+
+      // ProductsCharacteristics({
+      //   mainProductFeatures: currentProduct.features, 
+      //   comparedProductFeatures: product.features});
+    
     return (
       <div className="productCard" 
         onClick={
           (e) => {
             if (e.target.className === 'cardButton') {
-              e.preventDefault();
+              handleActionButtonClick(e, product.id);
             } else {
               changeProduct(product.id); 
+              window.scroll(0, 0);
             }
           }
         }
       >
+        <ComparisonModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} mainProduct={currentProduct} comparedProduct={product}/>
         <div className="productCardImage">
           <img
             className="cardImage"
@@ -67,7 +78,7 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
           <button
             className="cardButton"
             type="button"
-            onClick={() => handleActionButtonClick(product.id)}
+            // onClick={(e) => handleActionButtonClick(e, product.id)}
             src=""
           >
             {defineButtonStyle()}

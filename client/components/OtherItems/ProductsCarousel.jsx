@@ -23,7 +23,7 @@ const ProductsCarousel = ({ type, currentProduct, products, styles, ratings, cha
             return <ProductCard key={0} currentProduct={currentProduct} product={product} getMyOutfit={getMyOutfit} />;
           } else {
             return (
-              <Link key={product.id} to={`${product.id}`}>
+              <Link key={product.id} to={`${product.id}`} >
                 <ProductCard type={type} currentProduct={currentProduct} product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct} getMyOutfit={getMyOutfit}/>
               </Link>
             );

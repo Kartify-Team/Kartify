@@ -408,7 +408,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   right: 0;
   border: 2px solid black;
   border-radius: 50%;
-  z-index: 1000;
   background-color: white;
   display: flex;
   align-items: center;
@@ -489,7 +488,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   position: absolute;
   top: 5%;
   right: 7%;
-  z-index: 100;
   background: transparent;
   color: goldenrod;
 }
@@ -522,6 +520,13 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   position: absolute;
   bottom: 0px;
   left: 5%;
+}
+
+/* MODAL */
+#comparisonModal {
+  overflow: scroll;
+  width: 50%;
+  height: 50%;
 }
 
 /* 
