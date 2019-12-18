@@ -1,18 +1,40 @@
 import React from 'react';
 import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
+import { addOutfitProduct, removeOutfitProduct } from '../../utils/localStorage.js';
 
-const ProductCard = ({ product, style, rating, changeProduct }) => {
+const ProductCard = ({ type, currentProduct, product, style, rating, changeProduct, getMyOutfit }) => {
+
+  const defineButtonStyle = () => {
+    if (type === 'relatedProduct') {
+      return '★';
+    } else if (type === 'outfitProduct') {
+      return 'x';
+    }
+  };
+
+  const handleActionButtonClick = (id) => {
+    if (type === 'relatedProduct') {
+      // TODO: OPEN 
+    } else if (type === 'outfitProduct') {
+      removeOutfitProduct(id);
+      getMyOutfit();
+    }
+  };
+
   if (product === null) {
     return (
-      <div className="productCard">
+      <div className="productCard" onClick={() => {
+        addOutfitProduct(currentProduct.id);
+        getMyOutfit();
+      }}>
         <div className="productCardImage">
           <button
             className="cardButton"
             type="button"
             src="" // TODO: ADD ICON TO BUTTON
           >
-          X
+          +
           </button>
         </div>
         <div className="productCardDescription">
@@ -37,18 +59,18 @@ const ProductCard = ({ product, style, rating, changeProduct }) => {
           <img
             className="cardImage"
             src={
-              style === undefined || style.thumbnail === null
+              style === undefined || style.url === null
                 ? '/img/default.png'
-                : style.thumbnail
+                : style.url
             }
           />
           <button
             className="cardButton"
             type="button"
-            onClick={() => {}} //TODO: OPEN MODAL
+            onClick={() => handleActionButtonClick(product.id)}
             src=""
           >
-            ★
+            {defineButtonStyle()}
           </button>
         </div>
         <div className="productCardDescription">
