@@ -36,8 +36,8 @@ describe('QuestionList Component', () => {
     const wrapper = shallow(<QuestionListContainer store={store} />);
     expect(wrapper.find('QuestionList').prop('product').id).toEqual(1);
   });
-  // it('passes query data from store to QuestionList props', () => {
-  //   const wrapper = shallow(<QuestionListContainer store={store} />);
-  //   expect(wrapper.find('QuestionList').prop('query')).toEqual("Size");
-  // });
+  xit('passes query data from store to QuestionList props', () => {
+    const wrapper = shallow(<QuestionListContainer store={store} />);
+    expect(wrapper.find('QuestionList').prop('query')).toEqual("Size");
+  });
 });
