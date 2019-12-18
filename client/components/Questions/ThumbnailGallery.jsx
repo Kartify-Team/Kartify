@@ -4,19 +4,19 @@ import Modal from 'react-modal';
 const ThumbnailGallery = ({ imageURLs }) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [currentPic, setCurrentPic] = useState("");
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-            height: '85vh',
-            width: 'auto',
-            overflow: 'hidden'
-        }
-    };
+    // const customStyles = {
+    //     content: {
+    //         top: '50%',
+    //         left: '50%',
+    //         right: 'auto',
+    //         bottom: 'auto',
+    //         marginRight: '-50%',
+    //         transform: 'translate(-50%, -50%)',
+    //         height: '85vh',
+    //         width: '85vw',
+    //         overflow: 'hidden'
+    //     }
+    // };
     Modal.setAppElement('#app')
 
     return (<div className="thumbnailGallery">
@@ -29,7 +29,7 @@ const ThumbnailGallery = ({ imageURLs }) => {
         <Modal
             isOpen={modalIsOpen}
             onRequestClose={() => setIsOpen(false)}
-            style={customStyles}
+            className="Modal" overlayClassName="ModalOverlay"
             contentLabel="Example Modal">
             <div className="modal-header">
                 <img src={currentPic} />

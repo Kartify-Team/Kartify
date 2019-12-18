@@ -203,6 +203,39 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   border: var(--color) 1px solid;
   padding: 0.5em;
 }
+/* // const customStyles = {
+  //     content: {
+  //         top: '50%',
+  //         left: '50%',
+  //         right: 'auto',
+  //         bottom: 'auto',
+  //         marginRight: '-50%',
+  //         transform: 'translate(-50%, -50%)',
+  //         height: '85vh',
+  //         width: '85vw',
+  //         overflow: 'hidden'
+  //     }
+  // }; */
+.Modal {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    height: 85vh;
+    width: 85vh;
+    overflow: hidden;
+    background-color: papayawhip;
+}
+
+.ModalOverlay {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rebeccapurple;
+}
 
 .modal-header {
   display: flex;
