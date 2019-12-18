@@ -3,9 +3,9 @@ import { useFormik, useEffect } from 'formik';
 import StarsSelector from './StarsSelector';
 import CharacteristicForm from './CharacteristicForm';
 import { isValidEmail } from '../../../utils';
+import { postReview } from '../../../greenfieldAPI/reviews';
 
-const AddReviewForm = characteristics => {
-  characteristics = characteristics.characteristics;
+const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
   const [rating, setRating] = useState(0);
   const [size, setSize] = useState();
   const [width, setWidth] = useState();
@@ -22,9 +22,50 @@ const AddReviewForm = characteristics => {
       nickname: '',
       email: ''
     },
+
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      const characteristicsObj = {};
+      if (size) {
+        characteristicsObj[characteristics['Size'].id] = size;
+      }
+
+      if (width) {
+        characteristicsObj[characteristics['Width'].id] = width;
+      }
+
+      if (comfort) {
+        characteristicsObj[characteristics['Comfort'].id] = comfort;
+      }
+
+      if (quality) {
+        characteristicsObj[characteristics['Quality'].id] = quality;
+      }
+
+      if (length) {
+        characteristicsObj[characteristics['Length'].id] = length;
+      }
+
+      if (fit) {
+        characteristicsObj[characteristics['Fit'].id] = fit;
+      }
+
+      const doesRecommend = values.recommendation === 'yes' ? true : false;
+
+      postReview(
+        id,
+        rating,
+        values.summary,
+        values.body,
+        doesRecommend,
+        values.nickname,
+        values.email,
+        characteristicsObj
+      ).then(() => {
+        setReviewList(id, 1, sort);
+        close();
+      });
     },
+
     validate: values => {
       const errors = {};
       if (!rating) errors.rating = 'Required';
@@ -63,7 +104,7 @@ const AddReviewForm = characteristics => {
         checked={formik.values.recommendation === 'yes'}
         onClick={formik.handleChange}
       />
-      No
+      Yes
       <br />
       <input
         type="radio"
@@ -72,7 +113,7 @@ const AddReviewForm = characteristics => {
         checked={formik.values.recommendation === 'no'}
         onClick={formik.handleChange}
       />
-      Yes
+      No
       {formik.errors.recommendation ? (
         <div className="error">{formik.errors.recommendation}</div>
       ) : null}
