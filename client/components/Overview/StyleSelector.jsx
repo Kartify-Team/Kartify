@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
   if (!styles) {
@@ -14,7 +14,9 @@ const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
               <div
                 key={`${styles.product_id}-${style.style_id}`}
                 className={
-                  currentStyle === style ? 'selected-style-container ' : ''
+                  currentStyle === style
+                    ? "selected-style-container selector-image"
+                    : "selector-image"
                 }
               >
                 <span className="image-container">
@@ -23,7 +25,7 @@ const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
                     onClick={() => {
                       changeStyle(style);
                     }}
-                    src={style.photos[0].url || '/img/default.png'}
+                    src={style.photos[0].url || "/img/default.png"}
                   />
                 </span>
                 {currentStyle === style ? (

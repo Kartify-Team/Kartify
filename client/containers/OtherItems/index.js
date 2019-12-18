@@ -5,8 +5,6 @@ import getProductsStyles from '../../actions/dispatchers/getProductsStyles.js';
 import getProductsRatings from '../../actions/dispatchers/getProductsRatings.js';
 import getMyOutfit from '../../actions/dispatchers/getMyOutfit.js';
 import { changeProduct } from '../../actions/creators/changeProduct.js';
-import { saveOutfit } from '../../utils/localStorage.js';
-
 
 const mapStateToProps = (store) => ({
   productInfo: store.product,
@@ -35,10 +33,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getMyOutfit: () => {
     dispatch(getMyOutfit());
-  },
-  saveOutfit: (id) => {
-    dispatch(saveOutfit(id));
-  } 
+  }
 });
 
 const OtherItemsContainer = connect(mapStateToProps, mapDispatchToProps)(OtherItems);
