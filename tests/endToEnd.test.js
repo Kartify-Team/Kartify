@@ -20,9 +20,8 @@ describe('Kartify Page', () => {
         expect(text).toContain('Kartify');
     })
 
-    it('should be able to ', async () => {
-        const text = await page.evaluate(() => document.body.textContent);
-        expect(text).toContain('Kartify');
+    it('should be able to click on Add a Question button', async () => {
+        await expect(page).toClick('button.action-button#q-list', { text: 'Add a Question' })
     })
     afterAll(async () => {
         await browser.close();
