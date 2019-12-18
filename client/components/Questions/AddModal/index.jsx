@@ -4,16 +4,7 @@ import AddFormContainer from '../../../containers/Questions/AddForm'
 
 const AddQuestion = ({ setIsOpen, modalIsOpen, product, formType, question }) => {
     var subtitle;
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)'
-        }
-    };
+
     const header = {
         addQuestion: <h2 ref={_subtitle => (subtitle = _subtitle)}>Ask Your Question About the {product.name}</h2>,
         addAnswer: <h2 ref={_subtitle => (subtitle = _subtitle)}>{product.name}: {question ? question.question_body : ""}</h2>
@@ -24,7 +15,7 @@ const AddQuestion = ({ setIsOpen, modalIsOpen, product, formType, question }) =>
         <Modal
             isOpen={modalIsOpen}
             onRequestClose={() => setIsOpen(false)}
-            style={customStyles}
+            className="Modal" overlayClassName="ModalOverlay"
             contentLabel="Example Modal">
             <div className="modal-header">
                 {header[formType]}

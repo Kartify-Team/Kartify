@@ -116,7 +116,7 @@ section {
 
 body {
   line-height: 1;
-  font-size: 8pt;
+  font-size: 1rem;
 }
 
 ol,
@@ -246,7 +246,7 @@ a {
   text-decoration: underline;
 }
 
-b {
+strong {
   font-weight: 600;
   font-size: 1.1em;
 }
@@ -302,6 +302,30 @@ textarea,
 select {
   border: var(--color) 1px solid;
   padding: 0.5em;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  max-height: 85vh;
+  max-width: 85vw;
+  overflow: hidden;
+  background-color: white;
+  margin-right: -50%;
+  padding: 2%;
+  transform: translate(-50%, -50%);
+}
+
+.ModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 60%);
 }
 
 .modal-header {
@@ -437,14 +461,14 @@ select {
 }
 
 .selector-image {
-  height: 7em;
-  width: 7em;
+  height: 4.8em;
+  width: 4.8em;
 }
 
 .image-container {
   overflow: hidden;
-  width: 6.5em;
-  height: 6.5em;
+  width: 4.3em;
+  height: 4.3em;
   background-size: cover;
   margin: 3px;
   border-radius: 50%;
@@ -689,7 +713,7 @@ select {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
   max-height: 60vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 #question-container {
@@ -755,6 +779,7 @@ select {
 img.uploadIcon {
   content: url("./img/upload.svg") !important;
 }
+
 /* 
  _______  _______          _________ _______           _______ 
 (  ____ )(  ____ \|\     /|\__   __/(  ____ \|\     /|(  ____ \
@@ -791,11 +816,15 @@ img.uploadIcon {
 }
 
 .review_item {
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
   padding: 5px;
+  text-align: left;
+  padding: 3%;
 }
 
+.summary {
+  font-weight: bold;
+}
 #review-stats-container {
   display: flex;
   flex-direction: column;
@@ -811,6 +840,7 @@ img.uploadIcon {
 
 #star-stats-container {
   height: 40%;
+  width: 100%;
 }
 
 .avg-rating-header {
@@ -884,11 +914,19 @@ img.uploadIcon {
   margin: 0 auto;
   margin-top: 6%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-direction: column;
-  border: black 1px solid;
   margin: 10px 5px 5px 10px;
   height: 500px;
+  align-items: flex-start;
+}
+
+#avg-rating-container {
+  justify-content: flex-start;
+  display: flex;
+  width: 40%;
+  padding-left: 20%;
+  margin-top: 5%;
 }
 
 .star-bar-label {
@@ -951,6 +989,15 @@ img.uploadIcon {
 
 .characteristic {
   height: 10%;
+  padding-left: 21%;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.characteristic-label {
+  font-size: 0.8em;
+  width: 80%;
+  overflow: ;
 }
 
 /* Forms */
@@ -962,8 +1009,4 @@ img.uploadIcon {
 #add-review-form > input,
 #add-review-form > textarea {
   width: 400px;
-}
-
-#add-review-form {
-  overflow: scroll;
 }

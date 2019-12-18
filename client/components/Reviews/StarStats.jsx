@@ -5,7 +5,6 @@ import StarBar from './StarBar';
 const StarStats = ({ rating, total, ratings }) => {
   return (
     <div id="star-stats-container">
-      Star Stats
       <AverageRating averageRating={rating} />
       {Object.keys(ratings).map(rating => {
         return (

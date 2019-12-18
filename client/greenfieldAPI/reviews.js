@@ -39,11 +39,35 @@ export const getRatingMetadata = productId => {
     .then(response => response.data);
 };
 
-export const getProductReviews = (productId, page, count) => {
+export const getProductReviews = (productId, page, sort) => {
   return axios.get(`${greenfieldRoot}/reviews/${productId}/list`, {
     params: {
       page,
-      count
+      count: 1000000,
+      sort
     }
+  });
+};
+
+export const postReview = (
+  productId,
+  rating,
+  summary,
+  body,
+  recommend,
+  name,
+  email,
+  characteristics,
+  photos = []
+) => {
+  return axios.post(`${greenfieldRoot}/reviews/${productId}`, {
+    rating,
+    summary,
+    body,
+    recommend,
+    name,
+    email,
+    photos,
+    characteristics
   });
 };

@@ -56,7 +56,9 @@ const ProductImage = ({ currentStyle }) => {
         }}
         style={{
           visibility:
-            !!currentStyle && currentStyle.photos[0].url !== currentImage
+            !!currentStyle &&
+            currentStyle.photos.length > 1 &&
+            currentStyle.photos[0].url !== currentImage
               ? "visible"
               : "hidden"
         }}

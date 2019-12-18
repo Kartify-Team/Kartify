@@ -1,8 +1,8 @@
 import Modal from 'react-modal';
 import React from 'react';
-import AddReviewForm from './AddReviewForm';
+import AddReviewFormContainer from '../../../containers/Reviews/addReviewFormContainer';
 
-const AddReview = ({ setIsOpen, isOpen, product, characteristics }) => {
+const AddReview = ({ setIsOpen, isOpen, product, sort }) => {
   var subtitle;
   const customStyles = {
     content: {
@@ -11,19 +11,15 @@ const AddReview = ({ setIsOpen, isOpen, product, characteristics }) => {
       right: 'auto',
       bottom: 'auto',
       marginRight: '-50%',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
+      height: '85vh'
     }
   };
   Modal.setAppElement('#app');
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
-  }
 
   return (
     <Modal
       isOpen={isOpen}
-      onAfterOpen={afterOpenModal}
       onRequestClose={() => setIsOpen(false)}
       style={customStyles}
       contentLabel="Add Review"
@@ -35,7 +31,7 @@ const AddReview = ({ setIsOpen, isOpen, product, characteristics }) => {
         <button onClick={() => setIsOpen(false)}>X</button>
       </div>
 
-      <AddReviewForm characteristics={characteristics} />
+      <AddReviewFormContainer sort={sort} close={() => setIsOpen(false)} />
     </Modal>
   );
 };
