@@ -22,8 +22,12 @@ const ImageGallery = ({ images, currentImage, changeImage, currentIndex }) => {
       } else {
         if (topIndex > currentIndex) {
           setTopIndex(currentIndex);
-        } else if (currentIndex > images.length - 7) {
-          setTopIndex(images.length - 7);
+        } else {
+          if (topIndex + 1 < images.length - 7) {
+            setTopIndex(topIndex + 1);
+          } else {
+            setTopIndex(images.length - 7);
+          }
         }
       }
     }
