@@ -17,7 +17,7 @@ export const labels = {
     'Uncomfortable',
     'Slightly uncomfortable',
     'Ok',
-    'Comfort',
+    'Comfortable',
     'Perfect'
   ],
   quality: [
