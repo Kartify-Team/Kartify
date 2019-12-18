@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer'
 
 const timeout = 5000;
 
-describe('Kartify Page', () => {
+xdescribe('Kartify Page', () => {
     let browser;
     let page;
 
