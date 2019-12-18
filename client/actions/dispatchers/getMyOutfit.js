@@ -5,16 +5,13 @@ const getMyOutfit = () => {
   return dispatch => {
     let oldOutfit = localStorage.getItem('outfit');
     if (oldOutfit === null) {
-      let defaultOutfit = [];
-      for (let i = 0; i < 5; i++) {
-        defaultOutfit.push(null);
-      }
-      dispatch(changeMyOutfit(defaultOutfit));
+      dispatch(changeMyOutfit([null]));
     } else {
-      let newOutfit = JSON.parse(oldOutfit);
-      getProductsInfo(newOutfit)
+      let parsedOutfit = JSON.parse(oldOutfit);
+      getProductsInfo(parsedOutfit)
         .then(products => {
-          dispatch(changeMyOutfit(products));
+          let newOutfit = [null, ...products]
+          dispatch(changeMyOutfit(newOutfit));
         });
     }
   };
