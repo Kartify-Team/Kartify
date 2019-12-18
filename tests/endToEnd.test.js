@@ -8,6 +8,9 @@ describe('Kartify Page', () => {
 
     beforeAll(async () => {
         browser = await puppeteer.launch({ headless: false });
+        // browser = await puppeteer.launch({
+        //     executablePath: './chrome-win32/chrome.exe'
+        // });
         page = await browser.newPage();
         await page.goto('http://localhost:3000/products/1?')
     }, timeout)
