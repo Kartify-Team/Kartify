@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -10,17 +10,107 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+button,
+span {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -29,16 +119,21 @@ body {
   font-size: 1rem;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -64,7 +159,8 @@ a:focus {
   text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   text-decoration: none;
 }
 
@@ -98,7 +194,7 @@ a:hover, a:active {
 #site-title {
   font-size: 3em;
   padding: 15px;
-  font-family: 'Rock Salt', cursive;
+  font-family: "Rock Salt", cursive;
 }
 
 #components-container {
@@ -199,7 +295,11 @@ label {
   display: flex;
 }
 
-input[type='email'], input[type='text'], input[type='number'], textarea, select {
+input[type="email"],
+input[type="text"],
+input[type="number"],
+textarea,
+select {
   border: var(--color) 1px solid;
   padding: 0.5em;
 }
@@ -260,11 +360,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   grid-template-rows: 75% 25%;
 }
 
-#product-image-container {
-  border: black 1px solid;
-  margin: 10px 5px 5px 10px;
-}
-
 #product-interaction-container {
   border: black 1px solid;
   margin: 10px 10px 5px 5px;
@@ -273,22 +368,14 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   flex-wrap: nowrap;
 }
 
-#product-description-container {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  display: grid;
-  grid-template-columns: 65% 35%;
-  height: 95%;
-  border: black 1px solid;
-  margin: 5px 10px 10px 10px;
-}
-
 .interaction-item {
   border: black 1px solid;
   height: 33%;
   width: 100%;
   overflow: scroll;
 }
+
+/* Information Box */
 
 #overview-info {
   display: grid;
@@ -303,12 +390,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   align-self: center;
 }
 
-#main-product-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 #stars-reviews {
   display: flex;
 }
@@ -317,7 +398,20 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   justify-content: right;
 }
 
-#left-description, #right-description {
+/* Description */
+
+#product-description-container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  height: 95%;
+  border: black 1px solid;
+  margin: 5px 10px 10px 10px;
+}
+
+#left-description,
+#right-description {
   text-align: left;
 }
 
@@ -335,8 +429,29 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 #left-description h2 {
-  font-size: 30px;
+  font-size: 3em;
   margin-top: 10px;
+}
+
+/* Selected Style */
+
+.selected-style-container {
+  position: relative;
+}
+
+#selected-style {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: 5;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #style-selector-container {
@@ -345,10 +460,15 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 5px;
 }
 
+.selector-image {
+  height: 4.8em;
+  width: 4.8em;
+}
+
 .image-container {
   overflow: hidden;
-  width: 70px;
-  height: 70px;
+  width: 4.3em;
+  height: 4.3em;
   background-size: cover;
   margin: 3px;
   border-radius: 50%;
@@ -361,9 +481,11 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   max-width: 100%;
 }
 
+/* Cart */
+
 #cart-container {
   display: grid;
-  grid-template-areas: 'size size size qty qty' 'add add add add star';
+  grid-template-areas: "size size size qty qty" "add add add add star";
   align-content: center;
   justify-content: center;
 }
@@ -396,25 +518,64 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   border: 1px solid black;
 }
 
-.selected-style-container {
+/* Image Gallery */
+
+#product-image-container {
   position: relative;
+  border: black 1px solid;
+  margin: 10px 5px 5px 10px;
 }
 
-#selected-style {
+#main-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#image-gallery {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 0;
-  right: 0;
-  border: 2px solid black;
-  border-radius: 50%;
-  background-color: white;
+  width: 12%;
+  height: 90%;
+  left: 10px;
+  top: 4.5%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
-#selected-style i {}
+.thumbnail-container {
+  width: 90%;
+  height: 13.5%;
+  margin: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-gallery-thumb {
+  height: 97%;
+  width: 97%;
+  object-fit: cover;
+  border: 1px solid black;
+}
+
+.selected-thumbnail {
+  padding-bottom: 3px;
+  border-bottom: 5px solid black;
+}
+
+#image-left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 16%;
+}
+
+#image-right-arrow {
+  position: absolute;
+  top: 50%;
+  left: 95%;
+}
 
 /* 
  _______ _________          _______  _______   __________________ _______  _______  _______ 
@@ -585,19 +746,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 10px 0px 0px 0px;
 }
 
-.answers>span>#first {
+.answers > span > #first {
   margin: 1em 0px;
 }
 
-.answers>span>#more {
+.answers > span > #more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers>span>#answerer {
+.answers > span > #answerer {
   margin-left: 15px;
 }
 
-.answers>#load-more {
+.answers > #load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -611,7 +772,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   height: 50px;
 }
 
-#add-question-form>input, #add-question-form>textarea {
+#add-question-form > input,
+#add-question-form > textarea {
   width: 400px;
 }
 
@@ -621,7 +783,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 img.uploadIcon {
-  content: url('./img/upload.svg') !important;
+  content: url("./img/upload.svg") !important;
 }
 
 /* 
@@ -636,11 +798,14 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container, #comfort-rating-container, #star-stats-container {
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
-#review-list-container, #review-stats-container {
+#review-list-container,
+#review-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -653,7 +818,8 @@ img.uploadIcon {
   height: 800px;
 }
 
-#review-list-container {}
+#review-list-container {
+}
 
 .review_item {
   margin: 10px 5px 5px 10px;
@@ -846,13 +1012,7 @@ img.uploadIcon {
   color: red;
 }
 
-#add-review-form>input, #add-review-form>textarea {
+#add-review-form > input,
+#add-review-form > textarea {
   width: 400px;
 }
-<<<<<<< HEAD
-
-#add-review-form {
-  overflow: scroll;
-}
-=======
->>>>>>> 04305fd81cf3dbdb5d37c49ed349fc0df193ee2d
