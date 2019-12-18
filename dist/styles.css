@@ -876,6 +876,7 @@ img.uploadIcon {
   justify-content: center;
   margin-top: 10px;
   position: relative;
+  word-wrap: break-word;
 }
 
 .characteristics-sub-bar {
