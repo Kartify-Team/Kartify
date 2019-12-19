@@ -3,17 +3,11 @@ import StarStats from './StarStats';
 import Characteristic from './characteristic';
 
 const RatingBreakdown = ({
-  productId,
   ratings,
   characteristics,
-  totalRatings
+  totalRatings,
+  toggleFilter
 }) => {
-  // let [totalRatings, setTotalRatings] = useState(0);
-  // useEffect(() => {
-  //   if (reviews !== null && reviews !== undefined) {
-  //     setTotalRatings(getTotalRatings(reviews));
-  //   }
-  // }, []);
   const ratingsWithoutAvg = { ...ratings };
   delete ratingsWithoutAvg.average;
   if (!ratings || !characteristics) {
@@ -26,6 +20,7 @@ const RatingBreakdown = ({
             rating={ratings === null ? null : ratings.average}
             total={totalRatings}
             ratings={ratingsWithoutAvg}
+            toggleFilter={toggleFilter}
           />
           {Object.keys(characteristics).map(characteristic => (
             <Characteristic

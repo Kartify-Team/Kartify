@@ -5,7 +5,8 @@ export default (
     ratings: null,
     characteristics: null,
     totalRatings: null,
-    reviewList: null
+    reviewList: null,
+    filters: []
   },
   action
 ) => {
@@ -18,6 +19,15 @@ export default (
       return { ...state, totalRatings: action.totalRatings };
     case 'SET_REVIEW_LIST':
       return { ...state, reviewList: action.reviewList };
+    case 'TOGGLE_FILTER':
+      const newFilters = [...state.filters];
+      const filterIndex = newFilters.indexOf(action.filter);
+      if (filterIndex >= 0) {
+        newFilters.splice(filterIndex, 1);
+      } else {
+        newFilters.push(action.filter);
+      }
+      return { ...state, filters: newFilters };
     default:
       return state;
   }

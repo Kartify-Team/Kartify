@@ -1,44 +1,25 @@
 import React from 'react';
 import { combineProductFeatures } from '../../../utils/index.js';
 
-const ProductsCharacteristics = ({mainProductFeatures, comparedProductFeatures}) => {
-  let main = [
-    {
-      feature: 'buttons',
-      value: 'round'
-    },
-    {
-      feature: 'material',
-      value: 'leather'
-    }
-  ];
-  let compared = [
-    {
-      feature: 'material',
-      value: 'duck'
-    },
-    {
-      feature: 'buttons',
-      value: 'round'
-    },
-    {
-      feature: 'color',
-      value: 'red'
-    }
-  ];
-  let combinedFeatures = combineProductFeatures(mainProductFeatures, comparedProductFeatures);
+const ProductsCharacteristics = ({ mainProduct, comparedProduct }) => {
+  let combinedFeatures = combineProductFeatures(mainProduct.features, comparedProduct.features);
 
   return (
-    <div>
-      <table>
+    <div className='features-table-container'>
+      <table className='features-table'>
         <tbody>
+          <tr className='features-table-headers'>
+            <th>{mainProduct.name}</th>
+            <th></th>
+            <th>{comparedProduct.name}</th>
+          </tr>
           {
             Object.values(combinedFeatures).map((ele) => {
               return (
-                <tr key={ele.feature}>
-                  <td>{(ele.mainValue === null || ele.mainValue === 'null') ? '' : ele.mainValue}</td>
-                  <td>{ele.feature}</td>
-                  <td>{(ele.mainValue === null || ele.comparedValue === 'null') ? '' : ele.comparedValue}</td>
+                <tr key={ele.feature} className='features-table-row'>
+                  <td className='features-table-left-column'>{(ele.mainValue === null || ele.mainValue === 'null') ? '' : ele.mainValue}</td>
+                  <td className='features-table-center-column'>{ele.feature}</td>
+                  <td className='features-table-right-column'>{(ele.comparedValue === null || ele.comparedValue === 'null') ? '' : ele.comparedValue}</td>
                 </tr>
               );
             })

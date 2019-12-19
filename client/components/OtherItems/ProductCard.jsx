@@ -46,12 +46,7 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
         </div>
       </div>
     );
-  } else {
-
-      // ProductsCharacteristics({
-      //   mainProductFeatures: currentProduct.features, 
-      //   comparedProductFeatures: product.features});
-    
+  } else {    
     return (
       <div className="productCard" 
         onClick={

@@ -35,11 +35,7 @@ const ProductComparison = ({ mainProduct, comparedProduct, setIsOpen, modalIsOpe
           x
         </button>
       </div>
-      <div className="table-header">
-        <h4>{mainProduct.name}</h4>
-        <h4>{comparedProduct.name}</h4>
-      </div>
-      <ProductFeatures mainProductFeatures={mainProduct.features} comparedProductFeatures={comparedProduct.features} />
+      <ProductFeatures mainProduct={mainProduct} comparedProduct={comparedProduct} />
     </Modal >
   );
 
