@@ -950,7 +950,7 @@ img.uploadIcon {
 }
 
 #reviews-scroll {
-  overflow: scroll;
+  overflow: auto;
   height: 100%;
 }
 
