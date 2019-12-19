@@ -10,87 +10,7 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video,
-input,
-button,
-span {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -100,17 +20,7 @@ span {
   font-family: 'Open Sans', sans-serif;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -120,20 +30,15 @@ body {
   overflow-x: hidden;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
@@ -160,8 +65,7 @@ a:focus {
   text-decoration: none;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
   text-decoration: none;
 }
 
@@ -178,22 +82,25 @@ a:active {
  */
 
 :root {
-  --color: var(--primary-accent-color);
+  --color: #525252;
   --background-color: #ffffff;
   --primary-accent-color: #525252;
-  --secondary-accent-color: #00ffff;
+  --light-accent-color: #ededed;
+  --error: #ff0000;
+  --highlighted: goldenrod;
+  --link-color: blue;
 }
 
 .topnav {
-  background-color: #333;
-  color: #ffffff;
+  background-color: var(--primary-accent-color);
+  color: var(--background-color);
   padding: 5px;
   overflow: hidden;
   width: 100%;
 }
 
 #site-title {
-  color: white;
+  color: var(--background-color);
   font-size: 3em;
   padding: 15px;
   font-family: 'Rock Salt', cursive;
@@ -210,12 +117,6 @@ a:active {
   margin: 0 auto;
   display: grid;
   width: 80%;
-}
-
-.placeholder-component {
-  background-color: var(--color);
-  margin: 10px 5px 5px 10px;
-  color: var(--secondary-accent-color);
 }
 
 .section-title {
@@ -257,6 +158,7 @@ sub {
 
 a {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 strong {
@@ -272,7 +174,7 @@ strong {
   cursor: pointer;
   margin-right: 2%;
   color: var(--color);
-  background-color: white;
+  background-color: var(--background-color);
   font-weight: bold;
 }
 
@@ -285,8 +187,23 @@ strong {
   outline: none;
 }
 
+.action-button.secondary {
+  margin: 0.5em 0;
+  border-radius: 1em;
+  font-size: 0.8em;
+  padding: 10px;
+  border: var(--color) 1px solid;
+  color: var(--primary-accent-color);
+  background-color: var(--background-color);
+}
+
+.action-button.secondary:hover {
+  background-color: var(--primary-accent-color);
+  color: var(--color);
+}
+
 .highlighted {
-  background-color: #ffff00;
+  background-color: var(--highlighted);
 }
 
 .thumbnailGallery {
@@ -294,8 +211,8 @@ strong {
 }
 
 .thumbnail {
-  margin-right: 10px;
-  height: 3em;
+  margin: 1em 1em 1em 0;
+  height: 4em;
   width: auto;
 }
 
@@ -308,6 +225,19 @@ strong {
   max-height: 10vh;
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+#spinner {
+  content: url("/img/spinner.gif");
+  width: 50px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#x-icon {
+  cursor: pointer;
 }
 
 /*
@@ -332,13 +262,13 @@ label {
   display: flex;
 }
 
-input[type='email'],
-input[type='text'],
-input[type='number'],
-textarea,
-select {
+input[type='email'], input[type='text'], input[type='number'], textarea, select {
   border: var(--color) 1px solid;
   padding: 0.5em;
+}
+
+#file-upload {
+  display: none;
 }
 
 .Modal {
@@ -350,7 +280,7 @@ select {
   max-height: 85vh;
   max-width: 85vw;
   overflow: hidden;
-  background-color: white;
+  background-color: var(--background-color);
   margin-right: -50%;
   padding: 2%;
   transform: translate(-50%, -50%);
@@ -362,7 +292,8 @@ select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 60%);
+  background-color: var(--background-color);
+  opacity: 60%;
 }
 
 .modal-header {
@@ -372,7 +303,7 @@ select {
 }
 
 .form-error {
-  color: red;
+  color: var(--error);
 }
 
 /* 
@@ -448,8 +379,7 @@ select {
   height: 95%;
 }
 
-#left-description,
-#right-description {
+#left-description, #right-description {
   text-align: left;
 }
 
@@ -463,7 +393,7 @@ select {
   align-items: center;
   height: 100%;
   margin-left: 8px;
-  border-left: 2px solid black;
+  border-left: 2px solid var(--color);
 }
 
 #left-description h2 {
@@ -513,9 +443,9 @@ select {
   height: 20px;
   top: 0;
   right: 0;
-  border: 2px solid black;
+  border: 2px solid var(--color);
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -539,7 +469,7 @@ select {
   background-size: cover;
   margin: 3px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 2px solid var(--color);
   display: flex;
   justify-content: center;
 }
@@ -577,7 +507,7 @@ select {
   grid-area: add;
   height: 3.5em;
   width: 92%;
-  border: 1px solid black;
+  border: 1px solid var(--color);
   margin-left: 5%;
   display: flex;
   justify-content: space-between;
@@ -588,14 +518,14 @@ select {
   height: 3.5em;
   width: 92%;
   margin-right: 8%;
-  border: 1px solid black;
+  border: 1px solid var(--color);
 }
 
 /* Product Image & Image Gallery */
 
 #product-image-container {
   position: relative;
-  background-color: lightgray;
+  background-color: var(--primary-accent-color);
   margin: 1% 8% 1% 0;
 }
 
@@ -634,12 +564,12 @@ select {
   height: 97%;
   width: 97%;
   object-fit: cover;
-  border: 1px solid black;
+  border: 1px solid var(--color);
 }
 
 .selected-thumbnail {
   padding-bottom: 3px;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid var(--color);
 }
 
 #image-left-arrow {
@@ -671,7 +601,7 @@ select {
   overflow: hidden;
   height: auto;
   width: auto;
-  background-color: white;
+  background-color: var(--background-color);
   margin-right: -50%;
   padding: 0.2%;
   transform: translate(-50%, -50%);
@@ -683,7 +613,8 @@ select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 60%);
+  background-color: var(--background-color);
+  opacity: 60%;
   z-index: 100;
 }
 
@@ -696,8 +627,7 @@ select {
   position: relative;
 }
 
-#expanded-left,
-#expanded-right {
+#expanded-left, #expanded-right {
   position: absolute;
   top: 50%;
 }
@@ -757,14 +687,14 @@ select {
   width: 220px;
   margin: 15px;
   padding: 0;
-  border: black;
+  border: var(--color);
   border-style: solid;
   border-width: thin;
   display: inline-block;
 }
 
 .productCard:hover {
-  background-color: lightgray;
+  background-color: var(--primary-accent-color);
 }
 
 .productCardImage {
@@ -783,7 +713,7 @@ select {
   top: 5%;
   right: 7%;
   background: transparent;
-  color: goldenrod;
+  color: var(--highlighted);
 }
 
 .cardImage {
@@ -930,19 +860,19 @@ select {
   overflow-y: scroll; */
 }
 
-.answers > span > #first {
+.answers>span>#first {
   margin: 1em 0px;
 }
 
-.answers > span > #more {
+.answers>span>#more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers > span > #answerer {
+.answers>span>#answerer {
   margin-left: 15px;
 }
 
-.answers > #load-more {
+.answers>#load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -956,8 +886,7 @@ select {
   height: 50px;
 }
 
-#add-question-form > input,
-#add-question-form > textarea {
+#add-question-form>input, #add-question-form>textarea {
   width: 400px;
 }
 
@@ -982,9 +911,7 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container,
-#comfort-rating-container,
-#star-stats-container {
+#size-rating-container, #comfort-rating-container, #star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -1035,7 +962,7 @@ img.uploadIcon {
   margin-left: 2%;
   margin-right: 2%;
   background-color: var(--color);
-  color: white;
+  color: var(--background-color);
   border-radius: 3px;
   padding: 7px;
 }
@@ -1051,7 +978,7 @@ img.uploadIcon {
   padding-bottom: 3%;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color);
 }
 
 .review-item-top {
@@ -1059,7 +986,7 @@ img.uploadIcon {
   align-items: center;
   justify-content: space-between;
   font-weight: lighter;
-  color: #afafaf;
+  color: var(--primary-accent-color);
   font-size: 0.8em;
 }
 
@@ -1155,7 +1082,7 @@ img.uploadIcon {
   overflow: hidden;
   height: 10px;
   display: inline-block;
-  background-color: #ededed;
+  background-color: var(--light-accent-color);
 }
 
 .star-bar-dynamic {
@@ -1195,12 +1122,12 @@ img.uploadIcon {
 /* PRICE COMPONENT*/
 
 .regularPriceDiscount {
-  color: gray;
+  color: var(--primary-accent-color);
   text-decoration: line-through;
 }
 
 .priceDiscount {
-  color: red;
+  color: var(--error);
   font-weight: 500;
   margin-right: 5px;
 }
@@ -1223,7 +1150,7 @@ img.uploadIcon {
   max-width: 32%;
   height: 10px;
   display: inline-block;
-  background-color: #ebebeb;
+  background-color: var(--light-accent-color);
   margin: 0 auto;
 }
 
@@ -1259,7 +1186,7 @@ img.uploadIcon {
 /* Forms */
 
 .error {
-  color: red;
+  color: var(--error);
 }
 
 #add-review-form {
@@ -1277,16 +1204,16 @@ img.uploadIcon {
   margin-top: 3%;
 }
 
-#sort-menu > select {
+#sort-menu>select {
   margin-left: 1%;
   border: none;
-  background-color: white;
-  border-bottom: 2px solid black;
+  background-color: var(--background-color);
+  border-bottom: 2px solid var(--colors);
   font-size: 1rem;
   border-radius: 0;
 }
 
-#sort-menu > select:focus {
+#sort-menu>select:focus {
   outline: none;
 }
 
@@ -1305,7 +1232,7 @@ img.uploadIcon {
 }
 
 .show-more {
-  color: blue;
+  color: var(--link-color);
 }
 
 .review-body {
