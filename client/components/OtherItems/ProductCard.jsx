@@ -18,6 +18,7 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
   const handleActionButtonClick = (e, id) => {
     e.preventDefault();
     if (type === 'relatedProduct') {
+      e.preventDefault();
       setIsOpen(true);
       e.preventDefault();
     } else if (type === 'outfitProduct') {

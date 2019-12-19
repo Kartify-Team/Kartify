@@ -717,21 +717,26 @@ select {
 }
 
 .features-table-left-column {
-  width: 40%;
+  width: 33%;
   text-align: center; 
   vertical-align: middle;
 }
 
 .features-table-center-column {
-  width: 20%;
+  color: gray;
+  width: 33%;
   text-align: center; 
   vertical-align: middle;
 }
 
 .features-table-right-column {
-  width: 40%;
+  width: 33%;
   text-align: center; 
   vertical-align: middle;
+}
+
+.features-table-row {
+  height: 30px;
 }
 
 /* 

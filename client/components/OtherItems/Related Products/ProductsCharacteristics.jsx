@@ -4,6 +4,17 @@ import { combineProductFeatures } from '../../../utils/index.js';
 const ProductsCharacteristics = ({ mainProduct, comparedProduct }) => {
   let combinedFeatures = combineProductFeatures(mainProduct.features, comparedProduct.features);
 
+  const getFeature = (value) => {
+    if (value === null) {
+      return '';
+    } else if (value === 'null') {
+      return '✓';
+    } else {
+      return value;
+    }
+  };
+
+  console.log(mainProduct.name, mainProduct.features, '---', comparedProduct.name, comparedProduct.features, '-----', combinedFeatures);
   return (
     <div className='features-table-container'>
       <table className='features-table'>
@@ -17,9 +28,9 @@ const ProductsCharacteristics = ({ mainProduct, comparedProduct }) => {
             Object.values(combinedFeatures).map((ele) => {
               return (
                 <tr key={ele.feature} className='features-table-row'>
-                  <td className='features-table-left-column'>{(ele.mainValue === null || ele.mainValue === 'null') ? '' : ele.mainValue}</td>
+                  <td className='features-table-left-column'>{getFeature(ele.mainValue)}</td>
                   <td className='features-table-center-column'>{ele.feature}</td>
-                  <td className='features-table-right-column'>{(ele.comparedValue === null || ele.comparedValue === 'null') ? '' : ele.comparedValue}</td>
+                  <td className='features-table-right-column'>{getFeature(ele.comparedValue)}</td>
                 </tr>
               );
             })
