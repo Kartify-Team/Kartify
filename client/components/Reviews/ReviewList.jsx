@@ -12,10 +12,12 @@ const ReviewList = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [sort, setSort] = useState('helpful');
+  const [reviewsChanged, setReviewsChanged] = useState(false);
+  const [helpfulReviews, setHelpfulReviews] = useState([]);
 
   useEffect(() => {
     setReviewList(product.id, 1, sort);
-  }, [sort]);
+  }, [product.id, sort, reviewsChanged]);
 
   let filterDisplay;
   if (filters.length > 0) {
@@ -86,7 +88,17 @@ const ReviewList = ({
               }
             })
             .slice(0, count)
-            .map(review => ReviewItem(review))}
+            .map(review => (
+              <ReviewItem
+                review={review}
+                updateReviews={() => setReviewList(product.id, 1, sort)}
+                key={review.review_id}
+                setReviewsChanged={setReviewsChanged}
+                reviewsChanged={reviewsChanged}
+                helpfulReviews={helpfulReviews}
+                setHelpfulReviews={setHelpfulReviews}
+              />
+            ))}
         </div>
       </div>
       <div id="review-list-container"></div>
