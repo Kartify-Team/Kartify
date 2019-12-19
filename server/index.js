@@ -31,9 +31,9 @@ server.post('/img', (req, res) => {
     .catch(err => res.status(500).send(err));
 });
 
-const startMessage = process.env.ENVIRONMENT === "production" ?
+const startMessage = process.env.ENVIRONMENT === 'production' ?
   `Server started on Port ${port}! ${root}/products/1` :
-  `Server started! ${root}:${port}/products/1`
+  `Server started! ${root}:${port}/products/1`;
 server.listen(port, () =>
   console.log(startMessage)
 );
