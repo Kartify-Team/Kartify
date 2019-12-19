@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
 import { addOutfitProduct, removeOutfitProduct } from '../../utils/localStorage.js';
+import ComparisonModal from './Related Products/ComparisonModal.jsx';
 
-const ProductCard = ({ type, currentProduct, product, style, rating, changeProduct, getMyOutfit }) => {
+const ProductCard = ({ type, currentProduct, product, style, rating, changeProduct, getMyOutfit, setIsOpen, setComparedProduct }) => {
 
   const defineButtonStyle = () => {
     if (type === 'relatedProduct') {
@@ -13,9 +14,11 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
     }
   };
 
-  const handleActionButtonClick = (id) => {
+  const handleActionButtonClick = (e, id) => {
     if (type === 'relatedProduct') {
-      // TODO: OPEN 
+      e.preventDefault();
+      setIsOpen(true);
+      setComparedProduct(product);
     } else if (type === 'outfitProduct') {
       removeOutfitProduct(id);
       getMyOutfit();
@@ -42,15 +45,16 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
         </div>
       </div>
     );
-  } else {
+  } else {    
     return (
       <div className="productCard" 
         onClick={
           (e) => {
             if (e.target.className === 'cardButton') {
-              e.preventDefault();
+              handleActionButtonClick(e, product.id);
             } else {
               changeProduct(product.id); 
+              window.scroll(0, 0);
             }
           }
         }
@@ -67,7 +71,7 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
           <button
             className="cardButton"
             type="button"
-            onClick={() => handleActionButtonClick(product.id)}
+            // onClick={(e) => handleActionButtonClick(e, product.id)}
             src=""
           >
             {defineButtonStyle()}
