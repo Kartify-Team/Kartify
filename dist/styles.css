@@ -177,9 +177,9 @@ a:active {
  */
 
 :root {
-  --color: rgb(139, 139, 139);
+  --color: var(--primary-accent-color);
   --background-color: #ffffff;
-  --primary-accent-color: #000000;
+  --primary-accent-color: #525252;
   --secondary-accent-color: #00ffff;
 }
 
@@ -226,15 +226,17 @@ h2 {
   font-size: 1em;
   font-weight: 800;
   margin: 0;
-  color: var(--primary-accent-color);
+  color: var(--color);
 }
 
 body {
   font-size: 1;
+  color: var(--color);
 }
 
 p {
   margin: 1.5em 0em;
+  color: var(--color);
 }
 
 sub {
@@ -976,6 +978,9 @@ img.uploadIcon {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: lighter;
+  color: #afafaf;
+  font-size: 1em;
 }
 
 .review-item-bottom {
@@ -1018,6 +1023,10 @@ img.uploadIcon {
 
 #avg-rating-stars {
   display: inline-block;
+  height: 100%;
+  margin-top: 3.5%;
+  margin-left: 3%;
+  font-size: 0.7em;
 }
 
 /* Stars Component */
@@ -1046,7 +1055,7 @@ img.uploadIcon {
   white-space: nowrap;
   /* z-index: 10; */
   display: inline-block;
-  color: black;
+  color: var(--color);
   width: 100%;
   float: left;
 }
@@ -1057,6 +1066,7 @@ img.uploadIcon {
   width: 50%;
   margin: 10px 3px 0px 0px;
   font-size: 0.7em;
+  color: var(--color);
 }
 
 .star-bar-static {
@@ -1072,10 +1082,9 @@ img.uploadIcon {
   position: relative;
   width: 100%;
   overflow: hidden;
-  color: black;
+  background-color: var(--color);
   float: left;
   height: 10px;
-  background-color: black;
   display: inline-block;
 }
 
@@ -1093,7 +1102,6 @@ img.uploadIcon {
   justify-content: flex-start;
   display: flex;
   width: 40%;
-  padding-left: 20%;
   margin-top: 5%;
 }
 
