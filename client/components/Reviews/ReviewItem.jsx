@@ -6,6 +6,7 @@ import {
   reportReview
 } from '../../greenfieldAPI/reviews';
 import { ReportedReview } from './ReportedReview';
+import ThumbnailGallery from '../Questions/ThumbnailGallery';
 
 const ReviewItem = ({
   review,
@@ -22,11 +23,13 @@ const ReviewItem = ({
     rating,
     summary,
     reviewer_name,
-    review_id
+    review_id,
+    photos
   } = review;
 
   const [isReported, setIsReported] = useState(false);
   const displayDate = formatDate(date);
+  const photoURLs = photos.map(photo => photo.url);
 
   const handleHelpful = reviewId => {
     if (helpfulReviews.includes(reviewId)) return;
@@ -52,6 +55,7 @@ const ReviewItem = ({
         <Stars stars={rating} />
         <p>{reviewer_name}</p>
         <p className="summary">{summary}</p>
+        <ThumbnailGallery imageURLs={photoURLs} />
         <p>{body}</p>
         <p>{displayDate.toLocaleString('en-US')}</p>
         Helpful?{' '}

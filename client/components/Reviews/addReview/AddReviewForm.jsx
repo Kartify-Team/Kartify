@@ -4,6 +4,7 @@ import StarsSelector from './StarsSelector';
 import CharacteristicForm from './CharacteristicForm';
 import { isValidEmail } from '../../../utils';
 import { postReview } from '../../../greenfieldAPI/reviews';
+import ImageUpload from '../../Questions/AddModal/ImageUpload';
 
 const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
   const [rating, setRating] = useState(0);
@@ -13,6 +14,7 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
   const [quality, setQuality] = useState();
   const [length, setLength] = useState();
   const [fit, setFit] = useState();
+  const [photos, setPhotos] = useState([]);
 
   const formik = useFormik({
     initialValues: {
@@ -59,7 +61,8 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
         doesRecommend,
         values.nickname,
         values.email,
-        characteristicsObj
+        characteristicsObj,
+        photos
       ).then(() => {
         setReviewList(id, 1, sort);
         close();
@@ -160,6 +163,7 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
         <div className="error">{formik.errors.body}</div>
       ) : null}
       <br />
+      <ImageUpload updatePhotos={setPhotos} />
       <label htmlFor="nickname">What is your nickname?</label>
       <input
         type="text"
