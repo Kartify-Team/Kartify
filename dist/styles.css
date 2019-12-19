@@ -203,7 +203,7 @@ a:active {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 80vw;
+  max-width: 90vw;
 }
 
 .component {
@@ -392,26 +392,29 @@ select {
   text-align: center;
   display: grid;
   width: 80%;
-  height: 800px;
-  grid-template-columns: 65% 35%;
+  height: 1000px;
+  grid-template-columns: 70% 30%;
   grid-template-rows: 75% 25%;
 }
 
+/* Information Box */
+
 #product-interaction-container {
-  margin: 1em 0 1em 1em;
+  margin: 1% 0;
+  right: 10%;
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
 
-/* Information Box */
-
 #overview-info {
   display: grid;
   height: 40%;
   width: 100%;
-  grid-template-rows: 13% 13% 40% 13% 10%;
+  grid-template-rows: 10% 10% 45% 10% 10%;
   text-align: left;
+  align-items: center;
   padding: 5% 5% 0 5%;
 }
 
@@ -430,7 +433,9 @@ select {
 }
 
 #review-link {
+  margin-top: 1%;
   justify-content: right;
+  font-size: 0.7em;
 }
 
 /* Description */
@@ -449,7 +454,8 @@ select {
 }
 
 #left-description {
-  margin-left: 20px;
+  margin-top: 4%;
+  margin-left: 2%;
 }
 
 #right-description {
@@ -484,9 +490,6 @@ select {
 
 #style-text {
   font-weight: bold;
-}
-
-#style-text-container {
 }
 
 /* Selected Style */
@@ -551,7 +554,6 @@ select {
   display: grid;
   grid-template-areas: "size size size qty qty" "add add add add star";
   align-content: center;
-  /* justify-content: center; */
   height: 18%;
   width: 100%;
   margin-top: 5%;
@@ -594,7 +596,7 @@ select {
 #product-image-container {
   position: relative;
   background-color: lightgray;
-  margin: 10px 5px 5px 10px;
+  margin: 1% 8% 1% 0;
 }
 
 #main-product-image {
