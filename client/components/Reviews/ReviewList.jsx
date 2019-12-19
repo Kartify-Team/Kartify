@@ -73,7 +73,7 @@ const ReviewList = ({
 
         <div id="filter-container">{filterDisplay}</div>
 
-        <div>
+        <div id="reviews-scroll">
           {reviews
             .filter(review => {
               if (filters.length > 0) {

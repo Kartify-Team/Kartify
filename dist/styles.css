@@ -909,8 +909,13 @@ img.uploadIcon {
  */
 
 #review-list-container {
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
+}
+
+#reviews-scroll {
+  overflow: scroll;
+  height: 100%;
 }
 
 #reviews-container {
@@ -919,7 +924,7 @@ img.uploadIcon {
   justify-content: center;
   width: 100%;
   margin: 0 auto;
-  height: 800px;
+  height: 100vh;
 }
 
 #filter-container {
