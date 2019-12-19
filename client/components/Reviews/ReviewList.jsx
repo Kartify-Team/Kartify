@@ -32,7 +32,7 @@ const ReviewList = ({
 
   return (
     <>
-      <div id="review-list-container">
+      <div id="review-list-container" style={{ width: '60%' }}>
         <button
           className="action-button"
           onClick={() => {
