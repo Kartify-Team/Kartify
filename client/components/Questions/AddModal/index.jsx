@@ -35,7 +35,7 @@ const AddQuestion = ({
     >
       <div className="modal-header">
         {header[formType]}
-        <i class="fa fa-times" id="x-icon" onClick={() => setIsOpen(false)}></i>
+        <i className="fa fa-times" id="x-icon" onClick={() => setIsOpen(false)}></i>
       </div>
       <AddFormContainer
         setIsOpen={setIsOpen}

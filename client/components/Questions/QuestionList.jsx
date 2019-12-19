@@ -16,7 +16,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
     setMaxQs(2)
     setLoading(false)
     setSeeMore(false)
-    setAllQuestionsDisplayed(false)
+    setAllQuestionsDisplayed(maxQs === questions.length)
     setLazyLoading(false)
     setBottomReached(false)
     if (questions.length > 0) {

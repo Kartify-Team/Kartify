@@ -84,10 +84,11 @@ a:hover, a:active {
 :root {
   --color: #525252;
   --background-color: #ffffff;
+  --translucent-background-color: rgba(255, 255, 255, .6);
   --primary-accent-color: #525252;
   --light-accent-color: #ededed;
   --error: #ff0000;
-  --highlighted: goldenrod;
+  --highlighted: yellow;
   --link-color: blue;
 }
 
@@ -180,7 +181,7 @@ strong {
 
 .action-button:hover {
   color: white;
-  background-color: var(--color);
+  background-color: var(--primary-accent-color);
 }
 
 .action-button:focus {
@@ -292,8 +293,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-color);
-  opacity: 60%;
+  background-color: var(--translucent-background-color);
 }
 
 .modal-header {
@@ -525,7 +525,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 
 #product-image-container {
   position: relative;
-  background-color: var(--primary-accent-color);
+  background-color: var(--light-accent-color);
   margin: 1% 8% 1% 0;
 }
 
@@ -694,7 +694,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 .productCard:hover {
-  background-color: var(--primary-accent-color);
+  background-color: var(--light-accent-color);
 }
 
 .productCardImage {
@@ -707,13 +707,13 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 .cardButton {
-  height: 7%;
-  width: 7%;
+  height: 10%;
+  width: 10%;
   position: absolute;
   top: 5%;
-  right: 7%;
+  right: 9%;
   background: transparent;
-  color: var(--highlighted);
+  color: var(--background-color);
 }
 
 .cardImage {
