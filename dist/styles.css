@@ -1034,7 +1034,7 @@ img.uploadIcon {
 .filter {
   margin-left: 2%;
   margin-right: 2%;
-  background-color: black;
+  background-color: var(--color);
   color: white;
   border-radius: 3px;
   padding: 7px;
@@ -1260,6 +1260,10 @@ img.uploadIcon {
 
 .error {
   color: red;
+}
+
+#add-review-form {
+  width: 100%;
 }
 
 #add-review-form > textarea {
