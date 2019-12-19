@@ -264,7 +264,7 @@ strong {
 }
 
 .action-button {
-  border: black 1px solid;
+  border: var(--color) 1px solid;
   display: inline-block;
   width: auto;
   padding: 15px;
@@ -278,6 +278,10 @@ strong {
 .action-button:hover {
   color: white;
   background-color: var(--color);
+}
+
+.action-button:focus {
+  outline: none;
 }
 
 .highlighted {
@@ -975,6 +979,10 @@ img.uploadIcon {
 #comfort-rating-container,
 #star-stats-container {
   margin: 10px 5px 5px 10px;
+}
+
+.padding-ten {
+  margin-bottom: 10%;
 }
 
 #review-list-container {
