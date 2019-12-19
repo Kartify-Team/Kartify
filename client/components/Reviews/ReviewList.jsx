@@ -93,7 +93,7 @@ const ReviewList = ({
                 setIsOpen(true);
               }}
             >
-              ADD REVIEW &nbsp;<i class="fa fa-plus"></i>
+              ADD REVIEW &nbsp;<i className="fa fa-plus"></i>
             </button>
           </div>
           <AddReview
