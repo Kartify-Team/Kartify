@@ -14,7 +14,6 @@ const ProductsCharacteristics = ({ mainProduct, comparedProduct }) => {
     }
   };
 
-  console.log(mainProduct.name, mainProduct.features, '---', comparedProduct.name, comparedProduct.features, '-----', combinedFeatures);
   return (
     <div className='features-table-container'>
       <table className='features-table'>

@@ -4,8 +4,7 @@ import Price from '../Price/index.jsx';
 import { addOutfitProduct, removeOutfitProduct } from '../../utils/localStorage.js';
 import ComparisonModal from './Related Products/ComparisonModal.jsx';
 
-const ProductCard = ({ type, currentProduct, product, style, rating, changeProduct, getMyOutfit }) => {
-  const [modalIsOpen, setIsOpen] = useState(false);
+const ProductCard = ({ type, currentProduct, product, style, rating, changeProduct, getMyOutfit, setIsOpen, setComparedProduct }) => {
 
   const defineButtonStyle = () => {
     if (type === 'relatedProduct') {
@@ -16,11 +15,10 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
   };
 
   const handleActionButtonClick = (e, id) => {
-    e.preventDefault();
     if (type === 'relatedProduct') {
       e.preventDefault();
       setIsOpen(true);
-      e.preventDefault();
+      setComparedProduct(product);
     } else if (type === 'outfitProduct') {
       removeOutfitProduct(id);
       getMyOutfit();
@@ -61,7 +59,6 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
           }
         }
       >
-        <ComparisonModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} mainProduct={currentProduct} comparedProduct={product}/>
         <div className="productCardImage">
           <img
             className="cardImage"
