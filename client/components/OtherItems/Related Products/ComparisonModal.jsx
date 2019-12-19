@@ -15,10 +15,8 @@ const ProductComparison = ({ mainProduct, comparedProduct, setIsOpen, modalIsOpe
   };
 
   const handleModalClose = (e) => {
-    console.log('closed')
-    console.log(e)
     e.preventDefault();
-    setIsOpen(false)
+    setIsOpen(false);
   };
 
 

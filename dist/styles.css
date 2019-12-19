@@ -269,8 +269,15 @@ strong {
 
 .thumbnail {
   margin-right: 10px;
-  height: 15em;
+  height: 3em;
   width: auto;
+}
+
+.upload-previews {
+  max-width: 50vw;
+  max-height: 10vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 /*
@@ -907,6 +914,12 @@ img.uploadIcon {
 |/   \__/(_______/   \_/   \_______/(_______/(_______)\_______)
                                                                
  */
+
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
+  margin: 10px 5px 5px 10px;
+}
 
 #review-list-container {
   height: 100%;
