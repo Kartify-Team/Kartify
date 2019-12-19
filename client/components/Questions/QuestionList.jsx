@@ -30,7 +30,6 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
   }
   useEffect(() => {
     const hasMoreSpace = document.getElementById("question-list-container").clientHeight <= window.innerHeight * .86;
-
     if (seeMore && (hasMoreSpace || bottomReached)) {
       setBottomReached(true)
       if (maxQs < questions.length) {
@@ -44,7 +43,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
         setAllQuestionsDisplayed(true);
       }
     }
-  }, [seeMore, bottomReached, loading])
+  }, [seeMore, bottomReached])
 
   const handleHelpful = (type, id) => {
     markAsHelpful(id, type)
@@ -83,7 +82,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
           }
 
         })}
-        {lazyLoading ? <center><img src="/img/spinner.gif" width="30px" height="auto" /></center> : <></>}
+        {lazyLoading ? <img id="spinner" /> : <></>}
         {allQuestionsDisplayed ? addQuestion : <></>}
       </div>
     );
