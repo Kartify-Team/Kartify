@@ -1,8 +1,8 @@
-import React from 'react';
-import StyleSelector from './StyleSelector';
-import Cart from './Cart';
-import Stars from '../Reviews/Stars';
-import Price from '../Price';
+import React from "react";
+import StyleSelector from "./StyleSelector";
+import Cart from "./Cart";
+import Stars from "../Reviews/Stars";
+import Price from "../Price";
 
 const ProductInteraction = ({
   product,
@@ -13,7 +13,7 @@ const ProductInteraction = ({
 }) => {
   return (
     <div id="product-interaction-container">
-      <div id="overview-info" className="interaction-item">
+      <div id="overview-info">
         <span id="stars-reviews">
           <Stars stars={average || 0} />
           <a id="review-link" href="#reviews-container">

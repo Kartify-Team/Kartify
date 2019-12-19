@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ProductDescription = ({ product }) => (
   <div id="product-description-container">
@@ -10,12 +10,11 @@ const ProductDescription = ({ product }) => (
     <span id="right-description">
       {!product.features ? null : (
         <ul>
-          {/* Features List */}
           {product.features.map((feature, idx) => {
             return (
               <li key={`feature-${idx}`}>
-                {feature.feature}{' '}
-                {feature.value === 'null' ? null : `: ${feature.value}`}
+                ✔ {feature.feature}{" "}
+                {feature.value === "null" ? null : `: ${feature.value}`}
               </li>
             );
           })}
