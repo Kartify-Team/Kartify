@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Stars from './Stars';
 import { formatDate } from '../../utils';
 import {
   incrementHelpfulness,
   reportReview
 } from '../../greenfieldAPI/reviews';
+import { ReportedReview } from './ReportedReview';
+import ThumbnailGallery from '../Questions/ThumbnailGallery';
 
 const ReviewItem = ({
   review,
@@ -18,55 +20,64 @@ const ReviewItem = ({
     body,
     date,
     helpfulness,
-    reportReview,
     rating,
     summary,
     reviewer_name,
-    review_id
+    review_id,
+    photos
   } = review;
 
+  const [isReported, setIsReported] = useState(false);
   const displayDate = formatDate(date);
+  const photoURLs = photos.map(photo => photo.url);
 
   const handleHelpful = reviewId => {
     if (helpfulReviews.includes(reviewId)) return;
 
-    const newHelpfulReviews = [...helpfulReviews];
-    newHelpfulReviews.push(reviewId);
-    setHelpfulReviews(newHelpfulReviews);
+    setHelpfulReviews([...helpfulReviews, reviewId]);
 
     incrementHelpfulness(reviewId)
       .then(() => updateReviews())
       .then(() => setReviewsChanged(!reviewsChanged));
   };
 
-  const handleReport = reviewId => {};
+  const handleReport = reviewId => {
+    reportReview(reviewId).then(() => {
+      setIsReported(true);
+    });
+  };
 
-  return (
-    <div className="review_item">
-      <Stars stars={rating} />
-      <p>{reviewer_name}</p>
-      <p className="summary">{summary}</p>
-      <p>{body}</p>
-      <p>{displayDate.toLocaleString('en-US')}</p>
-      Helpful?{' '}
-      <p onClick={() => handleHelpful(review_id)}>
-        <span
-          className={
-            helpfulReviews.includes(review_id) ? '' : 'underline-clickable'
-          }
+  if (isReported) {
+    return <ReportedReview />;
+  } else {
+    return (
+      <div className="review_item">
+        <Stars stars={rating} />
+        <p>{reviewer_name}</p>
+        <p className="summary">{summary}</p>
+        <ThumbnailGallery imageURLs={photoURLs} />
+        <p>{body}</p>
+        <p>{displayDate.toLocaleString('en-US')}</p>
+        Helpful?{' '}
+        <p onClick={() => handleHelpful(review_id)}>
+          <span
+            className={
+              helpfulReviews.includes(review_id) ? '' : 'underline-clickable'
+            }
+          >
+            Yes
+          </span>{' '}
+          ({helpfulness})
+        </p>
+        <p
+          className="underline-clickable"
+          onClick={() => handleReport(review_id)}
         >
-          Yes
-        </span>{' '}
-        ({helpfulness})
-      </p>
-      <p
-        className="underline-clickable"
-        onClick={() => reportReview(review_id)}
-      >
-        Report
-      </p>
-    </div>
-  );
+          Report
+        </p>
+      </div>
+    );
+  }
 };
 
 export default ReviewItem;
