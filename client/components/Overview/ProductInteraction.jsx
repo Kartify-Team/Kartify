@@ -61,6 +61,12 @@ const ProductInteraction = ({
             ></a>
           </div>
         </div>
+        <div id="style-text-container">
+          <p>
+            <span id="style-text">STYLE > </span>
+            {!!currentStyle ? currentStyle.name : null}
+          </p>
+        </div>
       </div>
       <StyleSelector
         styles={product.styles}
