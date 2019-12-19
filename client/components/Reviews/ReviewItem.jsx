@@ -29,6 +29,7 @@ const ReviewItem = ({
   } = review;
 
   const [isReported, setIsReported] = useState(false);
+  const [expandedReviews, setExpandedReviews] = useState([]);
   const displayDate = formatDate(date);
   const photoURLs = photos.map(photo => photo.url);
 
@@ -61,7 +62,35 @@ const ReviewItem = ({
         </div>
         <p className="summary">{summary}</p>
         <ThumbnailGallery imageURLs={photoURLs} />
-        <p>{body}</p>
+        <p className="review-body">
+          {expandedReviews.includes(review_id) ? body : body.slice(0, 250)}
+          {body.length > 250 && !expandedReviews.includes(review_id) ? (
+            <>
+              &nbsp;
+              <span
+                className="underline-clickable show-more"
+                onClick={() =>
+                  setExpandedReviews([...expandedReviews, review_id])
+                }
+              >
+                ...show more
+              </span>
+            </>
+          ) : null}
+        </p>
+        {/* {body.length > 250 && !expandedReviews.includes(review_id) ? (
+          <>
+            <span
+              className="underline-clickable"
+              onClick={() =>
+                setExpandedReviews([...expandedReviews, review_id])
+              }
+            >
+              Show more
+            </span>
+            <br />
+          </>
+        ) : null} */}
         {recommend === 1 ? (
           <p>
             <i className="fa fa-check"></i> I recommend this product
