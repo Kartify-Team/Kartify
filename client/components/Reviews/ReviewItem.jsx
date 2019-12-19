@@ -52,9 +52,13 @@ const ReviewItem = ({
     return <ReportedReview />;
   } else {
     return (
-      <div className="review_item">
-        <Stars stars={rating} />
-        <p>{reviewer_name}</p>
+      <div className="review-item">
+        <div className="review-item-top">
+          <Stars stars={rating} />
+          <p>
+            {reviewer_name}, {displayDate.toLocaleString('en-US')}
+          </p>
+        </div>
         <p className="summary">{summary}</p>
         <ThumbnailGallery imageURLs={photoURLs} />
         <p>{body}</p>
@@ -63,24 +67,25 @@ const ReviewItem = ({
             <i className="fa fa-check"></i> I recommend this product
           </p>
         ) : null}
-        <p>{displayDate.toLocaleString('en-US')}</p>
-        Helpful?{' '}
-        <p onClick={() => handleHelpful(review_id)}>
+        <div className="review-item-bottom">
+          Helpful?&nbsp;&nbsp;
+          <span onClick={() => handleHelpful(review_id)}>
+            <span
+              className={
+                helpfulReviews.includes(review_id) ? '' : 'underline-clickable'
+              }
+            >
+              Yes
+            </span>
+          </span>
+          &nbsp; ({helpfulness}) | &nbsp;
           <span
-            className={
-              helpfulReviews.includes(review_id) ? '' : 'underline-clickable'
-            }
+            className="underline-clickable"
+            onClick={() => handleReport(review_id)}
           >
-            Yes
-          </span>{' '}
-          ({helpfulness})
-        </p>
-        <p
-          className="underline-clickable"
-          onClick={() => handleReport(review_id)}
-        >
-          Report
-        </p>
+            Report
+          </span>
+        </div>
       </div>
     );
   }
