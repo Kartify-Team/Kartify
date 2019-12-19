@@ -5,10 +5,9 @@ const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
     return null;
   } else {
     return (
-      <div className="interaction-item">
-        <br />
+      <div id="style-selector-container">
         <p>STYLE > {!!currentStyle ? currentStyle.name : null}</p>
-        <div id="style-selector-container">
+        <div id="styles-container">
           {styles.results.map(style => {
             return (
               <div

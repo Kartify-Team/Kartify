@@ -50,7 +50,13 @@ const ProductImage = ({ currentStyle }) => {
         changeImage={changeImage}
         currentIndex={currentIndex}
       />
-      <img id="main-product-image" src={currentImage} />
+      <img
+        id="main-product-image"
+        src={currentImage}
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      />
       <i
         className="fa fa-chevron-left fa-2x"
         id="image-left-arrow"
@@ -92,8 +98,36 @@ const ProductImage = ({ currentStyle }) => {
         className="expanded-image-modal"
         overlayClassName="expanded-image-modal-overlay"
       >
-        <div>
+        <div id="expanded-image-modal">
           <img id="expanded-image" src={currentImage} />
+          <i
+            className="fa fa-chevron-left fa-3x"
+            id="expanded-left"
+            onClick={() => {
+              updateIndex("left");
+            }}
+            style={{
+              visibility:
+                !!currentStyle &&
+                currentStyle.photos.length > 1 &&
+                currentStyle.photos[0].url !== currentImage
+                  ? "visible"
+                  : "hidden"
+            }}
+          />
+          <i
+            className="fa fa-chevron-right fa-3x"
+            id="expanded-right"
+            onClick={() => {
+              updateIndex("right");
+            }}
+            style={{
+              visibility:
+                !!currentStyle && currentIndex < currentStyle.photos.length - 1
+                  ? "visible"
+                  : "hidden"
+            }}
+          />
         </div>
       </Modal>
     </div>

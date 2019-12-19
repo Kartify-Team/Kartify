@@ -13,7 +13,7 @@ const ProductInteraction = ({
 }) => {
   return (
     <div id="product-interaction-container">
-      <div id="overview-info" className="interaction-item">
+      <div id="overview-info">
         <span id="stars-reviews">
           <Stars stars={average || 0} />
           <a id="review-link" href="#reviews-container">
