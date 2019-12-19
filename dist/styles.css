@@ -972,6 +972,10 @@ img.uploadIcon {
   margin: 10px 5px 5px 10px;
 }
 
+.padding-ten {
+  margin-bottom: 10%;
+}
+
 #review-list-container {
   height: 100%;
   margin: 0 auto;
