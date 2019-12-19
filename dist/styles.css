@@ -119,6 +119,10 @@ body {
   font-size: 1rem;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ol,
 ul {
   list-style: none;
@@ -192,6 +196,7 @@ a:active {
 }
 
 #site-title {
+  color: white;
   font-size: 3em;
   padding: 15px;
   font-family: 'Rock Salt', cursive;
