@@ -273,6 +273,10 @@ strong {
   width: auto;
 }
 
+.thumbnail.large {
+  height: 7em;
+}
+
 .upload-previews {
   max-width: 50vw;
   max-height: 10vh;
@@ -856,7 +860,7 @@ select {
 #question-list-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
-  max-height: 60vh;
+  max-height: 95vh;
   overflow-y: scroll;
 }
 
@@ -882,6 +886,8 @@ select {
 
 .answers {
   margin: 10px 0px 0px 0px;
+  max-height: 45vh;
+  overflow-y: scroll;
 }
 
 .answers > span > #first {

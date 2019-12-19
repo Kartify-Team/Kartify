@@ -7,7 +7,7 @@ const AddQuestion = ({
   modalIsOpen,
   product,
   formType,
-  question
+  question = {}
 }) => {
   var subtitle;
 
