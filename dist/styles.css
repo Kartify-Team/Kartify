@@ -261,24 +261,18 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 #product-interaction-container {
-  border: black 1px solid;
   margin: 10px 10px 5px 5px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
 
-.interaction-item {
-  border: black 1px solid;
-  height: 33%;
-  width: 100%;
-  overflow: scroll;
-}
-
 /* Information Box */
 
 #overview-info {
   display: grid;
+  height: 30%;
+  width: 100%;
   grid-template-rows: 15% 15% 50% 15%;
   text-align: left;
   padding: auto;
@@ -306,7 +300,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   display: grid;
   grid-template-columns: 65% 35%;
   height: 95%;
-  border: black 1px solid;
+  /* border: black 1px solid; */
   margin: 5px 10px 10px 10px;
 }
 
@@ -316,7 +310,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 
 #left-description {
   margin-left: 20px;
-  border-right: 3px solid black;
 }
 
 #right-description {
@@ -324,7 +317,6 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   align-items: center;
   height: 100%;
   margin-left: 8px;
-  border-left: 3px solid black;
 }
 
 #left-description h2 {
@@ -333,6 +325,12 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 /* Selected Style */
+
+#style-selector-container {
+  height: 40%;
+  width: 100%;
+  overflow: scroll;
+}
 
 .selected-style-container {
   position: relative;
@@ -346,14 +344,13 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   right: 0;
   border: 2px solid black;
   border-radius: 50%;
-  z-index: 5;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#style-selector-container {
+#styles-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 5px;
@@ -387,37 +384,41 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   justify-content: center;
-}
-
-#add-button {
-  grid-area: add;
-  height: 50px;
-  width: 150px;
-  border: 1px solid black;
-  margin: 5px;
+  height: 33%;
+  width: 100%;
 }
 
 #size-button {
   grid-area: size;
-  height: 50px;
-  margin: 5px;
+  height: 5em;
+  width: 15em;
+  margin: 1em 0 1em 1em;
 }
 
 #qty-button {
   grid-area: qty;
-  margin: 5px;
-  height: 50px;
+  height: 5em;
+  width: 7em;
+  margin: 1em;
+}
+
+#add-button {
+  grid-area: add;
+  height: 3.5em;
+  width: 12em;
+  border: 1px solid black;
+  margin: 0 1em 1em 1em;
 }
 
 #star-button {
   grid-area: star;
-  height: 50px;
-  width: 50px;
-  margin: 5px;
+  height: 3.5em;
+  width: 3.5em;
   border: 1px solid black;
+  margin: 0 1em 1em 0;
 }
 
-/* Image Gallery */
+/* Product Image & Image Gallery */
 
 #product-image-container {
   position: relative;
@@ -429,6 +430,10 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#main-product-image:hover {
+  cursor: zoom-in;
 }
 
 #image-gallery {
@@ -474,6 +479,62 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   position: absolute;
   top: 50%;
   left: 95%;
+}
+
+#image-expand {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.expanded-image-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  max-height: 90vh;
+  max-width: 80vw;
+  overflow: hidden;
+  height: auto;
+  width: auto;
+  background-color: white;
+  margin-right: -50%;
+  padding: 0.2%;
+  transform: translate(-50%, -50%);
+}
+
+.expanded-image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 60%);
+  z-index: 100;
+}
+
+#expanded-image {
+  max-height: 90vh;
+  max-width: 80vw;
+}
+
+#expanded-image-modal {
+  position: relative;
+}
+
+#expanded-left,
+#expanded-right {
+  position: absolute;
+  top: 50%;
+}
+
+#expanded-left {
+  left: 5%;
+}
+
+#expanded-right {
+  right: 5%;
 }
 
 /* 
@@ -774,7 +835,8 @@ img.uploadIcon {
 .star-container {
   display: inline-block;
   position: relative;
-  height: 20px;
+  height: 2em;
+  margin-right: 1em;
 }
 
 .bottom-star {

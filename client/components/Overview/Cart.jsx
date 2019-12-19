@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { getInventory } from '../../utils/styleHelpers';
+import React, { useState, useEffect } from "react";
+import { getInventory } from "../../utils/styleHelpers";
 
 const Cart = ({ inventory }) => {
   const availableSizes = getInventory(inventory).sort(
@@ -32,10 +32,10 @@ const Cart = ({ inventory }) => {
   }, [inventory]);
 
   return (
-    <div className="interaction-item" id="cart-container">
+    <div id="cart-container">
       <select
         id="size-button"
-        value={!selectedSize ? 'default' : selectedSize}
+        value={!selectedSize ? "default" : selectedSize}
         onChange={changeSelectedSize}
       >
         {availableSizes.length > 0 ? (
@@ -58,7 +58,7 @@ const Cart = ({ inventory }) => {
 
       <select
         id="qty-button"
-        value={!selectedQty ? 'default' : selectedQty}
+        value={!selectedQty ? "default" : selectedQty}
         onChange={changeSelectedQty}
       >
         <option value="default" disabled hidden>
