@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -97,7 +97,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 article,
@@ -119,6 +119,10 @@ body {
   font-size: 1rem;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ol,
 ul {
   list-style: none;
@@ -133,7 +137,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -177,9 +181,9 @@ a:active {
  */
 
 :root {
-  --color: rgb(139, 139, 139);
+  --color: var(--primary-accent-color);
   --background-color: #ffffff;
-  --primary-accent-color: #000000;
+  --primary-accent-color: #525252;
   --secondary-accent-color: #00ffff;
 }
 
@@ -192,9 +196,10 @@ a:active {
 }
 
 #site-title {
+  color: white;
   font-size: 3em;
   padding: 15px;
-  font-family: "Rock Salt", cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 #components-container {
@@ -222,19 +227,25 @@ h3 {
   color: var(--color);
 }
 
+h1 {
+  color: var(--color);
+}
+
 h2 {
   font-size: 1em;
   font-weight: 800;
   margin: 0;
-  color: var(--primary-accent-color);
+  color: var(--color);
 }
 
 body {
   font-size: 1;
+  color: var(--color);
 }
 
 p {
   margin: 1.5em 0em;
+  color: var(--color);
 }
 
 sub {
@@ -256,7 +267,16 @@ strong {
   display: inline-block;
   width: auto;
   padding: 15px;
-  /* margin: 5px 15px; */
+  cursor: pointer;
+  margin-right: 2%;
+  color: var(--color);
+  background-color: white;
+  font-weight: bold;
+}
+
+.action-button:hover {
+  color: white;
+  background-color: var(--color);
 }
 
 .highlighted {
@@ -306,9 +326,9 @@ label {
   display: flex;
 }
 
-input[type="email"],
-input[type="text"],
-input[type="number"],
+input[type='email'],
+input[type='text'],
+input[type='number'],
 textarea,
 select {
   border: var(--color) 1px solid;
@@ -516,7 +536,7 @@ select {
 
 #cart-container {
   display: grid;
-  grid-template-areas: "size size size qty qty" "add add add add star";
+  grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   /* justify-content: center; */
   height: 18%;
@@ -930,7 +950,7 @@ select {
 }
 
 img.uploadIcon {
-  content: url("./img/upload.svg") !important;
+  content: url('./img/upload.svg') !important;
 }
 
 /* 
@@ -956,8 +976,15 @@ img.uploadIcon {
   margin: 0 auto;
 }
 
+#review-list-button-container {
+  margin-top: 3%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 #reviews-scroll {
-  overflow: scroll;
+  overflow: auto;
   height: 100%;
 }
 
@@ -979,6 +1006,10 @@ img.uploadIcon {
   overflow: hidden;
 }
 
+.review-button {
+  margin-right: 2%;
+}
+
 .filter {
   margin-left: 2%;
   margin-right: 2%;
@@ -994,9 +1025,9 @@ img.uploadIcon {
 
 .review-item {
   margin: 0 auto;
-  padding: 5px;
   text-align: left;
-  padding: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
@@ -1006,6 +1037,9 @@ img.uploadIcon {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: lighter;
+  color: #afafaf;
+  font-size: 0.8em;
 }
 
 .review-item-bottom {
@@ -1048,6 +1082,10 @@ img.uploadIcon {
 
 #avg-rating-stars {
   display: inline-block;
+  height: 100%;
+  margin-top: 3.5%;
+  margin-left: 3%;
+  font-size: 0.7em;
 }
 
 /* Stars Component */
@@ -1076,7 +1114,7 @@ img.uploadIcon {
   white-space: nowrap;
   /* z-index: 10; */
   display: inline-block;
-  color: black;
+  color: var(--color);
   width: 100%;
   float: left;
 }
@@ -1087,6 +1125,7 @@ img.uploadIcon {
   width: 50%;
   margin: 10px 3px 0px 0px;
   font-size: 0.7em;
+  color: var(--color);
 }
 
 .star-bar-static {
@@ -1102,10 +1141,9 @@ img.uploadIcon {
   position: relative;
   width: 100%;
   overflow: hidden;
-  color: black;
+  background-color: var(--color);
   float: left;
   height: 10px;
-  background-color: black;
   display: inline-block;
 }
 
@@ -1123,7 +1161,6 @@ img.uploadIcon {
   justify-content: flex-start;
   display: flex;
   width: 40%;
-  padding-left: 20%;
   margin-top: 5%;
 }
 
@@ -1172,7 +1209,6 @@ img.uploadIcon {
 .characteristic-type {
   display: flex;
   flex-direction: row;
-  color: black;
 }
 
 .pointer {
@@ -1214,6 +1250,7 @@ img.uploadIcon {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 3%;
 }
 
 #sort-menu > select {

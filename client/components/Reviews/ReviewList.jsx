@@ -33,31 +33,6 @@ const ReviewList = ({
   return (
     <>
       <div id="review-list-container" style={{ width: '60%' }}>
-        <button
-          className="action-button"
-          onClick={() => {
-            setReviewList(product.id, 1, sort);
-            count += 2;
-          }}
-        >
-          More Reviews
-        </button>
-        <button
-          className="action-button"
-          onClick={() => {
-            setIsOpen(true);
-          }}
-        >
-          Add Review
-        </button>
-
-        <AddReview
-          setIsOpen={setIsOpen}
-          isOpen={isOpen}
-          product={product}
-          sort={sort}
-        />
-
         <div id="sort-menu">
           <h2 className="inline">{reviews.length} reviews, sorted by</h2>
           <select
@@ -99,9 +74,34 @@ const ReviewList = ({
                 setHelpfulReviews={setHelpfulReviews}
               />
             ))}
+          <div id="review-list-button-container">
+            <button
+              className="action-button review-button"
+              onClick={() => {
+                setReviewList(product.id, 1, sort);
+                count += 2;
+              }}
+            >
+              MORE REVIEWS
+            </button>
+            <button
+              className="action-button review-button"
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
+              ADD REVIEW &nbsp;<i class="fa fa-plus"></i>
+            </button>
+          </div>
+
+          <AddReview
+            setIsOpen={setIsOpen}
+            isOpen={isOpen}
+            product={product}
+            sort={sort}
+          />
         </div>
       </div>
-      <div id="review-list-container"></div>
     </>
   );
 };
