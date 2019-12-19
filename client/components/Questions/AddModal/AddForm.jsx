@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { useFormik } from 'formik';
 import { submitAQuestion } from '../../../greenfieldAPI';
 import { isValidEmail } from '../../../utils';
-import axios from 'axios';
 import ImageUpload from './ImageUpload';
 
 const AddForm = ({
@@ -15,8 +14,14 @@ const AddForm = ({
 }) => {
   const [errorsOn, setErrorsOn] = useState(false);
   const display = {
-    addQuestion: 'Your Question',
-    addAnswer: 'Submit your answer'
+    addQuestion: {
+      title: 'Your Question',
+      submit: "SUBMIT QUESTION"
+    },
+    addAnswer: {
+      title: 'Submit your answer',
+      submit: "SUBMIT YOUR ANSWER"
+    }
   };
   const [photos, setPhotos] = useState([]);
 
@@ -58,7 +63,7 @@ const AddForm = ({
   return (
     <form id="add-question-form" onSubmit={formik.handleSubmit}>
       <br />
-      <label htmlFor="body">{display[formType]}</label>
+      <label htmlFor="body">{display[formType].title}</label>
       <textarea
         id="body"
         name="body"
@@ -69,8 +74,8 @@ const AddForm = ({
       {errorsOn && formik.errors.body ? (
         <div className="form-error">{formik.errors.body}</div>
       ) : (
-        <div></div>
-      )}
+          <div></div>
+        )}
       <label htmlFor="nickname">What is your nickname?</label>
       <input
         id="nickname"
@@ -83,8 +88,8 @@ const AddForm = ({
       {errorsOn && formik.errors.nickname ? (
         <div className="form-error">{formik.errors.nickname}</div>
       ) : (
-        <div></div>
-      )}
+          <div></div>
+        )}
       <sub>For privacy reasons, do not use your full name or email address</sub>
       <label htmlFor="email">Your email</label>
       <input
@@ -98,23 +103,23 @@ const AddForm = ({
       {errorsOn && formik.errors.email ? (
         <div className="form-error">{formik.errors.email}</div>
       ) : (
-        <div></div>
-      )}
+          <div></div>
+        )}
 
       <sub>For authentication reasons, you will not be emailed</sub>
       <br />
       {formType === 'addAnswer' ? (
         <ImageUpload updatePhotos={setPhotos} />
       ) : (
-        <></>
-      )}
+          <></>
+        )}
       <button
         id="submit"
         type="submit"
         className="action-button"
         onClick={() => setErrorsOn(true)}
       >
-        Submit
+        {display[formType].submit}
       </button>
     </form>
   );

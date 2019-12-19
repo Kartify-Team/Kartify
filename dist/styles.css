@@ -189,6 +189,21 @@ strong {
   outline: none;
 }
 
+.action-button.secondary {
+  margin: 0.5em 0;
+  border-radius: 1em;
+  font-size: 0.8em;
+  padding: 10px;
+  border: var(--color) 1px solid;
+  color: var(--primary-accent-color);
+  background-color: white;
+}
+
+.action-button.secondary:hover {
+  background-color: lightgray;
+  color: var(--color);
+}
+
 .highlighted {
   background-color: #ffff00;
 }
@@ -198,8 +213,8 @@ strong {
 }
 
 .thumbnail {
-  margin-right: 10px;
-  height: 3em;
+  margin: 1em 1em 1em 0;
+  height: 4em;
   width: auto;
 }
 
@@ -218,7 +233,9 @@ strong {
   content: url("/img/spinner.gif");
   width: 50px;
   height: auto;
-  margin-left: 15vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*
@@ -247,6 +264,10 @@ input[type="email"], input[type="text"], input[type="number"], textarea, select 
   font-size: 1em;
   border: var(--color) 1px solid;
   padding: 0.5em;
+}
+
+#file-upload {
+  display: none;
 }
 
 .Modal {
@@ -393,8 +414,7 @@ input[type="email"], input[type="text"], input[type="number"], textarea, select 
   font-weight: bold;
 }
 
-#style-text-container {
-}
+#style-text-container {}
 
 /* Selected Style */
 

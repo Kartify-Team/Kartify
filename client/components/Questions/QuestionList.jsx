@@ -13,13 +13,18 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
   const [allQuestionsDisplayed, setAllQuestionsDisplayed] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
   useEffect(() => {
+    setMaxQs(2)
+    setLoading(false)
+    setSeeMore(false)
+    setAllQuestionsDisplayed(false)
+    setLazyLoading(false)
+    setBottomReached(false)
     if (questions.length > 0) {
       const maxTemp = {};
       questions.forEach((question) => maxTemp[question.question_id] = 2)
       setMaxAs(maxTemp)
-      setLoading(false)
     }
-  }, [questions])
+  }, [questions, product])
 
   const scrollChange = (e) => {
     const element = e.target.parentNode;
@@ -54,8 +59,8 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
     <>
       <button className="action-button" id="q-list"
         onClick={() => setIsOpen(true)}>
-        Add a Question
-          </button>
+        ADD A QUESTION &nbsp;<i className="fa fa-plus"></i>
+      </button>
       <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} formType="addQuestion" />
     </>
 
@@ -77,7 +82,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
             count++;
             return <button className="action-button" id="q-list"
               onClick={() => setSeeMore(true)} key={question.question_id}>
-              More Answered Questions
+              MORE QUESTIONS
             </button>
           }
 
@@ -91,7 +96,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
       {addQuestion}
     </div>;
   } else {
-    return <div id="question-list-container">Loading Q List</div>
+    return <div id="question-list-container"><img id="spinner" /></div>
   }
 };
 export default QuestionList;
