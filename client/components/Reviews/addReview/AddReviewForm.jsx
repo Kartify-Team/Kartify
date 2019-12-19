@@ -15,6 +15,7 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
   const [length, setLength] = useState();
   const [fit, setFit] = useState();
   const [photos, setPhotos] = useState([]);
+  const [errorsOn, setErrorsOn] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -98,12 +99,15 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
       return errors;
     }
   });
+
+  formik.validateOnBlur = false;
+  formik.validateOnChange = false;
+
   return (
     <form id="add-review-form" onSubmit={formik.handleSubmit}>
       <br />
       <label htmlFor="rating">Overall Rating</label>
       <StarsSelector setRating={setRating} />
-      {!rating ? <div className="error">Required</div> : null}
       <label htmlFor="recommendation">Do you recommend this product?</label>
       <input
         type="radio"
@@ -122,9 +126,6 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
         onClick={formik.handleChange}
       />
       No
-      {formik.errors.recommendation ? (
-        <div className="error">{formik.errors.recommendation}</div>
-      ) : null}
       <label htmlFor="characteristics">Characteristics</label>
       {Object.keys(characteristics).map(characteristic => {
         let handler;
@@ -149,9 +150,6 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
         value={formik.values.summary}
         onChange={formik.handleChange}
       />
-      {formik.errors.summary ? (
-        <div className="error">{formik.errors.summary}</div>
-      ) : null}
       <label htmlFor="body">Review Body</label>
       <textarea
         id="body"
@@ -159,9 +157,6 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
         onChange={formik.handleChange}
         value={formik.values.body}
       />
-      {formik.errors.body ? (
-        <div className="error">{formik.errors.body}</div>
-      ) : null}
       <br />
       <ImageUpload updatePhotos={setPhotos} />
       <label htmlFor="nickname">What is your nickname?</label>
@@ -180,12 +175,22 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
         onChange={formik.handleChange}
         value={formik.values.email}
       />
-      {formik.errors.email ? (
-        <div className="error">{formik.errors.email}</div>
-      ) : null}
-      <button id="submit" type="submit" className="action-button">
+      <button
+        id="submit"
+        type="submit"
+        className="action-button"
+        onClick={() => setErrorsOn(true)}
+      >
         Submit
       </button>
+      <br />
+      {errorsOn
+        ? Object.keys(formik.errors).map(error => (
+            <div className="error">
+              {error}: {formik.errors[error]}
+            </div>
+          ))
+        : ''}
     </form>
   );
 };

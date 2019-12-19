@@ -24,7 +24,8 @@ const ReviewItem = ({
     summary,
     reviewer_name,
     review_id,
-    photos
+    photos,
+    recommend
   } = review;
 
   const [isReported, setIsReported] = useState(false);
@@ -57,6 +58,11 @@ const ReviewItem = ({
         <p className="summary">{summary}</p>
         <ThumbnailGallery imageURLs={photoURLs} />
         <p>{body}</p>
+        {recommend === 1 ? (
+          <p>
+            <i className="fa fa-check"></i> I recommend this product
+          </p>
+        ) : null}
         <p>{displayDate.toLocaleString('en-US')}</p>
         Helpful?{' '}
         <p onClick={() => handleHelpful(review_id)}>

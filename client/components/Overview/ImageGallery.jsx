@@ -64,7 +64,7 @@ const ImageGallery = ({ images, currentImage, changeImage, currentIndex }) => {
                 >
                   <img
                     className="image-gallery-thumb"
-                    src={image.thumbnail_url}
+                    src={image.url}
                     onClick={() => changeImage(image.url)}
                   />
                 </div>
