@@ -38,7 +38,7 @@ const Reviews = ({
   } else {
     return (
       <div className="component">
-        <h3>Ratings & Reviews</h3>
+        <h3 className="section-title">Ratings & Reviews</h3>
         <div id="reviews-container">
           <RatingBreakdown
             product={product}

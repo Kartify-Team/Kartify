@@ -117,9 +117,6 @@ section {
 body {
   line-height: 1;
   font-size: 1rem;
-}
-
-body {
   overflow-x: hidden;
 }
 
@@ -218,6 +215,10 @@ a:active {
   background-color: var(--color);
   margin: 10px 5px 5px 10px;
   color: var(--secondary-accent-color);
+}
+
+.section-title {
+  margin-top: 5%;
 }
 
 h3 {
@@ -1244,7 +1245,6 @@ img.uploadIcon {
   color: red;
 }
 
-#add-review-form > input,
 #add-review-form > textarea {
   width: 400px;
 }
@@ -1272,4 +1272,13 @@ img.uploadIcon {
 .underline-clickable {
   text-decoration: underline;
   cursor: pointer;
+}
+
+#recommendation-container {
+  display: flex;
+}
+
+.radio-and-label {
+  display: flex;
+  flex-direction: row;
 }

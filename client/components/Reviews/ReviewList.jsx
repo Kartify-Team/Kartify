@@ -14,6 +14,22 @@ const ReviewList = ({
   const [sort, setSort] = useState('helpful');
   const [reviewsChanged, setReviewsChanged] = useState(false);
   const [helpfulReviews, setHelpfulReviews] = useState([]);
+  let reviewCount;
+
+  const filteredReviews = reviews.filter(review => {
+    if (filters.length > 0) {
+      for (let filter of filters) {
+        if (review.rating.toString() === filter) {
+          return true;
+        }
+      }
+      return false;
+    } else {
+      return true;
+    }
+  });
+
+  reviewCount = filteredReviews.length;
 
   useEffect(() => {
     setReviewList(product.id, 1, sort);
@@ -29,7 +45,7 @@ const ReviewList = ({
   } else {
     filterDisplay = <h3>No filters applied</h3>;
   }
-
+  console.log(reviews.length);
   return (
     <>
       <div id="review-list-container" style={{ width: '60%' }}>
@@ -49,34 +65,21 @@ const ReviewList = ({
         <div id="filter-container">{filterDisplay}</div>
 
         <div id="reviews-scroll">
-          {reviews
-            .filter(review => {
-              if (filters.length > 0) {
-                for (let filter of filters) {
-                  if (review.rating.toString() === filter) {
-                    return true;
-                  }
-                }
-                return false;
-              } else {
-                return true;
-              }
-            })
-            .slice(0, count)
-            .map(review => (
-              <ReviewItem
-                review={review}
-                updateReviews={() => setReviewList(product.id, 1, sort)}
-                key={review.review_id}
-                setReviewsChanged={setReviewsChanged}
-                reviewsChanged={reviewsChanged}
-                helpfulReviews={helpfulReviews}
-                setHelpfulReviews={setHelpfulReviews}
-              />
-            ))}
+          {filteredReviews.slice(0, count).map(review => (
+            <ReviewItem
+              review={review}
+              updateReviews={() => setReviewList(product.id, 1, sort)}
+              key={review.review_id}
+              setReviewsChanged={setReviewsChanged}
+              reviewsChanged={reviewsChanged}
+              helpfulReviews={helpfulReviews}
+              setHelpfulReviews={setHelpfulReviews}
+            />
+          ))}
           <div id="review-list-button-container">
             <button
               className="action-button review-button"
+              style={{ display: count >= reviewCount ? 'none' : 'block' }}
               onClick={() => {
                 setReviewList(product.id, 1, sort);
                 count += 2;
@@ -90,10 +93,9 @@ const ReviewList = ({
                 setIsOpen(true);
               }}
             >
-              ADD REVIEW &nbsp;<i class="fa fa-plus"></i>
+              ADD REVIEW &nbsp;<i className="fa fa-plus"></i>
             </button>
           </div>
-
           <AddReview
             setIsOpen={setIsOpen}
             isOpen={isOpen}
