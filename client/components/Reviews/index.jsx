@@ -37,7 +37,7 @@ const Reviews = ({
     return null;
   } else {
     return (
-      <div className="component">
+      <div className="component padding-ten">
         <h3 className="section-title">Ratings & Reviews</h3>
         <div id="reviews-container">
           <RatingBreakdown
