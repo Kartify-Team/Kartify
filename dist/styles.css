@@ -738,7 +738,7 @@ input[type="email"], input[type="text"], input[type="number"], textarea, select 
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
   max-height: 85vh;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 #question-container {

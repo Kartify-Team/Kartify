@@ -11,7 +11,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
   const [bottomReached, setBottomReached] = useState(false);
   const [lazyLoading, setLazyLoading] = useState(false);
   const [allQuestionsDisplayed, setAllQuestionsDisplayed] = useState(false);
-  const questionContainer = document.getElementById("question-list-container");
+  const [seeMore, setSeeMore] = useState(false);
   useEffect(() => {
     if (questions.length > 0) {
       const maxTemp = {};
@@ -29,10 +29,9 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
     }
   }
   useEffect(() => {
-    const hasMoreSpace = document.getElementById("question-list-container").clientHeight <= window.innerHeight * .7;
-    console.log(`container height: ${document.getElementById("question-list-container").clientHeight}
-    window height: ${window.innerHeight}`)
-    if (!loading && (hasMoreSpace || bottomReached)) {
+    const hasMoreSpace = document.getElementById("question-list-container").clientHeight <= window.innerHeight * .86;
+
+    if (seeMore && (hasMoreSpace || bottomReached)) {
       setBottomReached(true)
       if (maxQs < questions.length) {
         setLazyLoading(true)
@@ -45,7 +44,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
         setAllQuestionsDisplayed(true);
       }
     }
-  }, [bottomReached, loading])
+  }, [seeMore, bottomReached, loading])
 
   const handleHelpful = (type, id) => {
     markAsHelpful(id, type)
@@ -66,9 +65,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
     return (
       <div id="question-list-container" onScroll={scrollChange}>
         {questions.map((question) => {
-          if (count < maxQs
-            // && Object.keys(question.answers).length > 0
-          ) {
+          if (count < maxQs) {
             if (query === "" || question.question_body.toUpperCase().indexOf(query.toUpperCase()) !== -1) {
               count++;
               return (<QuestionCard question={question}
@@ -77,13 +74,13 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
                 handleHelpful={handleHelpful} />);
             }
           }
-          // if (count === maxQs) {
-          //   count++;
-          //   return <button className="action-button" id="q-list"
-          //     onClick={() => setMaxQs(maxQs + 2)} key={question.question_id}>
-          //     More Answered Questions
-          //   </button>
-          // }
+          if (count === maxQs && !seeMore) {
+            count++;
+            return <button className="action-button" id="q-list"
+              onClick={() => setSeeMore(true)} key={question.question_id}>
+              More Answered Questions
+            </button>
+          }
 
         })}
         {lazyLoading ? <center><img src="/img/spinner.gif" width="30px" height="auto" /></center> : <></>}
