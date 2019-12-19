@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -97,7 +97,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 article,
@@ -134,7 +134,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -196,7 +196,7 @@ a:active {
   color: white;
   font-size: 3em;
   padding: 15px;
-  font-family: "Rock Salt", cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 #components-container {
@@ -327,9 +327,9 @@ label {
   display: flex;
 }
 
-input[type="email"],
-input[type="text"],
-input[type="number"],
+input[type='email'],
+input[type='text'],
+input[type='number'],
 textarea,
 select {
   border: var(--color) 1px solid;
@@ -540,7 +540,7 @@ select {
 
 #cart-container {
   display: grid;
-  grid-template-areas: "size size size qty qty" "add add add add star";
+  grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   /* justify-content: center; */
   height: 18%;
@@ -956,7 +956,7 @@ select {
 }
 
 img.uploadIcon {
-  content: url("./img/upload.svg") !important;
+  content: url('./img/upload.svg') !important;
 }
 
 /* 
@@ -1283,4 +1283,13 @@ img.uploadIcon {
 .radio-and-label {
   display: flex;
   flex-direction: row;
+}
+
+.show-more {
+  color: blue;
+}
+
+.review-body {
+  width: 100%;
+  word-break: break-all;
 }
