@@ -60,7 +60,7 @@ const ReviewItem = ({
         <p>{body}</p>
         {recommend === 1 ? (
           <p>
-            <i class="fa fa-check"></i> I recommend this product
+            <i className="fa fa-check"></i> I recommend this product
           </p>
         ) : null}
         <p>{displayDate.toLocaleString('en-US')}</p>
