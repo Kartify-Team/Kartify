@@ -32,7 +32,7 @@ const ReviewList = ({
 
   return (
     <>
-      <div id="review-list-container">
+      <div id="review-list-container" style={{ width: '60%' }}>
         <button
           className="action-button"
           onClick={() => {
@@ -73,7 +73,7 @@ const ReviewList = ({
 
         <div id="filter-container">{filterDisplay}</div>
 
-        <div>
+        <div id="reviews-scroll">
           {reviews
             .filter(review => {
               if (filters.length > 0) {

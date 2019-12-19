@@ -8,9 +8,9 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
 
   const defineButtonStyle = () => {
     if (type === 'relatedProduct') {
-      return '★';
+      return <i className="fa fa-star cardButton"></i>;
     } else if (type === 'outfitProduct') {
-      return 'x';
+      return <i className="fa fa-times-circle cardButton" ></i>;
     }
   };
 
@@ -25,6 +25,14 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
     }
   };
 
+  const getRatingStars = () => {
+    if (rating === 0) {
+      return;
+    } else {
+      return <RatingStars stars={rating} />;
+    }
+  };
+
   if (product === null) {
     return (
       <div className="productCard" onClick={() => {
@@ -35,9 +43,8 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
           <button
             className="cardButton"
             type="button"
-            src="" // TODO: ADD ICON TO BUTTON
           >
-          +
+            <i className="fa fa-plus"></i>
           </button>
         </div>
         <div className="productCardDescription">
@@ -50,7 +57,7 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
       <div className="productCard" 
         onClick={
           (e) => {
-            if (e.target.className === 'cardButton') {
+            if (e.target.className.includes('cardButton')) {
               handleActionButtonClick(e, product.id);
             } else {
               changeProduct(product.id); 
@@ -71,8 +78,6 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
           <button
             className="cardButton"
             type="button"
-            // onClick={(e) => handleActionButtonClick(e, product.id)}
-            src=""
           >
             {defineButtonStyle()}
           </button>
@@ -88,7 +93,7 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
             <Price originalPrice={product.default_price} salePrice={style ? style.salePrice : null} />
           </div>
           <div className="productCardRating">
-            <RatingStars stars={rating === undefined ? 0 : rating} />
+            {getRatingStars()}
           </div>
         </div>
       </div>

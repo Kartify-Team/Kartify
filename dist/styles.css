@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -97,7 +97,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 article,
@@ -133,7 +133,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -194,7 +194,7 @@ a:active {
 #site-title {
   font-size: 3em;
   padding: 15px;
-  font-family: "Rock Salt", cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 #components-container {
@@ -269,8 +269,15 @@ strong {
 
 .thumbnail {
   margin-right: 10px;
-  height: 15em;
+  height: 3em;
   width: auto;
+}
+
+.upload-previews {
+  max-width: 50vw;
+  max-height: 10vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 /*
@@ -295,9 +302,9 @@ label {
   display: flex;
 }
 
-input[type="email"],
-input[type="text"],
-input[type="number"],
+input[type='email'],
+input[type='text'],
+input[type='number'],
 textarea,
 select {
   border: var(--color) 1px solid;
@@ -503,7 +510,7 @@ select {
 
 #cart-container {
   display: grid;
-  grid-template-areas: "size size size qty qty" "add add add add star";
+  grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   justify-content: center;
   height: 24%;
@@ -914,7 +921,7 @@ select {
 }
 
 img.uploadIcon {
-  content: url("./img/upload.svg") !important;
+  content: url('./img/upload.svg') !important;
 }
 
 /* 
@@ -935,18 +942,23 @@ img.uploadIcon {
   margin: 10px 5px 5px 10px;
 }
 
-#review-list-container,
-#review-stats-container {
-  margin: 10px 5px 5px 10px;
+#review-list-container {
+  height: 100%;
+  margin: 0 auto;
+}
+
+#reviews-scroll {
+  overflow: scroll;
+  height: 100%;
 }
 
 #reviews-container {
   text-align: center;
-  display: grid;
-  grid-template-columns: 35% 65%;
+  display: flex;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
-  height: 800px;
+  height: 100vh;
 }
 
 #filter-container {
@@ -955,7 +967,6 @@ img.uploadIcon {
   padding-top: 3%;
   padding-left: 20%;
   padding-right: 20%;
-  height: 5%;
   overflow: hidden;
 }
 
@@ -972,20 +983,38 @@ img.uploadIcon {
   cursor: pointer;
 }
 
-.review_item {
-  margin: 10px 5px 5px 10px;
+.review-item {
+  margin: 0 auto;
   padding: 5px;
   text-align: left;
   padding: 3%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+}
+
+.review-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-item-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .summary {
+  margin-top: 0;
   font-weight: bold;
 }
 
 #review-stats-container {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 40%;
 }
 
 #size-rating-container {
@@ -997,8 +1026,9 @@ img.uploadIcon {
 }
 
 #star-stats-container {
-  height: 40%;
   width: 100%;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .avg-rating-header {
@@ -1016,7 +1046,7 @@ img.uploadIcon {
 .star-container {
   display: inline-block;
   position: relative;
-  height: 2em;
+  height: auto;
   margin-right: 1em;
 }
 
@@ -1024,7 +1054,7 @@ img.uploadIcon {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100px;
+  height: auto;
   width: 100%;
   overflow: hidden;
 }
@@ -1071,14 +1101,13 @@ img.uploadIcon {
 }
 
 #breakdown {
-  margin: 0 auto;
-  margin-top: 6%;
   display: flex;
   justify-content: left;
+  align-items: flex-end;
   flex-direction: column;
-  margin: 10px 5px 5px 10px;
+  margin: 0 auto;
   height: 500px;
-  align-items: flex-start;
+  width: 100%;
 }
 
 #avg-rating-container {
