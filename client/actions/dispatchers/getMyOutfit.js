@@ -10,7 +10,7 @@ const getMyOutfit = () => {
       let parsedOutfit = JSON.parse(oldOutfit);
       getProductsInfo(parsedOutfit)
         .then(products => {
-          let newOutfit = [null, ...products]
+          let newOutfit = [null, ...products];
           dispatch(changeMyOutfit(newOutfit));
         });
     }
