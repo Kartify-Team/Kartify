@@ -21,7 +21,16 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
     markAsHelpful(id, type)
       .then(() => addQuestionList(product.id))
   }
-  let addMoreQuestions = false;
+
+  const addQuestion =
+    <>
+      <button className="action-button" id="q-list"
+        onClick={() => setIsOpen(true)}>
+        Add a Question
+          </button>
+      <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} formType="addQuestion" />
+    </>
+
   if (!loading) {
     let count = 0;
     return (
@@ -47,16 +56,15 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
           }
 
         })}
-        <button className="action-button" id="q-list"
-          onClick={() => setIsOpen(true)}>
-          Add a Question
-          </button>
-        <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} formType="addQuestion" />
-
+        {addQuestion}
       </div>
     );
+  } else if (product) {
+    return <div id="question-list-container">
+      {addQuestion}
+    </div>;
   } else {
-    return <div id="question-list-container">Loading Q List</div>;
+    return <div id="question-list-container">Loading Q List</div>
   }
 };
 export default QuestionList;

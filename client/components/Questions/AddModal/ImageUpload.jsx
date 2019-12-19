@@ -39,7 +39,7 @@ const ImageUpload = ({ updatePhotos }) => {
                 onChange={uploadImage}
                 multiple
             />
-            <ThumbnailGallery imageURLs={imagePreviews} />
+            <ThumbnailGallery imageURLs={imagePreviews} size="small" />
 
 
             {error !== '' ? <div className="form-error">{error}</div> : <></>}
