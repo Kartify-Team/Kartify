@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 // import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 // import { Carousel } from 'react-responsive-carousel';
 // import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import Slider from 'react-slick';
 import ProductCard from './ProductCard.jsx';
+import ComparisonModal from './Related Products/ComparisonModal.jsx';
 
 const ProductsCarousel = ({ type, currentProduct, products, styles, ratings, changeProduct, getMyOutfit }) => {
-  const settings = {
-    dots: false, // ?
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true
-  };
+  // const settings = {
+  //   dots: false, // ?
+  //   infinite: false,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: true
+  // };
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [comparedProduct, setComparedProduct] = useState(null);
+
+
   if (products) {
     return (
       <div className="sliderContainer">
@@ -23,12 +29,13 @@ const ProductsCarousel = ({ type, currentProduct, products, styles, ratings, cha
             return <ProductCard key={0} currentProduct={currentProduct} product={product} getMyOutfit={getMyOutfit} />;
           } else {
             return (
-              <Link key={product.id} to={`${product.id}`}>
-                <ProductCard type={type} currentProduct={currentProduct} product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct} getMyOutfit={getMyOutfit}/>
+              <Link key={product.id} to={`${product.id}`} >
+                <ProductCard type={type} currentProduct={currentProduct} product={product} style={styles[i]} rating={ratings[i]} changeProduct={changeProduct} getMyOutfit={getMyOutfit} setIsOpen={setIsOpen} setComparedProduct={setComparedProduct} />
               </Link>
             );
           }
         })}
+        <ComparisonModal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} mainProduct={currentProduct} comparedProduct={comparedProduct}/>
       </div>
     );
   } else {

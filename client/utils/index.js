@@ -52,3 +52,36 @@ export const getProductsInfo = ids => {
   })
   .catch(error => console.error(error));
 };
+
+export const combineProductFeatures = (mainFeatures, comparedFeatures) => {
+  let combined = {};
+  for (let main of mainFeatures) {
+    if (combined[main.feature] === undefined) {
+
+      combined[main.feature] = {
+        feature: main.feature,
+        mainValue: main.value,
+        comparedValue: null
+      }
+
+      for (let compared of comparedFeatures) {
+        if (compared.feature === main.feature) {
+          combined[main.feature].comparedValue = compared.value;
+          break;
+        }
+      }
+    }
+  }
+  
+  for (let compared of comparedFeatures) {
+    if (combined[compared.feature]) {
+      continue;
+    }
+    combined[compared.feature] = {
+      feature: compared.feature,
+      mainValue: null,
+      comparedValue: compared.value
+    }
+  }
+  return combined;
+}

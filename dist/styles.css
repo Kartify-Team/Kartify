@@ -710,7 +710,6 @@ select {
   position: absolute;
   top: 5%;
   right: 7%;
-  z-index: 100;
   background: transparent;
   color: goldenrod;
 }
@@ -743,6 +742,62 @@ select {
   position: absolute;
   bottom: 0px;
   left: 5%;
+}
+
+/* Comparison Modal */
+
+#comparisonModal {
+  overflow: scroll;
+  width: 45%;
+  height: 45%;
+}
+
+.modal-header {
+  margin-bottom: 15px;
+}
+
+/* Comparison Table */
+
+.features-table-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+}
+
+.features-table {
+  height: auto;
+  width: 100%;
+  /* align-content: center;
+  text-align: center; */
+}
+
+.features-table-headers {
+  font-weight: bold;
+  height: 30px;
+}
+
+.features-table-left-column {
+  width: 33%;
+  text-align: center; 
+  vertical-align: middle;
+}
+
+.features-table-center-column {
+  color: gray;
+  width: 33%;
+  text-align: center; 
+  vertical-align: middle;
+}
+
+.features-table-right-column {
+  width: 33%;
+  text-align: center; 
+  vertical-align: middle;
+}
+
+.features-table-row {
+  height: 30px;
 }
 
 /* 
