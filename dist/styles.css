@@ -222,6 +222,10 @@ h3 {
   color: var(--color);
 }
 
+h1 {
+  color: var(--color);
+}
+
 h2 {
   font-size: 1em;
   font-weight: 800;
@@ -258,7 +262,16 @@ strong {
   display: inline-block;
   width: auto;
   padding: 15px;
-  /* margin: 5px 15px; */
+  cursor: pointer;
+  margin-right: 2%;
+  color: var(--color);
+  background-color: white;
+  font-weight: bold;
+}
+
+.action-button:hover {
+  color: white;
+  background-color: var(--color);
 }
 
 .highlighted {
@@ -949,6 +962,13 @@ img.uploadIcon {
   margin: 0 auto;
 }
 
+#review-list-button-container {
+  margin-top: 3%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 #reviews-scroll {
   overflow: auto;
   height: 100%;
@@ -972,6 +992,10 @@ img.uploadIcon {
   overflow: hidden;
 }
 
+.review-button {
+  margin-right: 2%;
+}
+
 .filter {
   margin-left: 2%;
   margin-right: 2%;
@@ -987,9 +1011,9 @@ img.uploadIcon {
 
 .review-item {
   margin: 0 auto;
-  padding: 5px;
   text-align: left;
-  padding: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
@@ -1001,7 +1025,7 @@ img.uploadIcon {
   justify-content: space-between;
   font-weight: lighter;
   color: #afafaf;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .review-item-bottom {
@@ -1171,7 +1195,6 @@ img.uploadIcon {
 .characteristic-type {
   display: flex;
   flex-direction: row;
-  color: black;
 }
 
 .pointer {
@@ -1213,6 +1236,7 @@ img.uploadIcon {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 3%;
 }
 
 #sort-menu > select {
