@@ -4,7 +4,7 @@ import SearchContainer from "../../containers/Questions/Search";
 
 // import { productData } from "./sampleData";
 
-const Questions = ({ product, addQuestionList }) => {
+const Questions = ({ product, addQuestionList, questions }) => {
   // const [product, setProduct] = useState(productData);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Questions = ({ product, addQuestionList }) => {
   return (
     <div className="component" id="q-and-a-container">
       <h3>Questions & Answers</h3>
-      <SearchContainer />
+      {questions.length > 0 ? <SearchContainer /> : <></>}
       <QuestionListContainer />
     </div>
   );

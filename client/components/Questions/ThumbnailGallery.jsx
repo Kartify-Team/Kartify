@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 
-const ThumbnailGallery = ({ imageURLs }) => {
+const ThumbnailGallery = ({ imageURLs, size = "large" }) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [currentPic, setCurrentPic] = useState("");
     // const customStyles = {
@@ -21,7 +21,7 @@ const ThumbnailGallery = ({ imageURLs }) => {
 
     return (<div className="thumbnailGallery">
         {imageURLs.map((url) =>
-            <img key={url} className="thumbnail" src={url} onClick={() => {
+            <img key={url} className={`thumbnail ${size}`} src={url} onClick={() => {
                 setCurrentPic(url)
                 setIsOpen(true)
             }} />

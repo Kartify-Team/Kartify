@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -97,7 +97,7 @@ span {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 article,
@@ -133,7 +133,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -194,7 +194,7 @@ a:active {
 #site-title {
   font-size: 3em;
   padding: 15px;
-  font-family: "Rock Salt", cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 #components-container {
@@ -273,6 +273,10 @@ strong {
   width: auto;
 }
 
+.thumbnail.large {
+  height: 7em;
+}
+
 .upload-previews {
   max-width: 50vw;
   max-height: 10vh;
@@ -302,9 +306,9 @@ label {
   display: flex;
 }
 
-input[type="email"],
-input[type="text"],
-input[type="number"],
+input[type='email'],
+input[type='text'],
+input[type='number'],
 textarea,
 select {
   border: var(--color) 1px solid;
@@ -512,7 +516,7 @@ select {
 
 #cart-container {
   display: grid;
-  grid-template-areas: "size size size qty qty" "add add add add star";
+  grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   /* justify-content: center; */
   height: 18%;
@@ -859,7 +863,7 @@ select {
 #question-list-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
-  max-height: 60vh;
+  max-height: 95vh;
   overflow-y: scroll;
 }
 
@@ -885,6 +889,8 @@ select {
 
 .answers {
   margin: 10px 0px 0px 0px;
+  max-height: 45vh;
+  overflow-y: scroll;
 }
 
 .answers > span > #first {
@@ -924,7 +930,7 @@ select {
 }
 
 img.uploadIcon {
-  content: url("./img/upload.svg") !important;
+  content: url('./img/upload.svg') !important;
 }
 
 /* 
