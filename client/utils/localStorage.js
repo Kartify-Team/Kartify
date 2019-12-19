@@ -24,7 +24,7 @@ export const saveOutfit = (id) => {
       localStorage.setItem('outfit', JSON.stringify(newOutfit));
     }
   };
-}
+};
 export const removeOutfitProduct = (id) => {
   let outfit = JSON.parse(localStorage.getItem('outfit') || '[]');
   for (let i = 0; i < outfit.length; i++) {
