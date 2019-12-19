@@ -737,7 +737,7 @@ input[type="email"], input[type="text"], input[type="number"], textarea, select 
 #question-list-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
-  max-height: 95vh;
+  max-height: 85vh;
   overflow-y: scroll;
 }
 
@@ -763,8 +763,8 @@ input[type="email"], input[type="text"], input[type="number"], textarea, select 
 
 .answers {
   margin: 10px 0px 0px 0px;
-  max-height: 45vh;
-  overflow-y: scroll;
+  /* max-height: 45vh;
+  overflow-y: scroll; */
 }
 
 .answers>span>#first {
