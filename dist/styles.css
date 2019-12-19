@@ -106,7 +106,8 @@ a:hover, a:active {
 #components-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: 80vw;
 }
 
 .component {
@@ -168,7 +169,7 @@ strong {
 }
 
 .action-button {
-  border: black 1px solid;
+  border: var(--color) 1px solid;
   display: inline-block;
   width: auto;
   padding: 15px;
@@ -182,6 +183,10 @@ strong {
 .action-button:hover {
   color: white;
   background-color: var(--color);
+}
+
+.action-button:focus {
+  outline: none;
 }
 
 .highlighted {
@@ -370,7 +375,7 @@ input[type="email"], input[type="text"], input[type="number"], textarea, select 
 /* Social Media Buttons */
 
 #social-media-buttons {
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -384,16 +389,20 @@ input[type="email"], input[type="text"], input[type="number"], textarea, select 
   margin-left: 5%;
 }
 
-/* Selected Style */
-
 #style-text {
   font-weight: bold;
 }
+
+#style-text-container {
+}
+
+/* Selected Style */
 
 #style-selector-container {
   height: 50%;
   width: 100%;
   overflow-y: auto;
+  margin-top: 5%;
   margin-bottom: 2%;
   margin-left: 3%;
 }
@@ -878,6 +887,10 @@ img.uploadIcon {
 
 #size-rating-container, #comfort-rating-container, #star-stats-container {
   margin: 10px 5px 5px 10px;
+}
+
+.padding-ten {
+  margin-bottom: 10%;
 }
 
 #review-list-container {

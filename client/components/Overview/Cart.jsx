@@ -87,7 +87,7 @@ const Cart = ({ productName, styleName, inventory }) => {
           }
         }}
       >
-        <span>ADD TO BAG</span> <span>+</span>
+        <span>ADD TO BAG</span> <span id="plus-sign">+</span>
       </button>
       <button id="star-button" className="action-button">
         ☆

@@ -45,7 +45,7 @@ const ReviewList = ({
   } else {
     filterDisplay = <h3>No filters applied</h3>;
   }
-  console.log(reviews.length);
+
   return (
     <>
       <div id="review-list-container" style={{ width: '60%' }}>
@@ -76,10 +76,12 @@ const ReviewList = ({
               setHelpfulReviews={setHelpfulReviews}
             />
           ))}
-          <div id="review-list-button-container">
+          <div id="review-list-button-container" className="padding-ten">
             <button
               className="action-button review-button"
-              style={{ display: count >= reviewCount ? 'none' : 'block' }}
+              style={{
+                display: count >= reviewCount ? 'none' : 'inline-block'
+              }}
               onClick={() => {
                 setReviewList(product.id, 1, sort);
                 count += 2;
