@@ -18,7 +18,6 @@ const OtherItems = ({
   myOutfitStyles = [],
   myOutfitRatings = []
 }) => {
-
   useEffect(() => {
     if (productInfo) {
       getRelatedProducts(productInfo.id);
@@ -48,11 +47,26 @@ const OtherItems = ({
     return (
       <div id="otherItems">
         <div className="otherItemsContainer">
-          <h3>Related Products</h3>
+          <h3 className="section-title">Related Products</h3>
 
-          <ProductsCarousel type={'relatedProduct'} currentProduct={productInfo} products={relatedProducts} styles={relatedProductsStyles} ratings={relatedProductsRatings} changeProduct={changeProduct}/>
+          <ProductsCarousel
+            type={'relatedProduct'}
+            currentProduct={productInfo}
+            products={relatedProducts}
+            styles={relatedProductsStyles}
+            ratings={relatedProductsRatings}
+            changeProduct={changeProduct}
+          />
           <h3>Your Outfit</h3>
-          <ProductsCarousel type={'outfitProduct'} currentProduct={productInfo} products={myOutfit} styles={myOutfitStyles} ratings={myOutfitRatings} changeProduct={changeProduct} getMyOutfit={getMyOutfit}/>
+          <ProductsCarousel
+            type={'outfitProduct'}
+            currentProduct={productInfo}
+            products={myOutfit}
+            styles={myOutfitStyles}
+            ratings={myOutfitRatings}
+            changeProduct={changeProduct}
+            getMyOutfit={getMyOutfit}
+          />
         </div>
       </div>
     );

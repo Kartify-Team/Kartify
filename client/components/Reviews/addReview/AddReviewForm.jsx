@@ -109,23 +109,29 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
       <label htmlFor="rating">Overall Rating</label>
       <StarsSelector setRating={setRating} />
       <label htmlFor="recommendation">Do you recommend this product?</label>
-      <input
-        type="radio"
-        name="recommendation"
-        value="yes"
-        checked={formik.values.recommendation === 'yes'}
-        onClick={formik.handleChange}
-      />
-      Yes
-      <br />
-      <input
-        type="radio"
-        name="recommendation"
-        value="no"
-        checked={formik.values.recommendation === 'no'}
-        onClick={formik.handleChange}
-      />
-      No
+      <div id="recommendation-container-row">
+        <div className="radio-and-label">
+          Yes &nbsp;
+          <input
+            type="radio"
+            name="recommendation"
+            value="yes"
+            checked={formik.values.recommendation === 'yes'}
+            onClick={formik.handleChange}
+          />
+        </div>
+        <div className="radio-and-label">
+          No &nbsp;
+          <input
+            type="radio"
+            name="recommendation"
+            value="no"
+            checked={formik.values.recommendation === 'no'}
+            onClick={formik.handleChange}
+          />
+        </div>
+        <br />
+      </div>
       <label htmlFor="characteristics">Characteristics</label>
       {Object.keys(characteristics).map(characteristic => {
         let handler;
