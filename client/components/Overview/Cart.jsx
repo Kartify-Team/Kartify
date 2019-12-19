@@ -37,6 +37,7 @@ const Cart = ({ productName, styleName, inventory }) => {
         id="size-button"
         value={!selectedSize ? "default" : selectedSize}
         onChange={changeSelectedSize}
+        className="action-button"
       >
         {availableSizes.length > 0 ? (
           <option value="default" disabled hidden>
@@ -58,6 +59,7 @@ const Cart = ({ productName, styleName, inventory }) => {
 
       <select
         id="qty-button"
+        className="action-button"
         value={!selectedQty ? "default" : selectedQty}
         onChange={changeSelectedQty}
       >
@@ -74,7 +76,8 @@ const Cart = ({ productName, styleName, inventory }) => {
       </select>
       <button
         id="add-button"
-        className="overview-button"
+        // className="overview-button"
+        className="action-button"
         disabled={availableSizes.length > 0 ? false : true}
         onClick={() => {
           if (selectedSize !== null && selectedQty !== null) {
@@ -84,9 +87,9 @@ const Cart = ({ productName, styleName, inventory }) => {
           }
         }}
       >
-        ADD TO BAG
+        <span>ADD TO BAG</span> <span>+</span>
       </button>
-      <button id="star-button" className="overview-button">
+      <button id="star-button" className="action-button">
         ☆
       </button>
     </div>

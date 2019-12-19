@@ -407,7 +407,7 @@ select {
   width: 100%;
   grid-template-rows: 13% 13% 40% 13% 10%;
   text-align: left;
-  padding: 5%;
+  padding: 5% 5% 0 5%;
 }
 
 #overview-info h3 {
@@ -568,6 +568,8 @@ select {
   width: 92%;
   border: 1px solid black;
   margin-left: 5%;
+  display: flex;
+  justify-content: space-between;
 }
 
 #star-button {
