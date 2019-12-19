@@ -14,6 +14,7 @@ const CharacteristicForm = ({ name, handler }) => {
       <label htmlFor={name}>{name}</label>
       <h3>{meanings[value - 1]}</h3>
       <span className="meaning"></span>
+      1 &nbsp;
       <input
         type="radio"
         name={name}
@@ -21,8 +22,8 @@ const CharacteristicForm = ({ name, handler }) => {
         checked={value === 1}
         onChange={() => setValue(1)}
       />
-      1
       <br />
+      2 &nbsp;
       <input
         type="radio"
         name={name}
@@ -30,8 +31,8 @@ const CharacteristicForm = ({ name, handler }) => {
         checked={value === 2}
         onChange={() => setValue(2)}
       />
-      2
       <br />
+      3 &nbsp;
       <input
         type="radio"
         name={name}
@@ -39,8 +40,8 @@ const CharacteristicForm = ({ name, handler }) => {
         checked={value === 3}
         onChange={() => setValue(3)}
       />
-      3
       <br />
+      4 &nbsp;
       <input
         type="radio"
         name={name}
@@ -48,8 +49,8 @@ const CharacteristicForm = ({ name, handler }) => {
         checked={value === 4}
         onChange={() => setValue(4)}
       />
-      4
       <br />
+      5 &nbsp;
       <input
         type="radio"
         name={name}
@@ -57,7 +58,6 @@ const CharacteristicForm = ({ name, handler }) => {
         checked={value === 5}
         onChange={() => setValue(5)}
       />
-      5
       <br />
     </>
   );
