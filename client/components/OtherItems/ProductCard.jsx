@@ -8,9 +8,9 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
 
   const defineButtonStyle = () => {
     if (type === 'relatedProduct') {
-      return '★';
+      return <i className="fa fa-star"></i>;
     } else if (type === 'outfitProduct') {
-      return 'x';
+      return <i className="fa fa-times-circle"></i>;
     }
   };
 
@@ -43,9 +43,8 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
           <button
             className="cardButton"
             type="button"
-            src="" // TODO: ADD ICON TO BUTTON
           >
-          +
+            <i className="fa fa-plus"></i>
           </button>
         </div>
         <div className="productCardDescription">
