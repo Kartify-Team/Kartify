@@ -373,7 +373,7 @@ select {
   display: grid;
   height: 30%;
   width: 100%;
-  grid-template-rows: 15% 15% 50% 15%;
+  grid-template-rows: 13% 13% 40% 13% 10%;
   text-align: left;
   padding: auto;
   justify-content: center;
@@ -423,6 +423,23 @@ select {
 #left-description h2 {
   font-size: 3em;
   margin-top: 10px;
+}
+
+/* Social Media Buttons */
+
+#social-media-buttons {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#twitter-share {
+  margin-right: 5%;
+}
+
+#pinterest-share {
+  margin-left: 5%;
 }
 
 /* Selected Style */
@@ -779,20 +796,20 @@ select {
 
 .features-table-left-column {
   width: 33%;
-  text-align: center; 
+  text-align: center;
   vertical-align: middle;
 }
 
 .features-table-center-column {
   color: gray;
   width: 33%;
-  text-align: center; 
+  text-align: center;
   vertical-align: middle;
 }
 
 .features-table-right-column {
   width: 33%;
-  text-align: center; 
+  text-align: center;
   vertical-align: middle;
 }
 
