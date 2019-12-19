@@ -67,7 +67,13 @@ const ProductInteraction = ({
         changeStyle={changeStyle}
         currentStyle={currentStyle}
       />
-      {!currentStyle ? null : <Cart inventory={currentStyle.skus} />}
+      {!currentStyle ? null : (
+        <Cart
+          productName={product.name}
+          styleName={currentStyle.name}
+          inventory={currentStyle.skus}
+        />
+      )}
     </div>
   );
 };
