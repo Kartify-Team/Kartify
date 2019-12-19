@@ -25,6 +25,14 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
     }
   };
 
+  const getRatingStars = () => {
+    if (rating === 0) {
+      return;
+    } else {
+      return <RatingStars stars={rating} />;
+    }
+  };
+
   if (product === null) {
     return (
       <div className="productCard" onClick={() => {
@@ -88,7 +96,7 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
             <Price originalPrice={product.default_price} salePrice={style ? style.salePrice : null} />
           </div>
           <div className="productCardRating">
-            <RatingStars stars={rating === undefined ? 0 : rating} />
+            {getRatingStars()}
           </div>
         </div>
       </div>
