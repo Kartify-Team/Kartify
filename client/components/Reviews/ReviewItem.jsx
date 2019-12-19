@@ -51,7 +51,6 @@ const ReviewItem = ({
   if (isReported) {
     return <ReportedReview />;
   } else {
-    console.log(recommend);
     return (
       <div className="review_item">
         <Stars stars={rating} />
