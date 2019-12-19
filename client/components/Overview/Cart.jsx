@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getInventory } from "../../utils/styleHelpers";
 
-const Cart = ({ inventory }) => {
+const Cart = ({ productName, styleName, inventory }) => {
   const availableSizes = getInventory(inventory).sort(
     (a, b) => Number(a[0]) - Number(b[0])
   );
@@ -72,7 +72,18 @@ const Cart = ({ inventory }) => {
             })
           : null}
       </select>
-      <button id="add-button" className="overview-button">
+      <button
+        id="add-button"
+        className="overview-button"
+        disabled={availableSizes.length > 0 ? false : true}
+        onClick={() => {
+          if (selectedSize !== null && selectedQty !== null) {
+            console.log(
+              `${selectedQty}, size ${selectedSize} [${styleName} - ${productName}] added to cart!`
+            );
+          }
+        }}
+      >
         ADD TO BAG
       </button>
       <button id="star-button" className="overview-button">
