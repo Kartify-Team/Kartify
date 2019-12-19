@@ -8,9 +8,9 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
 
   const defineButtonStyle = () => {
     if (type === 'relatedProduct') {
-      return <i className="fa fa-star"></i>;
+      return <i className="fa fa-star cardButton"></i>;
     } else if (type === 'outfitProduct') {
-      return <i className="fa fa-times-circle"></i>;
+      return <i className="fa fa-times-circle cardButton" ></i>;
     }
   };
 
@@ -57,7 +57,7 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
       <div className="productCard" 
         onClick={
           (e) => {
-            if (e.target.className === 'cardButton') {
+            if (e.target.className.includes('cardButton')) {
               handleActionButtonClick(e, product.id);
             } else {
               changeProduct(product.id); 
@@ -78,8 +78,6 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
           <button
             className="cardButton"
             type="button"
-            // onClick={(e) => handleActionButtonClick(e, product.id)}
-            src=""
           >
             {defineButtonStyle()}
           </button>
