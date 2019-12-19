@@ -6,7 +6,10 @@ const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
   } else {
     return (
       <div id="style-selector-container">
-        <p>STYLE > {!!currentStyle ? currentStyle.name : null}</p>
+        <p>
+          <span id="style-text">STYLE > </span>
+          {!!currentStyle ? currentStyle.name : null}
+        </p>
         <div id="styles-container">
           {styles.results.map(style => {
             return (
