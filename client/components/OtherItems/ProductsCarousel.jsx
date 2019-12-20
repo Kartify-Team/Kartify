@@ -7,7 +7,13 @@ const ProductsCarousel = ({ products, changeProduct, handleClick, setActionButto
     <div className="sliderContainer">
       {products.map((product) => {
         return (
-          <ProductCard key={product === null ? 0 : product.id} product={product} changeProduct={changeProduct} handleClick={handleClick} setActionButton={setActionButton} />
+          <ProductCard 
+            key={product === null ? 0 : product.id} 
+            product={product} 
+            changeProduct={changeProduct}
+            handleClick={handleClick}
+            setActionButton={setActionButton}
+          />
         );
       })}
     </div>
