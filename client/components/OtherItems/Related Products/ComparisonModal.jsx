@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import ProductFeatures from './ProductsCharacteristics.jsx';
 
 const ProductComparison = ({ mainProduct, comparedProduct, setIsOpen, modalIsOpen }) => {
+
   var subtitle;
   const header = () => {
     return (

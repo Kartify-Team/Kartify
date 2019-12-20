@@ -1,7 +1,7 @@
 import { changeMyOutfit } from '../creators/changeMyOutfit.js';
-import { getProductsInfo } from '../../utils/index';
+import { getProductsInfo } from '../../utils/getProductInfo.js';
 
-const getMyOutfit = () => {
+export const getMyOutfit = () => {
   return dispatch => {
     let oldOutfit = localStorage.getItem('outfit');
     if (oldOutfit === null) {
@@ -16,5 +16,3 @@ const getMyOutfit = () => {
     }
   };
 };
-
-export default getMyOutfit;

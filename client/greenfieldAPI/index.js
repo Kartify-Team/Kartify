@@ -7,7 +7,17 @@ export const getProductInfo = id => {
 };
 
 export const getRelatedProductsIds = id => {
-  return axios.get(`${greenfieldRoot}/products/${id}/related`);
+  return axios.get(`${greenfieldRoot}/products/${id}/related`)
+    .then(({ data }) => {
+      let uniqueProducts = {};
+      data.forEach((currentId) => {
+        if (uniqueProducts[currentId] === undefined && parseInt(id) !== currentId) {
+          uniqueProducts[currentId] = currentId;
+        }
+      });
+      return Object.values(uniqueProducts);
+    })
+    .catch(error => console.error(error));
 };
 
 export const getProductReviews = id => {
