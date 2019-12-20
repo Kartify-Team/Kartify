@@ -50,7 +50,7 @@ table {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--color);
 }
 
 a:visited {
@@ -81,15 +81,34 @@ a:hover, a:active {
                                                       
  */
 
-:root {
-  --color: #525252;
-  --background-color: #ffffff;
-  --translucent-background-color: rgba(255, 255, 255, .6);
-  --primary-accent-color: #525252;
-  --light-accent-color: #ededed;
-  --error: #ff0000;
-  --highlighted: yellow;
-  --link-color: blue;
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: #525252;
+    --background-color: #ffffff;
+    --translucent-background-color: rgba(255, 255, 255, .6);
+    --primary-accent-color: #525252;
+    --secondary-background-color: #f0f0f0;
+    --error: #ff0000;
+    --highlighted: yellow;
+    --link-color: blue;
+    --title-color: #ffffff;
+    --title-background: #525252;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: #ededed;
+    --background-color: #242424;
+    --translucent-background-color: rgba(0, 0, 0, .6);
+    --primary-accent-color: #525252;
+    --secondary-background-color: #1c1c1c;
+    --error: #ff0000;
+    --highlighted: yellow;
+    --link-color: blue;
+    --title-color: #ffffff;
+    --title-background: #525252;
+  }
 }
 
 .topnav {
@@ -101,7 +120,8 @@ a:hover, a:active {
 }
 
 #site-title {
-  color: var(--background-color);
+  color: var(--title-color);
+  background-color: var(--title-background);
   font-size: 3em;
   padding: 15px;
   font-family: 'Rock Salt', cursive;
@@ -145,6 +165,7 @@ h2 {
 body {
   font-size: 1;
   color: var(--color);
+  background-color: var(--background-color)
 }
 
 p {
@@ -200,7 +221,7 @@ strong {
 
 .action-button.secondary:hover {
   background-color: var(--primary-accent-color);
-  color: var(--color);
+  color: var(--background-color);
 }
 
 .highlighted {
@@ -266,6 +287,7 @@ label {
 input[type='email'], input[type='text'], input[type='number'], textarea, select {
   border: var(--color) 1px solid;
   padding: 0.5em;
+  background-color: var(--secondary-background-color)
 }
 
 #file-upload {
@@ -280,7 +302,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   bottom: auto;
   max-height: 85vh;
   max-width: 85vw;
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--background-color);
   margin-right: -50%;
   padding: 2%;
@@ -525,7 +547,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 
 #product-image-container {
   position: relative;
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-background-color);
   margin: 1% 8% 1% 0;
 }
 
@@ -693,7 +715,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 .productCard:hover {
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-background-color);
 }
 
 .productCardImage {
@@ -1090,7 +1112,7 @@ img.uploadIcon {
   overflow: hidden;
   height: 10px;
   display: inline-block;
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-background-color);
 }
 
 .star-bar-dynamic {
@@ -1158,7 +1180,7 @@ img.uploadIcon {
   max-width: 32%;
   height: 10px;
   display: inline-block;
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-background-color);
   margin: 0 auto;
 }
 
@@ -1211,6 +1233,7 @@ img.uploadIcon {
 #sort-menu>select {
   margin-left: 1%;
   border: none;
+  color: var(--color);
   background-color: var(--background-color);
   border-bottom: 2px solid var(--colors);
   font-size: 1rem;
