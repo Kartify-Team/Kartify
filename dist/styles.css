@@ -520,7 +520,7 @@ select {
 }
 
 #right-description ul {
-  border-left: 2px solid black;
+  border-left: 2px solid var(--color);
   position: relative;
   bottom: 6%;
   padding: 5%;
@@ -530,7 +530,6 @@ select {
 
 #right-description li {
   margin: 5% 0 5% 5%;
-  border-left: 2px solid var(--color);
 }
 
 #left-description h2 {
@@ -624,6 +623,8 @@ select {
   height: 18%;
   width: 100%;
   margin-top: 5%;
+  position: relative;
+  bottom: 3%;
 }
 
 #size-button {

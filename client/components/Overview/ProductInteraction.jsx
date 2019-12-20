@@ -9,7 +9,7 @@ const ProductInteraction = ({
   average,
   currentStyle,
   changeStyle,
-  numReviews
+  reviewList
 }) => {
   return (
     <div id="product-interaction-container">
@@ -17,7 +17,9 @@ const ProductInteraction = ({
         <span id="stars-reviews">
           <Stars stars={average || 0} />
           <a id="review-link" href="#reviews-container">
-            {numReviews > 0 ? `Read all ${numReviews} reviews` : null}
+            {!!reviewList && reviewList.length > 0
+              ? `Read all ${reviewList.length} reviews`
+              : null}
           </a>
         </span>
         <h3>{product.category}</h3>
