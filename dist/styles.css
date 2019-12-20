@@ -366,10 +366,12 @@ strong {
   margin: 20px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .toggle-icon {
   margin: 0 0.1em;
+  cursor: pointer;
 }
 
 /*
