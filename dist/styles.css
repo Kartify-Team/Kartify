@@ -1313,7 +1313,7 @@ img.uploadIcon {
   margin-left: 1%;
   border: none;
   background-color: var(--background-color);
-  border-bottom: 2px solid var(--colors);
+  border-bottom: 2px solid var(--color);
   font-size: 1rem;
   border-radius: 0;
 }
