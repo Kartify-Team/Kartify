@@ -23,10 +23,14 @@ const RelatedProducts = ({
     }
   };
 
+  const setActionButton = () => {
+    return <i className="fa fa-star cardButton"></i>;
+  };
+
   if (relatedProducts) {
     return (
       <>
-        <ProductsCarousel products={relatedProducts} changeProduct={changeProduct} handleClick={handleClick} />
+        <ProductsCarousel products={relatedProducts} changeProduct={changeProduct} handleClick={handleClick} setActionButton={setActionButton}/>
         <ComparisonModal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} mainProduct={mainProduct} comparedProduct={comparedProduct} />
       </>
     );

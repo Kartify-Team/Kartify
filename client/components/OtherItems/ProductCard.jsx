@@ -3,7 +3,7 @@ import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
 import { addOutfitProduct, removeOutfitProduct } from '../../utils/localStorage.js';
 
-const ProductCard = ({ product, changeProduct, handleClick }) => {
+const ProductCard = ({ product, changeProduct, handleClick, setActionButton }) => {
 
   const defineButtonStyle = () => {
     if (type === 'relatedProduct') {
@@ -69,8 +69,7 @@ const ProductCard = ({ product, changeProduct, handleClick }) => {
             className="cardButton"
             type="button"
           >
-            x
-            {/* {defineButtonStyle()} */}
+            {setActionButton()}
           </button>
         </div>
         <div className="productCardDescription">
