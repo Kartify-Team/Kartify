@@ -709,6 +709,10 @@ select {
   border-bottom: 5px solid var(--color);
 }
 
+.gallery-arrow {
+  text-shadow: 0 0 4px var(--background-color);
+}
+
 #image-left-arrow {
   position: absolute;
   top: 50%;
