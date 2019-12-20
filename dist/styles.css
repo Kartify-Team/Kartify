@@ -637,6 +637,10 @@ input:focus {
   max-width: 100%;
 }
 
+.style-image:hover {
+  cursor: pointer;
+}
+
 /* Cart */
 
 #cart-container {
@@ -722,10 +726,14 @@ input:focus {
 }
 
 .image-gallery-thumb {
-  height: 97%;
+  height: 96.5%;
   width: 97%;
   object-fit: cover;
   border: 1px solid var(--color);
+}
+
+.image-gallery-thumb:hover {
+  cursor: pointer;
 }
 
 .selected-thumbnail {
@@ -756,6 +764,16 @@ input:focus {
   top: 5%;
   right: 5%;
   text-shadow: 0 0 4px var(--background-color);
+}
+
+.gallery-arrow:hover {
+  cursor: pointer;
+}
+
+#image-expand:hover,
+#image-right-arrow:hover,
+#image-left-arrow:hover {
+  cursor: pointer;
 }
 
 .expanded-image-modal {
@@ -834,34 +852,45 @@ input:focus {
   width: 100%;
 }
 
-.sliderContainer {
+.carousel {
   height: 350px;
   width: 100%;
-  overflow-x: scroll;
   white-space: nowrap;
-}
-
-.slick-slider {
-  height: 100%;
-}
-
-.slick-initialized {
-  height: 100%;
-}
-
-#slider {
-  height: 100%;
+  position: relative;
 }
 
 .leftArrowCarousel {
-  margin-right: 1%;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 100;
+  text-shadow: 0 0 5px var(--background-color);
+}
+
+.rightArrowCarousel {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  text-shadow: 0 0 5px var(--background-color);
+}
+
+.sliderContainer {
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.linkCard {
+  margin-right: 2%;
 }
 
 .productCard {
-  height: 90%;
-  width: 25%;
+  height: 100%;
+  width: 100%;
   max-height: 350px;
-  max-width: 220px;
+  max-width: 235px;
   margin-right: 2%;
   /* margin: 15px; */
   padding: 0;
@@ -896,6 +925,10 @@ input:focus {
 
 #addOutfit {
   background-color: var(--secondary-background-color);
+}
+
+#addOutfit:hover {
+  background-color:  var(--translucent-background-color);
 }
 
 #plusContainer {
