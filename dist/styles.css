@@ -73,6 +73,10 @@ a:hover, a:active {
   text-decoration: none;
 }
 
+button:focus {
+  outline: none;
+}
+
 /* 
  _______           _______  _______  _______  ______  
 (  ____ \|\     /|(  ___  )(  ____ )(  ____ \(  __  \ 
