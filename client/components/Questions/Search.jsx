@@ -17,7 +17,7 @@ const Search = ({ handleSearch }) => {
         placeholder="Have a question? Search for answers…"
         value={text} onChange={(e) => setText(e.target.value)}
       />
-      < i class="fa fa-search fa-2x"></i></div></>
+      < i className="fa fa-search fa-2x"></i></div></>
   );
 };
 

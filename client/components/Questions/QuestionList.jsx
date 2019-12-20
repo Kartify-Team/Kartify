@@ -64,7 +64,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
       <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} formType="addQuestion" />
     </>
 
-  if (!loading) {
+  if (!loading && questions.length > 0) {
     let count = 0;
     return (
       <div id="question-list-container" onScroll={scrollChange}>

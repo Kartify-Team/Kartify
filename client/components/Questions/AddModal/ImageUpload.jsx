@@ -41,7 +41,7 @@ const ImageUpload = ({ updatePhotos }) => {
                 multiple
             />
             <ThumbnailGallery imageURLs={imagePreviews} size="small" />
-            <button className="action-button secondary" onClick={() => document.getElementById("file-upload").click()}>{imagePreviews.length === 0 ? <>Upload Images</> : <>Replace Images</>} </button>
+            {/* <button className="action-button secondary" onClick={() => document.getElementById("file-upload").click()}>{imagePreviews.length === 0 ? <>Upload Images</> : <>Replace Images</>} </button> */}
 
 
 

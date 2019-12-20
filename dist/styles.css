@@ -291,9 +291,7 @@ strong {
                                              
 */
 
-form {
-  /* padding: 15px; */
-}
+
 
 label {
   margin: 0.8em 0 0.2em 0;
@@ -301,19 +299,39 @@ label {
   display: flex;
 }
 
-input[type="email"], input[type="text"], input[type="number"], textarea, select {
+input,  textarea, 
+select{
   border: var(--color) 1px solid;
   padding: 0.5em;
   background-color: var(--secondary-background-color);
-  color: var(--color)
+  color: var(--color);
+  font-size: 1em;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus, 
+input:focus, input:-internal-autofill-selected {
+  border: var(--color) 1px solid;
+  padding: 0.5em;
+  background-color: var(--secondary-background-color) !important;
+  color: var(--color) !important
 }
 
 input:focus {
   outline: none;
 }
 
+
 #file-upload {
-  display: none;
+  /* display: none; */
+  border: 0;
+  background-color: transparent;
 }
 
 .Modal {
