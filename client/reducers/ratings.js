@@ -6,7 +6,8 @@ export default (
     characteristics: null,
     totalRatings: null,
     reviewList: null,
-    filters: []
+    filters: [],
+    totalReviews: null
   },
   action
 ) => {
@@ -28,6 +29,8 @@ export default (
         newFilters.push(action.filter);
       }
       return { ...state, filters: newFilters };
+    case 'SET_TOTAL_REVIEWS':
+      return { ...state, totalReviews: action.totalReviews };
     default:
       return state;
   }
