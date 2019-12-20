@@ -1,4 +1,4 @@
-const getCoverImage = styleObj => {
+export const getDefaultStyle = styleObj => {
   const findPhoto = (defaultStyleId = 0) => {
     if (defaultStyle === null) {
       for (const style of styles) {
@@ -52,5 +52,3 @@ const getCoverImage = styleObj => {
   }
   return result;
 };
-
-export default getCoverImage;

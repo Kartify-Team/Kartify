@@ -4,7 +4,7 @@ const Price = ({originalPrice, salePrice}) => {
   if (!salePrice || salePrice === '0') {
     return (
       <div className='priceContainer'>
-        <p>${originalPrice}</p>
+        <p className='originalPrice'>${originalPrice}</p>
       </div>
     );
   } else {
