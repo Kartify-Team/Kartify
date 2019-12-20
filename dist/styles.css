@@ -462,9 +462,10 @@ input:focus {
   text-align: center;
   display: grid;
   width: 100%;
-  height: 850px;
+  height: 95vh;
   grid-template-columns: 70% 30%;
   grid-template-rows: 75% 25%;
+  margin-bottom: 3%;
 }
 
 /* Information Box */
