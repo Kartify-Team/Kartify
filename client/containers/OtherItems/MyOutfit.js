@@ -1,9 +1,10 @@
 import {connect} from 'react-redux';
-import OtherItems from '../../components/OtherItems/index.jsx';
+import MyOutfit from '../../components/OtherItems/MyOutfit/index.jsx';
 import { changeProduct } from '../../actions/creators/changeProduct.js';
 
 const mapStateToProps = (store) => ({
-  productInfo: store.product
+  myOutfit: store.otherItems.myOutfit,
+  mainProduct: store.product
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -12,6 +13,6 @@ const mapDispatchToProps = (dispatch) => ({
   }
 });
 
-const OtherItemsContainer = connect(mapStateToProps, mapDispatchToProps)(OtherItems);
+const MyOutfitContainer = connect(mapStateToProps, mapDispatchToProps)(MyOutfit);
 
-export default OtherItemsContainer;
+export default MyOutfitContainer;

@@ -7,7 +7,7 @@ export const addOutfitProduct = (id) => {
       return;
     }
   }
-  outfit.unshift(id);
+  outfit.push(id);
   localStorage.setItem('outfit', JSON.stringify(outfit));
 };
 
