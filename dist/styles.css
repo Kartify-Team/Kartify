@@ -293,9 +293,7 @@ strong {
                                              
 */
 
-form {
-  /* padding: 15px; */
-}
+
 
 label {
   margin: 0.8em 0 0.2em 0;
@@ -313,10 +311,16 @@ input[type="email"], input[type="text"], input[type="number"], textarea, select 
 input:focus {
   outline: none;
 }
-
-#file-upload {
-  display: none;
+input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, input[type="number"]:focus, textarea:focus, select:focus, input:-internal-autofill-selected, input:blur {
+  border: var(--color) 1px solid;
+  padding: 0.5em;
+  background-color: var(--secondary-background-color);
+  color: var(--color)
 }
+
+/* #file-upload {
+  display: none;
+} */
 
 .Modal {
   position: absolute;
