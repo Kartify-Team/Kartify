@@ -831,21 +831,21 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 #q-and-a-search {
-  margin: 10px 5px 5px 10px;
+  margin: 10px 5px 5px 0;
   height: 2em;
 }
 
 #question-list-container {
   /* border: black 1px solid; */
-  margin: 10px 5px 5px 10px;
+  margin: 10px 5px 5px 0;
   max-height: 85vh;
   overflow: auto;
 }
 
 .question-container {
   /* border: black 1px solid; */
-  margin: 10px 5px 5px 10px;
-  padding: 5px;
+  margin: 10px 5px 5px 0;
+  padding: 5px 0 5px 0;
 }
 
 #question {
@@ -855,7 +855,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 #q-list {
-  margin: 10px;
+  margin: 10px 0 10px 0;
 }
 
 /* #question > h2 {
