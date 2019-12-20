@@ -169,6 +169,10 @@ a:active {
   text-decoration: none;
 }
 
+button:focus {
+  outline: none;
+}
+
 /* 
  _______           _______  _______  _______  ______  
 (  ____ \|\     /|(  ___  )(  ____ )(  ____ \(  __  \ 
@@ -828,6 +832,10 @@ select {
 
 #slider {
   height: 100%;
+}
+
+.leftArrowCarousel {
+  margin-right: 1%;
 }
 
 .productCard {
