@@ -24,5 +24,5 @@ export const modifyMyOutfit = (product, outfit, type) => {
       let newOutfit = outfit.slice();
       dispatch(changeMyOutfit(newOutfit));
     }
-  }
+  };
 };

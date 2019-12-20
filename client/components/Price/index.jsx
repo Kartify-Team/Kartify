@@ -1,16 +1,19 @@
-import React from 'react';
+import React from "react";
 
-const Price = ({originalPrice, salePrice}) => {
-  if (!salePrice || salePrice === '0') {
+const Price = ({ originalPrice, salePrice, name }) => {
+  if (!salePrice || salePrice === "0") {
     return (
-      <div className='priceContainer'>
-        <p className='originalPrice'>${originalPrice}</p>
+      <div className={!name ? "priceContainer" : name}>
+        <p className="originalPrice">${originalPrice}</p>
       </div>
     );
   } else {
     return (
-      <div className='priceContainer'>
-        <p><span className='priceDiscount'>${salePrice}</span><span className='regularPriceDiscount'>${originalPrice}</span></p>
+      <div className={!name ? "priceContainer" : name}>
+        <p>
+          <span className="priceDiscount">${salePrice}</span>
+          <span className="regularPriceDiscount">${originalPrice}</span>
+        </p>
       </div>
     );
   }

@@ -26,6 +26,7 @@ const ProductInteraction = ({
           <Price
             originalPrice={currentStyle.original_price}
             salePrice={currentStyle.sale_price}
+            name="description-price"
           />
         )}
         <div id="social-media-buttons">
@@ -72,6 +73,7 @@ const ProductInteraction = ({
         styles={product.styles}
         changeStyle={changeStyle}
         currentStyle={currentStyle}
+        productName={product.name}
       />
       {!currentStyle ? null : (
         <Cart

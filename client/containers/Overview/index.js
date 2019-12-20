@@ -4,9 +4,7 @@ import { setProductStyles } from '../../actions/creators/setProductStyles';
 
 const mapStateToProps = store => ({
   product: store.product,
-  average:
-    store.reviews.ratings === null ? null : store.reviews.ratings.average,
-  numReviews: store.reviews === undefined ? null : store.reviews.totalRatings
+  average: store.reviews.ratings === null ? null : store.reviews.ratings.average
 });
 
 const mapDispatchToProps = dispatch => ({

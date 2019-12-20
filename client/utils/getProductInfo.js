@@ -11,7 +11,7 @@ export const getProductsInfo = (ids) => {
     currentPromise.push(getProductInfo(currentId));
     currentPromise.push(getProductStyles(currentId));
     currentPromise.push(getProductReviews(currentId));
-    promises.push(Promise.all(currentPromise))
+    promises.push(Promise.all(currentPromise));
   }
   return (
     Promise.all(promises)

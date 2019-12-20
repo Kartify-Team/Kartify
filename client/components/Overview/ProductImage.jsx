@@ -56,6 +56,8 @@ const ProductImage = ({ currentStyle }) => {
         onClick={() => {
           setIsOpen(true);
         }}
+        alt="Main Product Image"
+        title="Main Product Image"
       />
       <i
         className="fa fa-chevron-left fa-2x"
