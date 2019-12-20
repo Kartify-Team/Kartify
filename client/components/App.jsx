@@ -1,19 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, useParams } from 'react-router-dom';
-import OverviewContainer from '../containers/Overview';
-import OtherItemsContainer from '../containers/OtherItems';
-import ReviewsContainer from '../containers/Reviews';
-import QuestionsContainer from '../containers/Questions';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, useParams } from "react-router-dom";
+import OverviewContainer from "../containers/Overview";
+import OtherItemsContainer from "../containers/OtherItems";
+import ReviewsContainer from "../containers/Reviews";
+import QuestionsContainer from "../containers/Questions";
 
-const App = ({ changeProduct, setRatings, setReviewList, getRelatedProducts, getMyOutfit }) => {
+const App = ({
+  changeProduct,
+  setRatings,
+  setReviewList,
+  getRelatedProducts,
+  setProductStyles,
+  getMyOutfit,
+  reviews
+}) => {
   const id = useParams().id;
-  const [dark, setDark] = useState(false)
-
-
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
-
     changeProduct(id);
+    setProductStyles(id);
     setRatings(id);
     setReviewList(id);
     getRelatedProducts(id);
@@ -26,7 +32,7 @@ const App = ({ changeProduct, setRatings, setReviewList, getRelatedProducts, get
       console.log("dark")
       setDark(true)
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (dark) {

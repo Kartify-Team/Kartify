@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -10,17 +10,107 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+button,
+span {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -34,16 +124,21 @@ body {
   overflow-x: hidden;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -69,8 +164,13 @@ a:focus {
   text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   text-decoration: none;
+}
+
+button:focus {
+  outline: none;
 }
 
 /* 
@@ -88,7 +188,7 @@ a:hover, a:active {
 :root {
   --color: #525252;
   --background-color: #ffffff;
-  --translucent-background-color: rgba(255, 255, 255, .6);
+  --translucent-background-color: rgba(255, 255, 255, 0.6);
   --primary-accent-color: #525252;
   --secondary-background-color: #f0f0f0;
   --error: #ff0000;
@@ -101,7 +201,7 @@ a:hover, a:active {
 [theme="dark"] {
   --color: #ededed;
   --background-color: rgb(37, 37, 37);
-  --translucent-background-color: rgba(80, 80, 80, .6);
+  --translucent-background-color: rgba(80, 80, 80, 0.6);
   --primary-accent-color: #949494;
   --secondary-background-color: rgba(65, 65, 65, 0.7);
   --error: #ff0000;
@@ -127,7 +227,7 @@ a:hover, a:active {
   background-color: var(--title-background);
   font-size: 3em;
   padding: 15px;
-  font-family: 'Rock Salt', cursive;
+  font-family: "Rock Salt", cursive;
 }
 
 #components-container {
@@ -140,7 +240,7 @@ a:hover, a:active {
 .component {
   margin: 0 auto;
   display: grid;
-  width: 80%;
+  width: 100%;
 }
 
 .section-title {
@@ -168,7 +268,7 @@ h2 {
 body {
   font-size: 1;
   color: var(--color);
-  background-color: var(--background-color)
+  background-color: var(--background-color);
 }
 
 p {
@@ -253,12 +353,12 @@ strong {
 }
 
 #spinner {
-  content: url('/img/spinner.gif');
+  content: url("/img/spinner.gif");
   width: 50px;
   height: auto;
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
 #x-icon {
@@ -295,10 +395,14 @@ label {
   display: flex;
 }
 
-input[type='email'], input[type='text'], input[type='number'], textarea, select {
+input[type="email"],
+input[type="text"],
+input[type="number"],
+textarea,
+select {
   border: var(--color) 1px solid;
   padding: 0.5em;
-  background-color: var(--secondary-background-color)
+  background-color: var(--secondary-background-color);
 }
 
 #file-upload {
@@ -355,8 +459,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 0 auto;
   text-align: center;
   display: grid;
-  width: 80%;
-  height: 1000px;
+  width: 100%;
+  height: 850px;
   grid-template-columns: 70% 30%;
   grid-template-rows: 75% 25%;
 }
@@ -412,7 +516,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   height: 95%;
 }
 
-#left-description, #right-description {
+#left-description,
+#right-description {
   text-align: left;
 }
 
@@ -426,7 +531,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   align-items: center;
   height: 100%;
   margin-left: 8px;
+}
+
+#right-description ul {
   border-left: 2px solid var(--color);
+  position: relative;
+  bottom: 6%;
+  padding: 5%;
+  left: 3%;
+  width: 100%;
+}
+
+#right-description li {
+  margin: 5% 0 5% 5%;
 }
 
 #left-description h2 {
@@ -502,7 +619,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   background-size: cover;
   margin: 3px;
   border-radius: 50%;
-  border: 2px solid var(--color);
+  border: 1px solid var(--color);
   display: flex;
   justify-content: center;
 }
@@ -515,11 +632,13 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 
 #cart-container {
   display: grid;
-  grid-template-areas: 'size size size qty qty' 'add add add add star';
+  grid-template-areas: "size size size qty qty" "add add add add star";
   align-content: center;
   height: 18%;
   width: 100%;
   margin-top: 5%;
+  position: relative;
+  bottom: 3%;
 }
 
 #size-button {
@@ -605,22 +724,29 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   border-bottom: 5px solid var(--color);
 }
 
+.gallery-arrow {
+  text-shadow: 0 0 4px var(--background-color);
+}
+
 #image-left-arrow {
   position: absolute;
   top: 50%;
   left: 16%;
+  text-shadow: 0 0 4px var(--background-color);
 }
 
 #image-right-arrow {
   position: absolute;
   top: 50%;
   left: 95%;
+  text-shadow: 0 0 4px var(--background-color);
 }
 
 #image-expand {
   position: absolute;
   top: 5%;
   right: 5%;
+  text-shadow: 0 0 4px var(--background-color);
 }
 
 .expanded-image-modal {
@@ -659,17 +785,20 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   position: relative;
 }
 
-#expanded-left, #expanded-right {
+#expanded-left,
+#expanded-right {
   position: absolute;
   top: 50%;
 }
 
 #expanded-left {
   left: 5%;
+  text-shadow: 0 0 5px var(--background-color);
 }
 
 #expanded-right {
   right: 5%;
+  text-shadow: 0 0 5px var(--background-color);
 }
 
 /* 
@@ -687,7 +816,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 #otherItems {
   margin: 0 auto;
   display: grid;
-  width: 80%;
+  width: 100%;
 }
 
 .otherItemsContainer {
@@ -715,12 +844,17 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   height: 100%;
 }
 
+.leftArrowCarousel {
+  margin-right: 1%;
+}
+
 .productCard {
   height: 90%;
   width: 25%;
   max-height: 350px;
   max-width: 220px;
-  margin: 15px;
+  margin-right: 2%;
+  /* margin: 15px; */
   padding: 0;
   border: var(--color);
   border-style: solid;
@@ -752,7 +886,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 #addOutfit {
-  background-color: var(--secondary-background-color)
+  background-color: var(--secondary-background-color);
 }
 
 #plusContainer {
@@ -802,20 +936,26 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   left: 5%;
 }
 
+.priceContainer p {
+  margin: 0;
+}
+
 .originalPrice {
   font-size: 0.85em;
-  margin: 0;
+  /* margin: 0; */
 }
 
 .priceDiscount {
   font-size: 0.85em;
   color: darkred;
+  margin: 0;
 }
 
 .regularPriceDiscount {
   font-size: 0.75em;
   color: var(--color);
   text-decoration: line-through;
+  margin: 0;
 }
 
 .productCardRating {
@@ -897,7 +1037,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 #q-and-a-container {
   margin: 0 auto;
   display: grid;
-  width: 80%;
+  width: 100%;
 }
 
 #q-and-a-search {
@@ -938,19 +1078,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   overflow-y: scroll; */
 }
 
-.answers>span>.first {
+.answers > span > .first {
   margin: 1em 0px;
 }
 
-.answers>span>.more {
+.answers > span > .more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers>span>.answerer {
+.answers > span > .answerer {
   margin-left: 15px;
 }
 
-.answers>.load-more {
+.answers > .load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -964,7 +1104,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   height: 50px;
 }
 
-#add-question-form>input, #add-question-form>textarea {
+#add-question-form > input,
+#add-question-form > textarea {
   width: 400px;
 }
 
@@ -974,7 +1115,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 img.uploadIcon {
-  content: url('./img/upload.svg') !important;
+  content: url("./img/upload.svg") !important;
 }
 
 /* 
@@ -989,7 +1130,9 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container, #comfort-rating-container, #star-stats-container {
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -1258,7 +1401,7 @@ img.uploadIcon {
 .characteristic-label {
   font-size: 0.8em;
   width: 80%;
-  overflow: ;
+  /* overflow: ; */
 }
 
 /* Forms */
@@ -1271,7 +1414,7 @@ img.uploadIcon {
   width: 100%;
 }
 
-#add-review-form>textarea {
+#add-review-form > textarea {
   width: 400px;
 }
 
@@ -1282,7 +1425,7 @@ img.uploadIcon {
   margin-top: 3%;
 }
 
-#sort-menu>select {
+#sort-menu > select {
   margin-left: 1%;
   border: none;
   color: var(--color);
@@ -1292,7 +1435,7 @@ img.uploadIcon {
   border-radius: 0;
 }
 
-#sort-menu>select:focus {
+#sort-menu > select:focus {
   outline: none;
 }
 
