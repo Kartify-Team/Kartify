@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import ProductImage from './ProductImage';
-import ProductDescription from './ProductDescription';
-import { getDefaultStyle } from '../../utils/styleHelpers';
-import ProductInteractionContainer from '../../containers/Overview/ProductInteraction';
+import React, { useState, useEffect } from "react";
+import ProductImage from "./ProductImage";
+import ProductDescription from "./ProductDescription";
+import { getDefaultStyle } from "../../utils/styleHelpers";
+import ProductInteractionContainer from "../../containers/Overview/ProductInteraction";
 
-const Overview = ({ product, setProductStyles }) => {
+const Overview = ({ product }) => {
   const [currentStyle, setCurrentStyle] = useState(null);
-
-  useEffect(() => {
-    if (product) {
-      setProductStyles(product.id);
-    }
-  }, [!product ? '' : product.id]);
 
   useEffect(() => {
     const defaultStyle =
       !!product && !!product.styles ? getDefaultStyle(product.styles) : null;
 
     setCurrentStyle(defaultStyle);
-  }, [!product || !product.styles ? '' : product.styles]);
+  }, [!product || !product.styles ? "" : product.styles]);
 
   const changeSelectedStyle = style => {
     if (!!style) {
