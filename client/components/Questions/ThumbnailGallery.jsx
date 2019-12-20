@@ -32,7 +32,7 @@ const ThumbnailGallery = ({ imageURLs, size = "large" }) => {
             className="Modal" overlayClassName="ModalOverlay"
             contentLabel="Example Modal">
             <div className="modal-header">
-                <img src={currentPic} />
+                <img src={currentPic} alt={`Image ${currentPic}`} />
             </div>
 
         </Modal >

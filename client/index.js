@@ -21,6 +21,9 @@ const App = () => (<Provider store={store}>
 //   const el = Enzyme.mount(<App />, { attachTo: document.getElementById('app') });
 //   window.el = el;
 // } else {
+
+
+
 ReactDOM.render(<App />, document.getElementById('app'));
 // }
 

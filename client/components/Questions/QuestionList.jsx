@@ -16,7 +16,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
     setMaxQs(2)
     setLoading(false)
     setSeeMore(false)
-    setAllQuestionsDisplayed(false)
+    setAllQuestionsDisplayed(maxQs === questions.length)
     setLazyLoading(false)
     setBottomReached(false)
     if (questions.length > 0) {
@@ -34,7 +34,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
     }
   }
   useEffect(() => {
-    const hasMoreSpace = document.getElementById("question-list-container").clientHeight <= window.innerHeight * .86;
+    const hasMoreSpace = document.getElementById("question-list-container").clientHeight <= window.innerHeight;
     if (seeMore && (hasMoreSpace || bottomReached)) {
       setBottomReached(true)
       if (maxQs < questions.length) {
@@ -87,7 +87,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
           }
 
         })}
-        {lazyLoading ? <img id="spinner" /> : <></>}
+        {lazyLoading ? <img id="spinner" alt="Spinner" /> : <></>}
         {allQuestionsDisplayed ? addQuestion : <></>}
       </div>
     );
@@ -96,7 +96,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
       {addQuestion}
     </div>;
   } else {
-    return <div id="question-list-container"><img id="spinner" /></div>
+    return <div id="question-list-container"><img id="spinner" alt="Spinner" /></div>
   }
 };
 export default QuestionList;

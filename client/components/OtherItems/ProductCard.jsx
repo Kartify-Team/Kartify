@@ -23,13 +23,17 @@ const ProductCard = ({ product, handleClick, setActionButton }) => {
 
   if (product === null) {
     return (
-      <div className="productCard" onClick={ e => handleClick(e, product)}>
+      // <div className="productCard" id="addOutfit" onClick={() => {
+      //   addOutfitProduct(currentProduct.id);
+      //   getMyOutfit();
+      // }}>
+      <div className="productCard" id="addOutfit" onClick={e => handleClick(e, product)}>
         <div className="productCardImage">
           <button
-            className="cardButton"
+            className="cardButton" id="plusContainer"
             type="button"
           >
-            <i className="fa fa-plus"></i>
+            <i className="fa fa-plus fa-5x"></i>
           </button>
         </div>
         <div className="productCardDescription">
@@ -37,8 +41,9 @@ const ProductCard = ({ product, handleClick, setActionButton }) => {
         </div>
       </div>
     );
-  } else {    
+  } else {
     return (
+
       <Link key={product.id} to={`${product.id}`} >
         <div className="productCard" onClick={ e => handleClick(e, product)} >
           <div className="productCardImage">

@@ -10,87 +10,7 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video,
-input,
-button,
-span {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -100,17 +20,7 @@ span {
   font-family: 'Open Sans', sans-serif;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -124,20 +34,15 @@ body {
   overflow-x: hidden;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
@@ -149,7 +54,7 @@ table {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--color);
 }
 
 a:visited {
@@ -164,8 +69,7 @@ a:focus {
   text-decoration: none;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
   text-decoration: none;
 }
 
@@ -184,23 +88,41 @@ a:active {
 :root {
   --color: #525252;
   --background-color: #ffffff;
+  --translucent-background-color: rgba(255, 255, 255, .6);
   --primary-accent-color: #525252;
-  --light-accent-color: #ededed;
+  --secondary-background-color: #f0f0f0;
   --error: #ff0000;
-  --highlighted: goldenrod;
+  --highlighted: yellow;
   --link-color: blue;
+  --title-color: #ffffff;
+  --title-background: #4c4c4c;
+}
+
+[theme="dark"] {
+  --color: #ededed;
+  --background-color: rgb(37, 37, 37);
+  --translucent-background-color: rgba(80, 80, 80, .6);
+  --primary-accent-color: #949494;
+  --secondary-background-color: rgba(65, 65, 65, 0.7);
+  --error: #ff0000;
+  --highlighted: yellow;
+  --link-color: blue;
+  --title-color: #ffffff;
+  --title-background: #1f1f1f;
 }
 
 .topnav {
-  background-color: var(--primary-accent-color);
-  color: var(--background-color);
+  background-color: var(--title-background);
+  color: var(--title-color);
   padding: 5px;
   overflow: hidden;
   width: 100%;
+  display: flex;
 }
 
 #site-title {
-  color: var(--background-color);
+  color: var(--title-color);
+  background-color: var(--title-background);
   font-size: 3em;
   padding: 15px;
   font-family: 'Rock Salt', cursive;
@@ -244,8 +166,8 @@ h2 {
 body {
   font-size: 1;
   color: var(--color);
+  background-color: var(--background-color)
 }
-
 
 p {
   margin: 1.5em 0em;
@@ -281,7 +203,7 @@ strong {
 
 .action-button:hover {
   color: white;
-  background-color: var(--color);
+  background-color: var(--primary-accent-color);
 }
 
 .action-button:focus {
@@ -300,7 +222,7 @@ strong {
 
 .action-button.secondary:hover {
   background-color: var(--primary-accent-color);
-  color: var(--color);
+  color: var(--background-color);
 }
 
 .highlighted {
@@ -334,7 +256,7 @@ strong {
   height: auto;
   display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto
 }
 
 #x-icon {
@@ -363,13 +285,10 @@ label {
   display: flex;
 }
 
-input[type='email'],
-input[type='text'],
-input[type='number'],
-textarea,
-select {
+input[type='email'], input[type='text'], input[type='number'], textarea, select {
   border: var(--color) 1px solid;
   padding: 0.5em;
+  background-color: var(--secondary-background-color)
 }
 
 #file-upload {
@@ -384,7 +303,7 @@ select {
   bottom: auto;
   max-height: 85vh;
   max-width: 85vw;
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--background-color);
   margin-right: -50%;
   padding: 2%;
@@ -397,8 +316,7 @@ select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-color);
-  opacity: 60%;
+  background-color: var(--translucent-background-color);
 }
 
 .modal-header {
@@ -484,8 +402,7 @@ select {
   height: 95%;
 }
 
-#left-description,
-#right-description {
+#left-description, #right-description {
   text-align: left;
 }
 
@@ -631,7 +548,7 @@ select {
 
 #product-image-container {
   position: relative;
-  background-color: var(--primary-accent-color);
+  background-color: var(--secondary-background-color);
   margin: 1% 8% 1% 0;
 }
 
@@ -719,8 +636,7 @@ select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-color);
-  opacity: 60%;
+  background-color: var(--translucent-background-color);
   z-index: 100;
 }
 
@@ -733,8 +649,7 @@ select {
   position: relative;
 }
 
-#expanded-left,
-#expanded-right {
+#expanded-left, #expanded-right {
   position: absolute;
   top: 50%;
 }
@@ -805,7 +720,7 @@ select {
 }
 
 .productCard:hover {
-  background-color: var(--primary-accent-color);
+  background-color: var(--secondary-background-color);
 }
 
 .productCardImage {
@@ -818,13 +733,27 @@ select {
 }
 
 .cardButton {
-  height: 7%;
-  width: 7%;
+  height: 10%;
+  width: 10%;
   position: absolute;
   top: 5%;
-  right: 7%;
+  right: 9%;
   background: transparent;
-  color: var(--highlighted);
+  color: var(--background-color);
+}
+
+#addOutfit {
+  background-color: var(--secondary-background-color)
+}
+
+#plusContainer {
+  color: var(--color);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: translate(0%, 20%);
 }
 
 .cardImage {
@@ -969,21 +898,21 @@ select {
 }
 
 #q-and-a-search {
-  margin: 10px 5px 5px 10px;
+  margin: 10px 5px 5px 0;
   height: 2em;
 }
 
 #question-list-container {
   /* border: black 1px solid; */
-  margin: 10px 5px 5px 10px;
-  max-height: 85vh;
+  margin: 10px 5px 5px 0;
+  max-height: 95vh;
   overflow: auto;
 }
 
-#question-container {
+.question-container {
   /* border: black 1px solid; */
-  margin: 10px 5px 5px 10px;
-  padding: 5px;
+  margin: 10px 5px 5px 0;
+  padding: 5px 0 5px 0;
 }
 
 #question {
@@ -993,7 +922,7 @@ select {
 }
 
 #q-list {
-  margin: 10px;
+  margin: 10px 0 10px 0;
 }
 
 /* #question > h2 {
@@ -1006,19 +935,19 @@ select {
   overflow-y: scroll; */
 }
 
-.answers > span > #first {
+.answers>span>.first {
   margin: 1em 0px;
 }
 
-.answers > span > #more {
+.answers>span>.more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers > span > #answerer {
+.answers>span>.answerer {
   margin-left: 15px;
 }
 
-.answers > #load-more {
+.answers>.load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -1032,8 +961,7 @@ select {
   height: 50px;
 }
 
-#add-question-form > input,
-#add-question-form > textarea {
+#add-question-form>input, #add-question-form>textarea {
   width: 400px;
 }
 
@@ -1058,9 +986,7 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container,
-#comfort-rating-container,
-#star-stats-container {
+#size-rating-container, #comfort-rating-container, #star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -1231,7 +1157,7 @@ img.uploadIcon {
   overflow: hidden;
   height: 10px;
   display: inline-block;
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-background-color);
 }
 
 .star-bar-dynamic {
@@ -1299,7 +1225,7 @@ img.uploadIcon {
   max-width: 32%;
   height: 10px;
   display: inline-block;
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-background-color);
   margin: 0 auto;
 }
 
@@ -1342,7 +1268,7 @@ img.uploadIcon {
   width: 100%;
 }
 
-#add-review-form > textarea {
+#add-review-form>textarea {
   width: 400px;
 }
 
@@ -1353,16 +1279,17 @@ img.uploadIcon {
   margin-top: 3%;
 }
 
-#sort-menu > select {
+#sort-menu>select {
   margin-left: 1%;
   border: none;
+  color: var(--color);
   background-color: var(--background-color);
   border-bottom: 2px solid var(--color);
   font-size: 1rem;
   border-radius: 0;
 }
 
-#sort-menu > select:focus {
+#sort-menu>select:focus {
   outline: none;
 }
 

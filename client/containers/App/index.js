@@ -6,8 +6,10 @@ import { setRatings } from '../../actions/creators/setRatings';
 import { getRelatedProducts } from '../../actions/dispatchers/getRelatedProducts';
 import { getMyOutfit } from '../../actions/dispatchers/getMyOutfit.js';
 
+
 const mapStateToProps = state => ({
-  productInfo: state.product
+  productInfo: state.product,
+
 });
 
 const mapDispatchToProps = dispatch => ({
