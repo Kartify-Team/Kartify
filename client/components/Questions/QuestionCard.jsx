@@ -55,7 +55,7 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
 
   if (userActions) {
 
-    return <div id="question-container" key={question.question_id}>
+    return <div className="question-container" key={question.question_id}>
       <div id="question">
         <h2>Q: {questionHTML}</h2>
         <sub>{userActions.q ?
@@ -72,12 +72,12 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
 
               <span key={answer.id}>
                 {index === 0 ? (
-                  <p id="first">A: {removeHTMLTags(answer.body)}</p>) : (
-                    <p id="more">{removeHTMLTags(answer.body)}</p>
+                  <p className="first">A: {removeHTMLTags(answer.body)}</p>) : (
+                    <p className="more">{removeHTMLTags(answer.body)}</p>
                   )}
                 <ThumbnailGallery imageURLs={answer.photos} />
                 <br />
-                <sub id="answerer">
+                <sub className="answerer">
                   by {answer.answerer_name === "Seller" ? <strong>{answer.answerer_name}</strong> : <>{answer.answerer_name}</>},{" "}
                   {formatDate(answer.date)}
                   &nbsp; | &nbsp; {userActions.a && userActions.a[answer.id] ?
@@ -97,11 +97,11 @@ const QuestionCard = ({ question, product, handleHelpful, query }) => {
           }
         })}
         {expanded ?
-          <div id="load-more" onClick={() => setExpanded(false)}>
+          <div className="load-more" onClick={() => setExpanded(false)}>
             Collapse Answers
     </div>
           : <>{question.answers.length > 2 ?
-            <div id="load-more" onClick={() => setExpanded(true)}>
+            <div className="load-more" onClick={() => setExpanded(true)}>
               Load More Answers
         </div>
             : <></>}</>

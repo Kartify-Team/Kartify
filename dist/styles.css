@@ -149,7 +149,7 @@ table {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--color);
 }
 
 a:visited {
@@ -184,23 +184,41 @@ a:active {
 :root {
   --color: #525252;
   --background-color: #ffffff;
+  --translucent-background-color: rgba(255, 255, 255, 0.6);
   --primary-accent-color: #525252;
-  --light-accent-color: #ededed;
+  --secondary-background-color: #f0f0f0;
   --error: #ff0000;
-  --highlighted: goldenrod;
+  --highlighted: yellow;
   --link-color: blue;
+  --title-color: #ffffff;
+  --title-background: #4c4c4c;
+}
+
+[theme="dark"] {
+  --color: #ededed;
+  --background-color: rgb(37, 37, 37);
+  --translucent-background-color: rgba(80, 80, 80, 0.6);
+  --primary-accent-color: #949494;
+  --secondary-background-color: rgba(65, 65, 65, 0.7);
+  --error: #ff0000;
+  --highlighted: yellow;
+  --link-color: blue;
+  --title-color: #ffffff;
+  --title-background: #1f1f1f;
 }
 
 .topnav {
-  background-color: var(--primary-accent-color);
-  color: var(--background-color);
+  background-color: var(--title-background);
+  color: var(--title-color);
   padding: 5px;
   overflow: hidden;
   width: 100%;
+  display: flex;
 }
 
 #site-title {
-  color: var(--background-color);
+  color: var(--title-color);
+  background-color: var(--title-background);
   font-size: 3em;
   padding: 15px;
   font-family: "Rock Salt", cursive;
@@ -216,7 +234,7 @@ a:active {
 .component {
   margin: 0 auto;
   display: grid;
-  width: 80%;
+  width: 100%;
 }
 
 .section-title {
@@ -244,8 +262,8 @@ h2 {
 body {
   font-size: 1;
   color: var(--color);
+  background-color: var(--background-color);
 }
-
 
 p {
   margin: 1.5em 0em;
@@ -281,7 +299,7 @@ strong {
 
 .action-button:hover {
   color: white;
-  background-color: var(--color);
+  background-color: var(--primary-accent-color);
 }
 
 .action-button:focus {
@@ -300,7 +318,7 @@ strong {
 
 .action-button.secondary:hover {
   background-color: var(--primary-accent-color);
-  color: var(--color);
+  color: var(--background-color);
 }
 
 .highlighted {
@@ -329,7 +347,7 @@ strong {
 }
 
 #spinner {
-  content: url('/img/spinner.gif');
+  content: url("/img/spinner.gif");
   width: 50px;
   height: auto;
   display: block;
@@ -370,6 +388,7 @@ textarea,
 select {
   border: var(--color) 1px solid;
   padding: 0.5em;
+  background-color: var(--secondary-background-color);
 }
 
 #file-upload {
@@ -384,7 +403,7 @@ select {
   bottom: auto;
   max-height: 85vh;
   max-width: 85vw;
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--background-color);
   margin-right: -50%;
   padding: 2%;
@@ -397,8 +416,7 @@ select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-color);
-  opacity: 60%;
+  background-color: var(--translucent-background-color);
 }
 
 .modal-header {
@@ -499,7 +517,6 @@ select {
   align-items: center;
   height: 100%;
   margin-left: 8px;
-<<<<<<< HEAD
 }
 
 #right-description ul {
@@ -513,9 +530,7 @@ select {
 
 #right-description li {
   margin: 5% 0 5% 5%;
-=======
   border-left: 2px solid var(--color);
->>>>>>> 8aaf7ffdb88cc016370705033ce15f0b7076c1b1
 }
 
 #left-description h2 {
@@ -647,7 +662,7 @@ select {
 
 #product-image-container {
   position: relative;
-  background-color: var(--primary-accent-color);
+  background-color: var(--secondary-background-color);
   margin: 1% 8% 1% 0;
 }
 
@@ -735,8 +750,7 @@ select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-color);
-  opacity: 60%;
+  background-color: var(--translucent-background-color);
   z-index: 100;
 }
 
@@ -778,7 +792,7 @@ select {
 #otherItems {
   margin: 0 auto;
   display: grid;
-  width: 80%;
+  width: 100%;
 }
 
 .otherItemsContainer {
@@ -811,7 +825,8 @@ select {
   width: 25%;
   max-height: 350px;
   max-width: 220px;
-  margin: 15px;
+  margin-right: 2%;
+  /* margin: 15px; */
   padding: 0;
   border: var(--color);
   border-style: solid;
@@ -820,7 +835,7 @@ select {
 }
 
 .productCard:hover {
-  background-color: var(--primary-accent-color);
+  background-color: var(--secondary-background-color);
 }
 
 .productCardImage {
@@ -833,13 +848,27 @@ select {
 }
 
 .cardButton {
-  height: 7%;
-  width: 7%;
+  height: 10%;
+  width: 10%;
   position: absolute;
   top: 5%;
-  right: 7%;
+  right: 9%;
   background: transparent;
-  color: var(--highlighted);
+  color: var(--background-color);
+}
+
+#addOutfit {
+  background-color: var(--secondary-background-color);
+}
+
+#plusContainer {
+  color: var(--color);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: translate(0%, 20%);
 }
 
 .cardImage {
@@ -879,20 +908,26 @@ select {
   left: 5%;
 }
 
+.priceContainer p {
+  margin: 0;
+}
+
 .originalPrice {
   font-size: 0.85em;
-  margin: 0;
+  /* margin: 0; */
 }
 
 .priceDiscount {
   font-size: 0.85em;
   color: darkred;
+  margin: 0;
 }
 
 .regularPriceDiscount {
   font-size: 0.75em;
   color: var(--color);
   text-decoration: line-through;
+  margin: 0;
 }
 
 .productCardRating {
@@ -974,25 +1009,25 @@ select {
 #q-and-a-container {
   margin: 0 auto;
   display: grid;
-  width: 80%;
+  width: 100%;
 }
 
 #q-and-a-search {
-  margin: 10px 5px 5px 10px;
+  margin: 10px 5px 5px 0;
   height: 2em;
 }
 
 #question-list-container {
   /* border: black 1px solid; */
-  margin: 10px 5px 5px 10px;
-  max-height: 85vh;
+  margin: 10px 5px 5px 0;
+  max-height: 95vh;
   overflow: auto;
 }
 
-#question-container {
+.question-container {
   /* border: black 1px solid; */
-  margin: 10px 5px 5px 10px;
-  padding: 5px;
+  margin: 10px 5px 5px 0;
+  padding: 5px 0 5px 0;
 }
 
 #question {
@@ -1002,7 +1037,7 @@ select {
 }
 
 #q-list {
-  margin: 10px;
+  margin: 10px 0 10px 0;
 }
 
 /* #question > h2 {
@@ -1015,19 +1050,19 @@ select {
   overflow-y: scroll; */
 }
 
-.answers > span > #first {
+.answers > span > .first {
   margin: 1em 0px;
 }
 
-.answers > span > #more {
+.answers > span > .more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers > span > #answerer {
+.answers > span > .answerer {
   margin-left: 15px;
 }
 
-.answers > #load-more {
+.answers > .load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -1240,7 +1275,7 @@ img.uploadIcon {
   overflow: hidden;
   height: 10px;
   display: inline-block;
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-background-color);
 }
 
 .star-bar-dynamic {
@@ -1308,7 +1343,7 @@ img.uploadIcon {
   max-width: 32%;
   height: 10px;
   display: inline-block;
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-background-color);
   margin: 0 auto;
 }
 
@@ -1338,7 +1373,7 @@ img.uploadIcon {
 .characteristic-label {
   font-size: 0.8em;
   width: 80%;
-  overflow: ;
+  /* overflow: ; */
 }
 
 /* Forms */
@@ -1365,6 +1400,7 @@ img.uploadIcon {
 #sort-menu > select {
   margin-left: 1%;
   border: none;
+  color: var(--color);
   background-color: var(--background-color);
   border-bottom: 2px solid var(--color);
   font-size: 1rem;
@@ -1406,4 +1442,9 @@ img.uploadIcon {
   background-color: #ebebeb;
   padding: 4% 2% 4% 2%;
   margin-bottom: 3%;
+}
+
+#recommended {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }

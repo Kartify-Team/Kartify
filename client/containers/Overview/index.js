@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import Overview from "../../components/Overview";
-import { setProductStyles } from "../../actions/creators/setProductStyles";
+import { connect } from 'react-redux';
+import Overview from '../../components/Overview';
+import { setProductStyles } from '../../actions/creators/setProductStyles';
 
 const mapStateToProps = store => ({
   product: store.product,
