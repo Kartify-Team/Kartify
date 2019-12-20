@@ -270,7 +270,9 @@ strong {
 }
 
 #theme-toggle {
-  margin: 20px
+  margin: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .toggle-icon {
