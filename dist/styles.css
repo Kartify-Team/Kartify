@@ -213,12 +213,15 @@ button:focus {
   display: flex;
   flex: 1 1;
   justify-content: space-between;
+  height: 5.2em;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 #site-title {
   color: var(--title-color);
   background-color: var(--title-background);
-  font-size: 3em;
+  font-size: 2.7em;
   padding: 15px;
   font-family: 'Rock Salt', cursive;
 }
@@ -388,21 +391,12 @@ label {
   display: flex;
 }
 
-<<<<<<< HEAD
 input,  textarea, 
 select{
-=======
-input[type='email'],
-input[type='text'],
-input[type='number'],
-textarea,
-select {
->>>>>>> 086ebee6a4cba1e433dfa35b7c791c10978ccc12
   border: var(--color) 1px solid;
   padding: 0.5em;
   background-color: var(--secondary-background-color);
   color: var(--color);
-<<<<<<< HEAD
   font-size: 1em;
 }
 input:-webkit-autofill,
@@ -419,24 +413,12 @@ input:focus, input:-internal-autofill-selected {
   padding: 0.5em;
   background-color: var(--secondary-background-color) !important;
   color: var(--color) !important
-=======
->>>>>>> 086ebee6a4cba1e433dfa35b7c791c10978ccc12
 }
 
 input:focus {
   outline: none;
 }
 
-<<<<<<< HEAD
-=======
-input:focus {
-  color: var(--color);
-}
-
-input[type='text'] {
-  color: var(--color);
-}
->>>>>>> 086ebee6a4cba1e433dfa35b7c791c10978ccc12
 
 #file-upload {
   /* display: none; */
