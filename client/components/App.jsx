@@ -46,11 +46,7 @@ const App = ({
       <h1 id="site-title">Kartify</h1>
       <div id="theme-toggle" onClick={() => setDark(!dark)}>
         <span className="toggle-icon">☀️</span>
-<<<<<<< HEAD
-        <span className="toggle-icon"> <i className={`fa fa-toggle-on fa-2x ${dark ? "" : "fa-flip-horizontal"}`}></i>
-=======
         <span className="toggle-icon"> <i className={`fa fa-toggle-on ${dark ? "" : "fa-flip-horizontal"} fa-2x`}></i>
->>>>>>> e7888b227c3dad5681debb736820c8d8a382b4a4
         </span>
         <span className="toggle-icon">🌙</span>
       </div>
