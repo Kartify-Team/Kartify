@@ -805,34 +805,43 @@ select {
   width: 100%;
 }
 
-.sliderContainer {
+.carousel {
   height: 350px;
   width: 100%;
-  overflow-x: scroll;
   white-space: nowrap;
-}
-
-.slick-slider {
-  height: 100%;
-}
-
-.slick-initialized {
-  height: 100%;
-}
-
-#slider {
-  height: 100%;
+  position: relative;
 }
 
 .leftArrowCarousel {
-  margin-right: 1%;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 100;
+}
+
+.rightArrowCarousel {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+}
+
+.sliderContainer {
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.linkCard {
+  margin-right: 2%;
 }
 
 .productCard {
-  height: 90%;
-  width: 25%;
+  height: 100%;
+  width: 100%;
   max-height: 350px;
-  max-width: 220px;
+  max-width: 235px;
   margin-right: 2%;
   /* margin: 15px; */
   padding: 0;

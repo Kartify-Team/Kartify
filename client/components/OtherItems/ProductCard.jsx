@@ -23,10 +23,6 @@ const ProductCard = ({ product, handleClick, setActionButton }) => {
 
   if (product === null) {
     return (
-      // <div className="productCard" id="addOutfit" onClick={() => {
-      //   addOutfitProduct(currentProduct.id);
-      //   getMyOutfit();
-      // }}>
       <div className="productCard" id="addOutfit" onClick={e => handleClick(e, product)}>
         <div className="productCardImage">
           <button
@@ -44,7 +40,7 @@ const ProductCard = ({ product, handleClick, setActionButton }) => {
   } else {
     return (
 
-      <Link key={product.id} to={`${product.id}`} >
+      <Link key={product.id} to={`${product.id}`} className='linkCard'>
         <div className="productCard" onClick={ e => handleClick(e, product)} >
           <div className="productCardImage">
             {getCoverImage()}
