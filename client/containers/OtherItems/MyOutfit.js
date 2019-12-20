@@ -5,7 +5,9 @@ import { modifyMyOutfit } from '../../actions/dispatchers/changeMyOutfit.js';
 
 const mapStateToProps = (store) => ({
   myOutfit: store.otherItems.myOutfit,
-  mainProduct: store.product
+  mainProduct: store.product,
+  average:
+    store.reviews.ratings === null ? null : store.reviews.ratings.average
 });
 
 const mapDispatchToProps = (dispatch) => ({

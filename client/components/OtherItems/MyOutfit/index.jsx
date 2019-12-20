@@ -1,16 +1,30 @@
 import React, { useState } from 'react';
 import ProductsCarousel from '../ProductsCarousel.jsx';
 import { removeOutfitProduct } from '../../../utils/localStorage.js'
+import { addOutfitProduct } from '../../../utils/localStorage.js';
+import { getDefaultStyle } from '../../../utils/getCoverImage.js';
 
 const MyOutfit = ({ 
   myOutfit,
   changeMyOutfit, 
-  mainProduct, 
+  mainProduct,
+  average, 
   changeProduct 
 }) => {
 
   const handleClick = (e, product) => {
-    if (e.target.className.includes('cardButton')) {
+    if (product === null) {
+      let defaultStyle = getDefaultStyle(mainProduct.styles);
+      let newProduct = {...mainProduct};
+      newProduct.coverImage = defaultStyle.url;
+      newProduct.rating = average;
+      newProduct.salePrice = parseInt(defaultStyle.salePrice);
+      newProduct.defaultPrice = parseInt(defaultStyle.originalPrice);
+      addOutfitProduct(mainProduct.id);
+      changeMyOutfit(newProduct, myOutfit, 'add');
+    }
+    else if (e.target.className.includes('cardButton')) {
+      console.log(product)
       e.preventDefault();
       removeOutfitProduct(product.id);
       changeMyOutfit(product, myOutfit, 'remove');
