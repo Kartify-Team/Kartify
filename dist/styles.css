@@ -824,6 +824,10 @@ select {
   height: 100%;
 }
 
+.leftArrowCarousel {
+  margin-right: 1%;
+}
+
 .productCard {
   height: 90%;
   width: 25%;
