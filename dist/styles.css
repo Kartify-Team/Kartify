@@ -370,6 +370,7 @@ strong {
 
 .toggle-icon {
   margin: 0 0.1em;
+  cursor: pointer;
 }
 
 /*
@@ -462,9 +463,10 @@ input:focus {
   text-align: center;
   display: grid;
   width: 100%;
-  height: 850px;
+  height: 95vh;
   grid-template-columns: 70% 30%;
   grid-template-rows: 75% 25%;
+  margin-bottom: 3%;
 }
 
 /* Information Box */
@@ -923,10 +925,11 @@ input:focus {
 
 #addOutfit {
   background-color: var(--secondary-background-color);
+  cursor: pointer;
 }
 
 #addOutfit:hover {
-  background-color:  var(--translucent-background-color);
+  background-color: var(--translucent-background-color);
 }
 
 #plusContainer {
@@ -937,6 +940,7 @@ input:focus {
   top: 0%;
   right: 0%;
   transform: translate(0%, 20%);
+  cursor: pointer;
 }
 
 .cardImage {
