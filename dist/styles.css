@@ -10,87 +10,7 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video,
-input,
-button,
-span {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -100,17 +20,7 @@ span {
   font-family: "Open Sans", sans-serif;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -124,20 +34,15 @@ body {
   overflow-x: hidden;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
@@ -164,8 +69,7 @@ a:focus {
   text-decoration: none;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
   text-decoration: none;
 }
 
@@ -193,7 +97,7 @@ button:focus {
   --secondary-background-color: #f0f0f0;
   --error: #ff0000;
   --highlighted: yellow;
-  --link-color: blue;
+  --link-color: #6d84b4;
   --title-color: #ffffff;
   --title-background: #4c4c4c;
 }
@@ -205,10 +109,10 @@ button:focus {
   --primary-accent-color: #949494;
   --secondary-background-color: rgba(65, 65, 65, 0.7);
   --error: #ff0000;
-  --highlighted: yellow;
-  --link-color: blue;
+  --highlighted: #8a6a30;
+  --link-color: #6fa5a5;
   --title-color: #ffffff;
-  --title-background: #1f1f1f;
+  --title-background: #27544e;
 }
 
 .topnav {
@@ -395,14 +299,15 @@ label {
   display: flex;
 }
 
-input[type="email"],
-input[type="text"],
-input[type="number"],
-textarea,
-select {
+input[type="email"], input[type="text"], input[type="number"], textarea, select {
   border: var(--color) 1px solid;
   padding: 0.5em;
   background-color: var(--secondary-background-color);
+  color: var(--color)
+}
+
+input:focus {
+  outline: none;
 }
 
 #file-upload {
@@ -516,8 +421,7 @@ select {
   height: 95%;
 }
 
-#left-description,
-#right-description {
+#left-description, #right-description {
   text-align: left;
 }
 
@@ -785,8 +689,7 @@ select {
   position: relative;
 }
 
-#expanded-left,
-#expanded-right {
+#expanded-left, #expanded-right {
   position: absolute;
   top: 50%;
 }
@@ -1040,9 +943,24 @@ select {
   width: 100%;
 }
 
-#q-and-a-search {
+#q-and-a-search-container {
   margin: 10px 5px 5px 0;
   height: 2em;
+  display: flex;
+  flex: 1 1;
+  justify-content: space-between;
+  border: var(--color) 1px solid;
+  padding: 1em;
+  align-items: center;
+  background-color: var(--secondary-background-color)
+}
+
+#q-and-a-search-input {
+  margin: 0;
+  height: 2em;
+  width: 100%;
+  border: 0;
+  background-color: transparent;
 }
 
 #question-list-container {
@@ -1078,19 +996,19 @@ select {
   overflow-y: scroll; */
 }
 
-.answers > span > .first {
+.answers>span>.first {
   margin: 1em 0px;
 }
 
-.answers > span > .more {
+.answers>span>.more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers > span > .answerer {
+.answers>span>.answerer {
   margin-left: 15px;
 }
 
-.answers > .load-more {
+.answers>.load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -1104,8 +1022,7 @@ select {
   height: 50px;
 }
 
-#add-question-form > input,
-#add-question-form > textarea {
+#add-question-form>input, #add-question-form>textarea {
   width: 400px;
 }
 
@@ -1130,9 +1047,7 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container,
-#comfort-rating-container,
-#star-stats-container {
+#size-rating-container, #comfort-rating-container, #star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -1414,7 +1329,7 @@ img.uploadIcon {
   width: 100%;
 }
 
-#add-review-form > textarea {
+#add-review-form>textarea {
   width: 400px;
 }
 
@@ -1425,7 +1340,7 @@ img.uploadIcon {
   margin-top: 3%;
 }
 
-#sort-menu > select {
+#sort-menu>select {
   margin-left: 1%;
   border: none;
   color: var(--color);
@@ -1435,7 +1350,7 @@ img.uploadIcon {
   border-radius: 0;
 }
 
-#sort-menu > select:focus {
+#sort-menu>select:focus {
   outline: none;
 }
 
