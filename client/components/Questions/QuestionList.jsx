@@ -57,14 +57,14 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
 
   const addQuestion =
     <>
-      <button className="action-button" id="q-list"
+      <button className="action-button padding-ten" id="q-list"
         onClick={() => setIsOpen(true)}>
         ADD A QUESTION &nbsp;<i className="fa fa-plus"></i>
       </button>
       <AddModal setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} product={product} formType="addQuestion" />
     </>
 
-  if (!loading) {
+  if (!loading && questions.length > 0) {
     let count = 0;
     return (
       <div id="question-list-container" onScroll={scrollChange}>
@@ -80,7 +80,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
           }
           if (count === maxQs && !seeMore) {
             count++;
-            return <button className="action-button" id="q-list"
+            return <button className="action-button padding-ten" id="q-list"
               onClick={() => setSeeMore(true)} key={question.question_id}>
               MORE QUESTIONS
             </button>

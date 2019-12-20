@@ -1,15 +1,15 @@
-import React from "react";
-import StyleSelector from "./StyleSelector";
-import Cart from "./Cart";
-import Stars from "../Reviews/Stars";
-import Price from "../Price";
+import React from 'react';
+import StyleSelector from './StyleSelector';
+import Cart from './Cart';
+import Stars from '../Reviews/Stars';
+import Price from '../Price';
 
 const ProductInteraction = ({
   product,
   average,
   currentStyle,
   changeStyle,
-  numReviews
+  reviewList
 }) => {
   return (
     <div id="product-interaction-container">
@@ -17,7 +17,9 @@ const ProductInteraction = ({
         <span id="stars-reviews">
           <Stars stars={average || 0} />
           <a id="review-link" href="#reviews-container">
-            {numReviews > 0 ? `Read all ${numReviews} reviews` : null}
+            {!!reviewList && reviewList.length > 0
+              ? `Read all ${reviewList.length} reviews`
+              : null}
           </a>
         </span>
         <h3>{product.category}</h3>
@@ -27,6 +29,7 @@ const ProductInteraction = ({
             originalPrice={currentStyle.original_price}
             salePrice={currentStyle.sale_price}
             name="description-price"
+            id="description-price"
           />
         )}
         <div id="social-media-buttons">

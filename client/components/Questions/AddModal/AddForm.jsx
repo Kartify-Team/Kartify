@@ -65,7 +65,6 @@ const AddForm = ({
       <br />
       <label htmlFor="body">{display[formType].title}</label>
       <textarea
-        id="body"
         name="body"
         onChange={formik.handleChange}
         value={formik.values.body}

@@ -6,6 +6,7 @@ const ImageUpload = ({ updatePhotos }) => {
     const [imagePreviews, setImagePreviews] = useState([]);
     const [error, setError] = useState('');
     const uploadImage = event => {
+        event.preventDefault()
         const files = Array.from(event.target.files);
         if (!files) {
             setError('Please select at least 1 image.');
@@ -41,7 +42,7 @@ const ImageUpload = ({ updatePhotos }) => {
                 multiple
             />
             <ThumbnailGallery imageURLs={imagePreviews} size="small" />
-            <button className="action-button secondary" onClick={() => document.getElementById("file-upload").click()}>{imagePreviews.length === 0 ? <>Upload Images</> : <>Replace Images</>} </button>
+            {/* <button className="action-button secondary" onClick={() => document.getElementById("file-upload").click()}>{imagePreviews.length === 0 ? <>Upload Images</> : <>Replace Images</>} </button> */}
 
 
 

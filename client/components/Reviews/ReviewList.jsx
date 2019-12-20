@@ -58,9 +58,9 @@ const ReviewList = ({
             value={sort}
             className="inline"
           >
-            <option value="helpful">Helpful</option>
+            <option value="helpful">Helpfulness</option>
             <option value="newest">Newest</option>
-            <option value="relevant">Relevant</option>
+            <option value="relevant">Relevance</option>
           </select>
         </div>
 
