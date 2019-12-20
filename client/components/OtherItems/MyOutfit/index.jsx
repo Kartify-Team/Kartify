@@ -40,7 +40,11 @@ const MyOutfit = ({
   if (myOutfit) {
     return (
       <>
-        <ProductsCarousel products={myOutfit} changeProduct={changeProduct} handleClick={handleClick} setActionButton={setActionButton} />
+        <ProductsCarousel 
+          products={myOutfit} 
+          handleClick={handleClick} 
+          setActionButton={setActionButton} 
+        />
       </>
     );
   } else {

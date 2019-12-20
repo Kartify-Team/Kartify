@@ -30,7 +30,7 @@ const RelatedProducts = ({
   if (relatedProducts) {
     return (
       <>
-        <ProductsCarousel products={relatedProducts} changeProduct={changeProduct} handleClick={handleClick} setActionButton={setActionButton}/>
+        <ProductsCarousel products={relatedProducts} handleClick={handleClick} setActionButton={setActionButton}/>
         <ComparisonModal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} mainProduct={mainProduct} comparedProduct={comparedProduct} />
       </>
     );

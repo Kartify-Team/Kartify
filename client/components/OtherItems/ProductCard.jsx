@@ -2,34 +2,14 @@ import React from 'react';
 import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
 import { Link } from 'react-router-dom';
-import { addOutfitProduct, removeOutfitProduct } from '../../utils/localStorage.js';
 
-const ProductCard = ({ product, changeProduct, handleClick, setActionButton }) => {
-
-  const defineButtonStyle = () => {
-    if (type === 'relatedProduct') {
-      return <i className="fa fa-star cardButton"></i>;
-    } else if (type === 'outfitProduct') {
-      return <i className="fa fa-times-circle cardButton" ></i>;
-    }
-  };
+const ProductCard = ({ product, handleClick, setActionButton }) => {
 
   const getCoverImage = () => {
     if (product.coverImage === null) {
       return <img className='cardImage' src='/img/default.png' />;
     } else {
       return <img className='cardImage' src={product.coverImage} />;
-    }
-  };
-
-  const handleActionButtonClick = (e, id) => {
-    if (type === 'relatedProduct') {
-      e.preventDefault();
-      setIsOpen(true);
-      setComparedProduct(product);
-    } else if (type === 'outfitProduct') {
-      removeOutfitProduct(id);
-      getMyOutfit();
     }
   };
 
