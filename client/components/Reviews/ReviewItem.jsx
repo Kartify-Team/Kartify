@@ -50,7 +50,7 @@ const ReviewItem = ({
   };
 
   let responseContainer = null;
-  if (response) {
+  if (response && response !== 'null') {
     responseContainer = (
       <div className="review-response">
         <h2>Response:</h2>
