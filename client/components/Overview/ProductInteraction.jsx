@@ -11,7 +11,6 @@ const ProductInteraction = ({
   changeStyle,
   numReviews
 }) => {
-  console.log(numReviews);
   return (
     <div id="product-interaction-container">
       <div id="overview-info">
@@ -27,6 +26,7 @@ const ProductInteraction = ({
           <Price
             originalPrice={currentStyle.original_price}
             salePrice={currentStyle.sale_price}
+            name="description-price"
           />
         )}
         <div id="social-media-buttons">
