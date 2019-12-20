@@ -11,6 +11,7 @@ const ProductInteraction = ({
   changeStyle,
   numReviews
 }) => {
+  console.log(numReviews);
   return (
     <div id="product-interaction-container">
       <div id="overview-info">
@@ -72,6 +73,7 @@ const ProductInteraction = ({
         styles={product.styles}
         changeStyle={changeStyle}
         currentStyle={currentStyle}
+        productName={product.name}
       />
       {!currentStyle ? null : (
         <Cart
