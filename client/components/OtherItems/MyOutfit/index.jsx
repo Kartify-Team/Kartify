@@ -24,7 +24,6 @@ const MyOutfit = ({
       changeMyOutfit(newProduct, myOutfit, 'add');
     }
     else if (e.target.className.includes('cardButton')) {
-      console.log(product)
       e.preventDefault();
       removeOutfitProduct(product.id);
       changeMyOutfit(product, myOutfit, 'remove');
@@ -41,7 +40,11 @@ const MyOutfit = ({
   if (myOutfit) {
     return (
       <>
-        <ProductsCarousel products={myOutfit} changeProduct={changeProduct} handleClick={handleClick} setActionButton={setActionButton} />
+        <ProductsCarousel 
+          products={myOutfit} 
+          handleClick={handleClick} 
+          setActionButton={setActionButton} 
+        />
       </>
     );
   } else {
