@@ -33,6 +33,7 @@ export const getQuestions = productId => {
     .get(`${greenfieldRoot}/qa/${productId}?count=100000`)
     .then(({ data }) => data.results)
     .then((questions) => questions.sort((a, b) => b.question_helpfulness - a.question_helpfulness))
+
     .catch(err => console.log(err));
 };
 

@@ -8,15 +8,33 @@ const ReviewList = ({
   setReviewList,
   product,
   filters,
-  toggleFilter
+  toggleFilter,
+  setTotalReviews
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [sort, setSort] = useState('helpful');
   const [reviewsChanged, setReviewsChanged] = useState(false);
   const [helpfulReviews, setHelpfulReviews] = useState([]);
+  let reviewCount;
+
+  const filteredReviews = reviews.filter(review => {
+    if (filters.length > 0) {
+      for (let filter of filters) {
+        if (review.rating.toString() === filter) {
+          return true;
+        }
+      }
+      return false;
+    } else {
+      return true;
+    }
+  });
+
+  reviewCount = filteredReviews.length;
 
   useEffect(() => {
     setReviewList(product.id, 1, sort);
+    setTotalReviews(reviews.length);
   }, [product.id, sort, reviewsChanged]);
 
   let filterDisplay;
@@ -27,37 +45,12 @@ const ReviewList = ({
       </div>
     ));
   } else {
-    filterDisplay = <h3>No filters applied</h3>;
+    filterDisplay = <h3 id="filter-indicator">No filters applied</h3>;
   }
 
   return (
     <>
       <div id="review-list-container" style={{ width: '60%' }}>
-        <button
-          className="action-button"
-          onClick={() => {
-            setReviewList(product.id, 1, sort);
-            count += 2;
-          }}
-        >
-          More Reviews
-        </button>
-        <button
-          className="action-button"
-          onClick={() => {
-            setIsOpen(true);
-          }}
-        >
-          Add Review
-        </button>
-
-        <AddReview
-          setIsOpen={setIsOpen}
-          isOpen={isOpen}
-          product={product}
-          sort={sort}
-        />
-
         <div id="sort-menu">
           <h2 className="inline">{reviews.length} reviews, sorted by</h2>
           <select
@@ -74,34 +67,47 @@ const ReviewList = ({
         <div id="filter-container">{filterDisplay}</div>
 
         <div id="reviews-scroll">
-          {reviews
-            .filter(review => {
-              if (filters.length > 0) {
-                for (let filter of filters) {
-                  if (review.rating.toString() === filter) {
-                    return true;
-                  }
-                }
-                return false;
-              } else {
-                return true;
-              }
-            })
-            .slice(0, count)
-            .map(review => (
-              <ReviewItem
-                review={review}
-                updateReviews={() => setReviewList(product.id, 1, sort)}
-                key={review.review_id}
-                setReviewsChanged={setReviewsChanged}
-                reviewsChanged={reviewsChanged}
-                helpfulReviews={helpfulReviews}
-                setHelpfulReviews={setHelpfulReviews}
-              />
-            ))}
+          {filteredReviews.slice(0, count).map(review => (
+            <ReviewItem
+              review={review}
+              updateReviews={() => setReviewList(product.id, 1, sort)}
+              key={review.review_id}
+              setReviewsChanged={setReviewsChanged}
+              reviewsChanged={reviewsChanged}
+              helpfulReviews={helpfulReviews}
+              setHelpfulReviews={setHelpfulReviews}
+            />
+          ))}
+          <div id="review-list-button-container" className="padding-ten">
+            <button
+              className="action-button review-button"
+              style={{
+                display: count >= reviewCount ? 'none' : 'inline-block'
+              }}
+              onClick={() => {
+                setReviewList(product.id, 1, sort);
+                count += 2;
+              }}
+            >
+              MORE REVIEWS
+            </button>
+            <button
+              className="action-button review-button"
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
+              ADD REVIEW &nbsp;<i className="fa fa-plus"></i>
+            </button>
+          </div>
+          <AddReview
+            setIsOpen={setIsOpen}
+            isOpen={isOpen}
+            product={product}
+            sort={sort}
+          />
         </div>
       </div>
-      <div id="review-list-container"></div>
     </>
   );
 };

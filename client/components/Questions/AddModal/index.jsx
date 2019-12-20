@@ -7,7 +7,7 @@ const AddQuestion = ({
   modalIsOpen,
   product,
   formType,
-  question
+  question = {}
 }) => {
   var subtitle;
 
@@ -35,7 +35,7 @@ const AddQuestion = ({
     >
       <div className="modal-header">
         {header[formType]}
-        <button onClick={() => setIsOpen(false)}>X</button>
+        <i class="fa fa-times" id="x-icon" onClick={() => setIsOpen(false)}></i>
       </div>
       <AddFormContainer
         setIsOpen={setIsOpen}

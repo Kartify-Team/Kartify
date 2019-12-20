@@ -29,17 +29,20 @@ const ImageUpload = ({ updatePhotos }) => {
 
     return (
         <>
-            <label htmlFor="images">
+            <label for="file-upload">
                 Please upload up to 5 images of your product
       </label>
             <input
-                id="file"
+                id="file-upload"
                 name="file"
                 type="file"
                 onChange={uploadImage}
+                accept="image/*"
                 multiple
             />
-            <ThumbnailGallery imageURLs={imagePreviews} />
+            <ThumbnailGallery imageURLs={imagePreviews} size="small" />
+            <button className="action-button secondary" onClick={() => document.getElementById("file-upload").click()}>{imagePreviews.length === 0 ? <>Upload Images</> : <>Replace Images</>} </button>
+
 
 
             {error !== '' ? <div className="form-error">{error}</div> : <></>}

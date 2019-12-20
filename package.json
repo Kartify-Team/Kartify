@@ -12,7 +12,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "test": "node server/index.js && jest",
-    "start": "node server",
+    "start": "node server/",
     "build-dev": "webpack -d --watch",
     "test-coverage": "jest --coverage",
     "start-dev": "nodemon server/index.js"

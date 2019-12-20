@@ -25,10 +25,12 @@ const ReviewItem = ({
     reviewer_name,
     review_id,
     photos,
-    recommend
+    recommend,
+    response
   } = review;
 
   const [isReported, setIsReported] = useState(false);
+  const [expandedReviews, setExpandedReviews] = useState([]);
   const displayDate = formatDate(date);
   const photoURLs = photos.map(photo => photo.url);
 
@@ -51,6 +53,16 @@ const ReviewItem = ({
   if (isReported) {
     return <ReportedReview />;
   } else {
+    let responseContainer = null;
+    if (response) {
+      responseContainer = (
+        <div className="review-response">
+          <h2>Response:</h2>
+          <br />
+          {response}
+        </div>
+      );
+    }
     return (
       <div className="review-item">
         <div className="review-item-top">
@@ -61,12 +73,28 @@ const ReviewItem = ({
         </div>
         <p className="summary">{summary}</p>
         <ThumbnailGallery imageURLs={photoURLs} />
-        <p>{body}</p>
+        <p className="review-body">
+          {expandedReviews.includes(review_id) ? body : body.slice(0, 250)}
+          {body.length > 250 && !expandedReviews.includes(review_id) ? (
+            <>
+              &nbsp;
+              <span
+                className="underline-clickable show-more"
+                onClick={() =>
+                  setExpandedReviews([...expandedReviews, review_id])
+                }
+              >
+                ...show more
+              </span>
+            </>
+          ) : null}
+        </p>
         {recommend === 1 ? (
           <p>
             <i className="fa fa-check"></i> I recommend this product
           </p>
         ) : null}
+        {responseContainer}
         <div className="review-item-bottom">
           Helpful?&nbsp;&nbsp;
           <span onClick={() => handleHelpful(review_id)}>

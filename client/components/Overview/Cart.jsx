@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getInventory } from "../../utils/styleHelpers";
 
-const Cart = ({ inventory }) => {
+const Cart = ({ productName, styleName, inventory }) => {
   const availableSizes = getInventory(inventory).sort(
     (a, b) => Number(a[0]) - Number(b[0])
   );
@@ -37,6 +37,7 @@ const Cart = ({ inventory }) => {
         id="size-button"
         value={!selectedSize ? "default" : selectedSize}
         onChange={changeSelectedSize}
+        className="action-button"
       >
         {availableSizes.length > 0 ? (
           <option value="default" disabled hidden>
@@ -58,6 +59,7 @@ const Cart = ({ inventory }) => {
 
       <select
         id="qty-button"
+        className="action-button"
         value={!selectedQty ? "default" : selectedQty}
         onChange={changeSelectedQty}
       >
@@ -72,10 +74,22 @@ const Cart = ({ inventory }) => {
             })
           : null}
       </select>
-      <button id="add-button" className="overview-button">
-        ADD TO BAG
+      <button
+        id="add-button"
+        // className="overview-button"
+        className="action-button"
+        disabled={availableSizes.length > 0 ? false : true}
+        onClick={() => {
+          if (selectedSize !== null && selectedQty !== null) {
+            console.log(
+              `${selectedQty}, size ${selectedSize} [${styleName} - ${productName}] added to cart!`
+            );
+          }
+        }}
+      >
+        <span>ADD TO BAG</span> <span id="plus-sign">+</span>
       </button>
-      <button id="star-button" className="overview-button">
+      <button id="star-button" className="action-button">
         ☆
       </button>
     </div>
