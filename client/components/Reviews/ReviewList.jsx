@@ -43,7 +43,7 @@ const ReviewList = ({
       </div>
     ));
   } else {
-    filterDisplay = <h3>No filters applied</h3>;
+    filterDisplay = <h3 id="filter-indicator">No filters applied</h3>;
   }
 
   return (
