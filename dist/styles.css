@@ -713,18 +713,21 @@ select {
   position: absolute;
   top: 50%;
   left: 16%;
+  text-shadow: 0 0 4px var(--background-color);
 }
 
 #image-right-arrow {
   position: absolute;
   top: 50%;
   left: 95%;
+  text-shadow: 0 0 4px var(--background-color);
 }
 
 #image-expand {
   position: absolute;
   top: 5%;
   right: 5%;
+  text-shadow: 0 0 4px var(--background-color);
 }
 
 .expanded-image-modal {
@@ -771,10 +774,12 @@ select {
 
 #expanded-left {
   left: 5%;
+  text-shadow: 0 0 5px var(--background-color);
 }
 
 #expanded-right {
   right: 5%;
+  text-shadow: 0 0 5px var(--background-color);
 }
 
 /* 
