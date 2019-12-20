@@ -12,7 +12,8 @@ const AddReview = ({ setIsOpen, isOpen, product, sort }) => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      height: '85vh'
+      height: '85vh',
+      width: '40vw'
     }
   };
   Modal.setAppElement('#app');
@@ -28,7 +29,11 @@ const AddReview = ({ setIsOpen, isOpen, product, sort }) => {
         <h2 ref={_subtitle => (subtitle = _subtitle)}>
           About the {product.name}
         </h2>
-        <button onClick={() => setIsOpen(false)}>X</button>
+        <i
+          className="fa fa-times"
+          id="x-icon"
+          onClick={() => setIsOpen(false)}
+        ></i>
       </div>
 
       <AddReviewFormContainer sort={sort} close={() => setIsOpen(false)} />

@@ -1189,7 +1189,11 @@ img.uploadIcon {
   color: var(--error);
 }
 
-#add-review-form>textarea {
+#add-review-form {
+  width: 100%;
+}
+
+#add-review-form > textarea {
   width: 400px;
 }
 
