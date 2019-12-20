@@ -5,6 +5,8 @@ const StarBar = ({ count, total, label, toggleFilter }) => {
     width: `${(count / total) * 100}%`
   };
 
+  if (total === 0) dynamicStyle.width = '0%';
+
   const handleClick = filter => {
     toggleFilter(filter);
   };
