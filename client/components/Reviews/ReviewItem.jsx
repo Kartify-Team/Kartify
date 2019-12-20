@@ -25,7 +25,8 @@ const ReviewItem = ({
     reviewer_name,
     review_id,
     photos,
-    recommend
+    recommend,
+    response
   } = review;
 
   const [isReported, setIsReported] = useState(false);
@@ -52,6 +53,16 @@ const ReviewItem = ({
   if (isReported) {
     return <ReportedReview />;
   } else {
+    let responseContainer = null;
+    if (response) {
+      responseContainer = (
+        <div className="review-response">
+          <h2>Response:</h2>
+          <br />
+          {response}
+        </div>
+      );
+    }
     return (
       <div className="review-item">
         <div className="review-item-top">
@@ -78,24 +89,12 @@ const ReviewItem = ({
             </>
           ) : null}
         </p>
-        {/* {body.length > 250 && !expandedReviews.includes(review_id) ? (
-          <>
-            <span
-              className="underline-clickable"
-              onClick={() =>
-                setExpandedReviews([...expandedReviews, review_id])
-              }
-            >
-              Show more
-            </span>
-            <br />
-          </>
-        ) : null} */}
         {recommend === 1 ? (
           <p>
             <i className="fa fa-check"></i> I recommend this product
           </p>
         ) : null}
+        {responseContainer}
         <div className="review-item-bottom">
           Helpful?&nbsp;&nbsp;
           <span onClick={() => handleHelpful(review_id)}>
