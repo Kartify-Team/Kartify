@@ -124,6 +124,7 @@ button:focus {
   display: flex;
   flex: 1 1;
   justify-content: space-between;
+  align-items: center;
 }
 
 #site-title {
@@ -270,11 +271,14 @@ strong {
 }
 
 #theme-toggle {
-  margin: 20px
+  margin: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .toggle-icon {
-  margin: 0 .1em;
+  margin-left: .3em;
+  margin-right: 0;
 }
 
 /*
