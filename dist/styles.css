@@ -214,8 +214,8 @@ button:focus {
   flex: 1 1;
   justify-content: space-between;
   height: 5.2em;
-    align-items: center;
-    margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 #site-title {
@@ -329,6 +329,7 @@ strong {
 
 .thumbnailGallery {
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .thumbnail {
@@ -383,48 +384,26 @@ strong {
                                              
 */
 
-
-
 label {
   margin: 0.8em 0 0.2em 0;
   font-weight: bold;
   display: flex;
 }
 
-input,  textarea, 
-select{
+input[type='email'],
+input[type='text'],
+input[type='number'],
+textarea,
+select {
   border: var(--color) 1px solid;
   padding: 0.5em;
   background-color: var(--secondary-background-color);
   color: var(--color);
-  font-size: 1em;
-}
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus, 
-input:focus, input:-internal-autofill-selected {
-  border: var(--color) 1px solid;
-  padding: 0.5em;
-  background-color: var(--secondary-background-color) !important;
-  color: var(--color) !important
-}
-input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, input[type="number"]:focus, textarea:focus, select:focus, input:-internal-autofill-selected, input:blur {
-  border: var(--color) 1px solid;
-  padding: 0.5em;
-  background-color: var(--secondary-background-color);
-  color: var(--color)
 }
 
 input:focus {
   outline: none;
 }
-
 
 #file-upload {
   /* display: none; */
@@ -529,6 +508,11 @@ input:focus {
   font-size: 0.7em;
 }
 
+#description-price {
+  font-size: 1.2em;
+  margin-bottom: 8%;
+}
+
 /* Description */
 
 #product-description-container {
@@ -570,7 +554,7 @@ input:focus {
 }
 
 #left-description h2 {
-  font-size: 2em;
+  font-size: 1.3em;
   margin-top: 10px;
 }
 

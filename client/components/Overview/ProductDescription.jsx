@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const ProductDescription = ({ product }) => (
   <div id="product-description-container">
     <span id="left-description">
-      <h2>{product.slogan}</h2>
+      <h2 id="product-slogan">{product.slogan}</h2>
       <p>{product.description}</p>
     </span>
     <span id="right-description">
@@ -12,8 +12,8 @@ const ProductDescription = ({ product }) => (
           {product.features.map((feature, idx) => {
             return (
               <li key={`feature-${idx}`}>
-                ✔ {feature.feature}{" "}
-                {feature.value === "null" ? null : `: ${feature.value}`}
+                ✔ {feature.feature}{' '}
+                {feature.value === 'null' ? null : `: ${feature.value}`}
               </li>
             );
           })}
