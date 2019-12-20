@@ -234,7 +234,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 90vw;
+  max-width: 86vw;
 }
 
 .component {
@@ -366,11 +366,11 @@ strong {
 }
 
 #theme-toggle {
-  margin: 20px
+  margin: 20px;
 }
 
 .toggle-icon {
-  margin: 0 .1em;
+  margin: 0 0.1em;
 }
 
 /*
