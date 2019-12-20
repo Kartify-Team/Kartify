@@ -635,6 +635,10 @@ input:focus {
   max-width: 100%;
 }
 
+.style-image:hover {
+  cursor: pointer;
+}
+
 /* Cart */
 
 #cart-container {
@@ -720,10 +724,14 @@ input:focus {
 }
 
 .image-gallery-thumb {
-  height: 97%;
+  height: 96.5%;
   width: 97%;
   object-fit: cover;
   border: 1px solid var(--color);
+}
+
+.image-gallery-thumb:hover {
+  cursor: pointer;
 }
 
 .selected-thumbnail {
@@ -754,6 +762,16 @@ input:focus {
   top: 5%;
   right: 5%;
   text-shadow: 0 0 4px var(--background-color);
+}
+
+.gallery-arrow:hover {
+  cursor: pointer;
+}
+
+#image-expand:hover,
+#image-right-arrow:hover,
+#image-left-arrow:hover {
+  cursor: pointer;
 }
 
 .expanded-image-modal {
