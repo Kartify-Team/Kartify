@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -10,17 +10,107 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+button,
+span {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -29,22 +119,19 @@ html {
 }
 
 body {
-  line-height: 1;
+  line-height: normal;
   font-size: 1rem;
   overflow-x: hidden;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-  content: none;
 }
 
 table {
@@ -69,7 +156,8 @@ a:focus {
   text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   text-decoration: none;
 }
 
@@ -100,9 +188,10 @@ button:focus {
   --link-color: #6d84b4;
   --title-color: #ffffff;
   --title-background: #4c4c4c;
+  --slider-color: #ffffff;
 }
 
-[theme="dark"] {
+[theme='dark'] {
   --color: #ededed;
   --background-color: rgb(37, 37, 37);
   --translucent-background-color: rgba(80, 80, 80, 0.6);
@@ -132,7 +221,7 @@ button:focus {
   background-color: var(--title-background);
   font-size: 3em;
   padding: 15px;
-  font-family: "Rock Salt", cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 #components-container {
@@ -258,7 +347,7 @@ strong {
 }
 
 #spinner {
-  content: url("/img/spinner.gif");
+  content: url('/img/spinner.gif');
   width: 50px;
   height: auto;
   display: block;
@@ -277,8 +366,12 @@ strong {
 }
 
 .toggle-icon {
+<<<<<<< HEAD
   margin-left: .3em;
   margin-right: 0;
+=======
+  margin: 0 0.1em;
+>>>>>>> 086ebee6a4cba1e433dfa35b7c791c10978ccc12
 }
 
 /*
@@ -301,11 +394,15 @@ label {
   display: flex;
 }
 
-input[type="email"], input[type="text"], input[type="number"], textarea, select {
+input[type='email'],
+input[type='text'],
+input[type='number'],
+textarea,
+select {
   border: var(--color) 1px solid;
   padding: 0.5em;
   background-color: var(--secondary-background-color);
-  color: var(--color)
+  color: var(--color);
 }
 
 input:focus {
@@ -318,7 +415,19 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
   color: var(--color)
 }
 
+<<<<<<< HEAD
 /* #file-upload {
+=======
+input:focus {
+  color: var(--color);
+}
+
+input[type='text'] {
+  color: var(--color);
+}
+
+#file-upload {
+>>>>>>> 086ebee6a4cba1e433dfa35b7c791c10978ccc12
   display: none;
 } */
 
@@ -429,7 +538,8 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
   height: 95%;
 }
 
-#left-description, #right-description {
+#left-description,
+#right-description {
   text-align: left;
 }
 
@@ -544,7 +654,7 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
 
 #cart-container {
   display: grid;
-  grid-template-areas: "size size size qty qty" "add add add add star";
+  grid-template-areas: 'size size size qty qty' 'add add add add star';
   align-content: center;
   height: 18%;
   width: 100%;
@@ -697,7 +807,8 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
   position: relative;
 }
 
-#expanded-left, #expanded-right {
+#expanded-left,
+#expanded-right {
   position: absolute;
   top: 50%;
 }
@@ -960,7 +1071,7 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
   border: var(--color) 1px solid;
   padding: 1em;
   align-items: center;
-  background-color: var(--secondary-background-color)
+  background-color: var(--secondary-background-color);
 }
 
 #q-and-a-search-input {
@@ -1004,19 +1115,19 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
   overflow-y: scroll; */
 }
 
-.answers>span>.first {
+.answers > span > .first {
   margin: 1em 0px;
 }
 
-.answers>span>.more {
+.answers > span > .more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers>span>.answerer {
+.answers > span > .answerer {
   margin-left: 15px;
 }
 
-.answers>.load-more {
+.answers > .load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -1030,7 +1141,8 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
   height: 50px;
 }
 
-#add-question-form>input, #add-question-form>textarea {
+#add-question-form > input,
+#add-question-form > textarea {
   width: 400px;
 }
 
@@ -1040,7 +1152,7 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
 }
 
 img.uploadIcon {
-  content: url("./img/upload.svg") !important;
+  content: url('./img/upload.svg') !important;
 }
 
 /* 
@@ -1055,7 +1167,9 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container, #comfort-rating-container, #star-stats-container {
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -1335,10 +1449,17 @@ img.uploadIcon {
 
 #add-review-form {
   width: 100%;
+  color: var(--color);
 }
 
-#add-review-form>textarea {
-  width: 400px;
+#add-review-form > textarea {
+  width: 50%;
+  height: 150px;
+  color: var(--color);
+}
+
+#add-review-form > label {
+  margin-top: 2%;
 }
 
 #sort-menu {
@@ -1348,7 +1469,7 @@ img.uploadIcon {
   margin-top: 3%;
 }
 
-#sort-menu>select {
+#sort-menu > select {
   margin-left: 1%;
   border: none;
   color: var(--color);
@@ -1358,7 +1479,7 @@ img.uploadIcon {
   border-radius: 0;
 }
 
-#sort-menu>select:focus {
+#sort-menu > select:focus {
   outline: none;
 }
 
@@ -1398,4 +1519,116 @@ img.uploadIcon {
 #recommended {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+/* Reset range styling */
+
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 50%;
+  background: transparent;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-ms-track {
+  width: 50%;
+  cursor: pointer;
+
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  cursor: pointer;
+  margin-top: -14px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+/* All the same stuff for Firefox */
+input[type='range']::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type='range']::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #f0f0f0;
+  border-radius: 1.3px;
+  border: 0.2px solid var(--color);
+}
+
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: #f0f0f0;
+}
+
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #f0f0f0;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type='range']::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type='range']::-ms-fill-lower {
+  background: #f0f0f0;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type='range']:focus::-ms-fill-lower {
+  background: #f0f0f0;
+}
+input[type='range']::-ms-fill-upper {
+  background: var(--color);
+  border: 0.2px solid #010101;
+  --slider-color: ;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type='range']:focus::-ms-fill-upper {
+  background: #f0f0f0;
 }

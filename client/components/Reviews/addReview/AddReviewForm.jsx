@@ -158,7 +158,6 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
       />
       <label htmlFor="body">Review Body</label>
       <textarea
-        id="body"
         name="body"
         onChange={formik.handleChange}
         value={formik.values.body}
@@ -173,7 +172,7 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
         value={formik.values.nickname}
         placeholder="Example: jackson11!"
       />
-      <p>For privacy reasons, do not use your full name or email address</p>
+
       <label htmlFor="email">Your email</label>
       <input
         type="text"
@@ -181,6 +180,7 @@ const AddReviewForm = ({ characteristics, id, setReviewList, sort, close }) => {
         onChange={formik.handleChange}
         value={formik.values.email}
       />
+      <p>For privacy reasons, do not use your full name or email address</p>
       <button
         id="submit"
         type="submit"

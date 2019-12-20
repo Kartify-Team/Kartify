@@ -4,17 +4,11 @@ import AddReviewFormContainer from '../../../containers/Reviews/addReviewFormCon
 
 const AddReview = ({ setIsOpen, isOpen, product, sort }) => {
   var subtitle;
-  // const customStyles = {
-  //   content: {
-  //     top: '50%',
-  //     left: '50%',
-  //     right: 'auto',
-  //     bottom: 'auto',
-  //     marginRight: '-50%',
-  //     transform: 'translate(-50%, -50%)',
-  //     height: '85vh'
-  //   }
-  // };
+  const customStyles = {
+    content: {
+      width: '50%'
+    }
+  };
   Modal.setAppElement('#app');
 
   return (
@@ -23,8 +17,8 @@ const AddReview = ({ setIsOpen, isOpen, product, sort }) => {
       className="Modal"
       overlayClassName="ModalOverlay"
       onRequestClose={() => setIsOpen(false)}
-
       contentLabel="Add Review"
+      style={customStyles}
     >
       <div className="modal-header">
         <h2 ref={_subtitle => (subtitle = _subtitle)}>
