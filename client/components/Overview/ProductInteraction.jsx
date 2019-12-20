@@ -1,8 +1,8 @@
-import React from "react";
-import StyleSelector from "./StyleSelector";
-import Cart from "./Cart";
-import Stars from "../Reviews/Stars";
-import Price from "../Price";
+import React from 'react';
+import StyleSelector from './StyleSelector';
+import Cart from './Cart';
+import Stars from '../Reviews/Stars';
+import Price from '../Price';
 
 const ProductInteraction = ({
   product,
@@ -29,6 +29,7 @@ const ProductInteraction = ({
             originalPrice={currentStyle.original_price}
             salePrice={currentStyle.sale_price}
             name="description-price"
+            id="description-price"
           />
         )}
         <div id="social-media-buttons">
