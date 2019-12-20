@@ -45,6 +45,7 @@ const Reviews = ({
             totalRatings={totalRatings}
             toggleFilter={toggleFilter}
             totalReviews={totalReviews}
+            reviews={reviewList}
           />
           <ReviewList
             reviews={reviewList}

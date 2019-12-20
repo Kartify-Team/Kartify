@@ -6,7 +6,9 @@ const RatingBreakdown = ({
   ratings,
   characteristics,
   totalRatings,
-  toggleFilter
+  toggleFilter,
+  totalReviews,
+  reviews
 }) => {
   const ratingsWithoutAvg = { ...ratings };
   delete ratingsWithoutAvg.average;
@@ -21,6 +23,8 @@ const RatingBreakdown = ({
             total={totalRatings}
             ratings={ratingsWithoutAvg}
             toggleFilter={toggleFilter}
+            totalReviews={totalReviews}
+            reviews={reviews}
           />
           {Object.keys(characteristics).map(characteristic => (
             <Characteristic
