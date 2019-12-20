@@ -213,13 +213,9 @@ button:focus {
   display: flex;
   flex: 1 1;
   justify-content: space-between;
-<<<<<<< HEAD
-  align-items: center;
-=======
   height: 5.2em;
     align-items: center;
     margin-bottom: 20px;
->>>>>>> dcdf71680161a78e4bcbb364be0478eb08dac253
 }
 
 #site-title {
@@ -431,15 +427,10 @@ input:focus {
 
 
 #file-upload {
-<<<<<<< HEAD
-  display: none;
-} */
-=======
   /* display: none; */
   border: 0;
   background-color: transparent;
 }
->>>>>>> dcdf71680161a78e4bcbb364be0478eb08dac253
 
 .Modal {
   position: absolute;
