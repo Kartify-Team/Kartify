@@ -234,7 +234,7 @@ strong {
   height: auto;
   display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto
 }
 
 #x-icon {
@@ -613,8 +613,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-color);
-  opacity: 60%;
+  background-color: var(--translucent-background-color);
   z-index: 100;
 }
 
@@ -714,6 +713,15 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   right: 9%;
   background: transparent;
   color: var(--background-color);
+}
+
+#addOutfit {
+  background-color: var(--color)
+}
+
+#plusButton {
+  height: 50%;
+  width: 50%;
 }
 
 .cardImage {
@@ -834,7 +842,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   overflow: auto;
 }
 
-#question-container {
+.question-container {
   /* border: black 1px solid; */
   margin: 10px 5px 5px 10px;
   padding: 5px;
@@ -860,19 +868,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   overflow-y: scroll; */
 }
 
-.answers>span>#first {
+.answers>span>.first {
   margin: 1em 0px;
 }
 
-.answers>span>#more {
+.answers>span>.more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers>span>#answerer {
+.answers>span>.answerer {
   margin-left: 15px;
 }
 
-.answers>#load-more {
+.answers>.load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;

@@ -87,7 +87,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
           }
 
         })}
-        {lazyLoading ? <img id="spinner" /> : <></>}
+        {lazyLoading ? <img id="spinner" alt="Spinner" /> : <></>}
         {allQuestionsDisplayed ? addQuestion : <></>}
       </div>
     );
@@ -96,7 +96,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
       {addQuestion}
     </div>;
   } else {
-    return <div id="question-list-container"><img id="spinner" /></div>
+    return <div id="question-list-container"><img id="spinner" alt="Spinner" /></div>
   }
 };
 export default QuestionList;

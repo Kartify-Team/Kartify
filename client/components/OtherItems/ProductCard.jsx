@@ -35,13 +35,13 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
 
   if (product === null) {
     return (
-      <div className="productCard" onClick={() => {
+      <div className="productCard" id="addOutfit" onClick={() => {
         addOutfitProduct(currentProduct.id);
         getMyOutfit();
       }}>
         <div className="productCardImage">
           <button
-            className="cardButton"
+            className="cardButton" id="plusButton"
             type="button"
           >
             <i className="fa fa-plus"></i>
@@ -52,15 +52,15 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
         </div>
       </div>
     );
-  } else {    
+  } else {
     return (
-      <div className="productCard" 
+      <div className="productCard"
         onClick={
           (e) => {
             if (e.target.className.includes('cardButton')) {
               handleActionButtonClick(e, product.id);
             } else {
-              changeProduct(product.id); 
+              changeProduct(product.id);
               window.scroll(0, 0);
             }
           }
