@@ -1,6 +1,7 @@
 import React from 'react';
 import RatingStars from '../Reviews/Stars.jsx';
 import Price from '../Price/index.jsx';
+import { Link } from 'react-router-dom';
 import { addOutfitProduct, removeOutfitProduct } from '../../utils/localStorage.js';
 
 const ProductCard = ({ product, changeProduct, handleClick, setActionButton }) => {
@@ -58,27 +59,29 @@ const ProductCard = ({ product, changeProduct, handleClick, setActionButton }) =
     );
   } else {    
     return (
-      <div className="productCard" onClick={ e => handleClick(e, product)} >
-        <div className="productCardImage">
-          {getCoverImage()}
-          <button
-            className="cardButton"
-            type="button"
-          >
-            {setActionButton()}
-          </button>
-        </div>
-        <div className="productCardDescription">
-          <div className="productCardInfo">
-            <p className='productCardCategory'>{product.category[0].toUpperCase() + product.category.slice(1).toLowerCase()}</p>
-            <p className='productCardName'>{product.name}</p>
+      <Link key={product.id} to={`${product.id}`} >
+        <div className="productCard" onClick={ e => handleClick(e, product)} >
+          <div className="productCardImage">
+            {getCoverImage()}
+            <button
+              className="cardButton"
+              type="button"
+            >
+              {setActionButton()}
+            </button>
           </div>
-          <Price originalPrice={product.defaultPrice} salePrice={product.salePrice > 0 ? product.salePrice : null} />
-          <div className="productCardRating">
-            {getRatingStars()}
+          <div className="productCardDescription">
+            <div className="productCardInfo">
+              <p className='productCardCategory'>{product.category[0].toUpperCase() + product.category.slice(1).toLowerCase()}</p>
+              <p className='productCardName'>{product.name}</p>
+            </div>
+            <Price originalPrice={product.defaultPrice} salePrice={product.salePrice > 0 ? product.salePrice : null} />
+            <div className="productCardRating">
+              {getRatingStars()}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 };

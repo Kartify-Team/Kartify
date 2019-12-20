@@ -24,7 +24,6 @@ const MyOutfit = ({
       changeMyOutfit(newProduct, myOutfit, 'add');
     }
     else if (e.target.className.includes('cardButton')) {
-      console.log(product)
       e.preventDefault();
       removeOutfitProduct(product.id);
       changeMyOutfit(product, myOutfit, 'remove');
