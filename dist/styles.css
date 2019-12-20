@@ -213,13 +213,19 @@ button:focus {
   display: flex;
   flex: 1 1;
   justify-content: space-between;
+<<<<<<< HEAD
   align-items: center;
+=======
+  height: 5.2em;
+    align-items: center;
+    margin-bottom: 20px;
+>>>>>>> dcdf71680161a78e4bcbb364be0478eb08dac253
 }
 
 #site-title {
   color: var(--title-color);
   background-color: var(--title-background);
-  font-size: 3em;
+  font-size: 2.7em;
   padding: 15px;
   font-family: 'Rock Salt', cursive;
 }
@@ -389,19 +395,28 @@ label {
   display: flex;
 }
 
-input[type='email'],
-input[type='text'],
-input[type='number'],
-textarea,
-select {
+input,  textarea, 
+select{
   border: var(--color) 1px solid;
   padding: 0.5em;
   background-color: var(--secondary-background-color);
   color: var(--color);
+  font-size: 1em;
 }
-
-input:focus {
-  outline: none;
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus, 
+input:focus, input:-internal-autofill-selected {
+  border: var(--color) 1px solid;
+  padding: 0.5em;
+  background-color: var(--secondary-background-color) !important;
+  color: var(--color) !important
 }
 input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, input[type="number"]:focus, textarea:focus, select:focus, input:-internal-autofill-selected, input:blur {
   border: var(--color) 1px solid;
@@ -411,16 +426,20 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
 }
 
 input:focus {
-  color: var(--color);
+  outline: none;
 }
 
-input[type='text'] {
-  color: var(--color);
-}
 
 #file-upload {
+<<<<<<< HEAD
   display: none;
 } */
+=======
+  /* display: none; */
+  border: 0;
+  background-color: transparent;
+}
+>>>>>>> dcdf71680161a78e4bcbb364be0478eb08dac253
 
 .Modal {
   position: absolute;
