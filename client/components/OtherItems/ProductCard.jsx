@@ -41,10 +41,10 @@ const ProductCard = ({ type, currentProduct, product, style, rating, changeProdu
       }}>
         <div className="productCardImage">
           <button
-            className="cardButton" id="plusButton"
+            className="cardButton" id="plusContainer"
             type="button"
           >
-            <i className="fa fa-plus"></i>
+            <i className="fa fa-plus fa-5x"></i>
           </button>
         </div>
         <div className="productCardDescription">
