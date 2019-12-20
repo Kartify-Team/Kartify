@@ -1,11 +1,11 @@
-import { connect } from "react-redux";
-import App from "../../components/App";
-import { changeProduct } from "../../actions/creators/changeProduct";
-import { setReviewList } from "../../actions/creators/setReviewList";
-import { setRatings } from "../../actions/creators/setRatings";
-import { getRelatedProducts } from "../../actions/dispatchers/getRelatedProducts";
-import { getMyOutfit } from "../../actions/dispatchers/getMyOutfit.js";
-import { setProductStyles } from "../../actions/creators/setProductStyles";
+import { connect } from 'react-redux';
+import App from '../../components/App';
+import { changeProduct } from '../../actions/creators/changeProduct';
+import { setReviewList } from '../../actions/creators/setReviewList';
+import { setRatings } from '../../actions/creators/setRatings';
+import { getRelatedProducts } from '../../actions/dispatchers/getRelatedProducts';
+import { getMyOutfit } from '../../actions/dispatchers/getMyOutfit.js';
+import { setProductStyles } from '../../actions/creators/setProductStyles';
 
 const mapStateToProps = state => ({});
 

@@ -29,35 +29,39 @@ const App = ({
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.documentElement.setAttribute("theme", "dark");
-      setDark(true);
+      console.log("dark")
+      setDark(true)
     }
   }, []);
 
-  const changeTheme = () => {
-    setDark(!dark);
+  useEffect(() => {
     if (dark) {
       document.documentElement.setAttribute("theme", "dark");
     } else {
       document.documentElement.setAttribute("theme", "light");
     }
-  };
+  }, [dark])
 
-  return (
-    <>
-      <div className="topnav">
-        <h1 id="site-title">Kartify</h1>
-        <button className="action-button secondary" onClick={changeTheme}>
-          change Theme
-        </button>
+  return (<>
+    <div className="topnav">
+      <h1 id="site-title">Kartify</h1>
+      <div id="theme-toggle" onClick={() => setDark(!dark)}>
+        <span className="toggle-icon">☀️</span>
+        <span className="toggle-icon"> <i className={`fa fa-toggle-on ${dark ? "" : "fa-flip-horizontal"}`}></i>
+        </span>
+        <span className="toggle-icon">🌙</span>
       </div>
-      <div id="components-container">
-        <OverviewContainer />
-        <OtherItemsContainer />
-        <QuestionsContainer />
-        <ReviewsContainer />
-      </div>
-    </>
-  );
+
+    </div>
+    <div id="components-container">
+
+      <OverviewContainer />
+      <OtherItemsContainer />
+      <QuestionsContainer />
+      <ReviewsContainer />
+
+    </div>
+  </>);
 };
 
 export default App;

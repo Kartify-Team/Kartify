@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import Overview from "../../components/Overview";
+import { connect } from 'react-redux';
+import Overview from '../../components/Overview';
 
 const mapStateToProps = store => ({
   product: store.product,

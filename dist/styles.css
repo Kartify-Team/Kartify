@@ -218,6 +218,8 @@ button:focus {
   overflow: hidden;
   width: 100%;
   display: flex;
+  flex: 1 1;
+  justify-content: space-between;
 }
 
 #site-title {
@@ -361,6 +363,14 @@ strong {
 
 #x-icon {
   cursor: pointer;
+}
+
+#theme-toggle {
+  margin: 20px
+}
+
+.toggle-icon {
+  margin: 0 .1em;
 }
 
 /*
@@ -1457,7 +1467,7 @@ img.uploadIcon {
 }
 
 .review-response {
-  background-color: #ebebeb;
+  background-color: var(--secondary-background-color);
   padding: 4% 2% 4% 2%;
   margin-bottom: 3%;
 }
