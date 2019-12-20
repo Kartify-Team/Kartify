@@ -366,12 +366,7 @@ strong {
 }
 
 .toggle-icon {
-<<<<<<< HEAD
-  margin-left: .3em;
-  margin-right: 0;
-=======
   margin: 0 0.1em;
->>>>>>> 086ebee6a4cba1e433dfa35b7c791c10978ccc12
 }
 
 /*
@@ -415,9 +410,6 @@ input[type="email"]:focus,input[type="email"]:active, input[type="text"]:focus, 
   color: var(--color)
 }
 
-<<<<<<< HEAD
-/* #file-upload {
-=======
 input:focus {
   color: var(--color);
 }
@@ -427,7 +419,6 @@ input[type='text'] {
 }
 
 #file-upload {
->>>>>>> 086ebee6a4cba1e433dfa35b7c791c10978ccc12
   display: none;
 } */
 
