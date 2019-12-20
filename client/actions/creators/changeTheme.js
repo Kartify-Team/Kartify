@@ -1,6 +1,6 @@
 import { CHANGE_THEME } from '..';
 
 export const changeTheme = theme => {
-    type: CHANGE_THEME,
-        theme
+  CHANGE_THEME,
+  theme;
 };

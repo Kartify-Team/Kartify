@@ -3,7 +3,7 @@ import questionsReducer from './questions';
 import otherItems from './otherItems.js';
 import productReducer from './product';
 import ratingsReducer from './ratings';
-import themeReducer from './theme'
+import themeReducer from './theme';
 
 export default combineReducers({
   questions: questionsReducer,

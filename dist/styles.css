@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rock+Salt&display=swap");
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
 | (    )|| (    \/| (    \/| (    \/   ) (   | (    \/
@@ -10,17 +10,107 @@
 |/   \__/(_______/\_______)(_______/   )_(   \_______)
                                                        */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, span {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+button,
+span {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -34,16 +124,21 @@ body {
   overflow-x: hidden;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -69,7 +164,8 @@ a:focus {
   text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   text-decoration: none;
 }
 
@@ -92,7 +188,7 @@ button:focus {
 :root {
   --color: #525252;
   --background-color: #ffffff;
-  --translucent-background-color: rgba(255, 255, 255, .6);
+  --translucent-background-color: rgba(255, 255, 255, 0.6);
   --primary-accent-color: #525252;
   --secondary-background-color: #f0f0f0;
   --error: #ff0000;
@@ -105,7 +201,7 @@ button:focus {
 [theme="dark"] {
   --color: #ededed;
   --background-color: rgb(37, 37, 37);
-  --translucent-background-color: rgba(80, 80, 80, .6);
+  --translucent-background-color: rgba(80, 80, 80, 0.6);
   --primary-accent-color: #949494;
   --secondary-background-color: rgba(65, 65, 65, 0.7);
   --error: #ff0000;
@@ -129,7 +225,7 @@ button:focus {
   background-color: var(--title-background);
   font-size: 3em;
   padding: 15px;
-  font-family: 'Rock Salt', cursive;
+  font-family: "Rock Salt", cursive;
 }
 
 #components-container {
@@ -170,7 +266,7 @@ h2 {
 body {
   font-size: 1;
   color: var(--color);
-  background-color: var(--background-color)
+  background-color: var(--background-color);
 }
 
 p {
@@ -255,12 +351,12 @@ strong {
 }
 
 #spinner {
-  content: url('/img/spinner.gif');
+  content: url("/img/spinner.gif");
   width: 50px;
   height: auto;
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
 #x-icon {
@@ -289,10 +385,14 @@ label {
   display: flex;
 }
 
-input[type='email'], input[type='text'], input[type='number'], textarea, select {
+input[type="email"],
+input[type="text"],
+input[type="number"],
+textarea,
+select {
   border: var(--color) 1px solid;
   padding: 0.5em;
-  background-color: var(--secondary-background-color)
+  background-color: var(--secondary-background-color);
 }
 
 #file-upload {
@@ -349,8 +449,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   margin: 0 auto;
   text-align: center;
   display: grid;
-  width: 100%;
-  height: 1000px;
+  width: 80%;
+  height: 850px;
   grid-template-columns: 70% 30%;
   grid-template-rows: 75% 25%;
 }
@@ -406,7 +506,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   height: 95%;
 }
 
-#left-description, #right-description {
+#left-description,
+#right-description {
   text-align: left;
 }
 
@@ -420,6 +521,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   align-items: center;
   height: 100%;
   margin-left: 8px;
+}
+
+#right-description ul {
+  border-left: 2px solid black;
+  position: relative;
+  bottom: 6%;
+  padding: 5%;
+  left: 3%;
+  width: 100%;
+}
+
+#right-description li {
+  margin: 5% 0 5% 5%;
   border-left: 2px solid var(--color);
 }
 
@@ -509,7 +623,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 
 #cart-container {
   display: grid;
-  grid-template-areas: 'size size size qty qty' 'add add add add star';
+  grid-template-areas: "size size size qty qty" "add add add add star";
   align-content: center;
   height: 18%;
   width: 100%;
@@ -653,7 +767,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   position: relative;
 }
 
-#expanded-left, #expanded-right {
+#expanded-left,
+#expanded-right {
   position: absolute;
   top: 50%;
 }
@@ -747,7 +862,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 #addOutfit {
-  background-color: var(--secondary-background-color)
+  background-color: var(--secondary-background-color);
 }
 
 #plusContainer {
@@ -806,7 +921,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   /* margin: 0; */
 }
 
-.priceDiscount  {
+.priceDiscount {
   font-size: 0.85em;
   color: darkred;
   margin: 0;
@@ -939,19 +1054,19 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   overflow-y: scroll; */
 }
 
-.answers>span>.first {
+.answers > span > .first {
   margin: 1em 0px;
 }
 
-.answers>span>.more {
+.answers > span > .more {
   margin: 2em 0px 0.7em 15px;
 }
 
-.answers>span>.answerer {
+.answers > span > .answerer {
   margin-left: 15px;
 }
 
-.answers>.load-more {
+.answers > .load-more {
   margin-top: 1.2em;
   margin-left: 15px;
   font-size: 0.8em;
@@ -965,7 +1080,8 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
   height: 50px;
 }
 
-#add-question-form>input, #add-question-form>textarea {
+#add-question-form > input,
+#add-question-form > textarea {
   width: 400px;
 }
 
@@ -975,7 +1091,7 @@ input[type='email'], input[type='text'], input[type='number'], textarea, select 
 }
 
 img.uploadIcon {
-  content: url('./img/upload.svg') !important;
+  content: url("./img/upload.svg") !important;
 }
 
 /* 
@@ -990,7 +1106,9 @@ img.uploadIcon {
                                                                
  */
 
-#size-rating-container, #comfort-rating-container, #star-stats-container {
+#size-rating-container,
+#comfort-rating-container,
+#star-stats-container {
   margin: 10px 5px 5px 10px;
 }
 
@@ -1272,7 +1390,7 @@ img.uploadIcon {
   width: 100%;
 }
 
-#add-review-form>textarea {
+#add-review-form > textarea {
   width: 400px;
 }
 
@@ -1283,7 +1401,7 @@ img.uploadIcon {
   margin-top: 3%;
 }
 
-#sort-menu>select {
+#sort-menu > select {
   margin-left: 1%;
   border: none;
   color: var(--color);
@@ -1293,7 +1411,7 @@ img.uploadIcon {
   border-radius: 0;
 }
 
-#sort-menu>select:focus {
+#sort-menu > select:focus {
   outline: none;
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
+const StyleSelector = ({ styles, changeStyle, currentStyle, productName }) => {
   if (!styles) {
     return null;
   } else {
@@ -24,6 +24,8 @@ const StyleSelector = ({ styles, changeStyle, currentStyle }) => {
                       changeStyle(style);
                     }}
                     src={style.photos[0].url || "/img/default.png"}
+                    alt={`This is the ${style.name} style of ${productName}`}
+                    title={`This is the ${style.name} style of ${productName}`}
                   />
                 </span>
                 {currentStyle === style ? (
