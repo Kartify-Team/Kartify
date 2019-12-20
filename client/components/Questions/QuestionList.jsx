@@ -34,7 +34,7 @@ const QuestionList = ({ questions, product, query, addQuestionList }) => {
     }
   }
   useEffect(() => {
-    const hasMoreSpace = document.getElementById("question-list-container").clientHeight <= window.innerHeight * .86;
+    const hasMoreSpace = document.getElementById("question-list-container").clientHeight <= window.innerHeight;
     if (seeMore && (hasMoreSpace || bottomReached)) {
       setBottomReached(true)
       if (maxQs < questions.length) {

@@ -13,7 +13,9 @@ const Reviews = ({
   totalRatings,
   setTotalRatings,
   filters,
-  toggleFilter
+  toggleFilter,
+  totalReviews,
+  setTotalReviews
 }) => {
   if (product && reviews && reviews.ratings) {
     const id = product.id || useParams().id;
@@ -24,14 +26,10 @@ const Reviews = ({
   }
 
   if (
-    product === null ||
-    product === undefined ||
-    reviews === null ||
-    reviews === undefined ||
-    reviews.ratings === undefined ||
-    reviews.ratings === null ||
-    reviews.reviewList === null ||
-    reviews.reviewList === undefined ||
+    !product ||
+    !reviews ||
+    !reviews.ratings ||
+    !reviews.reviewList ||
     !characteristics
   ) {
     return null;
@@ -46,6 +44,8 @@ const Reviews = ({
             characteristics={characteristics}
             totalRatings={totalRatings}
             toggleFilter={toggleFilter}
+            totalReviews={totalReviews}
+            reviews={reviewList}
           />
           <ReviewList
             reviews={reviewList}
@@ -53,6 +53,7 @@ const Reviews = ({
             product={product}
             filters={filters}
             toggleFilter={toggleFilter}
+            setTotalReviews={setTotalReviews}
           />
         </div>
       </div>

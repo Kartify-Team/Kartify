@@ -30,7 +30,11 @@ const AddReview = ({ setIsOpen, isOpen, product, sort }) => {
         <h2 ref={_subtitle => (subtitle = _subtitle)}>
           About the {product.name}
         </h2>
-        <button onClick={() => setIsOpen(false)}>X</button>
+        <i
+          className="fa fa-times"
+          id="x-icon"
+          onClick={() => setIsOpen(false)}
+        ></i>
       </div>
 
       <AddReviewFormContainer sort={sort} close={() => setIsOpen(false)} />

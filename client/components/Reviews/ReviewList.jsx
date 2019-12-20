@@ -8,7 +8,8 @@ const ReviewList = ({
   setReviewList,
   product,
   filters,
-  toggleFilter
+  toggleFilter,
+  setTotalReviews
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [sort, setSort] = useState('helpful');
@@ -33,6 +34,7 @@ const ReviewList = ({
 
   useEffect(() => {
     setReviewList(product.id, 1, sort);
+    setTotalReviews(reviews.length);
   }, [product.id, sort, reviewsChanged]);
 
   let filterDisplay;
@@ -43,7 +45,7 @@ const ReviewList = ({
       </div>
     ));
   } else {
-    filterDisplay = <h3>No filters applied</h3>;
+    filterDisplay = <h3 id="filter-indicator">No filters applied</h3>;
   }
 
   return (
