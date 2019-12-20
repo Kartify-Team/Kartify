@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 /* _______  _______  _______  _______ _________ _______ 
 (  ____ )(  ____ \(  ____ \(  ____ \\__   __/(  ____ \
@@ -119,7 +119,7 @@ html {
 }
 
 body {
-  line-height: 1;
+  line-height: normal;
   font-size: 1rem;
   overflow-x: hidden;
 }
@@ -132,14 +132,6 @@ ul {
 blockquote,
 q {
   quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
 }
 
 table {
@@ -196,6 +188,7 @@ button:focus {
   --link-color: #6d84b4;
   --title-color: #ffffff;
   --title-background: #4c4c4c;
+  --slider-color: #ffffff;
 }
 
 [theme='dark'] {
@@ -220,12 +213,15 @@ button:focus {
   display: flex;
   flex: 1 1;
   justify-content: space-between;
+  height: 5.2em;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 #site-title {
   color: var(--title-color);
   background-color: var(--title-background);
-  font-size: 3em;
+  font-size: 2.7em;
   padding: 15px;
   font-family: 'Rock Salt', cursive;
 }
@@ -388,10 +384,6 @@ strong {
                                              
 */
 
-form {
-  /* padding: 15px; */
-}
-
 label {
   margin: 0.8em 0 0.2em 0;
   font-weight: bold;
@@ -414,7 +406,9 @@ input:focus {
 }
 
 #file-upload {
-  display: none;
+  /* display: none; */
+  border: 0;
+  background-color: transparent;
 }
 
 .Modal {
@@ -1440,10 +1434,17 @@ img.uploadIcon {
 
 #add-review-form {
   width: 100%;
+  color: var(--color);
 }
 
 #add-review-form > textarea {
-  width: 400px;
+  width: 50%;
+  height: 150px;
+  color: var(--color);
+}
+
+#add-review-form > label {
+  margin-top: 2%;
 }
 
 #sort-menu {
@@ -1503,4 +1504,116 @@ img.uploadIcon {
 #recommended {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+/* Reset range styling */
+
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 50%;
+  background: transparent;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-ms-track {
+  width: 50%;
+  cursor: pointer;
+
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  cursor: pointer;
+  margin-top: -14px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+/* All the same stuff for Firefox */
+input[type='range']::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type='range']::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #f0f0f0;
+  border-radius: 1.3px;
+  border: 0.2px solid var(--color);
+}
+
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: #f0f0f0;
+}
+
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #f0f0f0;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type='range']::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type='range']::-ms-fill-lower {
+  background: #f0f0f0;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type='range']:focus::-ms-fill-lower {
+  background: #f0f0f0;
+}
+input[type='range']::-ms-fill-upper {
+  background: var(--color);
+  border: 0.2px solid #010101;
+  --slider-color: ;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type='range']:focus::-ms-fill-upper {
+  background: #f0f0f0;
 }
