@@ -845,12 +845,14 @@ input:focus {
   top: 50%;
   left: 0;
   z-index: 100;
+  text-shadow: 0 0 5px var(--background-color);
 }
 
 .rightArrowCarousel {
   position: absolute;
   top: 50%;
   right: 2%;
+  text-shadow: 0 0 5px var(--background-color);
 }
 
 .sliderContainer {
@@ -903,6 +905,10 @@ input:focus {
 
 #addOutfit {
   background-color: var(--secondary-background-color);
+}
+
+#addOutfit:hover {
+  background-color:  var(--translucent-background-color);
 }
 
 #plusContainer {
