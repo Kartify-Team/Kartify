@@ -28,7 +28,7 @@ _Developed by [David Lam](https://github.com/davidlam296)_
 ### Related Items
 _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 
-
+![Related Products](https://user-images.githubusercontent.com/55328949/71314266-e7928b80-243c-11ea-8709-99085b36809d.gif)
 
 ### Your Outfit
 _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
