@@ -33,7 +33,7 @@ _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 ### Your Outfit
 _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 
-
+![Save Outfit Local Storage](https://user-images.githubusercontent.com/55328949/71314017-4fdf6e00-2439-11ea-82dc-1c1a7abe6066.gif)
 
 ### Questions & Answers
 _Developed by [Elaine Wong](https://github.com/lainermeister)_
