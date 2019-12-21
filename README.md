@@ -20,10 +20,10 @@ The Kartify product page contains many components of a modern e-commerce product
 
 ![Kartify Product Page](https://user-images.githubusercontent.com/26628913/71313556-2a029b00-2432-11ea-8370-28f713f946b5.gif)
 
+Per business requirements, the [product page was styled](#styling) both in light and dark themes.
+
 ### Product Overview
 _Developed by [David Lam](https://github.com/davidlam296)_
-
-
 
 ### Related Products
 _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
@@ -48,12 +48,31 @@ _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 ### Questions & Answers
 _Developed by [Elaine Wong](https://github.com/lainermeister)_
 
+Thw Questions & Answers are rendered for specific products based on an external API GET request. 
 
+The first two questions & answers are displayed (sorted with Seller on top, then by helpfulness). Lazy loading functionality allows for "infinite scrolling" until a user gets to the end of the question list.
+
+Users can mark questions & answers as "helpful" as well as "reporting" answers, and all these actions send PUT requests to the API.
+
+Additionally, users can enter 3 or more characters to search for questions by keyword.
+
+![Questions & Answers GIF 1](https://user-images.githubusercontent.com/26628913/71314491-422de680-2441-11ea-8376-04eec6b345c1.gif)
+
+Users can add questions to specific product pages, and answers to specific questions, both which sends POST requests to the API. The "Add Question" and "Add Answer" forms conditionally render off the same components that validate upon submission.
+
+The "Add Answer" form allows for users to upload up to 5 images of the product. This sends images to the [Cloudinary](https://cloudinary.com) API, which returns a list of URLs that we send to the external API when storing answers.
+
+![Questions & Answers GIF 2](https://user-images.githubusercontent.com/26628913/71314476-f8dd9700-2440-11ea-93dd-8d6e6b7e6146.gif)
 
 ### Reviews
 _Developed by [Bryce Champaign](https://github.com/brycechampaign)_
 
+### Styling
+We built color swapping functionality to allow users to flip between light and dark themes on an e-commerce page. The theme is set by default to the user's preferred setting, but the user can toggle back and forth using the theme swapping toggle.
 
+![Kartify-Light-and-Dark](https://user-images.githubusercontent.com/26628913/71299541-b6a34f80-2385-11ea-915b-f23e98c78ffd.gif)
+
+We created a [gist](https://gist.github.com/lainermeister/041fb9530e8c5b0a5b025911e4125527) on how to add this functionality onto any React app.
 
 ## Running the Project
 The project is [deployed](http://ec2-18-223-99-176.us-east-2.compute.amazonaws.com/products/1) on a free-tier AWS server.
