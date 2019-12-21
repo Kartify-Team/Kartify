@@ -55,10 +55,10 @@ _Further details on how the project is meant to be used may be helpful. For a li
 _Links to other repositories that are related to the current one. Are there partner projects? Is there a newer version of this project elsewhere?_
 
 ## Team Members 
-David Lam (Product Overview)
-Sebastian Coronel (Related Items & Your Outfit)
-Elaine Wong (Questions & Answers)
-Bryce Champaign (Reviews)
+* David Lam (Product Overview)
+* Sebastian Coronel (Related Items & Your Outfit)
+* Elaine Wong (Questions & Answers)
+* Bryce Champaign (Reviews)
 
 
 
