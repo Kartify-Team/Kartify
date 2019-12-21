@@ -68,7 +68,7 @@ The "Add Answer" form allows for users to upload up to 5 images of the product. 
 _Developed by [Bryce Champaign](https://github.com/brycechampaign)_
 
 ### Styling
-We built color swapping functionality to allow users to flip between light and dark themes on an e-commerce page. The theme is set by default to the user's preferred setting, but the user can toggle back and forth using the theme swapping toggle.
+We built color swapping functionality to allow users to flip between light and dark themes. The theme is set by default to the user's preferred setting, but the user can toggle back and forth using the theme swapping toggle.
 
 ![Kartify-Light-and-Dark](https://user-images.githubusercontent.com/26628913/71299541-b6a34f80-2385-11ea-915b-f23e98c78ffd.gif)
 
