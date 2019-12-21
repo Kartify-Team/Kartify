@@ -5,69 +5,61 @@ A front-end React app redesigning a multi-component product page on a retail web
 ## Table of Contents
 _Need to add links_
 * [Description](#description)
-* [Installation]
-* [Usage]
-* [Related Projects]
-* [Team Members]
+* [Installation](#running-the-project)
+* [Usage](#usage)
+* [Related Projects](#related-projects)
+* [Team Members](#team-members)
 
 ## Description
-[](#description)
-_A more detailed outline of the project. What does it do? Is there a high level list of features? If describing a project that has visual features, consider adding pictures or animations of the features and functionality in this section. See Adding Screen Captures below._
-
 The Kartify product page contains many components of a modern e-commerce product page, with the following sections:
-* [Product Overview](#overview)
-* [Related Items](#related)
-* [Your Outfit](#outfits)
-* [Questions & Answers](#questions)
+* [Product Overview](#product-overview)
+* [Related Items](#related-items)
+* [Your Outfit](#your-outfits)
+* [Questions & Answers](#questions-and-answers)
 * [Reviews](#reviews)
 
 ![Kartify Product Page](https://user-images.githubusercontent.com/26628913/71313556-2a029b00-2432-11ea-8370-28f713f946b5.gif)
 
 ### Product Overview
-[](#overview)
 _Developed by [David Lam](https://github.com/davidlam296)_
 
 
 
 ### Related Items
-[](#related)
 _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 
 
 
 ### Your Outfit
-[](#outfits)
 _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 
 
 
 ### Questions & Answers
-[](#questions)
 _Developed by [Elaine Wong](https://github.com/lainermeister)_
 
 
 
 ### Reviews
-[](#reviews)
 _Developed by [Bryce Champaign](https://github.com/brycechampaign)_
 
 
 
-## Installation
-_How can another developer get your project up and running on their own? What dependencies are required? Are there environmental requirements? Be specific, and outline steps to take in order to get the project running._
+## Running the Project
+The project is [deployed](http://ec2-18-223-99-176.us-east-2.compute.amazonaws.com/products/1) on a free-tier AWS server.
 
-Below are instructions on how to install the repo, build the files, configure the environment variables, and start the server.
+In addition, it can be run locally using the following instructions.
+
+### Installation
 1. Download or clone this repository
 2. Inside of the repository directory, run `npm install`
 ### Building
 To build the files, run `npm build`.
-### Configuring the server
-To specify which port the server will listen on, assign the desired port number to the `process.env.PORT` environment variable or
-create a `.env` file and assign the port number to the PORT variable there.
-### Configuring dotenv
-1. Create a file in the root directory named `.env`.
-2. In the `.env` file, specify the port number & root.
-3. Image uploads require an API key from Cloudinary. Sign up for a free account [here](https://cloudinary.com/) and obtain an name, API key, and secret.
+### Environment Configuration
+1. To specify which port the server will listen on, assign the desired port number to the `process.env.PORT` environment variable or create a `.env` file and assign the port number to the PORT variable there.
+2. Create a file in the root directory named `.env`.
+3. In the `.env` file, specify the port number & root.
+4. Image uploads require an API key from Cloudinary. Sign up for a free account [here](https://cloudinary.com/) and obtain an name, API key, and secret.
 Example:
 ```.env
 PORT=YOUR_PORT_HERE
