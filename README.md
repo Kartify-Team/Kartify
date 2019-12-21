@@ -25,34 +25,29 @@ _Developed by [David Lam](https://github.com/davidlam296)_
 
 
 
-### Related Items
+### Related Products
 _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 
 ![Related Products](https://user-images.githubusercontent.com/55328949/71314266-e7928b80-243c-11ea-8709-99085b36809d.gif)
 
-### Your Outfit
-_Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
+This section shows a lis of products related to the main product. The ids of the products to show are determined server-side, but additional HTTP requests are required to get the information, cover image, and price of each related product.
 
+The products are displayed in a finite carousel. If there are more than five related products, the user will be able to navigate the carousel by clicking the 'next' button. Once the last product in the carousel is diplayed, the arrow will disappear.
+
+Each chard has a 'compare' button in the top-right corner that will open a modal that displays the features of the main product and the clicked product. The common features are shown in the same line to make comparison easier.
+
+    ADD MODAL GIF!!!!!!!!!!!!!!!!!!!!!!
+
+Clicking anywhere else in the product card will redirect the user to the main page of that product.
+
+### My Outfit
+_Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
+ 
 ![Save Outfit Local Storage](https://user-images.githubusercontent.com/55328949/71314017-4fdf6e00-2439-11ea-82dc-1c1a7abe6066.gif)
 
 ### Questions & Answers
 _Developed by [Elaine Wong](https://github.com/lainermeister)_
 
-Thw Questions & Answers are rendered for specific products based on an external API GET request. 
-
-The first two questions & answers are displayed (sorted with Seller on top, then by helpfulness). Lazy loading functionality allows for "infinite scrolling" until a user gets to the end of the question list.
-
-Users can mark questions & answers as "helpful" as well as "reporting" answers, and all these actions send PUT requests to the API.
-
-Additionally, users can enter 3 or more characters to search for questions by keyword.
-
-![Questions & Answers GIF 1](https://user-images.githubusercontent.com/26628913/71314491-422de680-2441-11ea-8376-04eec6b345c1.gif)
-
-Users can add questions to specific product pages, and answers to specific questions, both which sends POST requests to the API. The "Add Question" and "Add Answer" forms conditionally render off the same components that validate upon submission.
-
-The "Add Answer" form allows for users to upload up to 5 images of the product. This sends images to the [Cloudinary](https://cloudinary.com) API, which returns a list of URLs that we send to the external API when storing answers.
-
-![Questions & Answers GIF 2](https://user-images.githubusercontent.com/26628913/71314476-f8dd9700-2440-11ea-93dd-8d6e6b7e6146.gif)
 
 
 ### Reviews
