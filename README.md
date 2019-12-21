@@ -1,7 +1,7 @@
 # Kartify
 #react #redux #reacthooks #ecommerce #greenfield #css #frontend
 ## Overview
-_A brief description outlining what the project_
+A front-end React app redesigning a multi-component product page on a retail web portal.
 ## Table of Contents
 _Need to add links_
 * [Description]
