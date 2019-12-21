@@ -46,7 +46,7 @@ Users can mark questions & answers as "helpful" as well as "reporting" answers, 
 
 Additionally, users can enter 3 or more characters to search for questions by keyword.
 
-![Questions & Answers GIF 1](https://user-images.githubusercontent.com/26628913/71314408-9cc64300-243f-11ea-9f85-771009701ef0.gif)
+![Questions & Answers GIF 1](https://user-images.githubusercontent.com/26628913/71314491-422de680-2441-11ea-8376-04eec6b345c1.gif)
 
 Users can add questions to specific product pages, and answers to specific questions, both which sends POST requests to the API. The "Add Question" and "Add Answer" forms conditionally render off the same components that validate upon submission.
 
