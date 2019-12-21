@@ -37,6 +37,7 @@ _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 
 ### Questions & Answers
 _Developed by [Elaine Wong](https://github.com/lainermeister)_
+![IXSn1CMjlF (1)](https://user-images.githubusercontent.com/26628913/71314038-8f0dbf00-2439-11ea-8244-c0f798006154.gif)
 
 
 
