@@ -12,6 +12,6 @@ const OtherItems = () => {
       <MyOutfitContainer />
     </div>
   );
-}
+};
 
 export default OtherItems;
