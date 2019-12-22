@@ -36,7 +36,7 @@ The products are displayed in a finite carousel. If there are more than five rel
 
 Each chard has a 'compare' button in the top-right corner that will open a modal that displays the features of the main product and the clicked product. The common features are shown in the same line to make comparison easier.
 
-    ADD MODAL GIF!!!!!!!!!!!!!!!!!!!!!!
+![Comparison Window](https://user-images.githubusercontent.com/55328949/71316076-09523980-2462-11ea-9080-121caf0b1ee5.gif)
 
 Clicking anywhere else in the product card will redirect the user to the main page of that product.
 
