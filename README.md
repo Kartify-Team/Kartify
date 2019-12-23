@@ -13,9 +13,9 @@ _Need to add links_
 ## Description
 The Kartify product page contains many components of a modern e-commerce product page, with the following sections:
 * [Product Overview](#product-overview)
-* [Related Items](#related-items)
-* [Your Outfit](#your-outfits)
-* [Questions & Answers](#questions-and-answers)
+* [Related Products](#related-products)
+* [My Outfit](#my-outfit)
+* [Questions & Answers](#questions-&-answers)
 * [Reviews](#reviews)
 
 ![Kartify Product Page](https://user-images.githubusercontent.com/26628913/71313556-2a029b00-2432-11ea-8370-28f713f946b5.gif)
@@ -68,7 +68,7 @@ The "Add Answer" form allows for users to upload up to 5 images of the product. 
 _Developed by [Bryce Champaign](https://github.com/brycechampaign)_
 
 ### Styling
-We built color swapping functionality to allow users to flip between light and dark themes on an e-commerce page. The theme is set by default to the user's preferred setting, but the user can toggle back and forth using the theme swapping toggle.
+We built color swapping functionality to allow users to flip between light and dark themes. The theme is set by default to the user's preferred setting, but the user can toggle back and forth using the theme swapping toggle.
 
 ![Kartify-Light-and-Dark](https://user-images.githubusercontent.com/26628913/71299541-b6a34f80-2385-11ea-915b-f23e98c78ffd.gif)
 
