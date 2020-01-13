@@ -1,13 +1,18 @@
 import axios from 'axios';
 // import { getProductRatings } from './reviews.js';
-const greenfieldRoot = 'http://3.134.102.30';
+export const root = {
+  products: 'http://ec2-18-216-94-171.us-east-2.compute.amazonaws.com:3000',
+  // products: 'http://3.134.102.30',
+  reviews: 'http://3.134.102.30',
+  qna: 'http://3.134.102.30'
+};
 
 export const getProductInfo = id => {
-  return axios.get(`${greenfieldRoot}/products/${id}`);
+  return axios.get(`${root.products}/products/${id}`);
 };
 
 export const getRelatedProductsIds = id => {
-  return axios.get(`${greenfieldRoot}/products/${id}/related`)
+  return axios.get(`${root.products}/products/${id}/related`)
     .then(({ data }) => {
       let uniqueProducts = {};
       data.forEach((currentId) => {
@@ -21,16 +26,16 @@ export const getRelatedProductsIds = id => {
 };
 
 export const getProductReviews = id => {
-  return axios.get(`${greenfieldRoot}/reviews/${id}/meta`);
+  return axios.get(`${root.reviews}/reviews/${id}/meta`);
 };
 
 export const getProductStyles = id => {
-  return axios.get(`${greenfieldRoot}/products/${id}/styles`);
+  return axios.get(`${root.products}/products/${id}/styles`);
 };
 
 export const getQuestions = productId => {
   return axios
-    .get(`${greenfieldRoot}/qa/${productId}?count=100000`)
+    .get(`${root.qna}/qa/${productId}?count=100000`)
     .then(({ data }) => data.results)
     .then((questions) => questions.sort((a, b) => b.question_helpfulness - a.question_helpfulness))
 
@@ -47,14 +52,14 @@ export const submitAQuestion = (body, form, product, question) => {
       .post(`${greenfieldRoot}/qa/${product.id}`, body);
   } else {
     return axios
-      .post(`${greenfieldRoot}/qa/${question.question_id}/answers`, body);
+      .post(`${root.qna}/qa/${question.question_id}/answers`, body);
   }
 };
 
 export const markAsHelpful = (id, type = 'question') => {
-  return axios.put(`${greenfieldRoot}/qa/${type}/${id}/helpful`);
+  return axios.put(`${root.qna}/qa/${type}/${id}/helpful`);
 };
 
 export const reportPost = (id, type = 'answer') => {
-  return axios.put(`${greenfieldRoot}/qa/${type}/${id}/report`);
+  return axios.put(`${root.qna}/qa/${type}/${id}/report`);
 };

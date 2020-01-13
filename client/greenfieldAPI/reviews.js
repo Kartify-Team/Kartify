@@ -1,10 +1,10 @@
 import axios from 'axios';
-
-const greenfieldRoot = 'http://3.134.102.30';
+import { root } from './index'
+// const greenfieldRoot = 'http://3.134.102.30';
 
 export const getProductRatings = productId => {
   const getReviewMetadata = axios
-    .get(`${greenfieldRoot}/reviews/${productId}/meta`)
+    .get(`${root.reviews}/reviews/${productId}/meta`)
     .then(response => response.data.ratings);
 
   return getReviewMetadata.then(ratings => {
@@ -35,12 +35,12 @@ export const getProductRatings = productId => {
 
 export const getRatingMetadata = productId => {
   return axios
-    .get(`${greenfieldRoot}/reviews/${productId}/meta`)
+    .get(`${root.reviews}/reviews/${productId}/meta`)
     .then(response => response.data);
 };
 
 export const getProductReviews = (productId, page, sort) => {
-  return axios.get(`${greenfieldRoot}/reviews/${productId}/list`, {
+  return axios.get(`${root.reviews}/reviews/${productId}/list`, {
     params: {
       page,
       count: 1000000,
@@ -60,7 +60,7 @@ export const postReview = (
   characteristics,
   photos = []
 ) => {
-  return axios.post(`${greenfieldRoot}/reviews/${productId}`, {
+  return axios.post(`${root.reviews}/reviews/${productId}`, {
     rating,
     summary,
     body,

@@ -5,6 +5,7 @@ const compression = require('compression');
 const server = express();
 const root = process.env.ROOT;
 const port = process.env.PORT;
+var cors = require('cors')
 
 const cloudinary = require('cloudinary');
 cloudinary.config({
@@ -13,6 +14,7 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET
 });
 server.use(compression());
+server.use(cors())
 server.use(express.static(path.join(__dirname, '../dist')));
 
 server.use(require('express-form-data').parse());
