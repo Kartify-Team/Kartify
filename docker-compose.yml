@@ -1,0 +1,18 @@
+
+version: '3.2'
+services:
+  web:
+    build: .
+    working_dir: /app
+    environment:
+      - PORT=3000
+      - PRODUCT_SERVER=http://ec2-18-216-94-171.us-east-2.compute.amazonaws.com:3000
+      - CLOUD_NAME=drkqjbjvd
+      - CLOUD_API_KEY=624315126115589
+      - CLOUD_API_SECRET=mRRZKkpU1nG56SHohQ7J-M3q7kw
+      - ENVIRONMENT=production
+    ports:
+      - "3000:3000"
+    command: "npm start"
+  
+  

@@ -1,17 +1,17 @@
 import axios from 'axios';
 // import { getProductRatings } from './reviews.js';
 export const root = {
-  products: 'http://ec2-18-216-94-171.us-east-2.compute.amazonaws.com:3000',
-  // products: 'http://3.134.102.30',
-  reviews: 'http://3.134.102.30',
-  qna: 'http://3.134.102.30'
+  products: process.env.PRODUCTS_SERVER,
+  reviews: process.env.REVIEWS_SERVER,
+  qna: process.env.QUESTIONS_SERVER
 };
-
 export const getProductInfo = id => {
+  console.log(`getting from ${root.products}/products/${id}`)
   return axios.get(`${root.products}/products/${id}`);
 };
 
 export const getRelatedProductsIds = id => {
+  console.log(`getting from ${root.products}/products/${id}`)
   return axios.get(`${root.products}/products/${id}/related`)
     .then(({ data }) => {
       let uniqueProducts = {};

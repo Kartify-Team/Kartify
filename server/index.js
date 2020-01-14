@@ -1,9 +1,8 @@
-require('dotenv').config();
+// require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
 const server = express();
-const root = process.env.ROOT;
 const port = process.env.PORT;
 var cors = require('cors')
 
@@ -23,6 +22,15 @@ server.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
+server.get('/env', (req, res) =>
+  res.send({
+    product: process.env.PRODUCT_SERVER,
+    reviews: process.env.REVIEWS_SERVER,
+    questions: process.env.QUESTIONS_SERVER
+  })
+
+)
+
 server.post('/img', (req, res) => {
   Promise.all(
     Object.values(req.files).map(image =>
@@ -34,8 +42,9 @@ server.post('/img', (req, res) => {
 });
 
 const startMessage = process.env.ENVIRONMENT === 'production' ?
-  `Server started on Port ${port}! ${root}/products/1` :
-  `Server started! ${root}:${port}/products/1`;
+  `Server started on Port ${port}! /products/1` :
+  `Server started! http://localhost:${port}/products/1
+  ${process.env.PRODUCT_SERVER}`;
 server.listen(port, () =>
   console.log(startMessage)
 );

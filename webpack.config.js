@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 const config = {
   entry: './client/index.js',
@@ -21,7 +22,12 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx']
-  }
+  },
+  plugins: [
+    new Dotenv()
+  ]
 };
 
 module.exports = config;
+
+

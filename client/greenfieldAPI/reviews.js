@@ -1,5 +1,13 @@
 import axios from 'axios';
-import { root } from './index'
+
+const root = {}
+axios.get('/env')
+  .then(({ data }) =>
+    root = {
+      product: data.products,
+      reviews: data.reviews,
+      questions: data.questions
+    })
 // const greenfieldRoot = 'http://3.134.102.30';
 
 export const getProductRatings = productId => {
