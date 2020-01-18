@@ -25,6 +25,16 @@ Per business requirements, the [product page was styled](#styling) both in light
 ### Product Overview
 _Developed by [David Lam](https://github.com/davidlam296)_
 
+This Product Overview section renders product information based on data receieved from an external API server.
+
+Basic product information is displayed, including: product name, description, features, rating and product styles.
+
+Dynamic producet information is displayed based on selected product style, including style name, price, size and quantity. Selecting a different style will dynamically render the changed data.
+
+The product's selected style 's default picture is displayed as the main image. A gallery interface will allow the user to view all other images of that style. The selected image is indicated with a bottom border. The main image can be selected by using the left and right buttons or by clicking on the thumbnail of the image gallery. An expanded view of the image can be seen by clicking on the main image.
+
+![image-gallery-demo](https://user-images.githubusercontent.com/52646652/72667572-f5740600-3a14-11ea-89fa-d6cb27c865f4.gif)
+
 ### Related Products
 _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 
@@ -48,7 +58,7 @@ _Developed by [Sebastian Coronel](https://github.com/scoronelhamilton)_
 ### Questions & Answers
 _Developed by [Elaine Wong](https://github.com/lainermeister)_
 
-Thw Questions & Answers are rendered for specific products based on an external API GET request. 
+The Questions & Answers are rendered for specific products based on an external API GET request. 
 
 The first two questions & answers are displayed (sorted with Seller on top, then by helpfulness). Lazy loading functionality allows for "infinite scrolling" until a user gets to the end of the question list.
 
