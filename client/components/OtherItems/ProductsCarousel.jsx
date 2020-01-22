@@ -21,6 +21,7 @@ const ProductsCarousel = ({ products, handleClick, setActionButton }) => {
       <div className='sliderContainer'>
         {products.map((product, i) => {
           if (products.length < cardsToRender || (i < pointer + cardsToRender && i >= pointer)) {
+            console.log(product === null ? 'null' : product.id)
             return (
               <ProductCard 
                 key={product === null ? 0 : product.id} 

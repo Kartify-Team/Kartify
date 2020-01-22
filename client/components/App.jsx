@@ -29,7 +29,7 @@ const App = ({
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.documentElement.setAttribute("theme", "dark");
-      setDark(true)
+      setDark(true);
     }
   }, []);
 
@@ -39,7 +39,7 @@ const App = ({
     } else {
       document.documentElement.setAttribute("theme", "light");
     }
-  }, [dark])
+  }, [dark]);
 
   return (<>
     <div className="topnav">
